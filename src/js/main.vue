@@ -1,13 +1,15 @@
 <template>
 	<div id="main-content">
-		
+		<index-header></index-header>
 	</div>
 </template>
 
 <script type="text/javascript">
+	import indexHeader from './components/index-header.vue';
+
 	export default{
 		components: {
-
+			indexHeader
 		},
 		methods: {
 
@@ -29,22 +31,9 @@
 	}
 </script>
 <style lang="sass">
-	$oneBoxWidth: 310px;
-	$oneBoxMarginRight: 30px;
-	$allBoxWidth: $oneBoxWidth * 3 + $oneBoxMarginRight * 2;
-	$boxHeigth: 455px;
-	$titleHeight: 35px;
-	$contentHeight: $boxHeigth - $titleHeight;
-	body{
-		background: #333333;
-	}
-	#main-content{
-		width: $allBoxWidth;
-		height: $boxHeigth;
-		margin: 100px auto 0;
-		font-size: 0;
-		position: relative;
-		background: red;
-	}
+@import "../css/reset.css";
+body{
+	font-family: "宋体";
+}
 </style>
 
