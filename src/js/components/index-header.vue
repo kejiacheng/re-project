@@ -28,7 +28,7 @@
 		},
 		data: function (){
 			return {
-				isLogin: false
+				
 			}
 		},
 		computed: {
@@ -86,6 +86,14 @@
 						background:#86ffec;
 						color:#ff0068;
 					}
+				}
+				.personal_wrapper{
+					display: inline-block;
+					position:relative;
+				}
+				.shopping_wrapper{
+					display: inline-block;
+					position:relative;
 				}
 			}
 		}
