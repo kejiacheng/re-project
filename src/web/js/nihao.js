@@ -63,12 +63,12 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 42);
+/******/ 	return __webpack_require__(__webpack_require__.s = 32);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 42:
+/***/ 32:
 /***/ (function(module, exports) {
 
 // import Vue from 'vue';

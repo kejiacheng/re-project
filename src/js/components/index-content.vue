@@ -2,129 +2,44 @@
 	<div id="content">
 		<div class="wrapper">
 			<div class="content_left">
-				<div class="ingredients">
+				<div class="ingredients" @click="ing_click">
 					<p class="title">主料选择<span>(最多1种)</span>
 					</p>
 					<div class="ingredients_items">
-						<div class="green_tea item">
-							<img src="../../img/green_tea.jpg">
-							<p class="item_name">绿茶</p>
-							<p class="item_price">价格：<span>2.5元</span>
-							</p>
-							<p class="add_item">
-								<i class="fa fa-plus"></i>
-							</p>
-						</div>
-						<div class="red_tea item">
-							<img src="../../img/red_tea.jpg">
-							<p class="item_name">红茶</p>
-							<p class="item_price">价格：<span>2.5元</span>
-							</p>
-							<p class="add_item">
-								<i class="fa fa-plus"></i>
-							</p>
-						</div>
-						<div class="apple item">
-							<img src="../../img/apple.jpg">
-							<p class="item_name">苹果汁</p>
-							<p class="item_price">价格：<span>3.5元</span>
-							</p>
-							<p class="add_item">
-								<i class="fa fa-plus"></i>
-							</p>
-						</div>
-						<div class="lemon item">
-							<img src="../../img/lemon.jpg">
-							<p class="item_name">柠檬汁</p>
-							<p class="item_price">价格：<span>3.5元</span>
-							</p>
-							<p class="add_item">
-								<i class="fa fa-plus"></i>
-							</p>
-						</div>
-						<div class="peach item">
-							<img src="../../img/peach.jpg">
-							<p class="item_name">蜜桃汁</p>
-							<p class="item_price">价格：<span>3.5元</span>
-							</p>
-							<p class="add_item">
-								<i class="fa fa-plus"></i>
-							</p>
-						</div>
-						<div class="mango item">
-							<img src="../../img/mango.jpg">
-							<p class="item_name">芒果汁</p>
-							<p class="item_price">价格：<span>4.0元</span>
-							</p>
-							<p class="add_item">
-								<i class="fa fa-plus"></i>
-							</p>
-						</div>
-						<div class="orange item">
-							<img src="../../img/orange.jpg">
-							<p class="item_name">鲜橙汁</p>
-							<p class="item_price">价格：<span>3.5元</span>
-							</p>
-							<p class="add_item">
-								<i class="fa fa-plus"></i>
-							</p>
-						</div>
+						<template v-for="item in ingredients">
+							<div :class="item.className" class="item">
+								<img :src="'../img/'+item.pic" :alt="item.name">
+								<p class="item_name">{{ item.name }}</p>
+								<p class="item_price">价格：<span class="price_num">{{ item.price }}</span></p>
+								<p class="add_item">
+									<i class="fa fa-plus"></i>
+								</p>
+							</div>
+						</template>
 					</div>
 				</div>
 				<div class="accessories">
 					<p class="title">辅料选择<span>(任意选择)</span></p>
 					<div class="accessories_items">
-						<div class="honey item">
-							<div class="item_left">
-								<img src="../../img/honey.jpg">
-								<p class="item_name">蜂蜜</p>
-							</div>
-							<div class="item_right">
-								<div class="right_content">
-									<p class="item_price">价格：<span class="num">1.0</span><span>元/份</span></p>
-									<p class="item_num">数量：<span>0</span></p>
-									<div class="add_sub" onselectstart="return false;">
-										<i class="fa fa-plus add"></i>
-	                                    <i class="fa fa-minus sub"></i>
+						<template v-for="item in accessories">
+							<div :class="item.className" class="item">
+								<div class="item_left">
+									<img :src="'../img/'+item.pic" :alt="item.name">
+									<p class="item_name">{{ item.name }}</p>
+								</div>
+								<div class="item_right">
+									<div class="right_content">
+										<p class="item_price">价格：<span class="num">{{ item.price }}</span><span>元/份</span></p>
+										<p class="item_num">数量：<span>0</span></p>
+										<div class="add_sub" onselectstart="return false">
+											<i class="fa fa-plus add"></i>
+											<i class=" fa fa-minus sub"></i>
+										</div>
+										<p class="totol_price">总计：<span>0.0</span></p>
 									</div>
-									<p class="totol_price">总计：<span>0.0</span></p>
 								</div>
 							</div>
-						</div>
-						<div class="coconut item">
-							<div class="item_left">
-								<img src="../../img/coconut.jpg">
-								<p class="item_name">椰果</p>
-							</div>
-							<div class="item_right">
-								<div class="right_content">
-									<p class="item_price">价格：<span class="num">0.8</span><span>元/份</span></p>
-									<p class="item_num">数量：<span>0</span></p>
-									<div class="add_sub" onselectstart="return false;">
-										<i class="fa fa-plus add"></i>
-	                                    <i class="fa fa-minus sub"></i>
-									</div>
-									<p class="totol_price">总计：<span>0.0</span></p>
-								</div>
-							</div>
-						</div>
-						<div class="HFCS item">
-							<div class="item_left">
-								<img src="../../img/HFCS.jpg">
-								<p class="item_name">果葡糖浆</p>
-							</div>
-							<div class="item_right">
-								<div class="right_content">
-									<p class="item_price">价格：<span class="num">0.5</span><span>元/份</span></p>
-									<p class="item_num">数量：<span>0</span></p>
-									<div class="add_sub" onselectstart="return false;">
-										<i class="fa fa-plus add"></i>
-	                                    <i class="fa fa-minus sub"></i>
-									</div>
-									<p class="totol_price">总计：<span>0.0</span></p>
-								</div>
-							</div>
-						</div>
+						</template>
 					</div>
 				</div>
 			</div>
@@ -141,16 +56,9 @@
 				<div class="ranking_list">
                     <p class="ranking_list_title">月售排行</p>
                     <ul>
-                        <li><i class="top_3">1</i><span title="苹果汁+红茶+牛奶+果葡糖浆">苹果汁+红茶+牛奶+果葡糖浆</span><strong>23011</strong></li>
-                        <li><i class="top_3">2</i><span title="芒果汁+奶油+椰果+蜂蜜">芒果汁+奶油+椰果+蜂蜜</span><strong>19637</strong></li>
-                        <li><i class="top_3">3</i><span title="椰果+蜜桃汁+牛奶">椰果+蜜桃汁+牛奶</span><strong>17666</strong></li>
-                        <li><i class="not_top">4</i><span title="柠檬汁+蜜桃汁+果葡糖浆+椰果">柠檬汁+蜜桃汁+果葡糖浆+椰果</span><strong>17213</strong></li>
-                        <li><i class="not_top">5</i><span title="鲜橙汁+椰果+牛奶+苹果汁">鲜橙汁+椰果+牛奶+苹果汁</span><strong>16871</strong></li>
-                        <li><i class="not_top">6</i><span title="绿茶+蜂蜜">绿茶+蜂蜜</span><strong>14239</strong></li>
-                        <li><i class="not_top">7</i><span title="绿茶+椰果+果葡糖浆">绿茶+椰果+果葡糖浆</span><strong>6584</strong></li>
-                        <li><i class="not_top">8</i><span title="苹果汁+蜜桃汁+鲜橙汁+芒果汁">苹果汁+蜜桃汁+鲜橙汁+芒果汁</span><strong>4568</strong></li>
-                        <li><i class="not_top">9</i><span title="柠檬汁+奶油+椰果">柠檬汁+奶油+椰果</span><strong>3654</strong></li>
-                        <li><i class="not_top">10</i><span title="苹果汁+奶油+椰果">苹果汁+奶油+椰果</span><strong>2601</strong></li>
+                    	<template v-for="item in ranking_list">
+                    		<li><i :class="item.className">{{ item.ranking }}</i><span :title="item.name">{{ item.name }}</span><strong>{{ item.num }}</strong></li>
+                    	</template>
                     </ul>
                 </div>
 			</div>
@@ -196,18 +104,82 @@
 			
 		},
 		methods: {
+			ing_click: function (e){//事件委托，节省性能
+				var that = this;
+				//用三目运算符获取正确DOM元素
+				var target = e.target.className == 'add_item'
+					? e.target.parentNode
+					: e.target.parentNode.className == 'add_item'
+					? e.target.parentNode.parentNode
+					: null;
 
+				if(target){
+					//获取ingredients名字和价格DOM
+					var item_name = target.getElementsByClassName('item_name')[0];
+					var price_num = target.getElementsByClassName('price_num')[0];
+
+					//判断ingredients是否已选择
+					if(that.shopping_list.ingredients.dom){
+						//若已选择则移除原先DOM的selected类
+						that.removeClass(that.shopping_list.ingredients.dom,'selected');
+					}
+					//添加目标DOM的selected类并且修改DATA中的缓存DOM
+					that.addClass(target,'selected');
+					that.shopping_list.ingredients.dom = target;
+					that.shopping_list.ingredients.name = item_name.innerHTML;
+					that.shopping_list.ingredients.price = price_num.innerHTML;
+				}
+			},
+			addEvents: function (target,type,func){//事件绑定事件 
+				if(target.addEventListener){
+					target.addEventListener(type,func,true);
+				}else if(target.attachEvent){
+					target.attachEvent("on",type,func);
+				}
+			},
+			removeEvents: function (target,type,func){//事件取消绑定事件
+				if(target.removeEventListener){
+					target.removeEventListener(type,func,true);
+				}else if(target.detachEvent){
+					target.detachEvent("on",type,func);
+				}
+			},
+			hasClass: function (obj,cls){//判断对象是否有这个class函数
+				return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+			},
+			addClass: function (obj,cls){//给对象添加class函数
+				if (!this.hasClass(obj,cls)) obj.className += " " + cls;  
+			},
+			removeClass: function (obj, cls){//给对象删除class函数  
+				if (this.hasClass(obj, cls)) {  
+				    var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
+				    obj.className = obj.className.replace(reg, ' ');  
+				}	
+			},
+			toggleClass: function (obj,cls){//对象toggleClass事件函数  
+				if(this.hasClass(obj,cls)){  
+			        this.removeClass(obj, cls);  
+			    }else{  
+			        this.addClass(obj, cls);  
+			    } 
+			}
 		},
 		data: function (){
 			return {
-				
+				ingredients: [{className:'green_tea',pic:'green_tea.jpg',name:'绿茶',price:'2.5'},{className:'red_tea',pic:'red_tea.jpg',name:'红茶',price:'2.5'},{className:'apple',pic:'apple.jpg',name:'苹果汁',price:'3.5'},{className:'lemon',pic:'lemon.jpg',name:'柠檬汁',price:'3.5'},{className:'peach',pic:'peach.jpg',name:'蜜桃汁',price:'3.5'},{className:'mango',pic:'mango.jpg',name:'芒果汁',price:'4.0'},{className:'orange',pic:'orange.jpg',name:'鲜橙汁',price:'3.5'}],
+				accessories: [{className:'honey',pic:'honey.jpg',name:'蜂蜜',price:'1.0'},{className:'coconut',pic:'coconut.jpg',name:'椰果',price:'0.8'},{className:'HFCS',pic:'HFCS.jpg',name:'果葡糖浆',price:'0.5'}],
+				ranking_list: [{className:'top_3',ranking:1,name:'苹果汁+红茶+牛奶+果葡糖浆',num:'23011'},{className:'top_3',ranking:2,name:'芒果汁+奶油+椰果+蜂蜜',num:'19637'},{className:'top_3',ranking:3,name:'椰果+蜜桃汁+牛奶',num:'17666'},{className:'not_top',ranking:4,name:'柠檬汁+蜜桃汁+果葡糖浆+椰果',num:'17213'},{className:'not_top',ranking:5,name:'鲜橙汁+椰果+牛奶+苹果汁',num:'16871'},{className:'not_top',ranking:6,name:'绿茶+蜂蜜',num:'14239'},{className:'not_top',ranking:7,name:'绿茶+椰果+果葡糖浆',num:'6584'},{className:'not_top',ranking:8,name:'苹果汁+蜜桃汁+鲜橙汁+芒果汁',num:'4568'},{className:'not_top',ranking:9,name:'柠檬汁+奶油+椰果',num:'3654'},{className:'not_top',ranking:10,name:'苹果汁+奶油+椰果',num:'2601'}],
+				shopping_list: {
+					ingredients: {},
+					accessories: {}
+				}
 			}
 		},
 		computed: {
 
 		},
 		created: function (){
-
+			
 		},
 		watch: {
 
@@ -241,6 +213,11 @@
 						font-size: 20px;
 						color: red;
 					}
+				}
+				.selected{
+					border-color: red;
+					box-shadow: 0 0 0 3px red inset;
+					border-radius: 60px;
 				}
 				img{
 					width: 100px;
