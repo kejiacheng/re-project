@@ -154,6 +154,39 @@
                     </ul>
                 </div>
 			</div>
+			<div class="complete_bt">
+				<div class="complete_bt_text">选购完成</div>
+		        <div class="complete_box">
+		            <div class="header">
+		                <div class="header_text">
+		                    <span>|</span>
+		                    购物清单
+		                </div>
+		                <div class="clear_goods">
+		                    <i class="fa fa-trash"></i>
+		                    <span>清空物品</span>
+		                </div>
+		            </div>
+		            <div class="content">
+		                <div class="tips">
+		                    <i class="fa fa-exclamation" style="color:red"></i>
+		                        以下是您的购物清单
+		                </div>
+		                <div class="have_goods">
+		                    <div class="all_items">
+		                    </div>
+		                    <div class="selected_items_totol_price">
+		                        <span class="confirm_bt" onselectstart="return false">确认支付</span>
+		                        总计：
+		                        <span class="price_num">1.0</span>
+		                    </div>
+		                </div>
+		                <div class="not_have">
+		                    您尚未选择主料！
+		                </div>
+		            </div>
+		        </div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -403,6 +436,141 @@
 	    						color: #ff1c4d;
 	    						font-weight: 600;
 	    					}
+						}
+					}
+				}
+			}
+			.complete_bt{
+				$complete_bt_width: 120px;
+				$complete_box_width: 400px;
+				width: $complete_bt_width;
+				height: 40px;
+				position: fixed;
+				bottom: 0;
+				left: calc(50% - #{$complete_bt_width / 2});
+				left: -webkit-calc(50% - #{$complete_bt_width / 2});
+				left: -moz-calc(50% - #{$complete_bt_width / 2});
+				background: #4941FD;
+				border-radius: 50% 50% 0 0;
+				text-align: center;
+				line-height: 45px;
+				color: #fff;
+				font-family: $mic;
+				cursor: pointer;
+				z-index: 100;
+				font-size: 16px;
+				.complete_box{
+					width: $complete_box_width;
+					min-height: 135px;
+					position: absolute;
+					left: calc(#{$complete_box_width / -2} + #{$complete_bt_width/2});
+					background: white;
+					top: 40px;
+					-webkit-transition: top linear 0.3s;
+					transition: top linear 0.3s;
+					cursor: default;
+					.header{
+						height: 35px;
+						width: 100%;
+						background: #f1f1f1;
+						.header_text{
+							width: 20%;
+							color: black;
+							line-height: 34px;
+							font-size: 13px;
+							float: left;
+							span{
+								font-weight: 900;
+								vertical-align: 1px;
+								color: #2800DE;
+							}
+						}
+						.clear_goods{
+							width: 20%;
+							float: right;
+							line-height: 35px;
+							color: black;
+							cursor: pointer;
+							span{
+								font-size: 13px;
+							}
+						}
+					}
+					.content{
+						padding: 0 15px;
+						min-height: 100px;
+						.tips{
+							height: 25px;
+							color: black;
+							font-size: 12px;
+							line-height: 25px;
+							text-align: left;
+							border-bottom: 1px solid #ccc;
+						}
+						.have_goods{
+							display: none;
+							.all_items{
+								.selected_items{
+									width: 100%;
+									height: 45px;
+									border-bottom: 1px solid #ccc;
+									box-sizing: border-box;
+									padding: 10px 5px;
+									color: black;
+									line-height: 25px;
+									text-align: left;
+									.selected_items_name{
+										font-size: 14px;
+									}
+									.selected_items_right{
+										float: right;
+										display: inline-block;
+										height: 25px;
+										.selected_items_price{
+											margin-right: 20px;
+											font-size: 14px;
+											color: #EF0000;
+										}
+										.num_box{
+											display: inline-block;
+											vertical-align: bottom;
+											img{
+												width: 20px;
+												vertical-align: top;
+												margin-top: 4px;
+												cursor: pointer;
+											}
+											.selected_items_num{
+												margin: 0 4px 0 3px;
+												color: #6052FB;
+												font-size: 13px;
+											}
+										}
+									}
+								}
+							}
+							.selected_items_totol_price{
+								height: 30px;
+								text-align: right;
+								color: black;
+								line-height: 30px;
+								font-size: 14px;
+								margin-right: 5px;
+								.confirm_bt{
+									float: left;
+									margin-left: 5px;
+									color: #4003FF;
+									cursor: pointer;
+									font-weight: 600;
+								}
+								.price_num{
+									color: #EF0000;
+								}
+							}
+						}
+						.not_have{
+							color: #6E6E6E;
+							line-height: 100px;
 						}
 					}
 				}

@@ -8,7 +8,7 @@
 	    	<div class="header_left">
 	    		 <a v-if="!isLogin" class="bt" href="">登录</a>
 	    		 <a v-if="!isLogin" class="bt" href="">注册</a>
-	    		 <div class="presonal_wrapper" v-if="isLogin">
+	    		 <div class="personal_wrapper" v-if="isLogin">
 	    		 	<a class="bt" href="">XX</a>
 	    		 </div>
 	    		 <div class="shopping_wrapper">
@@ -26,6 +26,7 @@
 		methods: {
 
 		},
+		props: ["isLogin"],
 		data: function (){
 			return {
 				
