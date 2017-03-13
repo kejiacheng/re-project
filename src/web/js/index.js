@@ -11190,7 +11190,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n@charset \"UTF-8\";\n#content {\n  margin-top: 30px;\n  width: 100%;\n  background: #f5f5f5;\n}\n#content .wrapper {\n    width: 1200px;\n    margin: 0 auto;\n    background: url(" + __webpack_require__(12) + ");\n    padding: 20px 30px;\n    box-sizing: border-box;\n    font-size: 0;\n}\n#content .wrapper .content_left {\n      width: 808px;\n      display: inline-block;\n}\n#content .wrapper .content_left .title {\n        font-size: 24px;\n        font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#content .wrapper .content_left .title span {\n          font-size: 20px;\n          color: red;\n}\n#content .wrapper .content_left .selected {\n        border-color: red;\n        box-shadow: 0 0 0 3px red inset;\n        border-radius: 60px;\n}\n#content .wrapper .content_left img {\n        width: 100px;\n        height: 100px;\n        border-radius: 50%;\n}\n#content .wrapper .content_left .item_name {\n        font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n        margin-bottom: 12px;\n}\n#content .wrapper .content_left .item_price {\n        font-weight: 600;\n        margin-bottom: 12px;\n}\n#content .wrapper .content_left .item_price span {\n          color: #FE0048;\n}\n#content .wrapper .content_left .ingredients {\n        font-size: 16px;\n}\n#content .wrapper .content_left .ingredients .ingredients_items {\n          margin: 15px 0;\n}\n#content .wrapper .content_left .ingredients .ingredients_items:after {\n            content: \"\";\n            display: table;\n            clear: both;\n}\n#content .wrapper .content_left .ingredients .ingredients_items .item {\n            width: 200px;\n            height: 250px;\n            border: 1px solid transparent;\n            float: left;\n            margin-bottom: 5px;\n            text-align: center;\n}\n#content .wrapper .content_left .ingredients .ingredients_items .item img {\n              margin: 22px 0 12px;\n}\n#content .wrapper .content_left .ingredients .ingredients_items .item .add_item {\n              width: 30px;\n              height: 30px;\n              background: #ff8a06;\n              border-radius: 50%;\n              margin: 0 auto;\n              cursor: pointer;\n}\n#content .wrapper .content_left .ingredients .ingredients_items .item .add_item .fa-plus {\n                margin-top: 5px;\n                margin-left: 1px;\n                font-size: 22px;\n                color: #fff;\n}\n#content .wrapper .content_left .accessories .accessories_items {\n        margin: 15px 0;\n}\n#content .wrapper .content_left .accessories .accessories_items:after {\n          content: \"\";\n          display: table;\n          clear: both;\n}\n#content .wrapper .content_left .accessories .accessories_items .item {\n          width: 345px;\n          height: 175px;\n          padding-left: 50px;\n          font-size: 0;\n          float: left;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_left {\n            width: 145px;\n            text-align: center;\n            display: inline-block;\n            font-size: 16px;\n            vertical-align: top;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_left img {\n              margin: 12px 0;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right {\n            width: 175px;\n            margin-left: 25px;\n            display: inline-block;\n            font-size: 16px;\n            text-align: left;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content {\n              margin-top: 30px;\n              border-right: 2px solid #333;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .item_num {\n                margin-top: 10px;\n                font-weight: 600;\n                display: inline-block;\n                vertical-align: top;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .item_num span {\n                  display: inline-block;\n                  text-align: center;\n                  width: 20px;\n                  color: #FE0048;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .add_sub {\n                margin-top: 10px;\n                display: inline-block;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .add_sub i {\n                  cursor: pointer;\n                  color: #545050;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .totol_price {\n                font-weight: 600;\n                margin-top: 20px;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .totol_price span {\n                  display: inline-block;\n                  text-align: center;\n                  width: 20px;\n                  color: #FE0048;\n}\n#content .wrapper .content_right {\n      font-size: 16px;\n      width: 332px;\n      display: inline-block;\n      vertical-align: top;\n}\n#content .wrapper .content_right .tips {\n        width: 320px;\n        margin-bottom: 30px;\n}\n#content .wrapper .content_right .tips .tips_title {\n          text-align: center;\n          font-size: 24px;\n          margin-bottom: 20px;\n          font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#content .wrapper .content_right .tips ul li {\n          display: block;\n          letter-spacing: 1px;\n          line-height: 20px;\n          padding-left: 5px;\n          margin-bottom: 10px;\n}\n#content .wrapper .content_right .tips ul li .important_word {\n            color: red;\n            font-weight: 600;\n}\n#content .wrapper .content_right .tips ul li i {\n            color: red;\n            font-weight: 600;\n}\n#content .wrapper .content_right .ranking_list .ranking_list_title {\n        text-align: center;\n        font-size: 24px;\n        margin-bottom: 20px;\n        font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#content .wrapper .content_right .ranking_list ul {\n        margin-left: 10px;\n}\n#content .wrapper .content_right .ranking_list ul li {\n          font-size: 13px;\n          padding: 9px 0;\n}\n#content .wrapper .content_right .ranking_list ul li i {\n            float: left;\n            display: inline-block;\n            text-align: center;\n            line-height: 15px;\n            width: 15px;\n            height: 15px;\n            font-style: normal;\n            margin-right: 15px;\n}\n#content .wrapper .content_right .ranking_list ul li i.top_3 {\n            background: #ff7f42;\n            color: white;\n}\n#content .wrapper .content_right .ranking_list ul li span {\n            width: 232px;\n            -webkit-line-clamp: 1;\n            -webkit-box-orient: vertical;\n            display: -webkit-box;\n            overflow: hidden;\n            float: left;\n            line-height: 15px;\n            margin-right: 8px;\n            color: #444;\n}\n#content .wrapper .content_right .ranking_list ul li strong {\n            color: #ff1c4d;\n            font-weight: 600;\n}\n#content .wrapper .complete_bt {\n      width: 120px;\n      height: 40px;\n      position: fixed;\n      bottom: 0;\n      left: calc(50% - 60px);\n      left: -webkit-calc(50% - 60px);\n      left: -moz-calc(50% - 60px);\n      background: #4941FD;\n      border-radius: 50% 50% 0 0;\n      text-align: center;\n      line-height: 45px;\n      color: #fff;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      cursor: pointer;\n      z-index: 100;\n      font-size: 16px;\n}\n#content .wrapper .complete_bt .complete_box {\n        width: 400px;\n        min-height: 135px;\n        position: absolute;\n        left: calc(-200px + 60px);\n        background: white;\n        top: 40px;\n        -webkit-transition: top linear 0.3s;\n        transition: top linear 0.3s;\n        cursor: default;\n}\n#content .wrapper .complete_bt .complete_box .header {\n          height: 35px;\n          width: 100%;\n          background: #f1f1f1;\n}\n#content .wrapper .complete_bt .complete_box .header .header_text {\n            width: 20%;\n            color: black;\n            line-height: 34px;\n            font-size: 13px;\n            float: left;\n}\n#content .wrapper .complete_bt .complete_box .header .header_text span {\n              font-weight: 900;\n              vertical-align: 1px;\n              color: #2800DE;\n}\n#content .wrapper .complete_bt .complete_box .header .clear_goods {\n            width: 20%;\n            float: right;\n            line-height: 35px;\n            color: black;\n            cursor: pointer;\n}\n#content .wrapper .complete_bt .complete_box .header .clear_goods span {\n              font-size: 13px;\n}\n#content .wrapper .complete_bt .complete_box .content {\n          padding: 0 15px;\n          min-height: 100px;\n}\n#content .wrapper .complete_bt .complete_box .content .tips {\n            height: 25px;\n            color: black;\n            font-size: 12px;\n            line-height: 25px;\n            text-align: left;\n            border-bottom: 1px solid #ccc;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods {\n            display: none;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items {\n              width: 100%;\n              height: 45px;\n              border-bottom: 1px solid #ccc;\n              box-sizing: border-box;\n              padding: 10px 5px;\n              color: black;\n              line-height: 25px;\n              text-align: left;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_name {\n                font-size: 14px;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_right {\n                float: right;\n                display: inline-block;\n                height: 25px;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_right .selected_items_price {\n                  margin-right: 20px;\n                  font-size: 14px;\n                  color: #EF0000;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_right .num_box {\n                  display: inline-block;\n                  vertical-align: bottom;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_right .num_box img {\n                    width: 20px;\n                    vertical-align: top;\n                    margin-top: 4px;\n                    cursor: pointer;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_right .num_box .selected_items_num {\n                    margin: 0 4px 0 3px;\n                    color: #6052FB;\n                    font-size: 13px;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .selected_items_totol_price {\n              height: 30px;\n              text-align: right;\n              color: black;\n              line-height: 30px;\n              font-size: 14px;\n              margin-right: 5px;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .selected_items_totol_price .confirm_bt {\n                float: left;\n                margin-left: 5px;\n                color: #4003FF;\n                cursor: pointer;\n                font-weight: 600;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .selected_items_totol_price .price_num {\n                color: #EF0000;\n}\n#content .wrapper .complete_bt .complete_box .content .not_have {\n            color: #6E6E6E;\n            line-height: 100px;\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\n#content {\n  margin-top: 30px;\n  width: 100%;\n  background: #f5f5f5;\n}\n#content .wrapper {\n    width: 1200px;\n    margin: 0 auto;\n    background: url(" + __webpack_require__(12) + ");\n    padding: 20px 30px;\n    box-sizing: border-box;\n    font-size: 0;\n}\n#content .wrapper .content_left {\n      width: 808px;\n      display: inline-block;\n}\n#content .wrapper .content_left .title {\n        font-size: 24px;\n        font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#content .wrapper .content_left .title span {\n          font-size: 20px;\n          color: red;\n}\n#content .wrapper .content_left .selected {\n        border-color: red;\n        box-shadow: 0 0 0 3px red inset;\n        border-radius: 60px;\n}\n#content .wrapper .content_left img {\n        width: 100px;\n        height: 100px;\n        border-radius: 50%;\n}\n#content .wrapper .content_left .item_name {\n        font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n        margin-bottom: 12px;\n}\n#content .wrapper .content_left .item_price {\n        font-weight: 600;\n        margin-bottom: 12px;\n}\n#content .wrapper .content_left .item_price span {\n          color: #FE0048;\n}\n#content .wrapper .content_left .ingredients {\n        font-size: 16px;\n}\n#content .wrapper .content_left .ingredients .ingredients_items {\n          margin: 15px 0;\n}\n#content .wrapper .content_left .ingredients .ingredients_items:after {\n            content: \"\";\n            display: table;\n            clear: both;\n}\n#content .wrapper .content_left .ingredients .ingredients_items .item {\n            width: 200px;\n            height: 250px;\n            border: 1px solid transparent;\n            float: left;\n            margin-bottom: 5px;\n            text-align: center;\n}\n#content .wrapper .content_left .ingredients .ingredients_items .item img {\n              margin: 22px 0 12px;\n}\n#content .wrapper .content_left .ingredients .ingredients_items .item .add_item {\n              width: 30px;\n              height: 30px;\n              background: #ff8a06;\n              border-radius: 50%;\n              margin: 0 auto;\n              cursor: pointer;\n}\n#content .wrapper .content_left .ingredients .ingredients_items .item .add_item .fa-plus {\n                margin-top: 5px;\n                margin-left: 1px;\n                font-size: 22px;\n                color: #fff;\n}\n#content .wrapper .content_left .accessories .accessories_items {\n        margin: 15px 0;\n}\n#content .wrapper .content_left .accessories .accessories_items:after {\n          content: \"\";\n          display: table;\n          clear: both;\n}\n#content .wrapper .content_left .accessories .accessories_items .item {\n          width: 345px;\n          height: 175px;\n          padding-left: 50px;\n          font-size: 0;\n          float: left;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_left {\n            width: 145px;\n            text-align: center;\n            display: inline-block;\n            font-size: 16px;\n            vertical-align: top;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_left img {\n              margin: 12px 0;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right {\n            width: 175px;\n            margin-left: 25px;\n            display: inline-block;\n            font-size: 16px;\n            text-align: left;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content {\n              margin-top: 30px;\n              border-right: 2px solid #333;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .item_num {\n                margin-top: 10px;\n                font-weight: 600;\n                display: inline-block;\n                vertical-align: top;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .item_num span {\n                  display: inline-block;\n                  text-align: center;\n                  width: 20px;\n                  color: #FE0048;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .add_sub {\n                margin-top: 10px;\n                display: inline-block;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .add_sub i {\n                  cursor: pointer;\n                  color: #545050;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .totol_price {\n                font-weight: 600;\n                margin-top: 20px;\n}\n#content .wrapper .content_left .accessories .accessories_items .item .item_right .right_content .totol_price span {\n                  display: inline-block;\n                  text-align: center;\n                  width: 20px;\n                  color: #FE0048;\n}\n#content .wrapper .content_right {\n      font-size: 16px;\n      width: 332px;\n      display: inline-block;\n      vertical-align: top;\n}\n#content .wrapper .content_right .tips {\n        width: 320px;\n        margin-bottom: 30px;\n}\n#content .wrapper .content_right .tips .tips_title {\n          text-align: center;\n          font-size: 24px;\n          margin-bottom: 20px;\n          font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#content .wrapper .content_right .tips ul li {\n          display: block;\n          letter-spacing: 1px;\n          line-height: 20px;\n          padding-left: 5px;\n          margin-bottom: 10px;\n}\n#content .wrapper .content_right .tips ul li .important_word {\n            color: red;\n            font-weight: 600;\n}\n#content .wrapper .content_right .tips ul li i {\n            color: red;\n            font-weight: 600;\n}\n#content .wrapper .content_right .ranking_list .ranking_list_title {\n        text-align: center;\n        font-size: 24px;\n        margin-bottom: 20px;\n        font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#content .wrapper .content_right .ranking_list ul {\n        margin-left: 10px;\n}\n#content .wrapper .content_right .ranking_list ul li {\n          font-size: 13px;\n          padding: 9px 0;\n}\n#content .wrapper .content_right .ranking_list ul li i {\n            float: left;\n            display: inline-block;\n            text-align: center;\n            line-height: 15px;\n            width: 15px;\n            height: 15px;\n            font-style: normal;\n            margin-right: 15px;\n}\n#content .wrapper .content_right .ranking_list ul li i.top_3 {\n            background: #ff7f42;\n            color: white;\n}\n#content .wrapper .content_right .ranking_list ul li span {\n            width: 232px;\n            -webkit-line-clamp: 1;\n            -webkit-box-orient: vertical;\n            display: -webkit-box;\n            overflow: hidden;\n            float: left;\n            line-height: 15px;\n            margin-right: 8px;\n            color: #444;\n}\n#content .wrapper .content_right .ranking_list ul li strong {\n            color: #ff1c4d;\n            font-weight: 600;\n}\n#content .wrapper .complete_bt {\n      width: 120px;\n      height: 40px;\n      position: fixed;\n      bottom: 0;\n      left: calc(50% - 60px);\n      left: -webkit-calc(50% - 60px);\n      left: -moz-calc(50% - 60px);\n      background: #4941FD;\n      border-radius: 50% 50% 0 0;\n      text-align: center;\n      line-height: 45px;\n      color: #fff;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      cursor: pointer;\n      z-index: 100;\n      font-size: 16px;\n}\n#content .wrapper .complete_bt .complete_box {\n        width: 400px;\n        min-height: 135px;\n        position: absolute;\n        left: calc(-200px + 60px);\n        background: white;\n        top: 40px;\n        -webkit-transition: top linear 0.3s;\n        transition: top linear 0.3s;\n        cursor: default;\n}\n#content .wrapper .complete_bt .complete_box .header {\n          height: 35px;\n          width: 100%;\n          background: #f1f1f1;\n}\n#content .wrapper .complete_bt .complete_box .header .header_text {\n            width: 20%;\n            color: black;\n            line-height: 34px;\n            font-size: 13px;\n            float: left;\n}\n#content .wrapper .complete_bt .complete_box .header .header_text span {\n              font-weight: 900;\n              vertical-align: 1px;\n              color: #2800DE;\n}\n#content .wrapper .complete_bt .complete_box .header .clear_goods {\n            width: 20%;\n            float: right;\n            line-height: 35px;\n            color: black;\n            cursor: pointer;\n}\n#content .wrapper .complete_bt .complete_box .header .clear_goods span {\n              font-size: 13px;\n}\n#content .wrapper .complete_bt .complete_box .content {\n          padding: 0 15px;\n          min-height: 100px;\n}\n#content .wrapper .complete_bt .complete_box .content .tips {\n            height: 25px;\n            color: black;\n            font-size: 12px;\n            line-height: 25px;\n            text-align: left;\n            border-bottom: 1px solid #ccc;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items {\n            width: 100%;\n            height: 45px;\n            border-bottom: 1px solid #ccc;\n            box-sizing: border-box;\n            padding: 10px 5px;\n            color: black;\n            line-height: 25px;\n            text-align: left;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_name {\n              font-size: 14px;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_right {\n              float: right;\n              display: inline-block;\n              height: 25px;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_right .selected_items_price {\n                margin-right: 20px;\n                font-size: 14px;\n                color: #EF0000;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_right .num_box {\n                display: inline-block;\n                vertical-align: bottom;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_right .num_box img {\n                  width: 20px;\n                  vertical-align: top;\n                  margin-top: 4px;\n                  cursor: pointer;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .all_items .selected_items .selected_items_right .num_box .selected_items_num {\n                  margin: 0 4px 0 3px;\n                  color: #6052FB;\n                  font-size: 13px;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .selected_items_totol_price {\n            height: 30px;\n            text-align: right;\n            color: black;\n            line-height: 30px;\n            font-size: 14px;\n            margin-right: 5px;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .selected_items_totol_price .confirm_bt {\n              float: left;\n              margin-left: 5px;\n              color: #4003FF;\n              cursor: pointer;\n              font-weight: 600;\n}\n#content .wrapper .complete_bt .complete_box .content .have_goods .selected_items_totol_price .price_num {\n              color: #EF0000;\n}\n#content .wrapper .complete_bt .complete_box .content .not_have {\n            color: #6E6E6E;\n            line-height: 100px;\n}\n", ""]);
 
 // exports
 
@@ -11423,10 +11423,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "price_num"
     }, [_vm._v(_vm._s(item.price))])]), _vm._v(" "), _vm._m(1, true)])]
   })], 2)]), _vm._v(" "), _c('div', {
-    staticClass: "accessories"
+    staticClass: "accessories",
+    on: {
+      "click": _vm.acc_click
+    }
   }, [_vm._m(2), _vm._v(" "), _c('div', {
     staticClass: "accessories_items"
-  }, [_vm._l((_vm.accessories), function(item) {
+  }, [_vm._l((_vm.shopping_list.accessories), function(item) {
     return [_c('div', {
       staticClass: "item",
       class: item.className
@@ -11447,10 +11450,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "item_price"
     }, [_vm._v("价格："), _c('span', {
       staticClass: "num"
-    }, [_vm._v(_vm._s(item.price))]), _c('span', [_vm._v("元/份")])]), _vm._v(" "), _vm._m(3, true), _vm._v(" "), _vm._m(4, true), _vm._v(" "), _vm._m(5, true)])])])]
+    }, [_vm._v(_vm._s(item.price))]), _c('span', [_vm._v("元/份")])]), _vm._v(" "), _c('p', {
+      staticClass: "item_num"
+    }, [_vm._v("数量："), _c('span', [_vm._v(_vm._s(item.num))])]), _vm._v(" "), _vm._m(3, true), _vm._v(" "), _c('p', {
+      staticClass: "totol_price"
+    }, [_vm._v("总计："), _c('span', [_vm._v(_vm._s((item.num * item.price).toFixed(1)))])])])])])]
   })], 2)])]), _vm._v(" "), _c('div', {
     staticClass: "content_right"
-  }, [_vm._m(6), _vm._v(" "), _c('div', {
+  }, [_vm._m(4), _vm._v(" "), _c('div', {
     staticClass: "ranking_list"
   }, [_c('p', {
     staticClass: "ranking_list_title"
@@ -11462,7 +11469,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "title": item.name
       }
     }, [_vm._v(_vm._s(item.name))]), _c('strong', [_vm._v(_vm._s(item.num))])])]
-  })], 2)])]), _vm._v(" "), _vm._m(7)])])
+  })], 2)])]), _vm._v(" "), _vm._m(5)])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('p', {
     staticClass: "title"
@@ -11478,24 +11485,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "title"
   }, [_vm._v("辅料选择"), _c('span', [_vm._v("(任意选择)")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', {
-    staticClass: "item_num"
-  }, [_vm._v("数量："), _c('span', [_vm._v("0")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "add_sub",
     attrs: {
       "onselectstart": "return false"
     }
   }, [_c('i', {
-    staticClass: "fa fa-plus add"
+    staticClass: "fa fa-plus add num_bt"
   }), _vm._v(" "), _c('i', {
-    staticClass: " fa fa-minus sub"
+    staticClass: " fa fa-minus sub num_bt"
   })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', {
-    staticClass: "totol_price"
-  }, [_vm._v("总计："), _c('span', [_vm._v("0.0")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "tips"
@@ -11554,7 +11553,51 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "have_goods"
   }, [_c('div', {
     staticClass: "all_items"
-  }), _vm._v(" "), _c('div', {
+  }, [_c('div', {
+    staticClass: "selected_items"
+  }, [_c('span', {
+    staticClass: "selected_items_name"
+  }, [_vm._v("芒果汁")]), _c('div', {
+    staticClass: "selected_items_right"
+  }, [_c('span', {
+    staticClass: "selected_items_price"
+  }, [_vm._v("4")]), _c('div', {
+    staticClass: "num_box"
+  }, [_c('img', {
+    staticClass: "minus_num",
+    attrs: {
+      "src": "img/minus.png"
+    }
+  }), _c('span', {
+    staticClass: "selected_items_num"
+  }, [_vm._v("1")]), _c('img', {
+    staticClass: "add_num",
+    attrs: {
+      "src": "img/add.png"
+    }
+  })])])]), _c('div', {
+    staticClass: "selected_items"
+  }, [_c('span', {
+    staticClass: "selected_items_name"
+  }, [_vm._v("蜂蜜")]), _c('div', {
+    staticClass: "selected_items_right"
+  }, [_c('span', {
+    staticClass: "selected_items_price"
+  }, [_vm._v("1.0")]), _c('div', {
+    staticClass: "num_box"
+  }, [_c('img', {
+    staticClass: "minus_num",
+    attrs: {
+      "src": "img/minus.png"
+    }
+  }), _c('span', {
+    staticClass: "selected_items_num"
+  }, [_vm._v("1")]), _c('img', {
+    staticClass: "add_num",
+    attrs: {
+      "src": "img/add.png"
+    }
+  })])])])]), _vm._v(" "), _c('div', {
     staticClass: "selected_items_totol_price"
   }, [_c('span', {
     staticClass: "confirm_bt",
@@ -11926,20 +11969,20 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 exports.default = {
 	components: {},
 	methods: {
 		ing_click: function ing_click(e) {
-			//事件委托，节省性能
 			var that = this;
 			//用三目运算符获取正确DOM元素
 			var target = e.target.className == 'add_item' ? e.target.parentNode : e.target.parentNode.className == 'add_item' ? e.target.parentNode.parentNode : null;
 
 			if (target) {
 				//获取ingredients名字和价格DOM
-				var item_name = target.getElementsByClassName('item_name')[0];
-				var price_num = target.getElementsByClassName('price_num')[0];
+				var item_name = target.getElementsByClassName('item_name')[0].innerHTML;
+				var price_num = target.getElementsByClassName('price_num')[0].innerHTML;
 
 				//判断ingredients是否已选择
 				if (that.shopping_list.ingredients.dom) {
@@ -11949,9 +11992,31 @@ exports.default = {
 				//添加目标DOM的selected类并且修改DATA中的缓存DOM
 				that.addClass(target, 'selected');
 				that.shopping_list.ingredients.dom = target;
-				that.shopping_list.ingredients.name = item_name.innerHTML;
-				that.shopping_list.ingredients.price = price_num.innerHTML;
-				console.log(that.shopping_list.ingredients);
+				that.shopping_list.ingredients.name = item_name;
+				that.shopping_list.ingredients.price = price_num;
+			}
+		},
+		acc_click: function acc_click(e) {
+			var that = this;
+			//使用三目获取正确DOM
+			var target = that.hasClass(e.target, 'num_bt') ? e.target.parentNode.parentNode.parentNode.parentNode : null;
+			if (target) {
+				//使用三目判断是加还是减
+				var sign = that.hasClass(e.target, 'add') ? 'add' : that.hasClass(e.target, 'sub') ? 'sub' : null;
+
+				var item_name = target.getElementsByClassName('item_name')[0].innerHTML;
+				var item_price = target.getElementsByClassName('num')[0].innerHTML;
+
+				if (sign == 'add') {
+					if (that.shopping_list.accessories[item_name].num < 3) {
+						that.shopping_list.accessories[item_name].num++;
+					}
+				} else if (sign == 'sub') {
+					if (that.shopping_list.accessories[item_name].num > 0) {
+						that.shopping_list.accessories[item_name].num--;
+					}
+				}
+				console.log(that.str);
 			}
 		},
 		addEvents: function addEvents(target, type, func) {
@@ -11997,15 +12062,49 @@ exports.default = {
 	data: function data() {
 		return {
 			ingredients: [{ className: 'green_tea', pic: 'green_tea.jpg', name: '绿茶', price: '2.5' }, { className: 'red_tea', pic: 'red_tea.jpg', name: '红茶', price: '2.5' }, { className: 'apple', pic: 'apple.jpg', name: '苹果汁', price: '3.5' }, { className: 'lemon', pic: 'lemon.jpg', name: '柠檬汁', price: '3.5' }, { className: 'peach', pic: 'peach.jpg', name: '蜜桃汁', price: '3.5' }, { className: 'mango', pic: 'mango.jpg', name: '芒果汁', price: '4.0' }, { className: 'orange', pic: 'orange.jpg', name: '鲜橙汁', price: '3.5' }],
-			accessories: [{ className: 'honey', pic: 'honey.jpg', name: '蜂蜜', price: '1.0' }, { className: 'coconut', pic: 'coconut.jpg', name: '椰果', price: '0.8' }, { className: 'HFCS', pic: 'HFCS.jpg', name: '果葡糖浆', price: '0.5' }],
 			ranking_list: [{ className: 'top_3', ranking: 1, name: '苹果汁+红茶+牛奶+果葡糖浆', num: '23011' }, { className: 'top_3', ranking: 2, name: '芒果汁+奶油+椰果+蜂蜜', num: '19637' }, { className: 'top_3', ranking: 3, name: '椰果+蜜桃汁+牛奶', num: '17666' }, { className: 'not_top', ranking: 4, name: '柠檬汁+蜜桃汁+果葡糖浆+椰果', num: '17213' }, { className: 'not_top', ranking: 5, name: '鲜橙汁+椰果+牛奶+苹果汁', num: '16871' }, { className: 'not_top', ranking: 6, name: '绿茶+蜂蜜', num: '14239' }, { className: 'not_top', ranking: 7, name: '绿茶+椰果+果葡糖浆', num: '6584' }, { className: 'not_top', ranking: 8, name: '苹果汁+蜜桃汁+鲜橙汁+芒果汁', num: '4568' }, { className: 'not_top', ranking: 9, name: '柠檬汁+奶油+椰果', num: '3654' }, { className: 'not_top', ranking: 10, name: '苹果汁+奶油+椰果', num: '2601' }],
 			shopping_list: {
 				ingredients: {},
-				accessories: {}
-			}
+				accessories: {
+					蜂蜜: {
+						className: 'honey',
+						pic: 'honey.jpg',
+						name: '蜂蜜',
+						price: '1.0',
+						num: 0
+					},
+					椰果: {
+						className: 'coconut',
+						pic: 'coconut.jpg',
+						name: '椰果',
+						price: '0.8',
+						num: 0
+					},
+					果葡糖浆: {
+						className: 'HFCS',
+						pic: 'HFCS.jpg',
+						name: '果葡糖浆',
+						price: '0.5',
+						num: 0
+					}
+				}
+			},
+			a: 5
 		};
 	},
-	computed: {},
+	computed: {
+		str: function str() {
+			var that = this;
+			var a = '';
+			a += '<div class="selected_items"><span class="selected_items_name">' + that.shopping_list.ingredients.name + '</span><div class="selected_items_right"><span class="selected_items_price">' + parseFloat(that.shopping_list.ingredients.price) + '</span><div class="num_box"><img class="minus_num" src="img/minus.png"/><span class="selected_items_num">' + 1 + '</span><img class="add_num" src="img/add.png"/></div></div></div>';
+			for (var i in that.shopping_list.accessories) {
+				if (that.shopping_list.accessories[i].num > 0) {
+					a += '<div class="selected_items"><span class="selected_items_name">' + that.shopping_list.accessories[i].name + '</span><div class="selected_items_right"><span class="selected_items_price">' + (that.shopping_list.accessories[i].price * that.shopping_list.accessories[i].num).toFixed(1) + '</span><div class="num_box"><img class="minus_num" src="img/minus.png"/><span class="selected_items_num">' + that.shopping_list.accessories[i].num + '</span><img class="add_num" src="img/add.png"/></div></div></div>';
+				}
+			}
+			return a;
+		}
+	},
 	created: function created() {},
 	watch: {}
 };

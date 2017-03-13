@@ -18,10 +18,10 @@
 						</template>
 					</div>
 				</div>
-				<div class="accessories">
+				<div class="accessories" @click="acc_click">
 					<p class="title">辅料选择<span>(任意选择)</span></p>
 					<div class="accessories_items">
-						<template v-for="item in accessories">
+						<template v-for="item in shopping_list.accessories">
 							<div :class="item.className" class="item">
 								<div class="item_left">
 									<img :src="'../img/'+item.pic" :alt="item.name">
@@ -30,12 +30,12 @@
 								<div class="item_right">
 									<div class="right_content">
 										<p class="item_price">价格：<span class="num">{{ item.price }}</span><span>元/份</span></p>
-										<p class="item_num">数量：<span>0</span></p>
+										<p class="item_num">数量：<span>{{ item.num }}</span></p>
 										<div class="add_sub" onselectstart="return false">
-											<i class="fa fa-plus add"></i>
-											<i class=" fa fa-minus sub"></i>
+											<i class="fa fa-plus add num_bt"></i>
+											<i class=" fa fa-minus sub num_bt"></i>
 										</div>
-										<p class="totol_price">总计：<span>0.0</span></p>
+										<p class="totol_price">总计：<span>{{ (item.num * item.price).toFixed(1) }}</span></p>
 									</div>
 								</div>
 							</div>
@@ -82,6 +82,28 @@
 		                </div>
 		                <div class="have_goods">
 		                    <div class="all_items">
+		                    	<div class="selected_items">
+		                    		<span class="selected_items_name">芒果汁</span>
+		                    		<div class="selected_items_right">
+		                    			<span class="selected_items_price">4</span>
+		                    			<div class="num_box">
+		                    				<img class="minus_num" src="img/minus.png"/>
+		                    				<span class="selected_items_num">1</span>
+		                    				<img class="add_num" src="img/add.png"/>
+		                    			</div>
+		                    		</div>
+		                    	</div>
+		                    	<div class="selected_items">
+		                    		<span class="selected_items_name">果葡糖浆</span>
+		                    		<div class="selected_items_right">
+		                    			<span class="selected_items_price">0.5</span>
+		                    			<div class="num_box">
+		                    				<img class="minus_num" src="img/minus.png"/>
+		                    				<span class="selected_items_num">1</span>
+		                    				<img class="add_num" src="img/add.png"/>
+		                    			</div>
+		                    		</div>
+		                    	</div>
 		                    </div>
 		                    <div class="selected_items_totol_price">
 		                        <span class="confirm_bt" onselectstart="return false">确认支付</span>
@@ -104,7 +126,7 @@
 			
 		},
 		methods: {
-			ing_click: function (e){//事件委托，节省性能
+			ing_click: function (e){
 				var that = this;
 				//用三目运算符获取正确DOM元素
 				var target = e.target.className == 'add_item'
@@ -115,8 +137,8 @@
 
 				if(target){
 					//获取ingredients名字和价格DOM
-					var item_name = target.getElementsByClassName('item_name')[0];
-					var price_num = target.getElementsByClassName('price_num')[0];
+					var item_name = target.getElementsByClassName('item_name')[0].innerHTML;
+					var price_num = target.getElementsByClassName('price_num')[0].innerHTML;
 
 					//判断ingredients是否已选择
 					if(that.shopping_list.ingredients.dom){
@@ -126,8 +148,35 @@
 					//添加目标DOM的selected类并且修改DATA中的缓存DOM
 					that.addClass(target,'selected');
 					that.shopping_list.ingredients.dom = target;
-					that.shopping_list.ingredients.name = item_name.innerHTML;
-					that.shopping_list.ingredients.price = price_num.innerHTML;
+					that.shopping_list.ingredients.name = item_name;
+					that.shopping_list.ingredients.price = price_num;
+				}
+			},
+			acc_click: function (e){
+				var that = this;
+				//使用三目获取正确DOM
+				var target = that.hasClass(e.target,'num_bt') ? e.target.parentNode.parentNode.parentNode.parentNode : null;
+				if(target){
+					//使用三目判断是加还是减
+					var sign = that.hasClass(e.target,'add')
+						? 'add'
+						: that.hasClass(e.target,'sub')
+						? 'sub'
+						: null;
+
+					var item_name = target.getElementsByClassName('item_name')[0].innerHTML;
+					var item_price = target.getElementsByClassName('num')[0].innerHTML;
+
+					if(sign == 'add'){
+						if(that.shopping_list.accessories[item_name].num < 3){
+							that.shopping_list.accessories[item_name].num++;
+						} 
+					}else if(sign == 'sub'){
+						if(that.shopping_list.accessories[item_name].num > 0){
+							that.shopping_list.accessories[item_name].num--;
+						}
+					}
+					console.log(that.str);
 				}
 			},
 			addEvents: function (target,type,func){//事件绑定事件 
@@ -167,16 +216,48 @@
 		data: function (){
 			return {
 				ingredients: [{className:'green_tea',pic:'green_tea.jpg',name:'绿茶',price:'2.5'},{className:'red_tea',pic:'red_tea.jpg',name:'红茶',price:'2.5'},{className:'apple',pic:'apple.jpg',name:'苹果汁',price:'3.5'},{className:'lemon',pic:'lemon.jpg',name:'柠檬汁',price:'3.5'},{className:'peach',pic:'peach.jpg',name:'蜜桃汁',price:'3.5'},{className:'mango',pic:'mango.jpg',name:'芒果汁',price:'4.0'},{className:'orange',pic:'orange.jpg',name:'鲜橙汁',price:'3.5'}],
-				accessories: [{className:'honey',pic:'honey.jpg',name:'蜂蜜',price:'1.0'},{className:'coconut',pic:'coconut.jpg',name:'椰果',price:'0.8'},{className:'HFCS',pic:'HFCS.jpg',name:'果葡糖浆',price:'0.5'}],
 				ranking_list: [{className:'top_3',ranking:1,name:'苹果汁+红茶+牛奶+果葡糖浆',num:'23011'},{className:'top_3',ranking:2,name:'芒果汁+奶油+椰果+蜂蜜',num:'19637'},{className:'top_3',ranking:3,name:'椰果+蜜桃汁+牛奶',num:'17666'},{className:'not_top',ranking:4,name:'柠檬汁+蜜桃汁+果葡糖浆+椰果',num:'17213'},{className:'not_top',ranking:5,name:'鲜橙汁+椰果+牛奶+苹果汁',num:'16871'},{className:'not_top',ranking:6,name:'绿茶+蜂蜜',num:'14239'},{className:'not_top',ranking:7,name:'绿茶+椰果+果葡糖浆',num:'6584'},{className:'not_top',ranking:8,name:'苹果汁+蜜桃汁+鲜橙汁+芒果汁',num:'4568'},{className:'not_top',ranking:9,name:'柠檬汁+奶油+椰果',num:'3654'},{className:'not_top',ranking:10,name:'苹果汁+奶油+椰果',num:'2601'}],
 				shopping_list: {
 					ingredients: {},
-					accessories: {}
-				}
+					accessories: {
+						蜂蜜:{
+							className: 'honey',
+							pic: 'honey.jpg',
+							name: '蜂蜜',
+							price: '1.0',
+							num: 0
+						},
+						椰果:{
+							className: 'coconut',
+							pic: 'coconut.jpg',
+							name: '椰果',
+							price: '0.8',
+							num: 0
+						},
+						果葡糖浆:{
+							className: 'HFCS',
+							pic: 'HFCS.jpg',
+							name: '果葡糖浆',
+							price: '0.5',
+							num: 0
+						}
+					}
+				},
+				a: 5
 			}
 		},
 		computed: {
-
+			str: function (){
+				var that = this;
+				var a = '';
+				a += '<div class="selected_items"><span class="selected_items_name">'+that.shopping_list.ingredients.name+'</span><div class="selected_items_right"><span class="selected_items_price">'+ parseFloat(that.shopping_list.ingredients.price) +'</span><div class="num_box"><img class="minus_num" src="../img/minus.png"/><span class="selected_items_num">'+ 1 +'</span><img class="add_num" src="../img/add.png"/></div></div></div>';
+				for(var i in that.shopping_list.accessories){
+					if(that.shopping_list.accessories[i].num > 0){
+						a += '<div class="selected_items"><span class="selected_items_name">'+that.shopping_list.accessories[i].name+'</span><div class="selected_items_right"><span class="selected_items_price">'+ (that.shopping_list.accessories[i].price*that.shopping_list.accessories[i].num).toFixed(1) +'</span><div class="num_box"><img class="minus_num" src="../img/minus.png"/><span class="selected_items_num">'+ that.shopping_list.accessories[i].num +'</span><img class="add_num" src="../img/add.png"/></div></div></div>';
+					}
+				}
+				return a;
+			}
 		},
 		created: function (){
 			
