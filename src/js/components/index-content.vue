@@ -130,9 +130,9 @@
 		},
 		methods: {
 			ing_click(e){
-				var that = this;
+				const that = this;
 				//用三目运算符获取正确DOM元素
-				var target = e.target.className == 'add_item'
+				const target = e.target.className == 'add_item'
 					? e.target.parentNode
 					: e.target.parentNode.className == 'add_item'
 					? e.target.parentNode.parentNode
@@ -140,8 +140,8 @@
 
 				if(target){
 					//获取ingredients名字和价格DOM
-					var item_name = target.getElementsByClassName('item_name')[0].innerHTML;
-					var price_num = target.getElementsByClassName('price_num')[0].innerHTML;
+					const item_name = target.getElementsByClassName('item_name')[0].innerHTML;
+					const price_num = target.getElementsByClassName('price_num')[0].innerHTML;
 
 					//判断ingredients是否已选择
 					if(that.shopping_list.ingredients.dom){
@@ -156,20 +156,20 @@
 				}
 			},
 			acc_click(e){
-				var that = this;
+				const that = this;
 				//使用三目获取正确DOM
-				var target = that.hasClass(e.target,'num_bt') ? e.target.parentNode.parentNode.parentNode.parentNode : null;
+				const target = that.hasClass(e.target,'num_bt') ? e.target.parentNode.parentNode.parentNode.parentNode : null;
 				if(target){
 					//使用三目判断是加还是减
-					var sign = that.hasClass(e.target,'add')
+					const sign = that.hasClass(e.target,'add')
 						? 'add'
 						: that.hasClass(e.target,'sub')
 						? 'sub'
 						: null;
 
 					//获取名字和价格
-					var item_name = target.getElementsByClassName('item_name')[0].innerHTML;
-					var item_price = target.getElementsByClassName('num')[0].innerHTML;
+					const item_name = target.getElementsByClassName('item_name')[0].innerHTML;
+					const item_price = target.getElementsByClassName('num')[0].innerHTML;
 					//根据符号进行货物数量的加减
 					if(sign == 'add'){
 						if(that.shopping_list.accessories[item_name].num < 3){
@@ -183,16 +183,16 @@
 				}
 			},
 			complete_bt(){
-				var that = this;
-				var shade = document.getElementsByClassName('shade')[0];
-				var body = document.body;
-				var body_height = body.clientHeight;//获取body高度
-				var complete_box = document.getElementsByClassName("complete_box")[0],
+				const that = this;
+				const shade = document.getElementsByClassName('shade')[0];
+				const body = document.body;
+				const body_height = body.clientHeight;//获取body高度
+				const complete_box = document.getElementsByClassName("complete_box")[0],
 					complete_bt = document.getElementsByClassName("complete_bt")[0],
 					comlete_box_height = complete_box.offsetHeight,
 					complete_bt_height = complete_bt.offsetHeight;
 
-				var shade_style = shade.style;
+				const shade_style = shade.style;
 				//改变遮蔽层样式
 				shade_style.height = body_height + 'px';
 				shade_style.display = 'block';
@@ -200,7 +200,7 @@
 				complete_box.style.top = -comlete_box_height + complete_bt_height + 'px';
 				
 				//body点击事件函数
-				var body_click = () => {
+				const body_click = () => {
 					shade_style.display = 'none';
 					complete_box.style.top = complete_bt_height + 'px';
 					that.removeEvents(body,'click',body_click);
@@ -209,43 +209,43 @@
 				that.addEvents(body,'click',body_click);
 			},
 			add(e){
-				var that = this;
+				const that = this;
 				//获取目标DOM
-				var target = e.target.parentNode.parentNode.parentNode;
+				const target = e.target.parentNode.parentNode.parentNode;
 				//获取该DOM的名字
-				var name = target.getElementsByClassName('selected_items_name')[0].innerHTML;
+				const name = target.getElementsByClassName('selected_items_name')[0].innerHTML;
 
 				if(that.shopping_list.accessories[name].num < 3){
 					that.shopping_list.accessories[name].num++;
 				}
 			},
 			minus(e){
-				var that = this;
+				const that = this;
 				//获取目标DOM
-				var target = e.target.parentNode.parentNode.parentNode;
+				const target = e.target.parentNode.parentNode.parentNode;
 				//获取该DOM的名字
-				var name = target.getElementsByClassName('selected_items_name')[0].innerHTML;
+				const name = target.getElementsByClassName('selected_items_name')[0].innerHTML;
 
 				if(that.shopping_list.accessories[name].num > 0){
 					that.shopping_list.accessories[name].num--;
 				}
 
-				var complete_box = document.getElementsByClassName('complete_box')[0];
+				const complete_box = document.getElementsByClassName('complete_box')[0];
 				//获取物品一栏的高度
-				var selected_items = document.getElementsByClassName('selected_items')[0];
-				var selected_items_height = selected_items.offsetHeight;
+				const selected_items = document.getElementsByClassName('selected_items')[0];
+				const selected_items_height = selected_items.offsetHeight;
 
 				//获取complete_box的top值并且去掉px
-				var now_top = parseFloat(complete_box.style.top);
+				const now_top = parseFloat(complete_box.style.top);
 				//当该物品个数为0，则改变top
 				if(that.shopping_list.accessories[name].num == 0){
 					complete_box.style.top = now_top + selected_items_height + 'px';
 				}
 			},
 			clear(){
-				var that = this;
+				const that = this;
 
-				var complete_box = document.getElementsByClassName("complete_box")[0],
+				const complete_box = document.getElementsByClassName("complete_box")[0],
 					complete_bt = document.getElementsByClassName("complete_bt")[0];
 
 				for(let i in that.shopping_list.ingredients){
@@ -257,7 +257,7 @@
 				}
 				
 				//用setTimeout使complete_box的高度变化发生在改变complete_box.style.top之前
-				var timer = setTimeout(() => {
+				const timer = setTimeout(() => {
 					complete_box.style.top = -complete_box.offsetHeight + complete_bt.offsetHeight + 'px';
 					clearTimeout(timer);
 				},0)
@@ -284,7 +284,7 @@
 			},
 			removeClass(obj, cls){//给对象删除class函数  
 				if (this.hasClass(obj, cls)) {  
-				    var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
+				    let reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
 				    obj.className = obj.className.replace(reg, ' ');  
 				}	
 			},
@@ -334,8 +334,8 @@
 		},
 		computed: {
 			totol_price(){//计算总价
-				var accessories_price = 0;
-				for(var i in this.shopping_list.accessories){
+				let accessories_price = 0;
+				for(let i in this.shopping_list.accessories){
 					accessories_price += parseFloat((this.shopping_list.accessories[i].price * this.shopping_list.accessories[i].num).toFixed(1));
 				}
 				return parseFloat(this.shopping_list.ingredients.price) + accessories_price;
@@ -344,7 +344,7 @@
 				return this.shopping_list.ingredients.dom ? true : false;
 			},
 			complete_bt_height(){
-				var complete_box = document.getElementsByClassName("complete_box")[0],
+				const complete_box = document.getElementsByClassName("complete_box")[0],
 					complete_bt = document.getElementsByClassName("complete_bt")[0],
 					comlete_box_height = complete_box.offsetHeight,
 					complete_bt_height = complete_bt.offsetHeight;
