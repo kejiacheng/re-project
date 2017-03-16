@@ -379,7 +379,7 @@
 			$mic: "微软雅黑";
 			width: $allWidth;
 			margin: 0 auto;
-			background: url(../../img/productBg.png);
+			background: url(../../../img/productBg.png);
 			padding: $paddingWidth 30px;
 			box-sizing: border-box;
 			font-size: 0;

@@ -2,17 +2,14 @@
 	<div id="header">
 		<div class="wrapper">
 			<div class="logo">
-	    		<img class="logo_img" src="../../img/header-pic.png" alt="logo图片"/>
+	    		<img class="logo_img" src="../../../img/header-pic.png" alt="logo图片"/>
 	    		<span class="logo_text">饮料随搭</span>
 	    	</div>
 	    	<div class="header_left">
-	    		 <a v-if="!isLogin" class="bt" href="">登录</a>
-	    		 <a v-if="!isLogin" class="bt" href="">注册</a>
+	    		 <a v-if="!isLogin" class="bt" href="login.html">登录</a>
+	    		 <a v-if="!isLogin" class="bt" href="resigter.html">注册</a>
 	    		 <div class="personal_wrapper" v-if="isLogin">
 	    		 	<a class="bt" href="">XX</a>
-	    		 </div>
-	    		 <div class="shopping_wrapper">
-	    		 	<a class="bt">购物单</a>
 	    		 </div>
 	    	</div>
 		</div>
@@ -89,10 +86,6 @@
 					}
 				}
 				.personal_wrapper{
-					display: inline-block;
-					position:relative;
-				}
-				.shopping_wrapper{
 					display: inline-block;
 					position:relative;
 				}

@@ -1,21 +1,21 @@
 <template>
 	<div id="main-content">
-		<index-header :isLogin="isLogin"></index-header>
-		<index-content></index-content>
-		<index-footer></index-footer>
+		<login-header></login-header>
+		<login-content></login-content>
+		<login-footer></login-footer>
 	</div>
 </template>
 
 <script type="text/javascript">
-	import indexHeader from './components/index/index-header.vue';
-	import indexContent from './components/index/index-content.vue';
-	import indexFooter from './components/index/index-footer.vue';
+	import loginHeader from './components/login/login-header.vue';
+	import loginContent from './components/login/login-content.vue';
+	import loginFooter from './components/login/login-footer.vue';
 
 	export default{
 		components: {
-			indexHeader,
-			indexContent,
-			indexFooter
+			loginHeader,
+			loginContent,
+			loginFooter
 		},
 		methods: {
 
