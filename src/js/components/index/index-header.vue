@@ -7,7 +7,7 @@
 	    	</div>
 	    	<div class="header_left">
 	    		 <a v-if="!isLogin" class="bt" href="login.html">登录</a>
-	    		 <a v-if="!isLogin" class="bt" href="resigter.html">注册</a>
+	    		 <a v-if="!isLogin" class="bt" href="register.html">注册</a>
 	    		 <div class="personal_wrapper" v-if="isLogin">
 	    		 	<a class="bt" href="">XX</a>
 	    		 </div>

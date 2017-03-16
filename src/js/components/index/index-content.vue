@@ -47,7 +47,7 @@
 				<div class="tips">
 					<p class="tips_title">选购须知</p>
 					<ul class="fa-ul">
-						<li><i class="fa-li fa fa-sun-o fa-spin"></i>各种配料随您喜好随意搭配,主料最多只可选择<span class="important_word">1</span>次，辅料类目数量<span class="important_word">任你选择</span>，每份大约为<span class="important_word">30ml</span>,每种类目最多可添加<span class="important_word">3份</span>。</li>
+						<li><i class="fa-li fa fa-sun-o fa-spin"></i>各种配料随您喜好随意搭配,主料最多只可选择<span class="important_word">1</span>种，辅料类目数量<span class="important_word">任你选择</span>，每份大约为<span class="important_word">30ml</span>,每种类目最多可添加<span class="important_word">3份</span>。</li>
                         <li><i class="fa-li fa fa-sun-o fa-spin"></i>配料进行<span class="important_word">消菌</span>冰冻贮藏，可储存<span class="important_word">X</span>个月，请放心使用。</li>
                         <li><i class="fa-li fa fa-sun-o fa-spin"></i>选购完，请点击选购完成按钮并确认需支付价格，进入支付页面</li>
                         <li><i class="fa-li fa fa-sun-o fa-spin"></i>支付完毕，请从<span class="important_word">右侧出口处</span>拿取产品，欢迎下次光临。</li>
@@ -623,7 +623,6 @@
 					left: calc(#{$complete_box_width / -2} + #{$complete_bt_width/2});
 					background: white;
 					top: 40px;
-					-webkit-transition: top linear 0.3s;
 					transition: top linear 0.3s;
 					cursor: default;
 					.header{
