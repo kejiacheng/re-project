@@ -11454,13 +11454,32 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     attrs: {
       "id": "content"
     }
-  }, [_c('div', {
+  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+    staticClass: "register_content"
+  }, [_c('form', [_c('div', {
+    staticClass: "input_box",
+    on: {
+      "click": _vm.hehe
+    }
+  }, [_c('label', [_vm._v("手机号码")]), _c('input', {
+    staticClass: "input_obj phone",
+    attrs: {
+      "type": "text",
+      "placeholder": "请输入您的手机号码"
+    }
+  }), _c('i', {
+    staticClass: "r_x r_x_phone"
+  }), _c('br'), _vm._v(" "), _c('p', {
+    staticClass: "tip tip_phone"
+  }, [_vm._v("手机号可用于登录、找回密码等服务")])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('a', {
+    staticClass: "register_bt"
+  }, [_vm._v("立即注册")])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "box_header"
   }, [_c('div', {
     staticClass: "new_user_head"
@@ -11474,7 +11493,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "index.html"
     }
-  }, [_c('span', [_vm._v("返回首页")])])])]), _vm._v(" "), _c('div', {
+  }, [_c('span', [_vm._v("返回首页")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "new_tip"
   }, [_c('img', {
     attrs: {
@@ -11482,21 +11503,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('span', [_vm._v("贴心提示：请勿设置过于简单的登录密码或支付密码，防止不法分子窃取您的账户信息")]), _vm._v(" "), _c('span', {
     staticClass: "catious"
-  }, [_vm._v("谨防诈骗！")])]), _vm._v(" "), _c('div', {
-    staticClass: "register_content"
-  }, [_c('form', [_c('div', {
-    staticClass: "input_box"
-  }, [_c('label', [_vm._v("手机号码")]), _c('input', {
-    staticClass: "input_obj phone",
-    attrs: {
-      "type": "text",
-      "placeholder": "请输入您的手机号码"
-    }
-  }), _c('i', {
-    staticClass: "r_x r_x_phone"
-  }), _c('br'), _vm._v(" "), _c('p', {
-    staticClass: "tip tip_phone"
-  }, [_vm._v("手机号可用于登录、找回密码等服务")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("谨防诈骗！")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "input_box"
   }, [_c('label', [_vm._v("账号名")]), _c('input', {
     staticClass: "input_obj username",
@@ -11507,7 +11516,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "r_x r_x_username"
   }), _c('br'), _vm._v(" "), _c('p', {
     staticClass: "tip tip_username"
-  }, [_vm._v("请输入2-8位账号名")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("请输入2-8位账号名")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "input_box"
   }, [_c('label', [_vm._v("登录密码")]), _c('input', {
     staticClass: "input_obj password",
@@ -11518,7 +11529,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "r_x r_x_password"
   }), _c('br'), _vm._v(" "), _c('p', {
     staticClass: "tip tip_password"
-  }, [_vm._v("请输入6-10位登录密码")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("请输入6-10位登录密码")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "input_box"
   }, [_c('label', [_vm._v("确认密码")]), _c('input', {
     staticClass: "input_obj confirm_password",
@@ -11529,7 +11542,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "r_x r_x_cf_pw"
   }), _c('br'), _vm._v(" "), _c('p', {
     staticClass: "tip tip_cf_pw"
-  }, [_vm._v("请确认密码")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("请确认密码")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "input_box"
   }, [_c('label', [_vm._v("获取验证码")]), _c('input', {
     staticClass: "input_obj vertify",
@@ -11543,9 +11558,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "get_vertify"
   }, [_vm._v("获取验证码")]), _c('br'), _vm._v(" "), _c('p', {
     staticClass: "tip tip_vertify"
-  }, [_vm._v("请输入验证码")])]), _vm._v(" "), _c('a', {
-    staticClass: "register_bt"
-  }, [_vm._v("立即注册")])])])])
+  }, [_vm._v("请输入验证码")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -11809,7 +11822,11 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
 	components: {},
-	methods: {},
+	methods: {
+		hehe: function hehe() {
+			this.$http.post('/register.html', { 'index': '33232' });
+		}
+	},
 	props: ["isLogin"],
 	data: function data() {
 		return {};

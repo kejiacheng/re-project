@@ -16,7 +16,7 @@
 		</div>
 		<div class="register_content">
 			<form>
-				<div class="input_box">
+				<div class="input_box" @click="hehe">
 					<label>手机号码</label><input class="input_obj phone" type="text" placeholder="请输入您的手机号码"><i class="r_x r_x_phone"></i><br>
                     <p class="tip tip_phone">手机号可用于登录、找回密码等服务</p>
 				</div>
@@ -47,7 +47,9 @@
 			
 		},
 		methods: {
-
+			hehe(){
+				this.$http.post('/register.html', { 'index': '33232' });
+			}
 		},
 		props: ["isLogin"],
 		data: function (){
