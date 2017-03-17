@@ -11466,8 +11466,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.phoneNum),
-      expression: "phoneNum"
+      value: (_vm.phone),
+      expression: "phone"
     }],
     staticClass: "input_obj phone",
     attrs: {
@@ -11475,21 +11475,105 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "请输入您的手机号码"
     },
     domProps: {
-      "value": (_vm.phoneNum)
+      "value": (_vm.phone)
     },
     on: {
-      "focus": _vm.phoneNumFocus,
-      "blur": _vm.phoneNumBlur,
+      "focus": _vm.phoneFocus,
+      "blur": _vm.phoneBlur,
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.phoneNum = $event.target.value
+        _vm.phone = $event.target.value
       }
     }
   }), _c('i', {
     staticClass: "r_x r_x_phone"
   }), _c('br'), _vm._v(" "), _c('p', {
     staticClass: "tip tip_phone"
-  }, [_vm._v(_vm._s(_vm.phoneNumTip))])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('a', {
+  }, [_vm._v(_vm._s(_vm.phoneTip))])]), _vm._v(" "), _c('div', {
+    staticClass: "input_box"
+  }, [_c('label', [_vm._v("账号名")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.username),
+      expression: "username"
+    }],
+    staticClass: "input_obj username",
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.username)
+    },
+    on: {
+      "focus": _vm.usernameFocus,
+      "blur": _vm.usernameBlur,
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.username = $event.target.value
+      }
+    }
+  }), _c('i', {
+    staticClass: "r_x r_x_username"
+  }), _c('br'), _vm._v(" "), _c('p', {
+    staticClass: "tip tip_username"
+  }, [_vm._v(_vm._s(_vm.usernameTip))])]), _vm._v(" "), _c('div', {
+    staticClass: "input_box"
+  }, [_c('label', [_vm._v("登录密码")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.password),
+      expression: "password"
+    }],
+    staticClass: "input_obj password",
+    attrs: {
+      "type": "password"
+    },
+    domProps: {
+      "value": (_vm.password)
+    },
+    on: {
+      "focus": _vm.passwordFocus,
+      "blur": _vm.passwordBlur,
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.password = $event.target.value
+      }
+    }
+  }), _c('i', {
+    staticClass: "r_x r_x_password"
+  }), _c('br'), _vm._v(" "), _c('p', {
+    staticClass: "tip tip_password"
+  }, [_vm._v(_vm._s(_vm.passwordTip))])]), _vm._v(" "), _c('div', {
+    staticClass: "input_box"
+  }, [_c('label', [_vm._v("确认密码")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.confirm_password),
+      expression: "confirm_password"
+    }],
+    staticClass: "input_obj confirm_password",
+    attrs: {
+      "type": "password"
+    },
+    domProps: {
+      "value": (_vm.confirm_password)
+    },
+    on: {
+      "focus": _vm.confirm_passwordFocus,
+      "blur": _vm.confirm_passwordBlur,
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.confirm_password = $event.target.value
+      }
+    }
+  }), _c('i', {
+    staticClass: "r_x r_x_confirm_password"
+  }), _c('br'), _vm._v(" "), _c('p', {
+    staticClass: "tip tip_confirm_password"
+  }, [_vm._v(_vm._s(_vm.confirm_passwordTip))])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('a', {
     staticClass: "register_bt"
   }, [_vm._v("立即注册")])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11518,45 +11602,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('span', [_vm._v("贴心提示：请勿设置过于简单的登录密码或支付密码，防止不法分子窃取您的账户信息")]), _vm._v(" "), _c('span', {
     staticClass: "catious"
   }, [_vm._v("谨防诈骗！")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "input_box"
-  }, [_c('label', [_vm._v("账号名")]), _c('input', {
-    staticClass: "input_obj username",
-    attrs: {
-      "type": "text"
-    }
-  }), _c('i', {
-    staticClass: "r_x r_x_username"
-  }), _c('br'), _vm._v(" "), _c('p', {
-    staticClass: "tip tip_username"
-  }, [_vm._v("请输入2-8位账号名")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "input_box"
-  }, [_c('label', [_vm._v("登录密码")]), _c('input', {
-    staticClass: "input_obj password",
-    attrs: {
-      "type": "password"
-    }
-  }), _c('i', {
-    staticClass: "r_x r_x_password"
-  }), _c('br'), _vm._v(" "), _c('p', {
-    staticClass: "tip tip_password"
-  }, [_vm._v("请输入6-10位登录密码")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "input_box"
-  }, [_c('label', [_vm._v("确认密码")]), _c('input', {
-    staticClass: "input_obj confirm_password",
-    attrs: {
-      "type": "password"
-    }
-  }), _c('i', {
-    staticClass: "r_x r_x_cf_pw"
-  }), _c('br'), _vm._v(" "), _c('p', {
-    staticClass: "tip tip_cf_pw"
-  }, [_vm._v("请确认密码")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "input_box"
@@ -11837,31 +11882,32 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 	components: {},
 	methods: {
-		phoneNumFocus: function phoneNumFocus(e) {
+		phoneFocus: function phoneFocus(e) {
 			var that = this;
 			var phone = document.getElementsByClassName('phone')[0];
 
-			that.phoneNumTip = '手机号可用于登录、找回密码等服务';
+			that.phoneTip = '手机号可用于登录、找回密码等服务';
 			//返回初始样式
 			that.origin(phone, "phone");
 		},
-		phoneNumBlur: function phoneNumBlur() {
+		phoneBlur: function phoneBlur() {
 			var that = this;
 			var reg = /^1[3|4|5|7|8]\d{9}$/g;
 			var tip_phone = document.getElementsByClassName('tip_phone')[0];
 			var phone = document.getElementsByClassName('phone')[0];
 			var r_x_phone = document.getElementsByClassName('r_x_phone')[0];
+			var index = 0;
 
 			//当输入为空时
-			if (that.phoneNum == "") {
-				that.phoneNumTip = '手机号可用于登录、找回密码等服务';
+			if (that.phone == "") {
+				that.phoneTip = '手机号可用于登录、找回密码等服务';
 				that.condition.phone = false;
 				return;
 			}
 
 			//判断格式是否正确
-			if (!reg.test(that.phoneNum)) {
-				that.phoneNumTip = '手机格式不正确，请重新输入';
+			if (!reg.test(that.phone)) {
+				that.phoneTip = '手机格式不正确，请重新输入';
 				//输入错误样式
 				that.error(phone, "phone");
 				that.condition.phone = false;
@@ -11869,7 +11915,7 @@ exports.default = {
 			}
 
 			//通过后台数据库判断手机是否已被注册
-			that.$http.post('/register.html', { 'phoneNum': that.phoneNum }).then(function (result) {
+			that.$http.post('/register.html', { 'index': index, 'phone': that.phone }).then(function (result) {
 				if (result.body == '通过！') {
 					r_x_phone.style.background = "url(../../../img/r.png)";
 					that.condition.phone = true;
@@ -11877,8 +11923,138 @@ exports.default = {
 					that.error(phone, "phone");
 					that.condition.phone = false;
 				}
-				that.phoneNumTip = result.body;
+				that.phoneTip = result.body;
 			});
+		},
+		usernameFocus: function usernameFocus() {
+			var that = this;
+			var username = document.getElementsByClassName('username')[0];
+
+			that.usernameTip = '请输入2-8位账号名';
+
+			//返回初始样式
+			that.origin(username, "username");
+		},
+		usernameBlur: function usernameBlur() {
+			var that = this;
+			var reg = /^[A-Za-z0-9\u4E00-\u9FA5-]{2,8}$/g;
+			var reg1 = /^\d{2,8}$/g;
+			var username = document.getElementsByClassName('username')[0];
+			var r_x_username = document.getElementsByClassName('r_x_username')[0];
+			var index = 1;
+
+			//用户名为空时
+			if (that.username == "") {
+				that.usernameTip = '请输入2-8位账号名';
+				that.condition.username = false;
+				return;
+			}
+
+			//判断用户名是否为纯数字
+			if (reg1.test(that.username)) {
+				that.usernameTip = '账号名不能纯数字';
+				that.error(username, "username");
+				that.condition.username = false;
+				return;
+			}
+
+			//判断用户名格式是否正确
+			if (!reg.test(that.username)) {
+				that.usernameTip = '用户名格式不正确';
+				that.error(username, "username");
+				that.condition.username = false;
+				return;
+			}
+
+			//通过后台数据库判断该用户名是否已被注册
+			that.$http.post('/register.html', { 'index': index, 'username': that.username }).then(function (result) {
+				if (result.body == '通过！') {
+					r_x_username.style.background = "url(../../../img/r.png)";
+					that.condition.username = true;
+				} else {
+					that.error(username, "username");
+					that.condition.username = false;
+				}
+				that.usernameTip = result.body;
+			});
+		},
+		passwordFocus: function passwordFocus() {
+			var that = this;
+			var password = document.getElementsByClassName('password')[0];
+
+			that.passwordTip = '请输入6-10位登录密码';
+
+			//返回初始样式
+			that.origin(password, "password");
+		},
+		passwordBlur: function passwordBlur() {
+			var that = this;
+			var reg = /^\w{6,10}$/g;
+			var password = document.getElementsByClassName('password')[0];
+			var r_x_password = document.getElementsByClassName('r_x_password')[0];
+			var confirm_password = document.getElementsByClassName('confirm_password')[0];
+			var r_x_confirm_password = document.getElementsByClassName('r_x_confirm_password')[0];
+
+			//密码为空时
+			if (that.password == "") {
+				that.passwordTip = "请输入6-10位登录密码";
+				that.condition.password = false;
+				return;
+			}
+
+			if (!reg.test(that.password)) {
+				that.passwordTip = "密码由6-10位字母，数字，下划线组成";
+				that.error(password, "password");
+				that.condition.password = false;
+				return;
+			} else {
+				that.passwordTip = "通过！";
+				that.condition.password = true;
+				r_x_password.style.background = "url(../../../img/r.png)";
+				if (that.confirm_password != "") {
+					if (that.password == that.confirm_password) {
+						that.condition.confirm_password = true;
+						that.origin(confirm_password, "confirm_password");
+						that.confirm_passwordTip = "通过！";
+						r_x_confirm_password.style.background = "url(../../../img/r.png)";
+					} else {
+						that.condition.confirm_password = false;
+						that.error(confirm_password, "confirm_password");
+						that.confirm_passwordTip = '密码不一致';
+						r_x_confirm_password.style.background = "url(../../../img/xx.png)";
+					}
+				}
+			}
+		},
+		confirm_passwordFocus: function confirm_passwordFocus() {
+			var that = this;
+			var confirm_password = document.getElementsByClassName('confirm_password')[0];
+
+			that.confirm_passwordTip = '请确认密码';
+
+			//返回初始样式
+			that.origin(confirm_password, "confirm_password");
+		},
+		confirm_passwordBlur: function confirm_passwordBlur() {
+			var that = this;
+			var confirm_password = document.getElementsByClassName('confirm_password')[0];
+			var r_x_confirm_password = document.getElementsByClassName('r_x_confirm_password')[0];
+
+			if (that.confirm_password == "") {
+				that.confirm_passwordTip = '请确认密码';
+				that.condition.confirm_password = false;
+				return;
+			}
+
+			if (that.password == that.confirm_password) {
+				that.confirm_passwordTip = "通过！";
+				r_x_confirm_password.style.background = "url(../../../img/r.png)";
+				that.condition.confirm_password = true;
+			} else {
+				that.confirm_passwordTip = "密码不一致";
+				that.error(confirm_password, 'confirm_password');
+				that.condition.confirm_password = false;
+			}
 		},
 		error: function error(obj, string) {
 			//输入错误样式
@@ -11911,13 +12087,19 @@ exports.default = {
 		return {
 			condition: {
 				phone: false,
-				userName: false,
+				username: false,
 				password: false,
-				rePassword: false,
+				confirm_password: false,
 				vertify: false
 			},
-			phoneNum: '',
-			phoneNumTip: '手机号可用于登录、找回密码等服务'
+			phone: '',
+			phoneTip: '手机号可用于登录、找回密码等服务',
+			username: '',
+			usernameTip: '请输入2-8位账号名',
+			password: '',
+			passwordTip: '请输入6-10位登录密码',
+			confirm_password: '',
+			confirm_passwordTip: '请确认密码'
 		};
 	},
 	computed: {},

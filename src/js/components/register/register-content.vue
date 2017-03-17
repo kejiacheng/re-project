@@ -17,20 +17,20 @@
 		<div class="register_content">
 			<form>
 				<div class="input_box">
-					<label>手机号码</label><input class="input_obj phone" type="text" placeholder="请输入您的手机号码" @focus="phoneNumFocus" @blur="phoneNumBlur" v-model="phoneNum"><i class="r_x r_x_phone"></i><br>
-                    <p class="tip tip_phone">{{ phoneNumTip }}</p>
+					<label>手机号码</label><input class="input_obj phone" type="text" placeholder="请输入您的手机号码" @focus="phoneFocus" @blur="phoneBlur" v-model="phone"><i class="r_x r_x_phone"></i><br>
+                    <p class="tip tip_phone">{{ phoneTip }}</p>
 				</div>
 				<div class="input_box">
-                    <label>账号名</label><input class="input_obj username" type="text"><i class="r_x r_x_username"></i><br>
-                    <p class="tip tip_username">请输入2-8位账号名</p>
+                    <label>账号名</label><input class="input_obj username" type="text" @focus="usernameFocus" @blur="usernameBlur" v-model="username"><i class="r_x r_x_username"></i><br>
+                    <p class="tip tip_username">{{ usernameTip }}</p>
                 </div>
                 <div class="input_box">
-                    <label>登录密码</label><input class="input_obj password" type="password"><i class="r_x r_x_password"></i><br>
-                    <p class="tip tip_password">请输入6-10位登录密码</p>
+                    <label>登录密码</label><input class="input_obj password" type="password" @focus="passwordFocus" @blur="passwordBlur" v-model="password"><i class="r_x r_x_password"></i><br>
+                    <p class="tip tip_password">{{ passwordTip }}</p>
                 </div>
                 <div class="input_box">
-                    <label>确认密码</label><input class="input_obj confirm_password" type="password"><i class="r_x r_x_cf_pw"></i><br>
-                    <p class="tip tip_cf_pw">请确认密码</p>
+                    <label>确认密码</label><input class="input_obj confirm_password" type="password" @focus="confirm_passwordFocus" @blur="confirm_passwordBlur" v-model="confirm_password"><i class="r_x r_x_confirm_password"></i><br>
+                    <p class="tip tip_confirm_password">{{ confirm_passwordTip }}</p>
                 </div>
                 <div class="input_box">
                     <label>获取验证码</label><input class="input_obj vertify" type="text" placeholder="请输入您的手机验证码"><i class="r_x r_x_vertify"></i><div class="get_vertify">获取验证码</div><br>
@@ -47,31 +47,32 @@
 			
 		},
 		methods: {
-			phoneNumFocus(e){
+			phoneFocus(e){
 				const that = this;
 				const phone = document.getElementsByClassName('phone')[0];
 
-				that.phoneNumTip = '手机号可用于登录、找回密码等服务';
+				that.phoneTip = '手机号可用于登录、找回密码等服务';
 				//返回初始样式
-				that.origin(phone,"phone");
+				that.origin(phone, "phone");
 			},
-			phoneNumBlur(){
+			phoneBlur(){
 				const that = this;
 				const reg = /^1[3|4|5|7|8]\d{9}$/g;
 				const tip_phone = document.getElementsByClassName('tip_phone')[0];
 				const phone = document.getElementsByClassName('phone')[0];
 				const r_x_phone = document.getElementsByClassName('r_x_phone')[0];
+				const index = 0;
 
 				//当输入为空时
-				if(that.phoneNum == ""){
-					that.phoneNumTip = '手机号可用于登录、找回密码等服务';
+				if(that.phone == ""){
+					that.phoneTip = '手机号可用于登录、找回密码等服务';
 					that.condition.phone = false;
 					return;
 				}
 
 				//判断格式是否正确
-				if(!reg.test(that.phoneNum)){
-					that.phoneNumTip = '手机格式不正确，请重新输入';
+				if(!reg.test(that.phone)){
+					that.phoneTip = '手机格式不正确，请重新输入';
 					//输入错误样式
 					that.error(phone,"phone");
 					that.condition.phone = false;
@@ -79,7 +80,7 @@
 				}
 				
 				//通过后台数据库判断手机是否已被注册
-				that.$http.post('/register.html', { 'phoneNum': that.phoneNum })
+				that.$http.post('/register.html', { 'index': index, 'phone': that.phone })
 				.then((result) => {
 					if(result.body == '通过！'){
 						r_x_phone.style.background = "url(../../../img/r.png)";
@@ -88,8 +89,139 @@
 						that.error(phone,"phone");
 						that.condition.phone = false;
 					}
-					that.phoneNumTip = result.body;
+					that.phoneTip = result.body;
 				})
+			},
+			usernameFocus(){
+				const that = this;
+				const username = document.getElementsByClassName('username')[0];
+
+				that.usernameTip = '请输入2-8位账号名';
+
+				//返回初始样式
+				that.origin(username, "username");
+			},
+			usernameBlur(){
+				const that = this;
+				const reg = /^[A-Za-z0-9\u4E00-\u9FA5-]{2,8}$/g;
+       			const reg1 = /^\d{2,8}$/g;
+       			const username = document.getElementsByClassName('username')[0];
+       			const r_x_username = document.getElementsByClassName('r_x_username')[0];
+       			const index = 1;
+
+       			//用户名为空时
+       			if(that.username == ""){
+       				that.usernameTip = '请输入2-8位账号名';
+       				that.condition.username = false;
+       				return;
+       			}
+
+       			//判断用户名是否为纯数字
+       			if(reg1.test(that.username)){
+       				that.usernameTip = '账号名不能纯数字';
+       				that.error(username, "username");
+       				that.condition.username = false;
+       				return;
+       			}
+
+       			//判断用户名格式是否正确
+       			if(!reg.test(that.username)){
+       				that.usernameTip = '用户名格式不正确';
+       				that.error(username, "username");
+       				that.condition.username = false;
+       				return;
+       			}
+
+       			//通过后台数据库判断该用户名是否已被注册
+       			that.$http.post('/register.html', { 'index': index, 'username': that.username })
+       			.then((result) => {
+       				if(result.body == '通过！'){
+						r_x_username.style.background = "url(../../../img/r.png)";
+						that.condition.username = true;
+					}else{
+						that.error(username,"username");
+						that.condition.username = false;
+					}
+					that.usernameTip = result.body;
+       			})
+			},
+			passwordFocus(){
+				const that = this;
+				const password = document.getElementsByClassName('password')[0];
+
+				that.passwordTip = '请输入6-10位登录密码';
+
+				//返回初始样式
+				that.origin(password, "password");
+			},
+			passwordBlur(){
+				const that = this;
+				var reg = /^\w{6,10}$/g;
+       			const password = document.getElementsByClassName('password')[0];
+       			const r_x_password = document.getElementsByClassName('r_x_password')[0];
+       			const confirm_password = document.getElementsByClassName('confirm_password')[0];
+       			const r_x_confirm_password = document.getElementsByClassName('r_x_confirm_password')[0];
+
+       			//密码为空时
+		        if(that.password == ""){
+		            that.passwordTip = "请输入6-10位登录密码";
+		            that.condition.password = false;
+		            return;
+		        }
+
+		        if(!reg.test(that.password)){
+		        	that.passwordTip = "密码由6-10位字母，数字，下划线组成";
+		            that.error(password,"password");
+		            that.condition.password = false;
+		            return;
+		        }else{
+		        	that.passwordTip = "通过！";
+		        	that.condition.password = true;
+		        	r_x_password.style.background = "url(../../../img/r.png)";
+		        	if(that.confirm_password != ""){
+		        		if(that.password == that.confirm_password){
+		        			that.condition.confirm_password = true;
+                    		that.origin(confirm_password,"confirm_password");
+			        		that.confirm_passwordTip = "通过！";
+			        		r_x_confirm_password.style.background = "url(../../../img/r.png)";
+			        	}else{
+			        		that.condition.confirm_password = false;
+			        		that.error(confirm_password,"confirm_password");
+			        		that.confirm_passwordTip = '密码不一致';
+			        		r_x_confirm_password.style.background = "url(../../../img/xx.png)";
+			        	}
+		        	}
+		        }
+			},
+			confirm_passwordFocus(){
+				const that = this;
+				const confirm_password = document.getElementsByClassName('confirm_password')[0];
+
+				that.confirm_passwordTip = '请确认密码';
+
+				//返回初始样式
+				that.origin(confirm_password, "confirm_password");
+			},
+			confirm_passwordBlur(){
+				const that = this;
+				const confirm_password = document.getElementsByClassName('confirm_password')[0];
+				const r_x_confirm_password = document.getElementsByClassName('r_x_confirm_password')[0];
+
+				if(that.confirm_password == ""){
+					that.confirm_passwordTip = '请确认密码';
+					that.condition.confirm_password = false;
+					return;
+				}
+
+				if(that.password == that.confirm_password){
+					that.confirm_passwordTip = "通过！";
+					r_x_confirm_password.style.background = "url(../../../img/r.png)";
+					that.condition.confirm_password = true;
+				}else{
+					that.confirm_passwordTip = "密码不一致";
+					that.error(confirm_password, 'confirm_password');
+					that.condition.confirm_password = false;
+				}
 			},
 			error(obj, string){//输入错误样式
 				const tip = document.getElementsByClassName("tip_" + string)[0];
@@ -120,13 +252,19 @@
 			return {
 				condition: {
 					phone: false,
-					userName: false,
+					username: false,
 					password: false,
-					rePassword: false,
+					confirm_password: false,
 					vertify: false
 				},
-				phoneNum: '',
-				phoneNumTip: '手机号可用于登录、找回密码等服务',
+				phone: '',
+				phoneTip: '手机号可用于登录、找回密码等服务',
+				username: '',
+				usernameTip: '请输入2-8位账号名',
+				password: '',
+				passwordTip: '请输入6-10位登录密码',
+				confirm_password: '',
+				confirm_passwordTip: '请确认密码',
 			}
 		},
 		computed: {

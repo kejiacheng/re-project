@@ -257,10 +257,14 @@
 				}
 				
 				//用setTimeout使complete_box的高度变化发生在改变complete_box.style.top之前
-				const timer = setTimeout(() => {
+				// const timer = setTimeout(() => {
+				// 	complete_box.style.top = -complete_box.offsetHeight + complete_bt.offsetHeight + 'px';
+				// 	clearTimeout(timer);
+				// },0)
+				//与上面注释段同理
+				this.$nextTick(() => {
 					complete_box.style.top = -complete_box.offsetHeight + complete_bt.offsetHeight + 'px';
-					clearTimeout(timer);
-				},0)
+				})
 			},
 			addEvents(target,type,func){//事件绑定事件 
 				if(target.addEventListener){

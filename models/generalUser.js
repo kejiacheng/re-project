@@ -3,16 +3,21 @@ var GeneralUser = require('../lib/mongo').GeneralUser;
 module.exports = {
 	create: (data) => {
 		var generalUser = new GeneralUser({
-			phoneNum: data.phoneNum,
+			phone: data.phone,
 			name: data.name,
 			password: data.password
 		});
 
 		return generalUser.save();
 	},
-	findPhoneNum: (data) => {
+	findPhone: (data) => {
 		return GeneralUser
-		.findOne({phoneNum: data})
+		.findOne({phone: data})
+		.exec();
+	},
+	findUsername: (data) => {
+		return GeneralUser
+		.findOne({name: data})
 		.exec();
 	}
 
