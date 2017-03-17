@@ -11461,21 +11461,35 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
     staticClass: "register_content"
   }, [_c('form', [_c('div', {
-    staticClass: "input_box",
-    on: {
-      "click": _vm.hehe
-    }
+    staticClass: "input_box"
   }, [_c('label', [_vm._v("手机号码")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.phoneNum),
+      expression: "phoneNum"
+    }],
     staticClass: "input_obj phone",
     attrs: {
       "type": "text",
       "placeholder": "请输入您的手机号码"
+    },
+    domProps: {
+      "value": (_vm.phoneNum)
+    },
+    on: {
+      "focus": _vm.phoneNumFocus,
+      "blur": _vm.phoneNumBlur,
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.phoneNum = $event.target.value
+      }
     }
   }), _c('i', {
     staticClass: "r_x r_x_phone"
   }), _c('br'), _vm._v(" "), _c('p', {
     staticClass: "tip tip_phone"
-  }, [_vm._v("手机号可用于登录、找回密码等服务")])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('a', {
+  }, [_vm._v(_vm._s(_vm.phoneNumTip))])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('a', {
     staticClass: "register_bt"
   }, [_vm._v("立即注册")])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11823,13 +11837,88 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 	components: {},
 	methods: {
-		hehe: function hehe() {
-			this.$http.post('/register.html', { 'index': '33232' });
+		phoneNumFocus: function phoneNumFocus(e) {
+			var that = this;
+			var phone = document.getElementsByClassName('phone')[0];
+
+			that.phoneNumTip = '手机号可用于登录、找回密码等服务';
+			//返回初始样式
+			that.origin(phone, "phone");
+		},
+		phoneNumBlur: function phoneNumBlur() {
+			var that = this;
+			var reg = /^1[3|4|5|7|8]\d{9}$/g;
+			var tip_phone = document.getElementsByClassName('tip_phone')[0];
+			var phone = document.getElementsByClassName('phone')[0];
+			var r_x_phone = document.getElementsByClassName('r_x_phone')[0];
+
+			//当输入为空时
+			if (that.phoneNum == "") {
+				that.phoneNumTip = '手机号可用于登录、找回密码等服务';
+				that.condition.phone = false;
+				return;
+			}
+
+			//判断格式是否正确
+			if (!reg.test(that.phoneNum)) {
+				that.phoneNumTip = '手机格式不正确，请重新输入';
+				//输入错误样式
+				that.error(phone, "phone");
+				that.condition.phone = false;
+				return;
+			}
+
+			//通过后台数据库判断手机是否已被注册
+			that.$http.post('/register.html', { 'phoneNum': that.phoneNum }).then(function (result) {
+				if (result.body == '通过！') {
+					r_x_phone.style.background = "url(../../../img/r.png)";
+					that.condition.phone = true;
+				} else {
+					that.error(phone, "phone");
+					that.condition.phone = false;
+				}
+				that.phoneNumTip = result.body;
+			});
+		},
+		error: function error(obj, string) {
+			//输入错误样式
+			var tip = document.getElementsByClassName("tip_" + string)[0];
+			var r_x = document.getElementsByClassName("r_x_" + string)[0];
+
+			tip.style.color = '#cc0000';
+			r_x.style.background = 'url(../../../img/xx.png)';
+			obj.style.borderColor = '#cc0000';
+			obj.style.borderStyle = 'solid';
+			obj.style.background = '#fef0ef';
+			obj.style.color = '#cc0000';
+		},
+		origin: function origin(obj, string) {
+			//返回初始样式
+			var tip = document.getElementsByClassName("tip_" + string)[0];
+			var r_x = document.getElementsByClassName("r_x_" + string)[0];
+			var pass = document.getElementsByClassName("pass_" + string)[0];
+
+			r_x.style.background = '';
+			tip.style.color = 'black';
+			obj.style.borderColor = '';
+			obj.style.borderStyle = '';
+			obj.style.background = '';
+			obj.style.color = 'black';
 		}
 	},
-	props: ["isLogin"],
+	props: [],
 	data: function data() {
-		return {};
+		return {
+			condition: {
+				phone: false,
+				userName: false,
+				password: false,
+				rePassword: false,
+				vertify: false
+			},
+			phoneNum: '',
+			phoneNumTip: '手机号可用于登录、找回密码等服务'
+		};
 	},
 	computed: {},
 	created: function created() {},

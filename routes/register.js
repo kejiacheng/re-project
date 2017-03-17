@@ -3,9 +3,13 @@ var router = express.Router();
 var GeneralUser = require('../models/generalUser.js');
 
 router.post('/', function (req, res ,next){
-	GeneralUser.findPhoneNum(3123123)
+	GeneralUser.findPhoneNum(req.body.phoneNum)
 	.then((result) => {
-		res.send('你好啊');
+		if(!result){
+			res.send('通过！');
+		}else{
+			res.send('该手机号已被注册！');
+		}
 	})
 })
 

@@ -16,9 +16,9 @@
 		</div>
 		<div class="register_content">
 			<form>
-				<div class="input_box" @click="hehe">
-					<label>手机号码</label><input class="input_obj phone" type="text" placeholder="请输入您的手机号码"><i class="r_x r_x_phone"></i><br>
-                    <p class="tip tip_phone">手机号可用于登录、找回密码等服务</p>
+				<div class="input_box">
+					<label>手机号码</label><input class="input_obj phone" type="text" placeholder="请输入您的手机号码" @focus="phoneNumFocus" @blur="phoneNumBlur" v-model="phoneNum"><i class="r_x r_x_phone"></i><br>
+                    <p class="tip tip_phone">{{ phoneNumTip }}</p>
 				</div>
 				<div class="input_box">
                     <label>账号名</label><input class="input_obj username" type="text"><i class="r_x r_x_username"></i><br>
@@ -47,14 +47,86 @@
 			
 		},
 		methods: {
-			hehe(){
-				this.$http.post('/register.html', { 'index': '33232' });
+			phoneNumFocus(e){
+				const that = this;
+				const phone = document.getElementsByClassName('phone')[0];
+
+				that.phoneNumTip = '手机号可用于登录、找回密码等服务';
+				//返回初始样式
+				that.origin(phone,"phone");
+			},
+			phoneNumBlur(){
+				const that = this;
+				const reg = /^1[3|4|5|7|8]\d{9}$/g;
+				const tip_phone = document.getElementsByClassName('tip_phone')[0];
+				const phone = document.getElementsByClassName('phone')[0];
+				const r_x_phone = document.getElementsByClassName('r_x_phone')[0];
+
+				//当输入为空时
+				if(that.phoneNum == ""){
+					that.phoneNumTip = '手机号可用于登录、找回密码等服务';
+					that.condition.phone = false;
+					return;
+				}
+
+				//判断格式是否正确
+				if(!reg.test(that.phoneNum)){
+					that.phoneNumTip = '手机格式不正确，请重新输入';
+					//输入错误样式
+					that.error(phone,"phone");
+					that.condition.phone = false;
+					return;
+				}
+				
+				//通过后台数据库判断手机是否已被注册
+				that.$http.post('/register.html', { 'phoneNum': that.phoneNum })
+				.then((result) => {
+					if(result.body == '通过！'){
+						r_x_phone.style.background = "url(../../../img/r.png)";
+						that.condition.phone = true;
+					}else{
+						that.error(phone,"phone");
+						that.condition.phone = false;
+					}
+					that.phoneNumTip = result.body;
+				})
+			},
+			error(obj, string){//输入错误样式
+				const tip = document.getElementsByClassName("tip_" + string)[0];
+			    const r_x = document.getElementsByClassName("r_x_" + string)[0];
+
+			    tip.style.color = '#cc0000';
+			    r_x.style.background = 'url(../../../img/xx.png)';
+			    obj.style.borderColor = '#cc0000';
+			    obj.style.borderStyle = 'solid';
+			    obj.style.background = '#fef0ef';
+			    obj.style.color = '#cc0000';
+			},
+			origin(obj, string){//返回初始样式
+				const tip = document.getElementsByClassName("tip_" + string)[0];
+			    const r_x = document.getElementsByClassName("r_x_" + string)[0];
+			    const pass = document.getElementsByClassName("pass_" + string)[0];
+
+			    r_x.style.background = '';
+			    tip.style.color = 'black';
+			    obj.style.borderColor = '';
+			    obj.style.borderStyle = '';
+			    obj.style.background = '';
+			    obj.style.color= 'black';
 			}
 		},
-		props: ["isLogin"],
+		props: [],
 		data: function (){
 			return {
-				
+				condition: {
+					phone: false,
+					userName: false,
+					password: false,
+					rePassword: false,
+					vertify: false
+				},
+				phoneNum: '',
+				phoneNumTip: '手机号可用于登录、找回密码等服务',
 			}
 		},
 		computed: {
