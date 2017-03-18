@@ -12133,11 +12133,12 @@ exports.default = {
 		get_vertify: function get_vertify() {
 			var that = this;
 			var cookie = that.cookieUtil();
+			var index = 3;
 
 			if (!cookie.get('vertify')) {
 				var date = new Date();
 				//过期时间为60秒
-				var expires = 60;
+				var expires = 10;
 				var time = expires;
 
 				//过期时间值
@@ -12158,6 +12159,22 @@ exports.default = {
 						that.countdown = '获取验证码';
 					}
 				}, 1000);
+
+				that.$http.post('/register.html', { index: index, phone: that.phone }).then(function (result) {
+					console.log(result.body);
+					// var url = `http://utf8.sms.webchinese.cn/?Uid=柯嘉诚93&Key=kejiacheng1111&smsMob=15869178373&smsText=验证码：${result.body}`;
+
+					// var xhr = new XMLHttpRequest();
+
+					// xhr.open('get',url);
+
+					// xhr.onreadystatechange = function (){
+					//     if(xhr.readyState == 4 && xhr.status == 200){
+
+					//     }
+					// }
+					// xhr.send();
+				});
 			}
 		},
 		error: function error(obj, string) {
