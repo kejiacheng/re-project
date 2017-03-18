@@ -11601,8 +11601,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _c('i', {
     staticClass: "r_x r_x_vertify"
   }), _c('div', {
-    staticClass: "get_vertify"
-  }, [_vm._v("获取验证码")]), _c('br'), _vm._v(" "), _c('p', {
+    staticClass: "get_vertify",
+    on: {
+      "click": _vm.get_vertify
+    }
+  }, [_vm._v(_vm._s(_vm.countdown))]), _c('br'), _vm._v(" "), _c('p', {
     staticClass: "tip tip_vertify"
   }, [_vm._v(_vm._s(_vm.vertifyTip))])]), _vm._v(" "), _c('a', {
     staticClass: "register_bt"
@@ -11896,7 +11899,32 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
 	components: {},
-	mounted: function mounted() {},
+	mounted: function mounted() {
+		var that = this;
+		var cookie = that.cookieUtil();
+		console.log(cookie.get('vertify'));
+		//过期时间
+		var outTime = cookie.get('vertify');
+
+		if (outTime) {
+			//当前时间
+			var nowTime = new Date().getTime();
+
+			var time = Math.floor((outTime - nowTime) / 1000);
+
+			that.countdown = time--;
+
+			//定时器事件，倒计时
+			var timer = setInterval(function () {
+				that.countdown = time--;
+
+				if (time <= 0) {
+					clearInterval(timer);
+					that.countdown = '获取验证码';
+				}
+			}, 1000);
+		}
+	},
 
 	methods: {
 		phoneFocus: function phoneFocus(e) {
@@ -12102,6 +12130,36 @@ exports.default = {
 				that.vertifyTip = result.body;
 			});
 		},
+		get_vertify: function get_vertify() {
+			var that = this;
+			var cookie = that.cookieUtil();
+
+			if (!cookie.get('vertify')) {
+				var date = new Date();
+				//过期时间为60秒
+				var expires = 60;
+				var time = expires;
+
+				//过期时间值
+				date = date.getTime() + expires * 1000;
+
+				//将到期时间写入cookie
+				cookie.set('vertify', date, expires);
+
+				//先写入时间
+				that.countdown = time--;
+
+				//定时器事件，倒计时
+				var timer = setInterval(function () {
+					that.countdown = time--;
+
+					if (time <= 0) {
+						clearInterval(timer);
+						that.countdown = '获取验证码';
+					}
+				}, 1000);
+			}
+		},
 		error: function error(obj, string) {
 			//输入错误样式
 			var tip = document.getElementsByClassName("tip_" + string)[0];
@@ -12158,7 +12216,7 @@ exports.default = {
 					if (secure) {
 						cookieText += '; secure';
 					}
-					documen.cookie = cookieText;
+					document.cookie = cookieText;
 				},
 				unset: function unset(name, path, domain, secure) {
 					this.set(name, "", new Date(0), path, domain, secure);
@@ -12185,7 +12243,8 @@ exports.default = {
 			confirm_password: '',
 			confirm_passwordTip: '请确认密码',
 			vertify: '',
-			vertifyTip: '请输入验证码'
+			vertifyTip: '请输入验证码',
+			countdown: '获取验证码'
 		};
 	},
 	computed: {},
