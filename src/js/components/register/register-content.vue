@@ -33,8 +33,8 @@
                     <p class="tip tip_confirm_password">{{ confirm_passwordTip }}</p>
                 </div>
                 <div class="input_box">
-                    <label>获取验证码</label><input class="input_obj vertify" type="text" placeholder="请输入您的手机验证码"><i class="r_x r_x_vertify"></i><div class="get_vertify">获取验证码</div><br>
-                    <p class="tip tip_vertify">请输入验证码</p>
+                    <label>获取验证码</label><input class="input_obj vertify" type="text" placeholder="请输入您的手机验证码" @focus="vertifyFocus" @blur="vertifyBlur" v-model="vertify"><i class="r_x r_x_vertify"></i><div class="get_vertify">获取验证码</div><br>
+                    <p class="tip tip_vertify">{{ vertifyTip }}</p>
                 </div>
                 <a class="register_bt">立即注册</a>
 			</form>
@@ -225,6 +225,37 @@
 					that.condition.confirm_password = false;
 				}
 			},
+			vertifyFocus(e){
+				const that = this;
+				const vertify = document.getElementsByClassName('vertify')[0];
+				that.vertifyTip = '请输入验证码';
+				//返回初始样式
+				that.origin(vertify, "vertify");
+			},
+			vertifyBlur(){
+				const that = this;
+				const vertify = document.getElementsByClassName('vertify')[0];
+       			const r_x_vertify = document.getElementsByClassName('r_x_vertify')[0];
+				const index = 2;
+
+				if(that.vertify == ""){
+					that.vertifyTip = '请输入验证码';
+					that.condition.vertify = false;
+					return;
+				}
+
+				that.$http.post('/register.html', { index: index, vertify: that.vertify})
+				.then((result) => {
+					if(result.body == '通过！'){
+						r_x_vertify.style.background = "url(../../../img/r.png)";
+						that.condition.vertify = true;
+					}else{
+						that.error(vertify,"vertify");
+						that.condition.vertify = false;
+					}
+					that.vertifyTip = result.body;
+				})
+			},
 			error(obj, string){//输入错误样式
 				const tip = document.getElementsByClassName("tip_" + string)[0];
 			    const r_x = document.getElementsByClassName("r_x_" + string)[0];
@@ -251,12 +282,12 @@
 			cookieUtil(){
 				return {
 					get: function (name){
-						let cookieName = encodeURIComponent(name) + '=';
-						let cookieStart = document.cookie.indexOf(cookieName);
+						const cookieName = encodeURIComponent(name) + '=';
+						const cookieStart = document.cookie.indexOf(cookieName);
 						let cookieValue;
 
 						if(cookieStart > -1){
-							var cookieEnd = document.cookie.indexOf(';', cookieStart);
+							let cookieEnd = document.cookie.indexOf(';', cookieStart);
 							if(cookieEnd == -1){
 								cookieEnd = document.cookie.length;
 							}
@@ -265,8 +296,8 @@
 						return cookieValue;
 					},
 					set: function (name, value, expires, path, domain, secure){
-						var cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
-						var date = new Date();
+						let cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+						let date = new Date();
 						date.setTime(date.getTime() + expires * 1000);
 						cookieText += '; expires=' + date.toGMTString();
 
@@ -306,6 +337,8 @@
 				passwordTip: '请输入6-10位登录密码',
 				confirm_password: '',
 				confirm_passwordTip: '请确认密码',
+				vertify: '',
+				vertifyTip: '请输入验证码',
 			}
 		},
 		computed: {

@@ -11573,7 +11573,38 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "r_x r_x_confirm_password"
   }), _c('br'), _vm._v(" "), _c('p', {
     staticClass: "tip tip_confirm_password"
-  }, [_vm._v(_vm._s(_vm.confirm_passwordTip))])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('a', {
+  }, [_vm._v(_vm._s(_vm.confirm_passwordTip))])]), _vm._v(" "), _c('div', {
+    staticClass: "input_box"
+  }, [_c('label', [_vm._v("获取验证码")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.vertify),
+      expression: "vertify"
+    }],
+    staticClass: "input_obj vertify",
+    attrs: {
+      "type": "text",
+      "placeholder": "请输入您的手机验证码"
+    },
+    domProps: {
+      "value": (_vm.vertify)
+    },
+    on: {
+      "focus": _vm.vertifyFocus,
+      "blur": _vm.vertifyBlur,
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.vertify = $event.target.value
+      }
+    }
+  }), _c('i', {
+    staticClass: "r_x r_x_vertify"
+  }), _c('div', {
+    staticClass: "get_vertify"
+  }, [_vm._v("获取验证码")]), _c('br'), _vm._v(" "), _c('p', {
+    staticClass: "tip tip_vertify"
+  }, [_vm._v(_vm._s(_vm.vertifyTip))])]), _vm._v(" "), _c('a', {
     staticClass: "register_bt"
   }, [_vm._v("立即注册")])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11602,22 +11633,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('span', [_vm._v("贴心提示：请勿设置过于简单的登录密码或支付密码，防止不法分子窃取您的账户信息")]), _vm._v(" "), _c('span', {
     staticClass: "catious"
   }, [_vm._v("谨防诈骗！")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "input_box"
-  }, [_c('label', [_vm._v("获取验证码")]), _c('input', {
-    staticClass: "input_obj vertify",
-    attrs: {
-      "type": "text",
-      "placeholder": "请输入您的手机验证码"
-    }
-  }), _c('i', {
-    staticClass: "r_x r_x_vertify"
-  }), _c('div', {
-    staticClass: "get_vertify"
-  }, [_vm._v("获取验证码")]), _c('br'), _vm._v(" "), _c('p', {
-    staticClass: "tip tip_vertify"
-  }, [_vm._v("请输入验证码")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -11881,13 +11896,10 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
 	components: {},
-	mounted: function mounted() {
-		var ver = document.getElementsByClassName('vertify')[0];
-	},
+	mounted: function mounted() {},
 
 	methods: {
 		phoneFocus: function phoneFocus(e) {
-			console.log(this.ver);
 			var that = this;
 			var phone = document.getElementsByClassName('phone')[0];
 			that.phoneTip = '手机号可用于登录、找回密码等服务';
@@ -12038,8 +12050,6 @@ exports.default = {
 
 			//返回初始样式
 			that.origin(confirm_password, "confirm_password");
-			var a = that.hello();
-			a.say();
 		},
 		confirm_passwordBlur: function confirm_passwordBlur() {
 			var that = this;
@@ -12061,6 +12071,36 @@ exports.default = {
 				that.error(confirm_password, 'confirm_password');
 				that.condition.confirm_password = false;
 			}
+		},
+		vertifyFocus: function vertifyFocus(e) {
+			var that = this;
+			var vertify = document.getElementsByClassName('vertify')[0];
+			that.vertifyTip = '请输入验证码';
+			//返回初始样式
+			that.origin(vertify, "vertify");
+		},
+		vertifyBlur: function vertifyBlur() {
+			var that = this;
+			var vertify = document.getElementsByClassName('vertify')[0];
+			var r_x_vertify = document.getElementsByClassName('r_x_vertify')[0];
+			var index = 2;
+
+			if (that.vertify == "") {
+				that.vertifyTip = '请输入验证码';
+				that.condition.vertify = false;
+				return;
+			}
+
+			that.$http.post('/register.html', { index: index, vertify: that.vertify }).then(function (result) {
+				if (result.body == '通过！') {
+					r_x_vertify.style.background = "url(../../../img/r.png)";
+					that.condition.vertify = true;
+				} else {
+					that.error(vertify, "vertify");
+					that.condition.vertify = false;
+				}
+				that.vertifyTip = result.body;
+			});
 		},
 		error: function error(obj, string) {
 			//输入错误样式
@@ -12087,13 +12127,41 @@ exports.default = {
 			obj.style.background = '';
 			obj.style.color = 'black';
 		},
-		hello: function hello() {
+		cookieUtil: function cookieUtil() {
 			return {
-				say: function say() {
-					console.log('hello');
+				get: function get(name) {
+					var cookieName = encodeURIComponent(name) + '=';
+					var cookieStart = document.cookie.indexOf(cookieName);
+					var cookieValue = void 0;
+
+					if (cookieStart > -1) {
+						var cookieEnd = document.cookie.indexOf(';', cookieStart);
+						if (cookieEnd == -1) {
+							cookieEnd = document.cookie.length;
+						}
+						cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+					}
+					return cookieValue;
 				},
-				cry: function cry() {
-					console.log('cry');
+				set: function set(name, value, expires, path, domain, secure) {
+					var cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+					var date = new Date();
+					date.setTime(date.getTime() + expires * 1000);
+					cookieText += '; expires=' + date.toGMTString();
+
+					if (path) {
+						cookieText += '; path=' + path;
+					}
+					if (domain) {
+						cookieText += '; domain' + domain;
+					}
+					if (secure) {
+						cookieText += '; secure';
+					}
+					documen.cookie = cookieText;
+				},
+				unset: function unset(name, path, domain, secure) {
+					this.set(name, "", new Date(0), path, domain, secure);
 				}
 			};
 		}
@@ -12115,7 +12183,9 @@ exports.default = {
 			password: '',
 			passwordTip: '请输入6-10位登录密码',
 			confirm_password: '',
-			confirm_passwordTip: '请确认密码'
+			confirm_passwordTip: '请确认密码',
+			vertify: '',
+			vertifyTip: '请输入验证码'
 		};
 	},
 	computed: {},
