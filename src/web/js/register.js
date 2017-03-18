@@ -11881,11 +11881,15 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
 	components: {},
+	mounted: function mounted() {
+		var ver = document.getElementsByClassName('vertify')[0];
+	},
+
 	methods: {
 		phoneFocus: function phoneFocus(e) {
+			console.log(this.ver);
 			var that = this;
 			var phone = document.getElementsByClassName('phone')[0];
-
 			that.phoneTip = '手机号可用于登录、找回密码等服务';
 			//返回初始样式
 			that.origin(phone, "phone");
@@ -12034,6 +12038,8 @@ exports.default = {
 
 			//返回初始样式
 			that.origin(confirm_password, "confirm_password");
+			var a = that.hello();
+			a.say();
 		},
 		confirm_passwordBlur: function confirm_passwordBlur() {
 			var that = this;
@@ -12080,6 +12086,16 @@ exports.default = {
 			obj.style.borderStyle = '';
 			obj.style.background = '';
 			obj.style.color = 'black';
+		},
+		hello: function hello() {
+			return {
+				say: function say() {
+					console.log('hello');
+				},
+				cry: function cry() {
+					console.log('cry');
+				}
+			};
 		}
 	},
 	props: [],

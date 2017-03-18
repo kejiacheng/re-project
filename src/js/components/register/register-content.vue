@@ -46,11 +46,13 @@
 		components: {
 			
 		},
+		mounted(){
+
+		},
 		methods: {
 			phoneFocus(e){
 				const that = this;
 				const phone = document.getElementsByClassName('phone')[0];
-
 				that.phoneTip = '手机号可用于登录、找回密码等服务';
 				//返回初始样式
 				that.origin(phone, "phone");
@@ -245,6 +247,45 @@
 			    obj.style.borderStyle = '';
 			    obj.style.background = '';
 			    obj.style.color= 'black';
+			},
+			cookieUtil(){
+				return {
+					get: function (name){
+						let cookieName = encodeURIComponent(name) + '=';
+						let cookieStart = document.cookie.indexOf(cookieName);
+						let cookieValue;
+
+						if(cookieStart > -1){
+							var cookieEnd = document.cookie.indexOf(';', cookieStart);
+							if(cookieEnd == -1){
+								cookieEnd = document.cookie.length;
+							}
+							cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+						}
+						return cookieValue;
+					},
+					set: function (name, value, expires, path, domain, secure){
+						var cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+						var date = new Date();
+						date.setTime(date.getTime() + expires * 1000);
+						cookieText += '; expires=' + date.toGMTString();
+
+						if(path){
+							cookieText += '; path=' + path;
+						}
+						if(domain){
+							cookieText += '; domain' + domain;
+						}
+						if(secure){
+							cookieText += '; secure';
+						}
+						documen.cookie = cookieText;
+					},
+					unset: function (name, path, domain, secure){
+						this.set(name, "", new Date(0), path, domain, secure);
+					}
+				}
+				
 			}
 		},
 		props: [],
