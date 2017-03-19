@@ -42,13 +42,13 @@ router.post('/', function (req, res ,next){
 		var timer = setTimeout(function (){
 			real_vertify = '';
 		}, 300000)
-
+		//
 		var a = encodeURIComponent('柯嘉诚93');
 		var b = encodeURIComponent(`验证码：${real_vertify}`);
 
 		var url = `http://utf8.sms.webchinese.cn/?Uid=${a}&Key=kejiacheng1111&smsMob=${req.body.phone}&smsText=${b}`;
 
-
+		//发送http请求
 		request(url, function (req,res,body){
 			console.log(body);
 		})

@@ -12142,6 +12142,7 @@ exports.default = {
 			var cookie = that.cookieUtil();
 			var index = 3;
 
+			//判断cookie中是否存在vertify
 			if (!cookie.get('vertify')) {
 				var date = new Date();
 				//过期时间为60秒

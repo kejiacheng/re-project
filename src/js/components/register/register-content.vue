@@ -291,6 +291,7 @@
 				const cookie = that.cookieUtil();
 				const index = 3;
 
+				//判断cookie中是否存在vertify
 				if(!cookie.get('vertify')){
 					let date = new Date();
 					//过期时间为60秒
