@@ -43,11 +43,13 @@ router.post('/', function (req, res ,next){
 			real_vertify = '';
 		}, 300000)
 
-		var url = `http://utf8.sms.webchinese.cn/?Uid=柯嘉诚93&Key=kejiacheng1111&smsMob=15869178373&smsText=验证码：${real_vertify}`;
-
 		var a = encodeURIComponent('柯嘉诚93');
 		var b = encodeURIComponent(`验证码：${real_vertify}`);
-		request(`http://utf8.sms.webchinese.cn/?Uid=${a}&Key=kejiacheng1111&smsMob=15869178373&smsText=${b}`, function (req,res,body){
+
+		var url = `http://utf8.sms.webchinese.cn/?Uid=${a}&Key=kejiacheng1111&smsMob=${req.body.phone}&smsText=${b}`;
+
+
+		request(url, function (req,res,body){
 			console.log(body);
 		})
 

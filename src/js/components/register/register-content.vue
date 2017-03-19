@@ -56,9 +56,9 @@
 			if(outTime){
 				//当前时间
 				const nowTime = new Date().getTime();
-
+				//获取剩余时间
 				let time = Math.floor((outTime - nowTime) / 1000);
-
+				//先写入时间
 				that.countdown = time--;
 
 				//定时器事件，倒计时
@@ -261,12 +261,14 @@
        			const r_x_vertify = document.getElementsByClassName('r_x_vertify')[0];
 				const index = 2;
 
+				//当验证码为空时
 				if(that.vertify == ""){
 					that.vertifyTip = '请输入验证码';
 					that.condition.vertify = false;
 					return;
 				}
 
+				//将验证码发给后台匹配
 				that.$http.post('/register.html', { index: index, vertify: that.vertify})
 				.then((result) => {
 					if(result.body == '通过！'){
@@ -281,13 +283,18 @@
 			},
 			get_vertify(){
 				const that = this;
+				//判断手机栏是否正确
+				if(!that.condition.phone){
+					return;
+				}
+
 				const cookie = that.cookieUtil();
 				const index = 3;
 
 				if(!cookie.get('vertify')){
 					let date = new Date();
 					//过期时间为60秒
-					const expires = 10;
+					const expires = 60;
 					let time = expires;
 
 					//过期时间值
@@ -308,23 +315,8 @@
 							that.countdown = '获取验证码';
 						}
 					}, 1000)
-
+					//将手机号发给后台
 					that.$http.post('/register.html', { index: index, phone: that.phone})
-					.then((result) => {
-						console.log(result.body);
-						// var url = `http://utf8.sms.webchinese.cn/?Uid=柯嘉诚93&Key=kejiacheng1111&smsMob=15869178373&smsText=验证码：${result.body}`;
-
-						// var xhr = new XMLHttpRequest();
-
-						// xhr.open('get',url);
-
-						// xhr.onreadystatechange = function (){
-						//     if(xhr.readyState == 4 && xhr.status == 200){
-
-						//     }
-						// }
-						// xhr.send();
-					})
 				}
 			},
 			error(obj, string){//输入错误样式
