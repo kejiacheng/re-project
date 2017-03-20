@@ -10,12 +10,12 @@
 				<div class="tips">
 					<i class="fa fa-exclamation"></i>
 					<span>请选择正确的登录方式</span>
-					<span class="wrong">密码错误</span>
+					<span class="wrong">{{ error }}</span>
 				</div>
 				<form>
-					<span class="label">账号:</span><input type="text" name="username" placeholder="请输入您的手机号" class="username"></br>
-					<span class="label">密码:</span><input type="password" name="password" placeholder="请输入您的密码" class="password">
-					<a class="login_bt">登录</a>
+					<span class="label">账号:</span><input type="text" name="phone" placeholder="请输入您的手机号" class="phone" @focus="focus" v-model="phone"></br>
+					<span class="label">密码:</span><input type="password" name="password" placeholder="请输入您的密码" class="password" @focus="focus" v-model="password">
+					<a class="login_bt" @click="login_bt">登录</a>
 				</form>
 				<div class="fg_pw_reg">
 					<a href="register.html" class="register">注册</a>
@@ -40,8 +40,10 @@
 
 				that.removeClass(staff_way, 'selected');
 				that.addClass(user_way, 'selected');
-
+2
 				line.style.left = (user_way.offsetWidth - line.offsetWidth) / 2 + 'px';
+
+				that.login_way = 'general';
 			},
 			staff(){
 				var that = this;
@@ -54,6 +56,23 @@
 				that.addClass(staff_way, 'selected');
 
 				line.style.left = (user_way.offsetWidth - line.offsetWidth) / 2 + user_way.offsetWidth + 'px';
+
+				that.login_way = 'staff';
+			},
+			login_bt(){
+				var that = this;
+
+				that.$http.post("/login.html", { phone: that.phone, password: that.password, login_way: that.login_way })
+				.then((result) => {
+					if(result.body == "登录成功"){
+						window.location = "index.html";
+					}else{
+						that.error = result.body;
+					}
+				})
+			},
+			focus(){
+				this.error = "";
 			},
 			hasClass(obj,cls){//判断对象是否有这个class函数
 				return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
@@ -78,7 +97,10 @@
 		props: ["isLogin"],
 		data: function (){
 			return {
-				
+				login_way: 'general',
+				phone: '',
+				password: '',
+				error: ''
 			}
 		},
 		computed: {
@@ -164,7 +186,6 @@
 					}
 					.wrong{
 						color: red;
-						display: none;
 					}
 				}	
 				form{

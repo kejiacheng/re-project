@@ -4,7 +4,7 @@ module.exports = {
 	create: (data) => {
 		var generalUser = new GeneralUser({
 			phone: data.phone,
-			name: data.name,
+			name: data.username,
 			password: data.password
 		});
 
@@ -19,6 +19,11 @@ module.exports = {
 		return GeneralUser
 		.findOne({name: data})
 		.exec();
+	},
+	login: (data) => {
+		return GeneralUser
+		.where('phone').equals(data.phone)
+		.where('password').equals(data.password)
+		.exec();
 	}
-
 }

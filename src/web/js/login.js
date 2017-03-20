@@ -11281,7 +11281,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n@charset \"UTF-8\";\n#content {\n  min-width: 500px;\n  height: 550px;\n  background: url(" + __webpack_require__(26) + ");\n  background-size: cover;\n  background-position: center 0;\n  position: relative;\n}\n#content .login_box {\n    width: 350px;\n    height: 330px;\n    background: #fff;\n    opacity: 0.9;\n    position: absolute;\n    top: 80px;\n    right: 50px;\n    border-radius: 8px 8px 0 0;\n    box-shadow: -10px 15px 3px 0 #444;\n}\n#content .login_box .login_box_header {\n      width: 350px;\n      height: 50px;\n      border-bottom: 1px solid #dedede;\n      font-size: 0;\n      position: relative;\n}\n#content .login_box .login_box_header .login_way {\n        display: inline-block;\n        font-size: 14px;\n        width: 175px;\n        height: 100%;\n        text-align: center;\n        line-height: 50px;\n        box-sizing: border-box;\n        font-weight: normal;\n        cursor: pointer;\n        font-weight: 600;\n}\n#content .login_box .login_box_header .user_way {\n        border-radius: 8px 0 0 0;\n}\n#content .login_box .login_box_header .staff_way {\n        border-radius: 0 8px 0 0;\n}\n#content .login_box .login_box_header .selected {\n        color: #3f89ec;\n        font-weight: 600;\n}\n#content .login_box .login_box_header .line {\n        width: 130px;\n        height: 2px;\n        background: #3f89ec;\n        position: absolute;\n        bottom: -1px;\n        left: 22.5px;\n        transition: left ease 1s;\n}\n#content .login_box .login_box_content .tips {\n      height: 40px;\n      padding-left: 15px;\n      line-height: 40px;\n      font-size: 13px;\n      color: #666;\n      margin-bottom: 18px;\n}\n#content .login_box .login_box_content .tips .fa-exclamation {\n        color: red;\n}\n#content .login_box .login_box_content .tips .wrong {\n        color: red;\n        display: none;\n}\n#content .login_box .login_box_content form .label {\n      display: inline-block;\n      width: 50px;\n      margin-right: 8px;\n      text-align: right;\n      margin-left: 20px;\n}\n#content .login_box .login_box_content form input {\n      margin-bottom: 22px;\n      width: 205px;\n      height: 30px;\n      font-size: 13px;\n      padding-left: 8px;\n}\n#content .login_box .login_box_content form .login_bt {\n      display: block;\n      width: 180px;\n      height: 45px;\n      background: #3f89ec;\n      text-align: center;\n      line-height: 45px;\n      color: #fff;\n      border-radius: 3px;\n      margin: 5px auto 20px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      letter-spacing: 2px;\n      font-weight: 600;\n      cursor: pointer;\n}\n#content .login_box .login_box_content .fg_pw_reg {\n      width: 250px;\n      font-size: 13px;\n      color: #3878FF;\n      margin: 0 auto;\n      text-align: right;\n}\n#content .login_box .login_box_content .fg_pw_reg a {\n        cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\n#content {\n  min-width: 500px;\n  height: 550px;\n  background: url(" + __webpack_require__(26) + ");\n  background-size: cover;\n  background-position: center 0;\n  position: relative;\n}\n#content .login_box {\n    width: 350px;\n    height: 330px;\n    background: #fff;\n    opacity: 0.9;\n    position: absolute;\n    top: 80px;\n    right: 50px;\n    border-radius: 8px 8px 0 0;\n    box-shadow: -10px 15px 3px 0 #444;\n}\n#content .login_box .login_box_header {\n      width: 350px;\n      height: 50px;\n      border-bottom: 1px solid #dedede;\n      font-size: 0;\n      position: relative;\n}\n#content .login_box .login_box_header .login_way {\n        display: inline-block;\n        font-size: 14px;\n        width: 175px;\n        height: 100%;\n        text-align: center;\n        line-height: 50px;\n        box-sizing: border-box;\n        font-weight: normal;\n        cursor: pointer;\n        font-weight: 600;\n}\n#content .login_box .login_box_header .user_way {\n        border-radius: 8px 0 0 0;\n}\n#content .login_box .login_box_header .staff_way {\n        border-radius: 0 8px 0 0;\n}\n#content .login_box .login_box_header .selected {\n        color: #3f89ec;\n        font-weight: 600;\n}\n#content .login_box .login_box_header .line {\n        width: 130px;\n        height: 2px;\n        background: #3f89ec;\n        position: absolute;\n        bottom: -1px;\n        left: 22.5px;\n        transition: left ease 1s;\n}\n#content .login_box .login_box_content .tips {\n      height: 40px;\n      padding-left: 15px;\n      line-height: 40px;\n      font-size: 13px;\n      color: #666;\n      margin-bottom: 18px;\n}\n#content .login_box .login_box_content .tips .fa-exclamation {\n        color: red;\n}\n#content .login_box .login_box_content .tips .wrong {\n        color: red;\n}\n#content .login_box .login_box_content form .label {\n      display: inline-block;\n      width: 50px;\n      margin-right: 8px;\n      text-align: right;\n      margin-left: 20px;\n}\n#content .login_box .login_box_content form input {\n      margin-bottom: 22px;\n      width: 205px;\n      height: 30px;\n      font-size: 13px;\n      padding-left: 8px;\n}\n#content .login_box .login_box_content form .login_bt {\n      display: block;\n      width: 180px;\n      height: 45px;\n      background: #3f89ec;\n      text-align: center;\n      line-height: 45px;\n      color: #fff;\n      border-radius: 3px;\n      margin: 5px auto 20px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      letter-spacing: 2px;\n      font-weight: 600;\n      cursor: pointer;\n}\n#content .login_box .login_box_content .fg_pw_reg {\n      width: 250px;\n      font-size: 13px;\n      color: #3878FF;\n      margin: 0 auto;\n      text-align: right;\n}\n#content .login_box .login_box_content .fg_pw_reg a {\n        cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -11518,9 +11518,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("员工登录")]), _vm._v(" "), _c('div', {
     staticClass: "line"
-  })]), _vm._v(" "), _vm._m(0)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  })]), _vm._v(" "), _c('div', {
     staticClass: "login_box_content"
   }, [_c('div', {
     staticClass: "tips"
@@ -11528,27 +11526,64 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "fa fa-exclamation"
   }), _vm._v(" "), _c('span', [_vm._v("请选择正确的登录方式")]), _vm._v(" "), _c('span', {
     staticClass: "wrong"
-  }, [_vm._v("密码错误")])]), _vm._v(" "), _c('form', [_c('span', {
+  }, [_vm._v(_vm._s(_vm.error))])]), _vm._v(" "), _c('form', [_c('span', {
     staticClass: "label"
   }, [_vm._v("账号:")]), _c('input', {
-    staticClass: "username",
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.phone),
+      expression: "phone"
+    }],
+    staticClass: "phone",
     attrs: {
       "type": "text",
-      "name": "username",
+      "name": "phone",
       "placeholder": "请输入您的手机号"
+    },
+    domProps: {
+      "value": (_vm.phone)
+    },
+    on: {
+      "focus": _vm.focus,
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.phone = $event.target.value
+      }
     }
   }), _c('br'), _vm._v(" "), _c('span', {
     staticClass: "label"
   }, [_vm._v("密码:")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.password),
+      expression: "password"
+    }],
     staticClass: "password",
     attrs: {
       "type": "password",
       "name": "password",
       "placeholder": "请输入您的密码"
+    },
+    domProps: {
+      "value": (_vm.password)
+    },
+    on: {
+      "focus": _vm.focus,
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.password = $event.target.value
+      }
     }
   }), _vm._v(" "), _c('a', {
-    staticClass: "login_bt"
-  }, [_vm._v("登录")])]), _vm._v(" "), _c('div', {
+    staticClass: "login_bt",
+    on: {
+      "click": _vm.login_bt
+    }
+  }, [_vm._v("登录")])]), _vm._v(" "), _vm._m(0)])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "fg_pw_reg"
   }, [_c('a', {
     staticClass: "register",
@@ -11560,7 +11595,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "fg_pw.html"
     }
-  }, [_vm._v("忘记密码")])])])
+  }, [_vm._v("忘记密码")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -11780,8 +11815,10 @@ exports.default = {
 
 			that.removeClass(staff_way, 'selected');
 			that.addClass(user_way, 'selected');
-
+			2;
 			line.style.left = (user_way.offsetWidth - line.offsetWidth) / 2 + 'px';
+
+			that.login_way = 'general';
 		},
 		staff: function staff() {
 			var that = this;
@@ -11794,6 +11831,22 @@ exports.default = {
 			that.addClass(staff_way, 'selected');
 
 			line.style.left = (user_way.offsetWidth - line.offsetWidth) / 2 + user_way.offsetWidth + 'px';
+
+			that.login_way = 'staff';
+		},
+		login_bt: function login_bt() {
+			var that = this;
+
+			that.$http.post("/login.html", { phone: that.phone, password: that.password, login_way: that.login_way }).then(function (result) {
+				if (result.body == "登录成功") {
+					window.location = "index.html";
+				} else {
+					that.error = result.body;
+				}
+			});
+		},
+		focus: function focus() {
+			this.error = "";
 		},
 		hasClass: function hasClass(obj, cls) {
 			//判断对象是否有这个class函数
@@ -11821,7 +11874,12 @@ exports.default = {
 	},
 	props: ["isLogin"],
 	data: function data() {
-		return {};
+		return {
+			login_way: 'general',
+			phone: '',
+			password: '',
+			error: ''
+		};
 	},
 	computed: {},
 	created: function created() {},

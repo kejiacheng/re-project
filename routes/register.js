@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
-var app = express();
 var GeneralUser = require('../models/generalUser.js');
 var real_vertify = '';
 router.post('/', function (req, res ,next){
-
 	if(req.body.index == 0){
 		GeneralUser.findPhone(req.body.phone)
 		.then((result) => {
@@ -83,7 +81,6 @@ router.post('/', function (req, res ,next){
 			}
 		})
 	}
-	
 })
 
 module.exports = router;

@@ -7,4 +7,5 @@ module.exports = function (app){
 	})
 
 	app.use('/register.html', require('./register'));
+	app.use('/login.html', require('./login'))
 }
