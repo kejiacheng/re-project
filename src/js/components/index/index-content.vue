@@ -356,7 +356,7 @@
 			}
 		},
 		created(){
-
+			
 		},
 		watch: {
 			'shopping_list.ingredients.dom':{

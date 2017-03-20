@@ -62,7 +62,7 @@
 				that.countdown = time--;
 
 				//定时器事件，倒计时
-				var timer = setInterval(() => {
+				let timer = setInterval(() => {
 					that.countdown = time--;
 
 					if(time <= 0){
@@ -181,7 +181,7 @@
 			},
 			passwordBlur(){
 				const that = this;
-				var reg = /^\w{6,10}$/g;
+				const reg = /^\w{6,10}$/g;
        			const password = document.getElementsByClassName('password')[0];
        			const r_x_password = document.getElementsByClassName('r_x_password')[0];
        			const confirm_password = document.getElementsByClassName('confirm_password')[0];

@@ -32,11 +32,11 @@
 		},
 		methods: {
 			user(){
-				var that = this;
-				var line = document.getElementsByClassName('line')[0];
+				const that = this;
+				const line = document.getElementsByClassName('line')[0];
 
-				var user_way = document.getElementsByClassName('user_way')[0];
-				var staff_way = document.getElementsByClassName('staff_way')[0];
+				const user_way = document.getElementsByClassName('user_way')[0];
+				const staff_way = document.getElementsByClassName('staff_way')[0];
 
 				that.removeClass(staff_way, 'selected');
 				that.addClass(user_way, 'selected');
@@ -46,11 +46,11 @@
 				that.login_way = 'general';
 			},
 			staff(){
-				var that = this;
-				var line = document.getElementsByClassName('line')[0];
+				const that = this;
+				const line = document.getElementsByClassName('line')[0];
 
-				var user_way = document.getElementsByClassName('user_way')[0];
-				var staff_way = document.getElementsByClassName('staff_way')[0];
+				const user_way = document.getElementsByClassName('user_way')[0];
+				const staff_way = document.getElementsByClassName('staff_way')[0];
 
 				that.removeClass(user_way, 'selected');
 				that.addClass(staff_way, 'selected');
@@ -60,7 +60,7 @@
 				that.login_way = 'staff';
 			},
 			login_bt(){
-				var that = this;
+				const that = this;
 
 				that.$http.post("/login.html", { phone: that.phone, password: that.password, login_way: that.login_way })
 				.then((result) => {

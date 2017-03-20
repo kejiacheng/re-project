@@ -6,10 +6,17 @@
 	    		<span class="logo_text">饮料随搭</span>
 	    	</div>
 	    	<div class="header_left">
-	    		 <a v-if="!isLogin" class="bt" href="login.html">登录</a>
-	    		 <a v-if="!isLogin" class="bt" href="register.html">注册</a>
-	    		 <div class="personal_wrapper" v-if="isLogin">
-	    		 	<a class="bt" href="">XX</a>
+	    		 <a v-if="!Login" class="bt" href="login.html">登录</a>
+	    		 <a v-if="!Login" class="bt" href="register.html">注册</a>
+	    		 <div class="personal_wrapper" v-if="Login" @mouseover="over" @mouseout="out">
+	    		 	<a class="bt" href="javascript:void(0)">{{ username }}</a>
+	    		 	<div class="personal_wrapper_box" v-show="personalShow">
+	    		 		<ul class="personal_wrapper_box_list">
+	    		 			<li><a>个人中心</a></li>
+	    		 			<li v-if="loginway == 'staff'"><a>后台中心</a></li>
+	    		 			<li><a href="javascript:void(0)" @click="exit">退出</a></li>
+	    		 		</ul>
+	    		 	</div>
 	    		 </div>
 	    	</div>
 		</div>
@@ -21,19 +28,35 @@
 			
 		},
 		methods: {
-
+			over(){
+				this.personalShow = true;
+			},
+			out(){
+				this.personalShow = false;
+			},
+			exit(){
+				const that = this;
+				const index = 1;
+				//向后台发送退出信号
+				that.$http.post('/', { index: index })
+				.then((result) => {
+					if(result.body = '退出成功'){
+						//退出成功触发exit事件让父元件得到响应
+						this.$emit('exit');
+					}
+				})
+			}
 		},
-		props: ["isLogin"],
+		props: ["Login","phone","username","loginway"],
 		data: function (){
 			return {
-				
+				personalShow: false
 			}
 		},
 		computed: {
 
 		},
 		created: function (){
-
 		},
 		watch: {
 
@@ -88,6 +111,35 @@
 				.personal_wrapper{
 					display: inline-block;
 					position:relative;
+					.personal_wrapper_box{
+						position: absolute;
+						top:60px;
+						left:40px;
+						width:70px;
+						background:#fff;
+						border:1px solid #dedede;
+						ul{
+							a{
+								display:block;
+								font-size:13px;
+								text-align: center;
+								width:100%;
+								height:30px;
+								line-height: 30px;
+								cursor:pointer;
+								color:#333;
+								&:last-child{
+									border-bottom:0;
+								}
+								&:hover{
+									color:#f1f1f1;
+									background:#38f;
+								}
+								li{							
+								}
+							}
+						}
+					}
 				}
 			}
 		}

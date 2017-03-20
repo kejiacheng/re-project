@@ -3,7 +3,17 @@ module.exports = function (app){
 		console.log('get');
 	})
 	app.post('/', function (req, res){
-		console.log('post');
+		if(req.body.index == 0){
+			if(req.session.phone){
+				res.json({ phone: req.session.phone, username: req.session.username, login_way: req.session.login_way })
+			}
+		}else if(req.body.index== 1){
+			delete req.session.phone;
+			delete req.session.password;
+			delete req.session.username;
+			delete req.session.login_way;
+			res.send('退出成功');
+		}
 	})
 
 	app.use('/register.html', require('./register'));

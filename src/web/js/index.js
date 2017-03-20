@@ -11264,7 +11264,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n#header {\n  height: 63px;\n}\n#header .wrapper {\n    width: 100%;\n    border-bottom: 3px solid #ff8a06;\n    min-width: 800px;\n    font-weight: 600;\n    background: #fff;\n    position: fixed;\n    top: 0;\n    left: 0;\n    z-index: 99;\n}\n#header .wrapper .logo {\n      width: 140px;\n      margin-left: 15px;\n}\n#header .wrapper .logo .logo_img {\n        height: 60px;\n        vertical-align: -20px;\n}\n#header .wrapper .header_left {\n      position: absolute;\n      top: 0;\n      right: 30px;\n      font-size: 0;\n}\n#header .wrapper .header_left .bt {\n        display: block;\n        float: left;\n        width: 150px;\n        height: 60px;\n        cursor: pointer;\n        line-height: 60px;\n        text-align: center;\n        color: #000;\n        font-weight: 600;\n        border-radius: 20px;\n        font-size: 16px;\n}\n#header .wrapper .header_left .bt:hover {\n          background: #86ffec;\n          color: #ff0068;\n}\n#header .wrapper .header_left .personal_wrapper {\n        display: inline-block;\n        position: relative;\n}\n", ""]);
+exports.push([module.i, "\n#header {\n  height: 63px;\n}\n#header .wrapper {\n    width: 100%;\n    border-bottom: 3px solid #ff8a06;\n    min-width: 800px;\n    font-weight: 600;\n    background: #fff;\n    position: fixed;\n    top: 0;\n    left: 0;\n    z-index: 99;\n}\n#header .wrapper .logo {\n      width: 140px;\n      margin-left: 15px;\n}\n#header .wrapper .logo .logo_img {\n        height: 60px;\n        vertical-align: -20px;\n}\n#header .wrapper .header_left {\n      position: absolute;\n      top: 0;\n      right: 30px;\n      font-size: 0;\n}\n#header .wrapper .header_left .bt {\n        display: block;\n        float: left;\n        width: 150px;\n        height: 60px;\n        cursor: pointer;\n        line-height: 60px;\n        text-align: center;\n        color: #000;\n        font-weight: 600;\n        border-radius: 20px;\n        font-size: 16px;\n}\n#header .wrapper .header_left .bt:hover {\n          background: #86ffec;\n          color: #ff0068;\n}\n#header .wrapper .header_left .personal_wrapper {\n        display: inline-block;\n        position: relative;\n}\n#header .wrapper .header_left .personal_wrapper .personal_wrapper_box {\n          position: absolute;\n          top: 60px;\n          left: 40px;\n          width: 70px;\n          background: #fff;\n          border: 1px solid #dedede;\n}\n#header .wrapper .header_left .personal_wrapper .personal_wrapper_box ul a {\n            display: block;\n            font-size: 13px;\n            text-align: center;\n            width: 100%;\n            height: 30px;\n            line-height: 30px;\n            cursor: pointer;\n            color: #333;\n}\n#header .wrapper .header_left .personal_wrapper .personal_wrapper_box ul a:last-child {\n              border-bottom: 0;\n}\n#header .wrapper .header_left .personal_wrapper .personal_wrapper_box ul a:hover {\n              color: #f1f1f1;\n              background: #38f;\n}\n", ""]);
 
 // exports
 
@@ -11461,24 +11461,45 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "wrapper"
   }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "header_left"
-  }, [(!_vm.isLogin) ? _c('a', {
+  }, [(!_vm.Login) ? _c('a', {
     staticClass: "bt",
     attrs: {
       "href": "login.html"
     }
-  }, [_vm._v("登录")]) : _vm._e(), _vm._v(" "), (!_vm.isLogin) ? _c('a', {
+  }, [_vm._v("登录")]) : _vm._e(), _vm._v(" "), (!_vm.Login) ? _c('a', {
     staticClass: "bt",
     attrs: {
       "href": "register.html"
     }
-  }, [_vm._v("注册")]) : _vm._e(), _vm._v(" "), (_vm.isLogin) ? _c('div', {
-    staticClass: "personal_wrapper"
+  }, [_vm._v("注册")]) : _vm._e(), _vm._v(" "), (_vm.Login) ? _c('div', {
+    staticClass: "personal_wrapper",
+    on: {
+      "mouseover": _vm.over,
+      "mouseout": _vm.out
+    }
   }, [_c('a', {
     staticClass: "bt",
     attrs: {
-      "href": ""
+      "href": "javascript:void(0)"
     }
-  }, [_vm._v("XX")])]) : _vm._e()])])])
+  }, [_vm._v(_vm._s(_vm.username))]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.personalShow),
+      expression: "personalShow"
+    }],
+    staticClass: "personal_wrapper_box"
+  }, [_c('ul', {
+    staticClass: "personal_wrapper_box_list"
+  }, [_vm._m(1), _vm._v(" "), (_vm.loginway == 'staff') ? _c('li', [_c('a', [_vm._v("后台中心")])]) : _vm._e(), _vm._v(" "), _c('li', [_c('a', {
+    attrs: {
+      "href": "javascript:void(0)"
+    },
+    on: {
+      "click": _vm.exit
+    }
+  }, [_vm._v("退出")])])])])]) : _vm._e()])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "logo"
@@ -11491,6 +11512,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('span', {
     staticClass: "logo_text"
   }, [_vm._v("饮料随搭")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('li', [_c('a', [_vm._v("个人中心")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -11813,7 +11836,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('index-header', {
     attrs: {
-      "isLogin": _vm.isLogin
+      "Login": _vm.Login,
+      "phone": _vm.phone,
+      "username": _vm.username,
+      "loginway": _vm.loginway
+    },
+    on: {
+      "haha": _vm.shishi
     }
   }), _vm._v(" "), _c('index-content'), _vm._v(" "), _c('index-footer')], 1)
 },staticRenderFns: []}
@@ -12375,13 +12404,40 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
 	components: {},
-	methods: {},
-	props: ["isLogin"],
+	methods: {
+		over: function over() {
+			this.personalShow = true;
+		},
+		out: function out() {
+			this.personalShow = false;
+		},
+		exit: function exit() {
+			var _this = this;
+
+			var that = this;
+			var index = 1;
+			that.$http.post('/', { index: index }).then(function (result) {
+				if (result.body = '退出成功') {
+					_this.$emit('haha');
+				}
+			});
+		}
+	},
+	props: ["Login", "phone", "username", "loginway"],
 	data: function data() {
-		return {};
+		return {
+			personalShow: false
+		};
 	},
 	computed: {},
 	created: function created() {},
@@ -12426,14 +12482,42 @@ exports.default = {
 		indexContent: _indexContent2.default,
 		indexFooter: _indexFooter2.default
 	},
-	methods: {},
+	methods: {
+		isLogin: function isLogin() {
+			var that = this;
+			var index = 0;
+
+			that.$http.post('/', { index: index }).then(function (result) {
+				if (result.body) {
+					that.Login = true;
+					that.phone = result.body.phone;
+					that.username = result.body.username;
+					that.loginway = result.body.login_way;
+				}
+			});
+		},
+		shishi: function shishi() {
+			var that = this;
+			that.Login = false;
+			that.phone = '';
+			that.username = '';
+			that.loginway = '';
+		}
+	},
 	data: function data() {
 		return {
-			isLogin: false
+			Login: false,
+			phone: '',
+			username: '',
+			loginway: ''
 		};
 	},
 	computed: {},
-	created: function created() {},
+	created: function created() {
+		var that = this;
+		that.isLogin();
+	},
+
 	watch: {}
 }; //
 //
