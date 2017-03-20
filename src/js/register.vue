@@ -1,15 +1,15 @@
 <template>
 	<div id="main-content">
-		<register-header></register-header>
+		<registerHeader></registerHeader>
 		<register-content></register-content>
-		<register-footer></register-footer>
+		<registerFooter></registerFooter>
 	</div>
 </template>
 
 <script type="text/javascript">
-	import registerHeader from './components/register/register-header.vue';
+	import registerHeader from './components/header.vue';
 	import registerContent from './components/register/register-content.vue';
-	import registerFooter from './components/register/register-footer.vue';
+	import registerFooter from './components/footer.vue';
 
 	export default{
 		components: {

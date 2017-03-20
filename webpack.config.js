@@ -1,11 +1,14 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 module.exports = {
 	entry: {
 		'index': __dirname + '/src/js/index.js',
-		'nihao': __dirname + '/src/js/nihao.js'
+		'login': __dirname + '/src/js/login.js',
+		'register': __dirname + '/src/js/register.js',
+		'changePW': __dirname + '/src/js/changePW.js'
 	},
 	output: {
 		path: __dirname + '/src/web/js',
@@ -40,6 +43,10 @@ module.exports = {
 			{
 				test : /\.jsx$/,
 				loader: "babel-loader"
+			},
+			{
+				test: /\.(png|jpg)$/,
+				loader: "url-loader"
 			}
 		]
 	},
@@ -56,11 +63,25 @@ module.exports = {
 			chunks: ['index']
 		}),
 		new HtmlWebpackPlugin({
-			filename: __dirname + '/src/web/nihao.html',
-			template: __dirname + '/src/html/nihao.html',
+			filename: __dirname + '/src/web/login.html',
+			template: __dirname + '/src/html/login.html',
 			injext: 'body',
 			hash: true,
-			chunks: ['nihao']
+			chunks: ['login']
+		}),
+		new HtmlWebpackPlugin({
+			filename: __dirname + '/src/web/register.html',
+			template: __dirname + '/src/html/register.html',
+			injext: 'body',
+			hash: true,
+			chunks: ['register']
+		}),
+		new HtmlWebpackPlugin({
+			filename: __dirname + '/src/web/changePW.html',
+			template: __dirname + '/src/html/changePW.html',
+			injext: 'body',
+			hash: true,
+			chunks: ['changePW']
 		})
 	]
 

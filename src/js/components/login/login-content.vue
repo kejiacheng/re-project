@@ -19,7 +19,7 @@
 				</form>
 				<div class="fg_pw_reg">
 					<a href="register.html" class="register">注册</a>
-					<a href="fg_pw.html" class="fg_pw">忘记密码</a>
+					<a href="changePW.html" class="fg_pw">忘记密码</a>
 				</div>
 			</div>
 		</div>		

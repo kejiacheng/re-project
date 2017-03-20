@@ -54,7 +54,7 @@ router.post('/', function (req, res ,next){
 		function createVertify(){
 			var vertify = '',
 				randomNum = 0;
-			for(var i=0;i<4;){
+			for(var i=0; i<4;){
 				//产生一个范围在48-122的随机数
 				randomNum = Math.floor(Math.random() * 75 + 48);
 				//判断随机数的范围

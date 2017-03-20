@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 74);
+/******/ 	return __webpack_require__(__webpack_require__.s = 71);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -11491,29 +11491,26 @@ exports.default = {
 };
 
 /***/ }),
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(60)
+__webpack_require__(61)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(70),
+  __webpack_require__(62),
   /* template */
-  __webpack_require__(51),
+  __webpack_require__(52),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\register.vue"
+Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\changePW.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] register.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] changePW.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -11522,9 +11519,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6e84857c", Component.options)
+    hotAPI.createRecord("data-v-6fecc2e0", Component.options)
   } else {
-    hotAPI.reload("data-v-6e84857c", Component.options)
+    hotAPI.reload("data-v-6fecc2e0", Component.options)
   }
 })()}
 
@@ -11532,27 +11529,18 @@ module.exports = Component.exports
 
 
 /***/ }),
+/* 21 */,
+/* 22 */,
+/* 23 */,
 /* 24 */,
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)();
-// imports
-
-
-// module
-exports.push([module.i, "\n@charset \"UTF-8\";\n#content {\n  width: 950px;\n  margin: 40px auto 0;\n  box-shadow: -10px 10px 1px #c9c9c9;\n  background: #fff;\n}\n#content .box_header {\n    width: 920px;\n    height: 75px;\n    margin: 0 auto;\n    border-bottom: 1px solid #dedede;\n}\n#content .box_header .new_user_head {\n      text-align: center;\n      margin-top: 30px;\n      margin-left: 20px;\n      padding-top: 15px;\n      border: solid #dedede;\n      width: 137px;\n      height: 30px;\n      float: left;\n      border-width: 1px 1px 0 1px;\n      background: #fff;\n}\n#content .box_header .back_index {\n      width: 70px;\n      height: 30px;\n      margin-top: 40px;\n      float: right;\n      font-size: 12px;\n      overflow: hidden;\n}\n#content .box_header .back_index img {\n        margin-top: 10px;\n        float: left;\n}\n#content .box_header .back_index span {\n        float: left;\n        display: inline-block;\n        margin-top: 11px;\n        margin-left: 2px;\n}\n#content .new_tip {\n    width: 594px;\n    height: 24px;\n    margin: 10px auto 50px;\n    border: 1px solid #fedbd1;\n    font-size: 13px;\n}\n#content .new_tip img {\n      margin-top: 6px;\n      margin-left: 2px;\n      float: left;\n}\n#content .new_tip span {\n      display: inline-block;\n      margin-top: 6px;\n      margin-left: 5px;\n}\n#content .new_tip .catious {\n      color: blue;\n}\n#content .register_content {\n    width: 440px;\n    margin: 0 auto;\n    padding-bottom: 50px;\n}\n#content .register_content .input_box label {\n      margin-right: 10px;\n      font-size: 14px;\n      width: 70px;\n      display: inline-block;\n      text-align: right;\n      color: #474747;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#content .register_content .input_box input {\n      width: 312px;\n      height: 34px;\n      margin-bottom: 10px;\n      font-size: 13px;\n      padding-left: 8px;\n}\n#content .register_content .input_box i {\n      display: inline-block;\n      width: 12px;\n      height: 12px;\n      background-size: 12px 12px;\n      margin-left: 5px;\n      margin-top: 13px;\n      vertical-align: top;\n}\n#content .register_content .input_box p {\n      margin-left: 80px;\n      margin-bottom: 10px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      font-size: 12px;\n}\n#content .register_content .input_box input.vertify {\n      width: 222px;\n}\n#content .register_content .input_box i.r_x_vertify {\n      margin-left: -20px;\n}\n#content .register_content .input_box .get_vertify {\n      display: inline-block;\n      width: 81px;\n      height: 35px;\n      background: #dedede;\n      vertical-align: top;\n      margin-left: 15px;\n      border: 1px solid #aaa;\n      font-size: 12px;\n      text-align: center;\n      line-height: 35px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      cursor: pointer;\n}\n#content .register_content .register_bt {\n      display: block;\n      background: #ff2832;\n      width: 180px;\n      height: 50px;\n      line-height: 50px;\n      text-align: center;\n      font-size: 18px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      color: white;\n      border-radius: 22px;\n      margin: 30px auto 0;\n      cursor: pointer;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 25 */,
 /* 26 */,
 /* 27 */,
 /* 28 */,
 /* 29 */,
 /* 30 */,
-/* 31 */
+/* 31 */,
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -11560,277 +11548,42 @@ exports = module.exports = __webpack_require__(0)();
 exports.i(__webpack_require__(5), "");
 
 // module
-exports.push([module.i, "\n@charset \"UTF-8\";\nbody {\n  font-family: \"\\5B8B\\4F53\";\n  background: #f6f9fb;\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\nbody {\n  font-family: \"\\5B8B\\4F53\";\n}\n#content {\n  width: 100%;\n  min-height: 500px;\n}\n#content .wrapper {\n    width: 980px;\n    margin: 20px auto 0;\n}\n#content .wrapper .steps {\n      height: 34px;\n      background: url(" + __webpack_require__(35) + ") no-repeat;\n}\n#content .wrapper .steps li {\n        line-height: 34px;\n        width: 175px;\n        padding-left: 66px;\n        float: left;\n}\n#content .wrapper .steps .now_steps {\n        background: url(" + __webpack_require__(38) + ");\n        color: #2e82ff;\n}\n#content .wrapper .confirm_user {\n      margin-top: 35px;\n      font-size: 0;\n}\n#content .wrapper .confirm_user input {\n        width: 300px;\n        height: 35px;\n        padding-left: 15px;\n        font-size: 14px;\n        margin-bottom: 15px;\n}\n#content .wrapper .confirm_user .vertify {\n        width: 180px;\n        margin-right: 20px;\n}\n#content .wrapper .confirm_user .vertify_text {\n        width: 98px;\n        display: inline-block;\n        height: 37px;\n        vertical-align: top;\n        border: 1px solid #aaa;\n        cursor: pointer;\n        font-size: 25px;\n        letter-spacing: 5px;\n        line-height: 37px;\n        text-align: center;\n}\n#content .wrapper .confirm_user .confirm_user_bt {\n        display: block;\n        width: 319px;\n        height: 39px;\n        background: #3f89ec;\n        border-radius: 3px;\n        text-align: center;\n        line-height: 39px;\n        font-size: 16px;\n        color: #fff;\n        font-weight: bold;\n        cursor: pointer;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 32 */,
-/* 33 */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAIAAACp9tltAAAArElEQVQoFWP8//8/A3GAiThlIFWoSr98YCjzZnBgBZFANhoAOgAKPr//n2z834YBioBsoAgSgJn6+T1DgQvDzbMIg4BsoAiS2WClQHWFrijqIDpQVYOVNkVjUQdXXRsKYTICHcPgyMbw5zfCajQWMwvD/l8MjIxgUy290WRRuGbuQHVAEbCpQNoWxMEODkPjiAVdGiaBqRkWWOg6sPBJUApzKxZT0IVIMJUEpQAAZFIcN1QugAAAAABJRU5ErkJggg=="
-
-/***/ }),
+/* 33 */,
 /* 34 */,
-/* 35 */,
-/* 36 */
+/* 35 */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjRDRDc3MzYyMTYzMTFFNTkwOUNDODNDMDU0MzhFM0UiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjRDRDc3MzcyMTYzMTFFNTkwOUNDODNDMDU0MzhFM0UiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCNENENzczNDIxNjMxMUU1OTA5Q0M4M0MwNTQzOEUzRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCNENENzczNTIxNjMxMUU1OTA5Q0M4M0MwNTQzOEUzRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmVLYuIAAAEiSURBVHjaYvz//z8DHASrigDJIiD2AWI1qOgNIN4ExJMY1t5+A1PKCNcYrBoMJOcCMT8DdvAJiJOAmtciNEI0rQbxGcxcGRj8khgYVHQhym+eZ2DYuoiB4dRuEA9kSyhIM+P/IBVRIOcOEPMxuEcyMKQ1YbdvVh0Dw87lMJtVmYBELliTuRuqpnwPCIYBkJyFGwNYLQNDAUijH1jCK5aBIPBJhLNAGjXATHVDwhpV9GAsdSYGUsCf3zDWLxZoPOmDQ0/HAqFo4g5MjQ+uw1j3mKCRy8CwfTGqIvTAAYEt82GsraDoEAMybpMaHbgTgKo+xE93LwNtWoglASCSXAiQnAfEvDiC5jMQJ6ImOcxE7gsKclDoAfEtkJ9AwYWcyAECDAAga2eYdeR2fQAAAABJRU5ErkJggg=="
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArcAAAAiCAIAAADKy2b5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpjMzE3MDU1OC01N2JkLTcwNDUtOTkwNi02Y2M4ZTE4NjM4NzIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RUY5MTdFRDhDQzY0MTFFNDk5NEY4RjFENjFCQUJGQjkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RUY5MTdFRDdDQzY0MTFFNDk5NEY4RjFENjFCQUJGQjkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU3OGU3NTNhLTQzNmMtY2Q0Yy1iN2FhLTI0MzdjNTg1NzNjNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpjMzE3MDU1OC01N2JkLTcwNDUtOTkwNi02Y2M4ZTE4NjM4NzIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4NVl1sAAAFBElEQVR42uyd70vyXBiA07n5A2xZVmBFSdEvqMCoT0Ff/LP73EfFBKMy3iCSJ9IyBEWn871xED7TfOql1x0fr+vDmLbRYbu8d5+dnXu+RqMxAzAJ6Lre7Xbb7TaHAtAVYDz4OQQwKViWpWma34+0gK4AZAkAA7RaLemicRxgUhIFdAWyBIDx0e12O50OkRcmAtu20RXIEgDGSrvd9vl83MgFdAUgSwAYgmVZgUBAgi+HAiZCV13X0RXIEgDGBOMOMFm6ttttdAWyBIDxIVmCBF9N0zgUgK4A/x8BpVpTrVbL5bIsm82mfAwGg3Nzc/F4XJacKnBhWZYYYtu2xF9lG4nS4NButw3DQFeYOHyKVFWSZhSLxff396F/NU1za2srHA5zwqAfv98fCARarZaCbUNpQFcgS/gZRM1CodDpdEZso2na/v6+yMo5g34k7DodNaVahdIwFDULMqIrjMpuVchhr6+vRws60xvYk82oJw0uJOD6eyjVLUNpGIqCBRnRFVS/l5DL5Wq1muvLSCRyenp6f3//+PjY/300Gj06OuK0wW8S+3yGYTgjqSrgUnptbW19fT0UCsn629ubhNp6vY7S6KqmrqZp7u7uipayXiqVCoUCEZh7CV5SrVYHUwTRNJVKOXeSXcjGsgunDfpRaqaZS2nJd3d2dl5fXy8uLi4vL8Ph8N7eHkpPua7qzON16SqtOjg4kF+T6JrNZhOJRDKZRFeyBC8pl8uub6TjJZpKf+vruwBI2JUumgozzVx+Li8vy/Lu7k6W9Xr96ekpFou5rhAoPW04BRkV1HVhYSEUChWLRVmvVCqSE8zPzxOBpxyPZ0IOTUszmcx3dwGwLEuFmWYuP//p0d9XQ2lQVtdfPT46bNFo9ObmBl3JErxkcHDOeRAhEol8fReAmd6NXKcUrrczzUb4KW1LJBKlUknaidLo6gyTqalrOp2e6Y0vVCoVIvCU4/GIAy9BgR9EhVL5I5ROpVKNRsMZfQBQ4gLwia4XPSSPEWmpLU2W4CWGYXx3l2AwyGmDoSlCIBBwddPVUfr4+FiibT6fH2whSqOrmhH44eEhFArNzs6iK1mCZzjzbb6FS1kAB7kGS9fH8/K3g0qbpnl2diaXhEwm0z8HEqXRVTVdk8lkOp3+uHngrLhqQKErWcJYWVxc/O4uS0tLnDZwIddgZ4KZ5y1xKS0pwsnJiXQZP0sRUBpd1dH1+flZcoLV1VXn48rKSq1Wc5VtRtep09Xbfx+LxSSZHSyZMCLz5b0j4MKZVKbIQ1UupTc2Nhxvz8/PP7bJZrMfD4WhNLqqo6sksvl8fmtra3NzUz6+vLxcXV0RgafdWM9rL0oDcrncVwqbSwJ+eHg4YvoDTCeGYYg/tm0r0h6UhhEEg0HLstAVJgXvpxg41ej+WGBENpDNEBQGI5fdQ50moTR8hq7rnU4HXYF7Cf8ln729vf1s6CEajW5vb/PeUnAnuWq/ihelAV2BLOEnqVar5XJZls1mU35RhmGYphmPxxkJg6EEg0GJuZ4/KI7S8OdQ23vJE7oCWQLAmNB13bZtFR4UB0BX+Fuh9CFMJJqmSeeMmAvoCkCWAPAbzlwyz+vWAXxRVxXKLAKQJcC04DworvL4LkC/riqUWQQgS4CpQJ26dQDoCmQJAArBWANMUnj1+9EVyBIAxodhGMRcmBR0XUdXIEsAGF/MVa1uHQC6wt/NvwIMAMNCWpktkGtKAAAAAElFTkSuQmCC"
 
 /***/ }),
+/* 36 */,
 /* 37 */,
-/* 38 */,
+/* 38 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPEAAAAiCAIAAAABA6jfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpjMzE3MDU1OC01N2JkLTcwNDUtOTkwNi02Y2M4ZTE4NjM4NzIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N0ZENDM1QTRDQzZFMTFFNDlGQTZENjFEQjYwRTM2Q0EiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6N0ZENDM1QTNDQzZFMTFFNDlGQTZENjFEQjYwRTM2Q0EiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjlhZTMyZTZmLTJhMDktMTg0MC1iOTI1LTI3MGQ0NjRiYjUwZCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpjMzE3MDU1OC01N2JkLTcwNDUtOTkwNi02Y2M4ZTE4NjM4NzIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5iBaLxAAAC4klEQVR42uzbS2sTURgG4PfMJW0zCfaWWtrUhWJB620pihbc6U63/gFx0WUXunGj4K50If4Bl27VVUHwttXajVg3moIm1mBjaudyxjNE2sx0TBkQZqa8z6LQyXdgyHmZfDnnRKzWfRDlwYgFy3SV3mUa3ynKi/U2pDA0TWOmaZ/wfXzbgGGazDTtH7aLZluYPWPNTFPONDdhS71HB8JMU/7UN6AbphCCmaZ9wpX4/uufHQgzTbnU2kLb0XRd3/2SkakbXa7hxcfgr/pwUSplnJzE+SM4VeUkUlSjheqgKaT0/dAei8jInkutiYfP8X4t/tUTE7gxi8lBziOF9JsYL0vbtjOX6ZU13H2CTadXzYCJ21cwM8F5pJDhIkqF0OZi+v20ekLfe7pHoBVVoMpUMVG3H214CG0uppxp9RmxuIS2Hb0+M4rX87h5NnRRlaliHk+hSISCzUXDzEqm333Bh6/RixcOYfE6in0x9apYDSHq5nhY79pcTDnTL1ejV9Sz+c5VLDxLMITo529seXpnaS/ltbzluIfu3KPEQ4jqwdKeIaVM+TndaEWvPHiDlUayIUSKJ1Wsgw4k5UybOueC/htNZKCfHrYSDxkpce4ohqFhtOQ7jpNypo+OJR5ybJzTRzEqZXiu6/t+ypm+OJ14yOw0p4+iDgygoHlK+r3HmSlMH0xQr4pPT3EGKaSgY2gg6Do6/6Z/3qPWxPzjmK3E3YoF3L+G6hAnkXaor4XB4TZpSyn/flNM/Z7UDd26HBxR6k0VqDIGmiKGLBVidzvQyNRZ08WlmH3y7ZZj7hLPmlJUds+adqj7ePsZrz4FJzoarWDpesTC8QmcOxz00IITSGGaQHUQnruV0d8EECVVKaFfdzprHaGs862hPLL6YBXk7kAz05RLhoaKtbN4x0xT/ruOMjzPjbTRzDTlVfeWITNNuVcwQluGzDTlmxAYK8N19/g9NjNNuTFchOaHtgxj/RFgAFud+n6bJwv4AAAAAElFTkSuQmCC"
+
+/***/ }),
 /* 39 */,
 /* 40 */,
 /* 41 */,
 /* 42 */,
-/* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(54)
-
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(67),
-  /* template */
-  __webpack_require__(45),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\register\\register-content.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] register-content.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-08da4b5b", Component.options)
-  } else {
-    hotAPI.reload("data-v-08da4b5b", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 43 */,
 /* 44 */,
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    attrs: {
-      "id": "content"
-    }
-  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
-    staticClass: "register_content"
-  }, [_c('form', [_c('div', {
-    staticClass: "input_box"
-  }, [_c('label', [_vm._v("手机号码")]), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.phone),
-      expression: "phone"
-    }],
-    staticClass: "input_obj phone",
-    attrs: {
-      "type": "text",
-      "placeholder": "请输入您的手机号码"
-    },
-    domProps: {
-      "value": (_vm.phone)
-    },
-    on: {
-      "focus": _vm.phoneFocus,
-      "blur": _vm.phoneBlur,
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.phone = $event.target.value
-      }
-    }
-  }), _c('i', {
-    staticClass: "r_x r_x_phone"
-  }), _c('br'), _vm._v(" "), _c('p', {
-    staticClass: "tip tip_phone"
-  }, [_vm._v(_vm._s(_vm.phoneTip))])]), _vm._v(" "), _c('div', {
-    staticClass: "input_box"
-  }, [_c('label', [_vm._v("账号名")]), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.username),
-      expression: "username"
-    }],
-    staticClass: "input_obj username",
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.username)
-    },
-    on: {
-      "focus": _vm.usernameFocus,
-      "blur": _vm.usernameBlur,
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.username = $event.target.value
-      }
-    }
-  }), _c('i', {
-    staticClass: "r_x r_x_username"
-  }), _c('br'), _vm._v(" "), _c('p', {
-    staticClass: "tip tip_username"
-  }, [_vm._v(_vm._s(_vm.usernameTip))])]), _vm._v(" "), _c('div', {
-    staticClass: "input_box"
-  }, [_c('label', [_vm._v("登录密码")]), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.password),
-      expression: "password"
-    }],
-    staticClass: "input_obj password",
-    attrs: {
-      "type": "password"
-    },
-    domProps: {
-      "value": (_vm.password)
-    },
-    on: {
-      "focus": _vm.passwordFocus,
-      "blur": _vm.passwordBlur,
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.password = $event.target.value
-      }
-    }
-  }), _c('i', {
-    staticClass: "r_x r_x_password"
-  }), _c('br'), _vm._v(" "), _c('p', {
-    staticClass: "tip tip_password"
-  }, [_vm._v(_vm._s(_vm.passwordTip))])]), _vm._v(" "), _c('div', {
-    staticClass: "input_box"
-  }, [_c('label', [_vm._v("确认密码")]), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.confirm_password),
-      expression: "confirm_password"
-    }],
-    staticClass: "input_obj confirm_password",
-    attrs: {
-      "type": "password"
-    },
-    domProps: {
-      "value": (_vm.confirm_password)
-    },
-    on: {
-      "focus": _vm.confirm_passwordFocus,
-      "blur": _vm.confirm_passwordBlur,
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.confirm_password = $event.target.value
-      }
-    }
-  }), _c('i', {
-    staticClass: "r_x r_x_confirm_password"
-  }), _c('br'), _vm._v(" "), _c('p', {
-    staticClass: "tip tip_confirm_password"
-  }, [_vm._v(_vm._s(_vm.confirm_passwordTip))])]), _vm._v(" "), _c('div', {
-    staticClass: "input_box"
-  }, [_c('label', [_vm._v("获取验证码")]), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.vertify),
-      expression: "vertify"
-    }],
-    staticClass: "input_obj vertify",
-    attrs: {
-      "type": "text",
-      "placeholder": "请输入您的手机验证码"
-    },
-    domProps: {
-      "value": (_vm.vertify)
-    },
-    on: {
-      "focus": _vm.vertifyFocus,
-      "blur": _vm.vertifyBlur,
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.vertify = $event.target.value
-      }
-    }
-  }), _c('i', {
-    staticClass: "r_x r_x_vertify"
-  }), _c('div', {
-    staticClass: "get_vertify",
-    on: {
-      "click": _vm.get_vertify
-    }
-  }, [_vm._v(_vm._s(_vm.countdown))]), _c('br'), _vm._v(" "), _c('p', {
-    staticClass: "tip tip_vertify"
-  }, [_vm._v(_vm._s(_vm.vertifyTip))])]), _vm._v(" "), _c('a', {
-    staticClass: "register_bt",
-    on: {
-      "click": _vm.register_bt
-    }
-  }, [_vm._v("立即注册")])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "box_header"
-  }, [_c('div', {
-    staticClass: "new_user_head"
-  }, [_vm._v("\n\t\t\t\t新用户注册\n\t\t\t")]), _vm._v(" "), _c('div', {
-    staticClass: "back_index"
-  }, [_c('img', {
-    attrs: {
-      "src": __webpack_require__(33)
-    }
-  }), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": "index.html"
-    }
-  }, [_c('span', [_vm._v("返回首页")])])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "new_tip"
-  }, [_c('img', {
-    attrs: {
-      "src": __webpack_require__(36)
-    }
-  }), _vm._v(" "), _c('span', [_vm._v("贴心提示：请勿设置过于简单的登录密码或支付密码，防止不法分子窃取您的账户信息")]), _vm._v(" "), _c('span', {
-    staticClass: "catious"
-  }, [_vm._v("谨防诈骗！")])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-08da4b5b", module.exports)
-  }
-}
-
-/***/ }),
+/* 45 */,
 /* 46 */,
 /* 47 */,
 /* 48 */,
 /* 49 */,
 /* 50 */,
-/* 51 */
+/* 51 */,
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11838,67 +11591,80 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "main-content"
     }
-  }, [_c('registerHeader'), _vm._v(" "), _c('register-content'), _vm._v(" "), _c('registerFooter')], 1)
-},staticRenderFns: []}
+  }, [_c('changePWHeader'), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "content"
+    }
+  }, [_c('div', {
+    staticClass: "wrapper"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "confirm_user"
+  }, [_c('form', {
+    attrs: {
+      "id": "myForm"
+    }
+  }, [_c('input', {
+    staticClass: "username",
+    attrs: {
+      "type": "text",
+      "name": "username",
+      "placeholder": "请输入您的手机号"
+    }
+  }), _c('br'), _vm._v(" "), _c('input', {
+    staticClass: "vertify",
+    attrs: {
+      "type": "text",
+      "placeholder": "请输入验证码"
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "vertify_text",
+    on: {
+      "click": _vm.changeVertify
+    }
+  }, [_vm._v(_vm._s(_vm.vertify))]), _vm._v(" "), _c('a', {
+    staticClass: "confirm_user_bt"
+  }, [_vm._v("下一步")])])])])]), _vm._v(" "), _c('changePWFooter')], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('ul', {
+    staticClass: "steps"
+  }, [_c('li', {
+    staticClass: "now_steps"
+  }, [_vm._v("确认账号")]), _vm._v(" "), _c('li', [_vm._v("安全验证")]), _vm._v(" "), _c('li', [_vm._v("重置密码")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6e84857c", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6fecc2e0", module.exports)
   }
 }
 
 /***/ }),
-/* 52 */,
 /* 53 */,
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(25);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("95abedf6", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/.0.26.2@css-loader/index.js!../../../../node_modules/.11.1.4@vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-08da4b5b\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../node_modules/.6.0.2@sass-loader/lib/loader.js!../../../../node_modules/.11.1.4@vue-loader/lib/selector.js?type=styles&index=0!./register-content.vue", function() {
-     var newContent = require("!!../../../../node_modules/.0.26.2@css-loader/index.js!../../../../node_modules/.11.1.4@vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-08da4b5b\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../node_modules/.6.0.2@sass-loader/lib/loader.js!../../../../node_modules/.11.1.4@vue-loader/lib/selector.js?type=styles&index=0!./register-content.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
+/* 54 */,
 /* 55 */,
 /* 56 */,
 /* 57 */,
 /* 58 */,
 /* 59 */,
-/* 60 */
+/* 60 */,
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(31);
+var content = __webpack_require__(32);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("d280f936", content, false);
+var update = __webpack_require__(2)("3093ecc5", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/.0.26.2@css-loader/index.js!../../node_modules/.11.1.4@vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-6e84857c\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/.6.0.2@sass-loader/lib/loader.js!../../node_modules/.11.1.4@vue-loader/lib/selector.js?type=styles&index=0!./register.vue", function() {
-     var newContent = require("!!../../node_modules/.0.26.2@css-loader/index.js!../../node_modules/.11.1.4@vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-6e84857c\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/.6.0.2@sass-loader/lib/loader.js!../../node_modules/.11.1.4@vue-loader/lib/selector.js?type=styles&index=0!./register.vue");
+   module.hot.accept("!!../../node_modules/.0.26.2@css-loader/index.js!../../node_modules/.11.1.4@vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-6fecc2e0\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/.6.0.2@sass-loader/lib/loader.js!../../node_modules/.11.1.4@vue-loader/lib/selector.js?type=styles&index=0!./changePW.vue", function() {
+     var newContent = require("!!../../node_modules/.0.26.2@css-loader/index.js!../../node_modules/.11.1.4@vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-6fecc2e0\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/.6.0.2@sass-loader/lib/loader.js!../../node_modules/.11.1.4@vue-loader/lib/selector.js?type=styles&index=0!./changePW.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -11908,451 +11674,7 @@ if(false) {
 }
 
 /***/ }),
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-	components: {},
-	mounted: function mounted() {
-		var that = this;
-		var cookie = that.cookieUtil();
-
-		//过期时间
-		var outTime = cookie.get('vertify');
-
-		if (outTime) {
-			//当前时间
-			var nowTime = new Date().getTime();
-			//获取剩余时间
-			var time = Math.floor((outTime - nowTime) / 1000);
-			//先写入时间
-			that.countdown = time--;
-
-			//定时器事件，倒计时
-			var timer = setInterval(function () {
-				that.countdown = time--;
-
-				if (time <= 0) {
-					clearInterval(timer);
-					that.countdown = '获取验证码';
-				}
-			}, 1000);
-		}
-	},
-
-	methods: {
-		phoneFocus: function phoneFocus(e) {
-			var that = this;
-			var phone = document.getElementsByClassName('phone')[0];
-			that.phoneTip = '手机号可用于登录、找回密码等服务';
-			//返回初始样式
-			that.origin(phone, "phone");
-		},
-		phoneBlur: function phoneBlur() {
-			var that = this;
-			var reg = /^1[3|4|5|7|8]\d{9}$/g;
-			var tip_phone = document.getElementsByClassName('tip_phone')[0];
-			var phone = document.getElementsByClassName('phone')[0];
-			var r_x_phone = document.getElementsByClassName('r_x_phone')[0];
-			var index = 0;
-
-			//当输入为空时
-			if (that.phone == "") {
-				that.phoneTip = '手机号可用于登录、找回密码等服务';
-				that.condition.phone = false;
-				return;
-			}
-
-			//判断格式是否正确
-			if (!reg.test(that.phone)) {
-				that.phoneTip = '手机格式不正确，请重新输入';
-				//输入错误样式
-				that.error(phone, "phone");
-				that.condition.phone = false;
-				return;
-			}
-
-			//通过后台数据库判断手机是否已被注册
-			that.$http.post('/register.html', { 'index': index, 'phone': that.phone }).then(function (result) {
-				if (result.body == '通过！') {
-					r_x_phone.style.background = "url(../../../img/r.png)";
-					that.condition.phone = true;
-				} else {
-					that.error(phone, "phone");
-					that.condition.phone = false;
-				}
-				that.phoneTip = result.body;
-			});
-		},
-		usernameFocus: function usernameFocus() {
-			var that = this;
-			var username = document.getElementsByClassName('username')[0];
-
-			that.usernameTip = '请输入2-8位账号名';
-
-			//返回初始样式
-			that.origin(username, "username");
-		},
-		usernameBlur: function usernameBlur() {
-			var that = this;
-			var reg = /^[A-Za-z0-9\u4E00-\u9FA5-]{2,8}$/g;
-			var reg1 = /^\d{2,8}$/g;
-			var username = document.getElementsByClassName('username')[0];
-			var r_x_username = document.getElementsByClassName('r_x_username')[0];
-			var index = 1;
-
-			//用户名为空时
-			if (that.username == "") {
-				that.usernameTip = '请输入2-8位账号名';
-				that.condition.username = false;
-				return;
-			}
-
-			//判断用户名是否为纯数字
-			if (reg1.test(that.username)) {
-				that.usernameTip = '账号名不能纯数字';
-				that.error(username, "username");
-				that.condition.username = false;
-				return;
-			}
-
-			//判断用户名格式是否正确
-			if (!reg.test(that.username)) {
-				that.usernameTip = '用户名格式不正确';
-				that.error(username, "username");
-				that.condition.username = false;
-				return;
-			}
-
-			//通过后台数据库判断该用户名是否已被注册
-			that.$http.post('/register.html', { 'index': index, 'username': that.username }).then(function (result) {
-				if (result.body == '通过！') {
-					r_x_username.style.background = "url(../../../img/r.png)";
-					that.condition.username = true;
-				} else {
-					that.error(username, "username");
-					that.condition.username = false;
-				}
-				that.usernameTip = result.body;
-			});
-		},
-		passwordFocus: function passwordFocus() {
-			var that = this;
-			var password = document.getElementsByClassName('password')[0];
-
-			that.passwordTip = '请输入6-10位登录密码';
-
-			//返回初始样式
-			that.origin(password, "password");
-		},
-		passwordBlur: function passwordBlur() {
-			var that = this;
-			var reg = /^\w{6,10}$/g;
-			var password = document.getElementsByClassName('password')[0];
-			var r_x_password = document.getElementsByClassName('r_x_password')[0];
-			var confirm_password = document.getElementsByClassName('confirm_password')[0];
-			var r_x_confirm_password = document.getElementsByClassName('r_x_confirm_password')[0];
-
-			//密码为空时
-			if (that.password == "") {
-				that.passwordTip = "请输入6-10位登录密码";
-				that.condition.password = false;
-				return;
-			}
-
-			if (!reg.test(that.password)) {
-				that.passwordTip = "密码由6-10位字母，数字，下划线组成";
-				that.error(password, "password");
-				that.condition.password = false;
-				return;
-			} else {
-				that.passwordTip = "通过！";
-				that.condition.password = true;
-				r_x_password.style.background = "url(../../../img/r.png)";
-				if (that.confirm_password != "") {
-					if (that.password == that.confirm_password) {
-						that.condition.confirm_password = true;
-						that.origin(confirm_password, "confirm_password");
-						that.confirm_passwordTip = "通过！";
-						r_x_confirm_password.style.background = "url(../../../img/r.png)";
-					} else {
-						that.condition.confirm_password = false;
-						that.error(confirm_password, "confirm_password");
-						that.confirm_passwordTip = '密码不一致';
-						r_x_confirm_password.style.background = "url(../../../img/xx.png)";
-					}
-				}
-			}
-		},
-		confirm_passwordFocus: function confirm_passwordFocus() {
-			var that = this;
-			var confirm_password = document.getElementsByClassName('confirm_password')[0];
-
-			that.confirm_passwordTip = '请确认密码';
-
-			//返回初始样式
-			that.origin(confirm_password, "confirm_password");
-		},
-		confirm_passwordBlur: function confirm_passwordBlur() {
-			var that = this;
-			var confirm_password = document.getElementsByClassName('confirm_password')[0];
-			var r_x_confirm_password = document.getElementsByClassName('r_x_confirm_password')[0];
-
-			if (that.confirm_password == "") {
-				that.confirm_passwordTip = '请确认密码';
-				that.condition.confirm_password = false;
-				return;
-			}
-
-			if (that.password == that.confirm_password) {
-				that.confirm_passwordTip = "通过！";
-				r_x_confirm_password.style.background = "url(../../../img/r.png)";
-				that.condition.confirm_password = true;
-			} else {
-				that.confirm_passwordTip = "密码不一致";
-				that.error(confirm_password, 'confirm_password');
-				that.condition.confirm_password = false;
-			}
-		},
-		vertifyFocus: function vertifyFocus(e) {
-			var that = this;
-			var vertify = document.getElementsByClassName('vertify')[0];
-			that.vertifyTip = '请输入验证码';
-			//返回初始样式
-			that.origin(vertify, "vertify");
-		},
-		vertifyBlur: function vertifyBlur() {
-			var that = this;
-			var vertify = document.getElementsByClassName('vertify')[0];
-			var r_x_vertify = document.getElementsByClassName('r_x_vertify')[0];
-			var index = 2;
-
-			//当验证码为空时
-			if (that.vertify == "") {
-				that.vertifyTip = '请输入验证码';
-				that.condition.vertify = false;
-				return;
-			}
-
-			//将验证码发给后台匹配
-			that.$http.post('/register.html', { index: index, vertify: that.vertify }).then(function (result) {
-				if (result.body == '通过！') {
-					r_x_vertify.style.background = "url(../../../img/r.png)";
-					that.condition.vertify = true;
-				} else {
-					that.error(vertify, "vertify");
-					that.condition.vertify = false;
-				}
-				that.vertifyTip = result.body;
-			});
-		},
-		get_vertify: function get_vertify() {
-			var that = this;
-			//判断手机栏是否正确
-			if (!that.condition.phone) {
-				return;
-			}
-
-			var cookie = that.cookieUtil();
-			var index = 3;
-
-			//判断cookie中是否存在vertify
-			if (!cookie.get('vertify')) {
-				var date = new Date();
-				//过期时间为60秒
-				var expires = 60;
-				var time = expires;
-
-				//过期时间值
-				date = date.getTime() + expires * 1000;
-
-				//将到期时间写入cookie
-				cookie.set('vertify', date, expires);
-
-				//先写入时间
-				that.countdown = time--;
-
-				//定时器事件，倒计时
-				var timer = setInterval(function () {
-					that.countdown = time--;
-
-					if (time <= 0) {
-						clearInterval(timer);
-						that.countdown = '获取验证码';
-					}
-				}, 1000);
-				//将手机号发给后台
-				that.$http.post('/register.html', { index: index, phone: that.phone });
-			}
-		},
-		register_bt: function register_bt() {
-			var that = this;
-			var index = 4;
-			//判断是否都已正确输入注册信息
-			for (var i in that.condition) {
-				if (!that.condition[i]) {
-					return;
-				}
-			}
-			//将注册信息发给后台
-			that.$http.post('register.html', { index: index, phone: that.phone, username: that.username, password: that.password }).then(function (result) {
-				if (result.body == '注册成功') {
-					window.location = "index.html";
-				}
-			});
-		},
-		error: function error(obj, string) {
-			//输入错误样式
-			var tip = document.getElementsByClassName("tip_" + string)[0];
-			var r_x = document.getElementsByClassName("r_x_" + string)[0];
-
-			tip.style.color = '#cc0000';
-			r_x.style.background = 'url(../../../img/xx.png)';
-			obj.style.borderColor = '#cc0000';
-			obj.style.borderStyle = 'solid';
-			obj.style.background = '#fef0ef';
-			obj.style.color = '#cc0000';
-		},
-		origin: function origin(obj, string) {
-			//返回初始样式
-			var tip = document.getElementsByClassName("tip_" + string)[0];
-			var r_x = document.getElementsByClassName("r_x_" + string)[0];
-			var pass = document.getElementsByClassName("pass_" + string)[0];
-
-			r_x.style.background = '';
-			tip.style.color = 'black';
-			obj.style.borderColor = '';
-			obj.style.borderStyle = '';
-			obj.style.background = '';
-			obj.style.color = 'black';
-		},
-		cookieUtil: function cookieUtil() {
-			return {
-				get: function get(name) {
-					var cookieName = encodeURIComponent(name) + '=';
-					var cookieStart = document.cookie.indexOf(cookieName);
-					var cookieValue = void 0;
-
-					if (cookieStart > -1) {
-						var cookieEnd = document.cookie.indexOf(';', cookieStart);
-						if (cookieEnd == -1) {
-							cookieEnd = document.cookie.length;
-						}
-						cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
-					}
-					return cookieValue;
-				},
-				set: function set(name, value, expires, path, domain, secure) {
-					var cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
-					var date = new Date();
-					date.setTime(date.getTime() + expires * 1000);
-					cookieText += '; expires=' + date.toGMTString();
-
-					if (path) {
-						cookieText += '; path=' + path;
-					}
-					if (domain) {
-						cookieText += '; domain' + domain;
-					}
-					if (secure) {
-						cookieText += '; secure';
-					}
-					document.cookie = cookieText;
-				},
-				unset: function unset(name, path, domain, secure) {
-					this.set(name, "", new Date(0), path, domain, secure);
-				}
-			};
-		}
-	},
-	props: [],
-	data: function data() {
-		return {
-			condition: {
-				phone: false,
-				username: false,
-				password: false,
-				confirm_password: false,
-				vertify: false
-			},
-			phone: '',
-			phoneTip: '手机号可用于登录、找回密码等服务',
-			username: '',
-			usernameTip: '请输入2-8位账号名',
-			password: '',
-			passwordTip: '请输入6-10位登录密码',
-			confirm_password: '',
-			confirm_passwordTip: '请确认密码',
-			vertify: '',
-			vertifyTip: '请输入验证码',
-			countdown: '获取验证码'
-		};
-	},
-	computed: {},
-	created: function created() {},
-	watch: {}
-};
-
-/***/ }),
-/* 68 */,
-/* 69 */,
-/* 70 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12366,32 +11688,29 @@ var _header = __webpack_require__(13);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _registerContent = __webpack_require__(43);
-
-var _registerContent2 = _interopRequireDefault(_registerContent);
-
 var _footer = __webpack_require__(12);
 
 var _footer2 = _interopRequireDefault(_footer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = {
-	components: {
-		registerHeader: _header2.default,
-		registerContent: _registerContent2.default,
-		registerFooter: _footer2.default
-	},
-	methods: {},
-	data: function data() {
-		return {
-			isLogin: false
-		};
-	},
-	computed: {},
-	created: function created() {},
-	watch: {}
-}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -12400,11 +11719,55 @@ exports.default = {
 //
 //
 
+exports.default = {
+	components: {
+		changePWHeader: _header2.default,
+		changePWFooter: _footer2.default
+	},
+	methods: {
+		changeVertify: function changeVertify() {
+			var that = this;
+			that.vertify = that.createVertify();
+		},
+		createVertify: function createVertify() {
+			var vertify = '',
+			    randomNum = 0;
+			for (var i = 0; i < 4;) {
+				//产生一个范围在48-122的随机数
+				randomNum = Math.floor(Math.random() * 75 + 48);
+				//判断随机数的范围
+				if (randomNum >= 48 && randomNum <= 57 || randomNum >= 65 && randomNum <= 90 || randomNum >= 97 && randomNum <= 122) {
+					//将随机数的unicode码转为字符并写入变量vertify
+					vertify += String.fromCharCode(randomNum);
+					i++;
+				}
+			}
+			return vertify;
+		}
+	},
+	data: function data() {
+		return {
+			vertify: ''
+		};
+	},
+	computed: {},
+	created: function created() {
+		var that = this;
+		that.vertify = that.createVertify();
+	},
+	watch: {}
+};
+
 /***/ }),
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12413,8 +11776,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_resource__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_vue__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__register_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__changePW_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__changePW_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__changePW_vue__);
 
 
 
@@ -12424,7 +11787,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 	el: '#main-content',
-	render: cE => cE(__WEBPACK_IMPORTED_MODULE_2__register_vue___default.a)
+	render: cE => cE(__WEBPACK_IMPORTED_MODULE_2__changePW_vue___default.a)
 })
 
 /***/ })

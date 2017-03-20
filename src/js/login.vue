@@ -1,15 +1,15 @@
 <template>
 	<div id="main-content">
-		<login-header></login-header>
+		<loginHeader></loginHeader>
 		<login-content></login-content>
-		<login-footer></login-footer>
+		<loginFooter></loginFooter>
 	</div>
 </template>
 
 <script type="text/javascript">
-	import loginHeader from './components/login/login-header.vue';
+	import loginHeader from './components/header.vue';
 	import loginContent from './components/login/login-content.vue';
-	import loginFooter from './components/login/login-footer.vue';
+	import loginFooter from './components/footer.vue';
 
 	export default{
 		components: {

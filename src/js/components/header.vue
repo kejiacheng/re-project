@@ -56,7 +56,7 @@
 					width: 50px;
 					height: 65px;
 					margin-right: 30px;
-					background: url(../../../img/header-pic.png);
+					background: url(../../img/header-pic.png);
 					background-size: 50px 65px;
 					vertical-align: middle;
 				}
