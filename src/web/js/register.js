@@ -11260,7 +11260,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n@charset \"UTF-8\";\n#content {\n  width: 950px;\n  margin: 40px auto 0;\n  box-shadow: -10px 10px 1px #c9c9c9;\n  background: #fff;\n}\n#content .box_header {\n    width: 920px;\n    height: 75px;\n    margin: 0 auto;\n    border-bottom: 1px solid #dedede;\n}\n#content .box_header .new_user_head {\n      text-align: center;\n      margin-top: 30px;\n      margin-left: 20px;\n      padding-top: 15px;\n      border: solid #dedede;\n      width: 137px;\n      height: 30px;\n      float: left;\n      border-width: 1px 1px 0 1px;\n      background: #fff;\n}\n#content .box_header .back_index {\n      width: 70px;\n      height: 30px;\n      margin-top: 40px;\n      float: right;\n      font-size: 12px;\n      overflow: hidden;\n}\n#content .box_header .back_index img {\n        margin-top: 10px;\n        float: left;\n}\n#content .box_header .back_index span {\n        float: left;\n        display: inline-block;\n        margin-top: 11px;\n        margin-left: 2px;\n}\n#content .new_tip {\n    width: 594px;\n    height: 24px;\n    margin: 10px auto 50px;\n    border: 1px solid #fedbd1;\n    font-size: 13px;\n}\n#content .new_tip img {\n      margin-top: 6px;\n      margin-left: 2px;\n      float: left;\n}\n#content .new_tip span {\n      display: inline-block;\n      margin-top: 6px;\n      margin-left: 5px;\n}\n#content .new_tip .catious {\n      color: blue;\n}\n#content .register_content {\n    width: 440px;\n    margin: 0 auto;\n    padding-bottom: 50px;\n}\n#content .register_content .input_box label {\n      margin-right: 10px;\n      font-size: 14px;\n      width: 70px;\n      display: inline-block;\n      text-align: right;\n      color: #474747;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#content .register_content .input_box input {\n      width: 312px;\n      height: 34px;\n      margin-bottom: 10px;\n      font-size: 13px;\n      padding-left: 8px;\n}\n#content .register_content .input_box i {\n      display: inline-block;\n      width: 12px;\n      height: 12px;\n      background-size: 12px 12px;\n      margin-left: 5px;\n      margin-top: 13px;\n      vertical-align: top;\n}\n#content .register_content .input_box p {\n      margin-left: 80px;\n      margin-bottom: 10px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      font-size: 12px;\n}\n#content .register_content .input_box input.vertify {\n      width: 222px;\n}\n#content .register_content .input_box i.r_x_vertify {\n      margin-left: -20px;\n}\n#content .register_content .input_box .get_vertify {\n      display: inline-block;\n      width: 81px;\n      height: 35px;\n      background: #dedede;\n      vertical-align: top;\n      margin-left: 15px;\n      border: 1px solid #aaa;\n      font-size: 12px;\n      text-align: center;\n      line-height: 35px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      cursor: pointer;\n}\n#content .register_content .register_bt {\n      display: block;\n      background: #ff2832;\n      width: 180px;\n      height: 50px;\n      line-height: 50px;\n      text-align: center;\n      font-size: 18px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      color: white;\n      border-radius: 22px;\n      margin: 30px auto 0;\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\n#content {\n  width: 950px;\n  margin: 40px auto 0;\n  box-shadow: -10px 10px 1px #c9c9c9;\n  background: #fff;\n}\n#content .box_header {\n    width: 920px;\n    height: 75px;\n    margin: 0 auto;\n    border-bottom: 1px solid #dedede;\n}\n#content .box_header .new_user_head {\n      text-align: center;\n      margin-top: 30px;\n      margin-left: 20px;\n      padding-top: 15px;\n      border: solid #dedede;\n      width: 137px;\n      height: 30px;\n      float: left;\n      border-width: 1px 1px 0 1px;\n      background: #fff;\n}\n#content .box_header .back_index {\n      width: 70px;\n      height: 30px;\n      margin-top: 40px;\n      float: right;\n      font-size: 12px;\n      overflow: hidden;\n}\n#content .box_header .back_index img {\n        margin-top: 10px;\n        float: left;\n}\n#content .box_header .back_index span {\n        float: left;\n        display: inline-block;\n        margin-top: 11px;\n        margin-left: 2px;\n}\n#content .new_tip {\n    width: 594px;\n    height: 24px;\n    margin: 10px auto 50px;\n    border: 1px solid #fedbd1;\n    font-size: 13px;\n}\n#content .new_tip img {\n      margin-top: 6px;\n      margin-left: 2px;\n      float: left;\n}\n#content .new_tip span {\n      display: inline-block;\n      margin-top: 6px;\n      margin-left: 5px;\n}\n#content .new_tip .catious {\n      color: blue;\n}\n#content .register_content {\n    width: 440px;\n    margin: 0 auto;\n    padding-bottom: 50px;\n}\n#content .register_content .input_box label {\n      margin-right: 10px;\n      font-size: 14px;\n      width: 70px;\n      display: inline-block;\n      text-align: right;\n      color: #474747;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#content .register_content .input_box input {\n      width: 312px;\n      height: 34px;\n      margin-bottom: 10px;\n      font-size: 13px;\n      padding-left: 8px;\n}\n#content .register_content .input_box i {\n      display: inline-block;\n      width: 12px;\n      height: 12px;\n      background-size: 12px 12px;\n      margin-left: 5px;\n      margin-top: 13px;\n      vertical-align: top;\n}\n#content .register_content .input_box p {\n      margin-left: 80px;\n      margin-bottom: 10px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      font-size: 12px;\n}\n#content .register_content .input_box input.vertify {\n      width: 222px;\n}\n#content .register_content .input_box i.r_x_vertify {\n      margin-left: -20px;\n}\n#content .register_content .input_box .get_vertify {\n      display: inline-block;\n      width: 81px;\n      height: 35px;\n      background: #dedede;\n      vertical-align: top;\n      margin-left: 15px;\n      border: 1px solid #aaa;\n      font-size: 12px;\n      text-align: center;\n      line-height: 35px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      cursor: pointer;\n}\n#content .register_content .register_bt {\n      display: block;\n      background: #ff2832;\n      width: 180px;\n      height: 50px;\n      line-height: 50px;\n      text-align: center;\n      font-size: 18px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      color: white;\n      border-radius: 22px;\n      margin: 30px auto 0;\n      cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -11608,7 +11608,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v(_vm._s(_vm.countdown))]), _c('br'), _vm._v(" "), _c('p', {
     staticClass: "tip tip_vertify"
   }, [_vm._v(_vm._s(_vm.vertifyTip))])]), _vm._v(" "), _c('a', {
-    staticClass: "register_bt"
+    staticClass: "register_bt",
+    on: {
+      "click": _vm.register_bt
+    }
   }, [_vm._v("立即注册")])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
@@ -11902,7 +11905,7 @@ exports.default = {
 	mounted: function mounted() {
 		var that = this;
 		var cookie = that.cookieUtil();
-		console.log(cookie.get('vertify'));
+
 		//过期时间
 		var outTime = cookie.get('vertify');
 
@@ -12170,6 +12173,22 @@ exports.default = {
 				//将手机号发给后台
 				that.$http.post('/register.html', { index: index, phone: that.phone });
 			}
+		},
+		register_bt: function register_bt() {
+			var that = this;
+			var index = 4;
+			//判断是否都已正确输入注册信息
+			for (var i in that.condition) {
+				if (!that.condition[i]) {
+					return;
+				}
+			}
+			//将注册信息发给后台
+			that.$http.post('register.html', { index: index, phone: that.phone, username: that.username, password: that.password }).then(function (result) {
+				if (result.body == '注册成功') {
+					window.location = "index.html";
+				}
+			});
 		},
 		error: function error(obj, string) {
 			//输入错误样式

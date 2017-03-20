@@ -36,7 +36,7 @@
                     <label>获取验证码</label><input class="input_obj vertify" type="text" placeholder="请输入您的手机验证码" @focus="vertifyFocus" @blur="vertifyBlur" v-model="vertify"><i class="r_x r_x_vertify"></i><div class="get_vertify" @click="get_vertify">{{ countdown }}</div><br>
                     <p class="tip tip_vertify">{{ vertifyTip }}</p>
                 </div>
-                <a class="register_bt">立即注册</a>
+                <a class="register_bt" @click="register_bt">立即注册</a>
 			</form>
 		</div>
 	</div>
@@ -49,7 +49,7 @@
 		mounted(){
 			const that = this;
 			const cookie = that.cookieUtil();
-			console.log(cookie.get('vertify'));
+
 			//过期时间
 			const outTime = cookie.get('vertify');
 			
@@ -308,7 +308,7 @@
 					that.countdown = time--;
 
 					//定时器事件，倒计时
-					var timer = setInterval(() => {
+					let timer = setInterval(() => {
 						that.countdown = time--;
 
 						if(time <= 0){
@@ -319,6 +319,23 @@
 					//将手机号发给后台
 					that.$http.post('/register.html', { index: index, phone: that.phone})
 				}
+			},
+			register_bt(){
+				const that = this;
+				const index = 4;
+				//判断是否都已正确输入注册信息
+				for(let i in that.condition){
+					if(!that.condition[i]){
+						return;
+					}
+				}
+				//将注册信息发给后台
+				that.$http.post('register.html', { index: index, phone: that.phone, username: that.username, password: that.password})
+				.then((result) => {
+					if(result.body == '注册成功'){
+						window.location = "index.html";
+					}
+				})
 			},
 			error(obj, string){//输入错误样式
 				const tip = document.getElementsByClassName("tip_" + string)[0];
@@ -548,7 +565,8 @@
 			    font-family: $mic;
 			    color: white;
 			    border-radius: 22px;
-			    margin: 30px auto 0;				
+			    margin: 30px auto 0;			
+			    cursor: pointer;	
 			}
 		}
 	}

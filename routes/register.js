@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
-var http = require('http');
-var fs = require('fs');
 var app = express();
 var GeneralUser = require('../models/generalUser.js');
 var real_vertify = '';
@@ -70,6 +68,20 @@ router.post('/', function (req, res ,next){
 			}
 			return vertify;
 		}
+	}else if(req.body.index == 4){
+		//将数据赋值给data
+		var data = {
+			phone: req.body.phone,
+			username: req.body.username,
+			password: req.body.password
+		}
+		//创建一个新用户
+		GeneralUser.create(data)
+		.then((result) => {
+			if(result){
+				res.send('注册成功');
+			}
+		})
 	}
 	
 })
