@@ -77,6 +77,10 @@ router.post('/', function (req, res ,next){
 		GeneralUser.create(data)
 		.then((result) => {
 			if(result){
+				req.session.phone = result[0].phone;
+				req.session.password = result[0].password;
+				req.session.username = result[0].username;
+				req.session.login_way = 'general';
 				res.send('注册成功');
 			}
 		})
