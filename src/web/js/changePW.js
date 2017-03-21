@@ -11795,16 +11795,13 @@ exports.default = {
 				alert('手机格式错误');
 				return;
 			}
-
+			//判断验证码是否正确
 			if (that.vertify.toLowerCase() != that.inputVertify.toLowerCase()) {
 				alert('请输入正确的验证码');
 				return;
 			}
-			window.location = 'changePW?phone=' + that.phone;
-			// that.$http.post('/changePW', { phone: that.phone })
-			// .then((result) => {
-
-			// })
+			//跳转页面
+			window.location = 'changePW-2?phone=' + that.phone;
 		}
 	},
 	data: function data() {

@@ -18,5 +18,5 @@ module.exports = function (app){
 
 	app.use('/register.html', require('./register'));
 	app.use('/login.html', require('./login'));
-	app.use('/changePW', require('./changePW'));
+	app.use('/changePW-2', require('./changePW-2'));
 }

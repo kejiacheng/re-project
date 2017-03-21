@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title></title>
 <link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/changePW.css">
+<link rel="stylesheet" type="text/css" href="css/changePW-2.css">
 </head>
 <body>
 	<div id="header">
@@ -23,9 +23,9 @@
 				<li class="now_steps">安全验证</li>
 				<li>重置密码</li>
 			</ul>
-			<form action="fg_pw3.php" method="post" id="myForm">
+			<form id="myForm">
 				<div class="confirm_user">
-				<input type='text' name='username' class='username' readonly value=<%=phone%>>"</br>
+				<input type='text' name='phone' class='phone' readonly value=<%=phone%>>"</br>
 				<input type="text" name="vertify" placeholder="请输入验证码" class="vertify">
 				<span class="vertify_text">获取验证码</span>
 				<a class="confirm_user_bt">下一步</a>
@@ -36,5 +36,6 @@
 	<div id="footer">
 		<p>浙ICP备16039089号-1</p>
 	</div>
+	<script type="text/javascript" src="js/changePW-2.js"></script>
 </body>
 </html>

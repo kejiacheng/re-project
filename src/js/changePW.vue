@@ -72,7 +72,7 @@
 					return;
 				}
 				//跳转页面
-				window.location = `changePW?phone=${ that.phone }`;
+				window.location = `changePW-2?phone=${ that.phone }`;
 			}
 		},
 		data: function (){
