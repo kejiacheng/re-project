@@ -7,7 +7,7 @@ module.exports = function (app){
 			if(req.session.phone){
 				res.json({ phone: req.session.phone, username: req.session.username, login_way: req.session.login_way })
 			}
-		}else if(req.body.index== 1){
+		}else if(req.body.index == 1){
 			delete req.session.phone;
 			delete req.session.password;
 			delete req.session.username;
@@ -17,5 +17,6 @@ module.exports = function (app){
 	})
 
 	app.use('/register.html', require('./register'));
-	app.use('/login.html', require('./login'))
+	app.use('/login.html', require('./login'));
+	app.use('/changePW', require('./changePW'));
 }

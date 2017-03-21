@@ -10,10 +10,10 @@
 				</ul>
 				<div class="confirm_user">
 					<form id="myForm">
-						<input type="text" name="username" placeholder="请输入您的手机号" class="username"></br>
-						<input type="text" placeholder="请输入验证码" class="vertify">
+						<input type="text" name="username" placeholder="请输入您的手机号" class="username" v-model="phone"></br>
+						<input type="text" placeholder="请输入验证码" class="vertify" v-model="inputVertify">
 						<span class="vertify_text" @click="changeVertify">{{ vertify }}</span>
-						<a class="confirm_user_bt">下一步</a>
+						<a class="confirm_user_bt" @click.prevent="next">下一步</a>
 					</form>
 				</div>
 			</div>
@@ -50,11 +50,39 @@
 					}
 				}
 				return vertify;
+			},
+			next(){
+				const that = this;
+				const reg = /^1[3|4|5|7|8]\d{9}$/g;
+
+				//当输入为空时
+				if(that.phone == ""){
+					alert('手机号不能为空');
+					return;
+				}
+
+				//判断格式是否正确
+				if(!reg.test(that.phone)){
+					alert('手机格式错误');
+					return;
+				}
+
+				if(that.vertify.toLowerCase() != that.inputVertify.toLowerCase()){
+					alert('请输入正确的验证码');
+					return;
+				}
+
+				that.$http.get('/changePW', {})
+				.then((result) => {
+					window.location = 'changePW';
+				})
 			}
 		},
 		data: function (){
 			return {
-				vertify: ''
+				vertify: '',
+				phone: '',
+				inputVertify: ''
 			}
 		},
 		computed: {

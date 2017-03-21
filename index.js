@@ -9,6 +9,10 @@ var routes = require('./routes');
 
 var path = require('path');
 
+app.set('views','./views');
+
+app.set('view engine','ejs');
+
 app.use(express.static(path.join(__dirname,'./src/web')));
 app.use(express.static(path.join(__dirname,'./src')));
 

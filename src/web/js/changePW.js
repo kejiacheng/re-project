@@ -11604,17 +11604,47 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "id": "myForm"
     }
   }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.phone),
+      expression: "phone"
+    }],
     staticClass: "username",
     attrs: {
       "type": "text",
       "name": "username",
       "placeholder": "请输入您的手机号"
+    },
+    domProps: {
+      "value": (_vm.phone)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.phone = $event.target.value
+      }
     }
   }), _c('br'), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.inputVertify),
+      expression: "inputVertify"
+    }],
     staticClass: "vertify",
     attrs: {
       "type": "text",
       "placeholder": "请输入验证码"
+    },
+    domProps: {
+      "value": (_vm.inputVertify)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.inputVertify = $event.target.value
+      }
     }
   }), _vm._v(" "), _c('span', {
     staticClass: "vertify_text",
@@ -11622,7 +11652,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.changeVertify
     }
   }, [_vm._v(_vm._s(_vm.vertify))]), _vm._v(" "), _c('a', {
-    staticClass: "confirm_user_bt"
+    staticClass: "confirm_user_bt",
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.next($event)
+      }
+    }
   }, [_vm._v("下一步")])])])])]), _vm._v(" "), _c('changePWFooter')], 1)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('ul', {
@@ -11743,11 +11779,38 @@ exports.default = {
 				}
 			}
 			return vertify;
+		},
+		next: function next() {
+			var that = this;
+			var reg = /^1[3|4|5|7|8]\d{9}$/g;
+
+			//当输入为空时
+			if (that.phone == "") {
+				alert('手机号不能为空');
+				return;
+			}
+
+			//判断格式是否正确
+			if (!reg.test(that.phone)) {
+				alert('手机格式错误');
+				return;
+			}
+
+			if (that.vertify.toLowerCase() != that.inputVertify.toLowerCase()) {
+				alert('请输入正确的验证码');
+				return;
+			}
+
+			that.$http.get('/changePW', {}).then(function (result) {
+				window.location = 'changePW';
+			});
 		}
 	},
 	data: function data() {
 		return {
-			vertify: ''
+			vertify: '',
+			phone: '',
+			inputVertify: ''
 		};
 	},
 	computed: {},
