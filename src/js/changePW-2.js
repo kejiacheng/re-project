@@ -96,12 +96,10 @@ var get_vertify = function (){
             }
         },1000)
 
-        //创建ajax并向php发送post请求并从php返回一个验证码
-
         if(phoneValue == ""){
             return;
         }
-
+        //将手机号发送给后台，并让后台随机生成一个4位数验证码并发送这验证码给当前手机
         var xhr = createXMLHttpRequest();
 
         xhr.open("post","changePW-2",true);
@@ -125,12 +123,13 @@ var confirmClick = function (){
 
 var blurEvent = function (){
     var vertifyValue = vertify.value;
-
+    //将输入的验证码发给后台验证
     var xhr = createXMLHttpRequest();
     xhr.open("post","changePW-2",true);
     xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     xhr.onreadystatechange = function(){
         if(xhr.readyState == 4 && xhr.status == 200){
+            //收到后台的信号添加移除点击事件
             if(xhr.responseText == '通过！'){
                 addEvents(confirm_user_bt, 'click', confirmClick);
             }else{

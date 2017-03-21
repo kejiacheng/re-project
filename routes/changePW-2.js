@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var GeneralUser = require('../models/generalUser.js');
 var request = require('request');
-	var real_vertify = '';
+var real_vertify = '';
 router.get('/', function (req, res ,next){
 	res.render('changePW-2',{
 		phone: req.query.phone,
@@ -46,19 +46,12 @@ router.post('/', function (req, res, next){
 			return vertify;
 		}	
 	}else if(req.body.index == 1){
-		// if(req.body.vertify.toLowerCase() == real_vertify.toLowerCase()){
-		// 	res.send('通过！');
-		// }else{
-		// 	res.send('不通过！');
-		// }
-		if(req.body.vertify == 0000){
+		if(req.body.vertify.toLowerCase() == real_vertify.toLowerCase()){
 			res.send('通过！');
 		}else{
 			res.send('不通过！');
 		}
 	}
-
-	
 })
 
 module.exports = router;
