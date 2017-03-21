@@ -11800,10 +11800,11 @@ exports.default = {
 				alert('请输入正确的验证码');
 				return;
 			}
+			window.location = 'changePW?phone=' + that.phone;
+			// that.$http.post('/changePW', { phone: that.phone })
+			// .then((result) => {
 
-			that.$http.get('/changePW', {}).then(function (result) {
-				window.location = 'changePW';
-			});
+			// })
 		}
 	},
 	data: function data() {

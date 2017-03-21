@@ -66,16 +66,13 @@
 					alert('手机格式错误');
 					return;
 				}
-
+				//判断验证码是否正确
 				if(that.vertify.toLowerCase() != that.inputVertify.toLowerCase()){
 					alert('请输入正确的验证码');
 					return;
 				}
-
-				that.$http.get('/changePW', {})
-				.then((result) => {
-					window.location = 'changePW';
-				})
+				//跳转页面
+				window.location = `changePW?phone=${ that.phone }`;
 			}
 		},
 		data: function (){
