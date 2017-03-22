@@ -20,4 +20,5 @@ module.exports = function (app){
 	app.use('/login.html', require('./login'));
 	app.use('/changePW-2', require('./changePW-2'));
 	app.use('/changePW-3', require('./changePW-3'));
+	app.use('/payment', require('./payment'))
 }
