@@ -11720,6 +11720,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "confirm_bt",
     attrs: {
       "onselectstart": "return false"
+    },
+    on: {
+      "click": _vm.payment
     }
   }, [_vm._v("确认支付")]), _vm._v("\n\t\t                        总计：\n\t\t                        "), _c('span', {
     staticClass: "price_num"
@@ -12242,6 +12245,24 @@ exports.default = {
 			this.$nextTick(function () {
 				complete_box.style.top = -complete_box.offsetHeight + complete_bt.offsetHeight + 'px';
 			});
+		},
+		payment: function payment() {
+			var that = this;
+			var accessories = '{';
+			//用sessionStorage传值
+			sessionStorage.setItem('ingredients_name', that.shopping_list.ingredients.name);
+			sessionStorage.setItem('ingredients_price', that.shopping_list.ingredients.price);
+
+			for (var i in that.shopping_list.accessories) {
+				if (that.shopping_list.accessories[i].num != 0) {
+					accessories += '"' + that.shopping_list.accessories[i].name + '"' + ': { "price":' + that.shopping_list.accessories[i].price + ', "num":' + that.shopping_list.accessories[i].num + "},";
+					// accessories += that.shopping_list.accessories[i].name + ' ' + that.shopping_list.accessories[i].price + ' ' + that.shopping_list.accessories[i].num + ' ';
+				}
+			}
+			accessories = accessories.substring(0, accessories.length - 1);
+			accessories += "}";
+			sessionStorage.setItem('accessories', accessories);
+			window.location = 'payment.html';
 		},
 		addEvents: function addEvents(target, type, func) {
 			//事件绑定事件 

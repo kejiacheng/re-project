@@ -108,7 +108,7 @@
 		                    	</template>
 		                    </div>
 		                    <div class="selected_items_totol_price">
-		                        <span class="confirm_bt" onselectstart="return false">确认支付</span>
+		                        <span class="confirm_bt" onselectstart="return false" @click="payment">确认支付</span>
 		                        总计：
 		                        <span class="price_num">{{ totol_price }}</span>
 		                    </div>
@@ -266,6 +266,24 @@
 					complete_box.style.top = -complete_box.offsetHeight + complete_bt.offsetHeight + 'px';
 				})
 			},
+			payment(){
+				const that = this;
+				let accessories = '{';
+				//用sessionStorage传值
+				sessionStorage.setItem('ingredients_name', that.shopping_list.ingredients.name);
+				sessionStorage.setItem('ingredients_price', that.shopping_list.ingredients.price);
+
+				for(let i in that.shopping_list.accessories){
+					if(that.shopping_list.accessories[i].num != 0){
+						accessories += '"' + that.shopping_list.accessories[i].name + '"' + ': { "price":' + that.shopping_list.accessories[i].price + ', "num":' + that.shopping_list.accessories[i].num + "},"
+						// accessories += that.shopping_list.accessories[i].name + ' ' + that.shopping_list.accessories[i].price + ' ' + that.shopping_list.accessories[i].num + ' ';
+					}
+				}
+				accessories = accessories.substring(0,accessories.length-1);
+				accessories += "}";
+				sessionStorage.setItem('accessories', accessories);
+				window.location = 'payment.html';
+			},
 			addEvents(target,type,func){//事件绑定事件 
 				if(target.addEventListener){
 					target.addEventListener(type,func,false);
@@ -284,7 +302,7 @@
 				return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
 			},
 			addClass(obj,cls){//给对象添加class函数
-				if (!this.hasClass(obj,cls)) obj.className += " " + cls;  
+				if (!this.hasClass(obj,cls)) obj.className += " " + cls;
 			},
 			removeClass(obj, cls){//给对象删除class函数  
 				if (this.hasClass(obj, cls)) {  

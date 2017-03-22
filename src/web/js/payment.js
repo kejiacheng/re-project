@@ -11548,7 +11548,7 @@ exports = module.exports = __webpack_require__(0)();
 exports.i(__webpack_require__(5), "");
 
 // module
-exports.push([module.i, "\n@charset \"UTF-8\";\nbody {\n  font-family: \"\\5B8B\\4F53\";\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\nbody {\n  font-family: \"\\5B8B\\4F53\";\n}\n#content {\n  width: 980px;\n  margin: 20px auto 0;\n  min-height: 500px;\n}\n#content .wrapper {\n    width: 400px;\n}\n#content .wrapper .content_text {\n      margin-bottom: 12px;\n      font-weight: 600;\n      color: red;\n}\n#content .wrapper .selected_goods {\n      width: 100%;\n}\n#content .wrapper .selected_goods table {\n        width: 700px;\n        border: 1px solid #aaa;\n}\n#content .wrapper .selected_goods table th, #content .wrapper .selected_goods table td {\n          text-align: center;\n          border: 1px solid #aaa;\n          height: 30px;\n}\n#content .wrapper .selected_goods table .goods_name {\n          width: 250px;\n}\n#content .wrapper .selected_goods table .same_width {\n          width: 150px;\n}\n#content .wrapper .selected_goods table .all_money {\n          text-align: right;\n          padding-right: 40px;\n}\n#content .wrapper .selected_goods table .all_money span {\n            padding: 0 5px;\n            color: #FE0048;\n            font-weight: 600;\n}\n#content .wrapper .payment_bt {\n      display: block;\n      width: 85px;\n      height: 35px;\n      background: #389cff;\n      text-align: center;\n      line-height: 35px;\n      color: #fff;\n      font-size: 14px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      border-radius: 3px;\n      margin-top: 15px;\n      cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -11582,8 +11582,55 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "main-content"
     }
-  }, [_c('paymentHeader'), _vm._v(" "), _c('paymentFooter')], 1)
-},staticRenderFns: []}
+  }, [_c('paymentHeader'), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "content"
+    }
+  }, [_c('div', {
+    staticClass: "wrapper"
+  }, [_c('p', {
+    staticClass: "content_text"
+  }, [_vm._v("以下为您所购买的产品!")]), _vm._v(" "), _c('div', {
+    staticClass: "selected_goods"
+  }, [_c('table', {
+    staticClass: "list_name"
+  }, [_c('tbody', [_vm._m(0), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "goods_name"
+  }, [_vm._v(_vm._s(_vm.ingredients_name))]), _vm._v(" "), _c('td', {
+    staticClass: "goods_num same_width"
+  }, [_vm._v("1")]), _vm._v(" "), _c('td', {
+    staticClass: "goods_price same_width"
+  }, [_vm._v(_vm._s(_vm.ingredients_price))]), _vm._v(" "), _c('td', {
+    staticClass: "goods__totle_price same_width"
+  }, [_vm._v(_vm._s(_vm.ingredients_price))])]), _vm._v(" "), _vm._l((_vm.accessories), function(item, index) {
+    return [_c('tr', [_c('td', {
+      staticClass: "goods_name"
+    }, [_vm._v(_vm._s(index))]), _vm._v(" "), _c('td', {
+      staticClass: "goods_num same_width"
+    }, [_vm._v(_vm._s(item.num))]), _vm._v(" "), _c('td', {
+      staticClass: "goods_price same_width"
+    }, [_vm._v(_vm._s(item.price))]), _vm._v(" "), _c('td', {
+      staticClass: "goods__totle_price same_width"
+    }, [_vm._v(_vm._s((item.num * item.price).toFixed(1)))])])]
+  }), _vm._v(" "), _c('tr', [_c('td', {
+    staticClass: "goods_name all_money",
+    attrs: {
+      "colspan": "4"
+    }
+  }, [_vm._v("总计:"), _c('span', [_vm._v(_vm._s(_vm.totol_price))]), _vm._v("元")])])], 2)])]), _vm._v(" "), _c('a', {
+    staticClass: "payment_bt"
+  }, [_vm._v("提交支付")])])]), _vm._v(" "), _c('paymentFooter')], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('tr', [_c('th', {
+    staticClass: "goods_name"
+  }, [_vm._v("物品名称")]), _vm._v(" "), _c('th', {
+    staticClass: "goods_num same_width"
+  }, [_vm._v("数量")]), _vm._v(" "), _c('th', {
+    staticClass: "goods_price same_width"
+  }, [_vm._v("单价")]), _vm._v(" "), _c('th', {
+    staticClass: "goods__totle_price same_width"
+  }, [_vm._v("总价")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -11666,6 +11713,46 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
 	components: {
@@ -11674,10 +11761,27 @@ exports.default = {
 	},
 	methods: {},
 	data: function data() {
-		return {};
+		return {
+			ingredients_name: '',
+			ingredients_price: 0,
+			accessories: '',
+			totol_price: 0
+		};
 	},
 	computed: {},
-	created: function created() {},
+	created: function created() {
+		var that = this;
+		that.ingredients_name = sessionStorage.getItem('ingredients_name');
+		that.ingredients_price = sessionStorage.getItem('ingredients_price');
+		that.accessories = JSON.parse(sessionStorage.getItem('accessories'));
+
+		that.totol_price += parseFloat(that.ingredients_price);
+
+		for (var i in that.accessories) {
+			that.totol_price += parseFloat(that.accessories[i].price) * that.accessories[i].num;
+			console.log(that.totol_price);
+		}
+	},
 
 	watch: {}
 };
