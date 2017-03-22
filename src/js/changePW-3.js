@@ -61,7 +61,22 @@ addEvents(cf_pw, "blur", cf_pwBlur);
 var confirmClick = function (){
 	//判断密码与确认密码是否通过,并发送信号给后台
 	if(pass_password && pass_cf_pw){
-		console.log('yes');
+        var phone = document.getElementsByClassName('phone')[0];
+        var phoneValue = phone.value;
+        var passwordValue = password.value;
+		var xhr = createXMLHttpRequest();
+
+        xhr.open('post', 'changePW-3', true);
+
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                if(xhr.responseText == '修改完成'){
+                    window.location = 'index.html';
+                }
+            }
+        };
+        xhr.send("phone="+phoneValue+"&password="+passwordValue);
 	}
 }
 //添加点击事件

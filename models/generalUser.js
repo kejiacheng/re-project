@@ -25,5 +25,11 @@ module.exports = {
 		.where('phone').equals(data.phone)
 		.where('password').equals(data.password)
 		.exec();
+	},
+	changePW: (data) => {
+		return GeneralUser
+		.where('phone').equals(data.phone)
+		.update({ password:data.password })
+		.exec();
 	}
 }
