@@ -27,19 +27,13 @@
 									<td class="goods__totle_price same_width">{{ (item.num * item.price).toFixed(1) }}</td>
 								</tr>
 							</template>
-							<!-- <tr>
-								<td class="goods_name">椰果</td>
-								<td class="goods_num same_width">2</td>
-								<td class="goods_price same_width">0.8</td>
-								<td class="goods__totle_price same_width">1.6</td>
-							</tr> -->
 							<tr>
 								<td class="goods_name all_money" colspan="4">总计:<span>{{ totol_price }}</span>元</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-				<a class="payment_bt">提交支付</a>
+				<a class="payment_bt" @click="payment">提交支付</a>
 			</div>
 		</div>
 		<paymentFooter></paymentFooter>
@@ -56,7 +50,11 @@
 			paymentFooter
 		},
 		methods: {
-			
+			payment(){
+				var that = this;
+				//将数据传给后台
+				that.$http.post("/payment", { ingredients_name: that.ingredients_name, ingredients_price: that.ingredients_price, accessories: that.accessories })
+			}
 		},
 		data: function (){
 			return {
@@ -71,6 +69,7 @@
 		},
 		created(){
 			var that = this;
+			//获取sessionStorage里的数据
 			that.ingredients_name = sessionStorage.getItem('ingredients_name');
 			that.ingredients_price = sessionStorage.getItem('ingredients_price');
 			that.accessories = JSON.parse(sessionStorage.getItem('accessories'));
@@ -79,9 +78,7 @@
 
 			for(let i in that.accessories){
 				that.totol_price += parseFloat(that.accessories[i].price) * that.accessories[i].num;
-				console.log(that.totol_price)
 			}
-
 		},
 		watch: {
 			

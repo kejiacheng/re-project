@@ -11618,7 +11618,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "colspan": "4"
     }
   }, [_vm._v("总计:"), _c('span', [_vm._v(_vm._s(_vm.totol_price))]), _vm._v("元")])])], 2)])]), _vm._v(" "), _c('a', {
-    staticClass: "payment_bt"
+    staticClass: "payment_bt",
+    on: {
+      "click": _vm.payment
+    }
   }, [_vm._v("提交支付")])])]), _vm._v(" "), _c('paymentFooter')], 1)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('tr', [_c('th', {
@@ -11747,19 +11750,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 exports.default = {
 	components: {
 		paymentHeader: _header2.default,
 		paymentFooter: _footer2.default
 	},
-	methods: {},
+	methods: {
+		payment: function payment() {
+			var that = this;
+			//将数据传给后台
+			that.$http.post("/payment", { ingredients_name: that.ingredients_name, ingredients_price: that.ingredients_price, accessories: that.accessories });
+		}
+	},
 	data: function data() {
 		return {
 			ingredients_name: '',
@@ -11771,15 +11774,15 @@ exports.default = {
 	computed: {},
 	created: function created() {
 		var that = this;
+		//获取sessionStorage里的数据
 		that.ingredients_name = sessionStorage.getItem('ingredients_name');
 		that.ingredients_price = sessionStorage.getItem('ingredients_price');
 		that.accessories = JSON.parse(sessionStorage.getItem('accessories'));
-
+		//计算总计
 		that.totol_price += parseFloat(that.ingredients_price);
 
 		for (var i in that.accessories) {
 			that.totol_price += parseFloat(that.accessories[i].price) * that.accessories[i].num;
-			console.log(that.totol_price);
 		}
 	},
 

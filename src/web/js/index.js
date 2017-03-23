@@ -12248,20 +12248,21 @@ exports.default = {
 		},
 		payment: function payment() {
 			var that = this;
-			var accessories = '{';
 			//用sessionStorage传值
 			sessionStorage.setItem('ingredients_name', that.shopping_list.ingredients.name);
 			sessionStorage.setItem('ingredients_price', that.shopping_list.ingredients.price);
-
+			//拼接accssories字符串，让支付页面可以json解析
+			var accessories = '{';
 			for (var i in that.shopping_list.accessories) {
 				if (that.shopping_list.accessories[i].num != 0) {
 					accessories += '"' + that.shopping_list.accessories[i].name + '"' + ': { "price":' + that.shopping_list.accessories[i].price + ', "num":' + that.shopping_list.accessories[i].num + "},";
-					// accessories += that.shopping_list.accessories[i].name + ' ' + that.shopping_list.accessories[i].price + ' ' + that.shopping_list.accessories[i].num + ' ';
 				}
 			}
+			//去除末尾的,
 			accessories = accessories.substring(0, accessories.length - 1);
 			accessories += "}";
 			sessionStorage.setItem('accessories', accessories);
+
 			window.location = 'payment.html';
 		},
 		addEvents: function addEvents(target, type, func) {
