@@ -13,7 +13,7 @@
 	    		 	<div class="personal_wrapper_box" v-show="personalShow">
 	    		 		<ul class="personal_wrapper_box_list">
 	    		 			<li><a>个人中心</a></li>
-	    		 			<li v-if="loginway == 'staff'"><a>后台中心</a></li>
+	    		 			<li v-if="loginway == 'staff'"><a href="backstage.html">后台中心</a></li>
 	    		 			<li><a href="javascript:void(0)" @click="exit">退出</a></li>
 	    		 		</ul>
 	    		 	</div>

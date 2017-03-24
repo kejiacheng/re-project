@@ -1,6 +1,6 @@
 <template>
-	<div id="footer">
-		<p>浙ICP备16039089号-1</p>
+	<div id="b">
+		11
 	</div>
 </template>
 <script type="text/javascript">
@@ -11,7 +11,7 @@
 		methods: {
 
 		},
-		props: [],
+		props: ["isLogin"],
 		data: function (){
 			return {
 				
@@ -29,11 +29,9 @@
 	}
 </script>
 <style lang="sass">
-	#footer{
-		height:40px;
-		p{
-			line-height:40px;
-			text-align: center;
-		}
+	#b{
+		width:100%;
+		height:800px;
+		background:black;
 	}
 </style>

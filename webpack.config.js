@@ -9,7 +9,8 @@ module.exports = {
 		'login': __dirname + '/src/js/login.js',
 		'register': __dirname + '/src/js/register.js',
 		'changePW': __dirname + '/src/js/changePW.js',
-		'payment': __dirname + '/src/js/payment.js'
+		'payment': __dirname + '/src/js/payment.js',
+		'backstage': __dirname + '/src/js/backstage.js'
 	},
 	output: {
 		path: __dirname + '/src/web/js',
@@ -90,6 +91,13 @@ module.exports = {
 			injext: 'body',
 			hash: true,
 			chunks: ['payment']
+		}),
+		new HtmlWebpackPlugin({
+			filename: __dirname + '/src/web/backstage.html',
+			template: __dirname + '/src/html/backstage.html',
+			injext: 'body',
+			hash: true,
+			chunks: ['backstage']
 		})
 	]
 
