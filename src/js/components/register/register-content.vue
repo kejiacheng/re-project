@@ -249,37 +249,37 @@
 				}
 			},
 			vertifyFocus(e){
-				// const that = this;
-				// const vertify = document.getElementsByClassName('vertify')[0];
-				// that.vertifyTip = '请输入验证码';
-				// //返回初始样式
-				// that.origin(vertify, "vertify");
+				const that = this;
+				const vertify = document.getElementsByClassName('vertify')[0];
+				that.vertifyTip = '请输入验证码';
+				//返回初始样式
+				that.origin(vertify, "vertify");
 			},
 			vertifyBlur(){
-				// const that = this;
-				// const vertify = document.getElementsByClassName('vertify')[0];
-    //    			const r_x_vertify = document.getElementsByClassName('r_x_vertify')[0];
-				// const index = 2;
+				const that = this;
+				const vertify = document.getElementsByClassName('vertify')[0];
+       			const r_x_vertify = document.getElementsByClassName('r_x_vertify')[0];
+				const index = 2;
 
-				// //当验证码为空时
-				// if(that.vertify == ""){
-				// 	that.vertifyTip = '请输入验证码';
-				// 	that.condition.vertify = false;
-				// 	return;
-				// }
+				//当验证码为空时
+				if(that.vertify == ""){
+					that.vertifyTip = '请输入验证码';
+					that.condition.vertify = false;
+					return;
+				}
 
-				// //将验证码发给后台匹配
-				// that.$http.post('/register.html', { index: index, vertify: that.vertify})
-				// .then((result) => {
-				// 	if(result.body == '通过！'){
-				// 		r_x_vertify.style.background = "url(../../../img/r.png)";
-				// 		that.condition.vertify = true;
-				// 	}else{
-				// 		that.error(vertify,"vertify");
-				// 		that.condition.vertify = false;
-				// 	}
-				// 	that.vertifyTip = result.body;
-				// })
+				//将验证码发给后台匹配
+				that.$http.post('/register.html', { index: index, vertify: that.vertify})
+				.then((result) => {
+					if(result.body == '通过！'){
+						r_x_vertify.style.background = "url(../../../img/r.png)";
+						that.condition.vertify = true;
+					}else{
+						that.error(vertify,"vertify");
+						that.condition.vertify = false;
+					}
+					that.vertifyTip = result.body;
+				})
 			},
 			get_vertify(){
 				const that = this;
@@ -411,7 +411,7 @@
 					username: false,
 					password: false,
 					confirm_password: false,
-					vertify: true
+					vertify: false
 				},
 				phone: '',
 				phoneTip: '手机号可用于登录、找回密码等服务',
