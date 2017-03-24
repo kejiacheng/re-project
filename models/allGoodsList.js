@@ -6,7 +6,10 @@ module.exports = {
 			phone: data.phone,
 			username: data.username,
 			ingredients: data.ingredients,
-			accessories: data.accessories
+			accessories: data.accessories,
+			date: data.date
 		});
+
+		return newGoods.save();
 	}
 }

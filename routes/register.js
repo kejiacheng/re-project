@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var GeneralUser = require('../models/generalUser.js');
+
+// mongoose.connect('mongodb://localhost:27017/graduation_project');
 var real_vertify = '';
 router.post('/', function (req, res ,next){
 	if(req.body.index == 0){
@@ -73,7 +75,7 @@ router.post('/', function (req, res ,next){
 			username: req.body.username,
 			password: req.body.password
 		}
-		//创建一个新用户
+
 		GeneralUser.create(data)
 		.then((result) => {
 			if(result){
