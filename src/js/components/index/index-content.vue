@@ -124,6 +124,7 @@
 	</div>
 </template>
 <script type="text/javascript">
+	import {addEvents, removeEvents, addClass, removeClass} from '../../function/function.js' 
 	export default{
 		components: {
 			
@@ -146,10 +147,10 @@
 					//判断ingredients是否已选择
 					if(that.shopping_list.ingredients.dom){
 						//若已选择则移除原先DOM的selected类
-						that.removeClass(that.shopping_list.ingredients.dom,'selected');
+						removeClass(that.shopping_list.ingredients.dom,'selected');
 					}
 					//添加目标DOM的selected类并且修改DATA中的缓存DOM
-					that.addClass(target,'selected');
+					addClass(target,'selected');
 					that.shopping_list.ingredients.dom = target;
 					that.shopping_list.ingredients.name = item_name;
 					that.shopping_list.ingredients.price = price_num;
@@ -158,12 +159,12 @@
 			acc_click(e){
 				const that = this;
 				//使用三目获取正确DOM
-				const target = that.hasClass(e.target,'num_bt') ? e.target.parentNode.parentNode.parentNode.parentNode : null;
+				const target = hasClass(e.target,'num_bt') ? e.target.parentNode.parentNode.parentNode.parentNode : null;
 				if(target){
 					//使用三目判断是加还是减
-					const sign = that.hasClass(e.target,'add')
+					const sign = hasClass(e.target,'add')
 						? 'add'
-						: that.hasClass(e.target,'sub')
+						: hasClass(e.target,'sub')
 						? 'sub'
 						: null;
 
@@ -203,10 +204,10 @@
 				const body_click = () => {
 					shade_style.display = 'none';
 					complete_box.style.top = complete_bt_height + 'px';
-					that.removeEvents(body,'click',body_click);
+					removeEvents(body,'click',body_click);
 				}
 				//添加body点击事件
-				that.addEvents(body,'click',body_click);
+				addEvents(body,'click',body_click);
 			},
 			add(e){
 				const that = this;
@@ -284,39 +285,6 @@
 				sessionStorage.setItem('accessories', accessories);
 				
 				window.location = 'payment.html';
-			},
-			addEvents(target,type,func){//事件绑定事件 
-				if(target.addEventListener){
-					target.addEventListener(type,func,false);
-				}else if(target.attachEvent){
-					target.attachEvent("on",type,func);
-				}
-			},
-			removeEvents(target,type,func){//事件取消绑定事件
-				if(target.removeEventListener){
-					target.removeEventListener(type,func,false);
-				}else if(target.detachEvent){
-					target.detachEvent("on",type,func);
-				}
-			},
-			hasClass(obj,cls){//判断对象是否有这个class函数
-				return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-			},
-			addClass(obj,cls){//给对象添加class函数
-				if (!this.hasClass(obj,cls)) obj.className += " " + cls;
-			},
-			removeClass(obj, cls){//给对象删除class函数  
-				if (this.hasClass(obj, cls)) {  
-				    let reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
-				    obj.className = obj.className.replace(reg, ' ');  
-				}	
-			},
-			toggleClass(obj,cls){//对象toggleClass事件函数  
-				if(this.hasClass(obj,cls)){  
-			        this.removeClass(obj, cls);  
-			    }else{  
-			        this.addClass(obj, cls);  
-			    } 
 			}
 		},
 		data(){
@@ -366,7 +334,7 @@
 			has_ingredients(){//判断是否选购了主料
 				return this.shopping_list.ingredients.dom ? true : false;
 			},
-			complete_bt_height(){
+			complete_bt_height(){//计算高度
 				const complete_box = document.getElementsByClassName("complete_box")[0],
 					complete_bt = document.getElementsByClassName("complete_bt")[0],
 					comlete_box_height = complete_box.offsetHeight,
@@ -378,6 +346,7 @@
 			
 		},
 		watch: {
+			//深度观察
 			'shopping_list.ingredients.dom':{
 				handler: function (newEle,oldEle){
 					if(!newEle){

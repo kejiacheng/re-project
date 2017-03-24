@@ -26,6 +26,7 @@
 	</div>
 </template>
 <script type="text/javascript">
+	import {addClass, removeClass} from '../../function/function.js'
 	export default{
 		components: {
 			
@@ -38,8 +39,8 @@
 				const user_way = document.getElementsByClassName('user_way')[0];
 				const staff_way = document.getElementsByClassName('staff_way')[0];
 
-				that.removeClass(staff_way, 'selected');
-				that.addClass(user_way, 'selected');
+				removeClass(staff_way, 'selected');
+				addClass(user_way, 'selected');
 2
 				line.style.left = (user_way.offsetWidth - line.offsetWidth) / 2 + 'px';
 
@@ -52,8 +53,8 @@
 				const user_way = document.getElementsByClassName('user_way')[0];
 				const staff_way = document.getElementsByClassName('staff_way')[0];
 
-				that.removeClass(user_way, 'selected');
-				that.addClass(staff_way, 'selected');
+				removeClass(user_way, 'selected');
+				addClass(staff_way, 'selected');
 
 				line.style.left = (user_way.offsetWidth - line.offsetWidth) / 2 + user_way.offsetWidth + 'px';
 
@@ -73,25 +74,6 @@
 			},
 			focus(){
 				this.error = "";
-			},
-			hasClass(obj,cls){//判断对象是否有这个class函数
-				return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-			},
-			addClass(obj,cls){//给对象添加class函数
-				if (!this.hasClass(obj,cls)) obj.className += " " + cls;  
-			},
-			removeClass(obj, cls){//给对象删除class函数  
-				if (this.hasClass(obj, cls)) {  
-				    let reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
-				    obj.className = obj.className.replace(reg, ' ');  
-				}	
-			},
-			toggleClass(obj,cls){//对象toggleClass事件函数  
-				if(this.hasClass(obj,cls)){  
-			        this.removeClass(obj, cls);  
-			    }else{  
-			        this.addClass(obj, cls);  
-			    } 
 			}
 		},
 		props: ["isLogin"],

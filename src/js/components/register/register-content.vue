@@ -42,13 +42,14 @@
 	</div>
 </template>
 <script type="text/javascript">
+	import {cookieUtil} from '../../function/function.js'
 	export default{
 		components: {
 			
 		},
 		mounted(){
 			const that = this;
-			const cookie = that.cookieUtil();
+			const cookie = cookieUtil();
 
 			//过期时间
 			const outTime = cookie.get('vertify');
@@ -288,7 +289,7 @@
 					return;
 				}
 
-				const cookie = that.cookieUtil();
+				const cookie = cookieUtil();
 				const index = 3;
 
 				//判断cookie中是否存在vertify
@@ -362,45 +363,6 @@
 			    obj.style.borderStyle = '';
 			    obj.style.background = '';
 			    obj.style.color= 'black';
-			},
-			cookieUtil(){
-				return {
-					get: function (name){
-						const cookieName = encodeURIComponent(name) + '=';
-						const cookieStart = document.cookie.indexOf(cookieName);
-						let cookieValue;
-
-						if(cookieStart > -1){
-							let cookieEnd = document.cookie.indexOf(';', cookieStart);
-							if(cookieEnd == -1){
-								cookieEnd = document.cookie.length;
-							}
-							cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
-						}
-						return cookieValue;
-					},
-					set: function (name, value, expires, path, domain, secure){
-						let cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
-						let date = new Date();
-						date.setTime(date.getTime() + expires * 1000);
-						cookieText += '; expires=' + date.toGMTString();
-
-						if(path){
-							cookieText += '; path=' + path;
-						}
-						if(domain){
-							cookieText += '; domain' + domain;
-						}
-						if(secure){
-							cookieText += '; secure';
-						}
-						document.cookie = cookieText;
-					},
-					unset: function (name, path, domain, secure){
-						this.set(name, "", new Date(0), path, domain, secure);
-					}
-				}
-				
 			}
 		},
 		props: [],
