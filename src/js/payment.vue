@@ -54,6 +54,11 @@
 				var that = this;
 				//将数据传给后台
 				that.$http.post("/payment", { ingredients_name: that.ingredients_name, ingredients_price: that.ingredients_price, accessories: that.accessories })
+				.then((result) => {
+					if(result.body == '支付完成'){
+						window.location = "index.html";
+					}
+				})
 			}
 		},
 		data: function (){

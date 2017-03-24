@@ -10,7 +10,7 @@ router.post('/', function (req, res ,next){
 	var hours = nowDate.getHours();
 
 	var newDate = year * 1000000 + month * 10000 + date * 100 + hours;
-	console.log(newDate);
+
 	var data = {
 		phone: req.session.phone ? req.session.phone : null,
 		username: req.session.username ? req.session.username : null,
@@ -25,7 +25,7 @@ router.post('/', function (req, res ,next){
 
 	AllGoodsList.create(data)
 	.then((result) => {
-		console.log(result);
+		res.send('支付完成');
 	})
 })
 

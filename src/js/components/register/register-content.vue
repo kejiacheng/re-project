@@ -332,9 +332,12 @@
 				//将注册信息发给后台
 				that.$http.post('register.html', { index: index, phone: that.phone, username: that.username, password: that.password})
 				.then((result) => {
+					console.log(result.body);
 					if(result.body == '注册成功'){
 						window.location = "index.html";
 					}
+				},(result) => {
+					console.log(result.body + 'error');
 				})
 			},
 			error(obj, string){//输入错误样式
