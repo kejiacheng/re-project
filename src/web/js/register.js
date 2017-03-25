@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 100);
+/******/ 	return __webpack_require__(__webpack_require__.s = 106);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -11604,13 +11604,13 @@ var cookieUtil = () => {
 
 
 /* styles */
-__webpack_require__(79)
+__webpack_require__(84)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(94),
+  __webpack_require__(100),
   /* template */
-  __webpack_require__(66),
+  __webpack_require__(70),
   /* scopeId */
   null,
   /* cssModules */
@@ -11663,7 +11663,8 @@ exports.push([module.i, "\n@charset \"UTF-8\";\n#content {\n  width: 950px;\n  m
 /* 39 */,
 /* 40 */,
 /* 41 */,
-/* 42 */
+/* 42 */,
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -11677,39 +11678,41 @@ exports.push([module.i, "\n@charset \"UTF-8\";\nbody {\n  font-family: \"\\5B8B\
 
 
 /***/ }),
-/* 43 */,
-/* 44 */
+/* 44 */,
+/* 45 */,
+/* 46 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAIAAACp9tltAAAArElEQVQoFWP8//8/A3GAiThlIFWoSr98YCjzZnBgBZFANhoAOgAKPr//n2z834YBioBsoAgSgJn6+T1DgQvDzbMIg4BsoAiS2WClQHWFrijqIDpQVYOVNkVjUQdXXRsKYTICHcPgyMbw5zfCajQWMwvD/l8MjIxgUy290WRRuGbuQHVAEbCpQNoWxMEODkPjiAVdGiaBqRkWWOg6sPBJUApzKxZT0IVIMJUEpQAAZFIcN1QugAAAAABJRU5ErkJggg=="
 
 /***/ }),
-/* 45 */,
-/* 46 */,
-/* 47 */
+/* 47 */,
+/* 48 */,
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjRDRDc3MzYyMTYzMTFFNTkwOUNDODNDMDU0MzhFM0UiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjRDRDc3MzcyMTYzMTFFNTkwOUNDODNDMDU0MzhFM0UiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCNENENzczNDIxNjMxMUU1OTA5Q0M4M0MwNTQzOEUzRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCNENENzczNTIxNjMxMUU1OTA5Q0M4M0MwNTQzOEUzRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmVLYuIAAAEiSURBVHjaYvz//z8DHASrigDJIiD2AWI1qOgNIN4ExJMY1t5+A1PKCNcYrBoMJOcCMT8DdvAJiJOAmtciNEI0rQbxGcxcGRj8khgYVHQhym+eZ2DYuoiB4dRuEA9kSyhIM+P/IBVRIOcOEPMxuEcyMKQ1YbdvVh0Dw87lMJtVmYBELliTuRuqpnwPCIYBkJyFGwNYLQNDAUijH1jCK5aBIPBJhLNAGjXATHVDwhpV9GAsdSYGUsCf3zDWLxZoPOmDQ0/HAqFo4g5MjQ+uw1j3mKCRy8CwfTGqIvTAAYEt82GsraDoEAMybpMaHbgTgKo+xE93LwNtWoglASCSXAiQnAfEvDiC5jMQJ6ImOcxE7gsKclDoAfEtkJ9AwYWcyAECDAAga2eYdeR2fQAAAABJRU5ErkJggg=="
 
 /***/ }),
-/* 48 */,
-/* 49 */,
 /* 50 */,
 /* 51 */,
 /* 52 */,
 /* 53 */,
-/* 54 */
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(69)
+__webpack_require__(73)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(90),
+  __webpack_require__(96),
   /* template */
-  __webpack_require__(56),
+  __webpack_require__(59),
   /* scopeId */
   null,
   /* cssModules */
@@ -11736,8 +11739,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 55 */,
-/* 56 */
+/* 58 */,
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11909,7 +11912,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "back_index"
   }, [_c('img', {
     attrs: {
-      "src": __webpack_require__(44)
+      "src": __webpack_require__(46)
     }
   }), _vm._v(" "), _c('a', {
     attrs: {
@@ -11921,7 +11924,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "new_tip"
   }, [_c('img', {
     attrs: {
-      "src": __webpack_require__(47)
+      "src": __webpack_require__(49)
     }
   }), _vm._v(" "), _c('span', [_vm._v("贴心提示：请勿设置过于简单的登录密码或支付密码，防止不法分子窃取您的账户信息")]), _vm._v(" "), _c('span', {
     staticClass: "catious"
@@ -11936,16 +11939,17 @@ if (false) {
 }
 
 /***/ }),
-/* 57 */,
-/* 58 */,
-/* 59 */,
 /* 60 */,
 /* 61 */,
 /* 62 */,
 /* 63 */,
 /* 64 */,
 /* 65 */,
-/* 66 */
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11964,9 +11968,9 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */,
-/* 68 */,
-/* 69 */
+/* 71 */,
+/* 72 */,
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -11992,22 +11996,23 @@ if(false) {
 }
 
 /***/ }),
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
 /* 74 */,
 /* 75 */,
 /* 76 */,
 /* 77 */,
 /* 78 */,
-/* 79 */
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(42);
+var content = __webpack_require__(43);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -12027,17 +12032,18 @@ if(false) {
 }
 
 /***/ }),
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
 /* 85 */,
 /* 86 */,
 /* 87 */,
 /* 88 */,
 /* 89 */,
-/* 90 */
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12439,10 +12445,10 @@ exports.default = {
 //
 
 /***/ }),
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12456,7 +12462,7 @@ var _header = __webpack_require__(13);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _registerContent = __webpack_require__(54);
+var _registerContent = __webpack_require__(57);
 
 var _registerContent2 = _interopRequireDefault(_registerContent);
 
@@ -12491,12 +12497,12 @@ exports.default = {
 //
 
 /***/ }),
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

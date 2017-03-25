@@ -1,46 +1,57 @@
 <template>
 	<div id="main-content">
-		<p><a @click="aa">tob</a><a @click="bb">toa</a></p>
-		<transition>
-			<router-view v-show="!haha"></router-view>
-		</transition>
-		<transition>
-			<aa v-show="haha"></aa>
-		</transition>
-		
+		<backstageHeader v-on:formPage="toFormPage" v-on:chartPage="toChartPage"></backstageHeader>
+		<router-view></router-view>
+		<!-- <formPage v-if="isNowPage"></formPage> -->
 	</div>
 </template>
 
 <script type="text/javascript">
-	import aa from './components/a.vue';
-	import bb from './components/b.vue';
+	import backstageHeader from './components/backstage/backstage-header.vue';
+	import formPage from './components/backstage/formPage.vue';
+	import chartPage from './components/backstage/chartPage.vue';
 
 	export default{
 		components: {
-			aa,
-			bb
+			backstageHeader,
+			formPage,
+			chartPage
+		},
+		mounted(){
+			var path = window.location.hash.replace('#/','');
+			if(path == 'chartPage'){
+				this.$router.push({ name: 'chartPage' });
+				this.isNowPage = true;
+			}else if(path == 'formPage' || path == ''){
+				this.$router.push({ name: 'formPage' });
+				this.isNowPage = false;
+			}
 		},
 		methods: {
 			aa(){
-				this.$router.push({ name: 'b' });
-				this.haha = !this.haha;
-				console.log(this.haha);
+				
 			},
 			bb(){
-				this.$router.push({ name: 'a' });
-				this.haha = !this.haha;
-				console.log(this.haha);
+
+			},
+			toFormPage(){
+				this.$router.push({ name: 'formPage' });
+				this.isNowPage = true;
+			},
+			toChartPage(){
+				this.$router.push({ name: 'chartPage' });
+				this.isNowPage = false;
 			}
 		},
-		data: function (){
+		data(){
 			return {
-				haha: true
+				isNowPage: true
 			}
 		},
 		computed: {
 
 		},
-		created: function (){
+		created(){
 
 		},
 		watch: {
@@ -52,6 +63,7 @@
 @import "../css/reset.css";
 body{
 	font-family: "宋体";
+	background: url("../img/backstageBg.jpg");
 }
 </style>
 

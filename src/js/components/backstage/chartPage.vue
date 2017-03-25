@@ -1,6 +1,6 @@
 <template>
-	<div id="a">
-		00
+	<div class="chartPageBox">
+		11
 	</div>
 </template>
 <script type="text/javascript">
@@ -29,9 +29,9 @@
 	}
 </script>
 <style lang="sass">
-	#a{
-		width:100%;
+	.chartPageBox{
+		width:60%;
 		height:800px;
-		background:red;
+		background:black;
 	}
 </style>

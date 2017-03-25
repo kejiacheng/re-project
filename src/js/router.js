@@ -1,14 +1,14 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import a from './components/a.vue';
-import b from './components/b.vue';
+import formPage from './components/backstage/formPage.vue';
+import chartPage from './components/backstage/chartPage.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
-	{ path: '/a', name: 'a', component: a },
-	{ path: '/b', name: 'b', component: b },
+	{ path: '/formPage', name: 'formPage', component: formPage },
+	{ path: '/chartPage', name: 'chartPage', component: chartPage },
 	{ path: '/', name: 'index' }
 ]
 
