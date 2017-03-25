@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 101);
+/******/ 	return __webpack_require__(__webpack_require__.s = 111);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -11327,89 +11327,13 @@ var cookieUtil = () => {
 
 
 /* styles */
-__webpack_require__(83)
+__webpack_require__(81)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(90),
+  __webpack_require__(95),
   /* template */
-  __webpack_require__(69),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\backstage\\chartPage.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] chartPage.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-60e72515", Component.options)
-  } else {
-    hotAPI.reload("data-v-60e72515", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(76)
-
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(91),
-  /* template */
-  __webpack_require__(62),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\backstage\\formPage.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] formPage.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-16d2431b", Component.options)
-  } else {
-    hotAPI.reload("data-v-16d2431b", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(75)
-
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(87),
-  /* template */
-  __webpack_require__(61),
+  __webpack_require__(65),
   /* scopeId */
   null,
   /* cssModules */
@@ -11436,22 +11360,28 @@ module.exports = Component.exports
 
 
 /***/ }),
+/* 22 */,
+/* 23 */,
 /* 24 */,
 /* 25 */,
 /* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_backstage_formPage_vue__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_backstage_formPage_vue__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_backstage_formPage_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_backstage_formPage_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_backstage_chartPage_vue__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_backstage_chartPage_vue__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_backstage_chartPage_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_backstage_chartPage_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_backstage_formPage_a_vue__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_backstage_formPage_a_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_backstage_formPage_a_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_backstage_formPage_b_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_backstage_formPage_b_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_backstage_formPage_b_vue__);
+
+
 
 
 
@@ -11461,8 +11391,23 @@ module.exports = Component.exports
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 const routes = [
-	{ path: '/formPage', name: 'formPage', component: __WEBPACK_IMPORTED_MODULE_2__components_backstage_formPage_vue___default.a },
-	{ path: '/chartPage', name: 'chartPage', component: __WEBPACK_IMPORTED_MODULE_3__components_backstage_chartPage_vue___default.a },
+	{ path: '/formPage', name: 'formPage', component: __WEBPACK_IMPORTED_MODULE_2__components_backstage_formPage_vue___default.a,
+	  children: [
+	  	{
+	  		path: 'a',
+	  		name: 'a',
+	  		component: __WEBPACK_IMPORTED_MODULE_4__components_backstage_formPage_a_vue___default.a
+	  	},
+	  	{
+	  		path: 'b',
+	  		name: 'b',
+	  		component: __WEBPACK_IMPORTED_MODULE_5__components_backstage_formPage_b_vue___default.a
+	  	}
+	  ]
+	},
+	{ path: '/chartPage', name: 'chartPage', component: __WEBPACK_IMPORTED_MODULE_3__components_backstage_chartPage_vue___default.a, 
+
+	},
 	{ path: '/', name: 'index' }
 ]
 
@@ -11471,7 +11416,7 @@ const routes = [
 });
 
 /***/ }),
-/* 30 */
+/* 28 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -11657,10 +11602,10 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
+/* 29 */,
+/* 30 */,
 /* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -11674,7 +11619,7 @@ exports.push([module.i, "\n@charset \"UTF-8\";\nbody {\n  font-family: \"\\5B8B\
 
 
 /***/ }),
-/* 35 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -11688,10 +11633,10 @@ exports.push([module.i, "\n.formPageBox .wrapper {\n  width: 1200px;\n  margin: 
 
 
 /***/ }),
+/* 34 */,
+/* 35 */,
 /* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -11705,9 +11650,9 @@ exports.push([module.i, "\n@charset \"UTF-8\";\n#header {\n  width: 100%;\n  hei
 
 
 /***/ }),
-/* 40 */,
-/* 41 */,
-/* 42 */
+/* 38 */,
+/* 39 */,
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -11715,14 +11660,42 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n.chartPageBox {\n  width: 60%;\n  height: 800px;\n  background: black;\n}\n", ""]);
+exports.push([module.i, "\n.chartPageBox .wrapper {\n  width: 1200px;\n  margin: 30px auto;\n  background: #bbb;\n  min-height: 500px;\n  position: relative;\n  box-sizing: border-box;\n  padding: 20px;\n}\n.chartPageBox .wrapper .mode_choice {\n    position: absolute;\n    top: 120px;\n    left: -50px;\n}\n@media (max-width: 1250px) {\n.chartPageBox .wrapper .mode_choice {\n        left: 0;\n}\n}\n.chartPageBox .wrapper .mode_choice ul li {\n      margin-bottom: 8px;\n      color: #dedede;\n      line-height: 20px;\n      font-weight: 600;\n      cursor: pointer;\n      background: #5B37EA;\n}\n.chartPageBox .wrapper .mode_choice ul li p {\n        display: table-cell;\n        vertical-align: middle;\n        text-align: center;\n        width: 45px;\n        height: 45px;\n}\n.chartPageBox .wrapper .mode_choice ul .active {\n      background: #F24C0A;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 43 */,
-/* 44 */,
+/* 41 */,
+/* 42 */,
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)();
+// imports
+
+
+// module
+exports.push([module.i, "\n.b {\n  width: 35%;\n  height: 400px;\n  background: red;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)();
+// imports
+
+
+// module
+exports.push([module.i, "\n.a {\n  width: 45%;\n  height: 400px;\n  color: blue;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 45 */
 /***/ (function(module, exports) {
 
@@ -11740,13 +11713,13 @@ module.exports = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAIBAQI
 
 
 /* styles */
-__webpack_require__(80)
+__webpack_require__(86)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(89),
+  __webpack_require__(97),
   /* template */
-  __webpack_require__(66),
+  __webpack_require__(70),
   /* scopeId */
   null,
   /* cssModules */
@@ -11773,15 +11746,167 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(89)
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(98),
+  /* template */
+  __webpack_require__(73),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\backstage\\chartPage.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] chartPage.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-60e72515", Component.options)
+  } else {
+    hotAPI.reload("data-v-60e72515", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(82)
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(99),
+  /* template */
+  __webpack_require__(66),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\backstage\\formPage.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] formPage.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-16d2431b", Component.options)
+  } else {
+    hotAPI.reload("data-v-16d2431b", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(93)
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(100),
+  /* template */
+  __webpack_require__(77),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\backstage\\formPage\\a.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] a.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-a88a4926", Component.options)
+  } else {
+    hotAPI.reload("data-v-a88a4926", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(92)
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(101),
+  /* template */
+  __webpack_require__(76),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\backstage\\formPage\\b.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] b.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-a86e1a24", Component.options)
+  } else {
+    hotAPI.reload("data-v-a86e1a24", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 57 */,
 /* 58 */,
 /* 59 */,
 /* 60 */,
-/* 61 */
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11805,12 +11930,10 @@ if (false) {
 }
 
 /***/ }),
-/* 62 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "formPageBox"
   }, [_c('div', {
@@ -11818,17 +11941,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "mode_choice"
   }, [_c('ul', [_c('li', {
-    staticClass: "backstage_index_li active"
+    staticClass: "backstage_index_li active",
+    on: {
+      "click": _vm.a
+    }
   }, [_c('p', [_vm._v("后台首页")])]), _vm._v(" "), _c('li', {
-    staticClass: "goods_ranking_li"
+    staticClass: "goods_ranking_li",
+    on: {
+      "click": _vm.b
+    }
   }, [_c('p', [_vm._v("销量排行")])]), _vm._v(" "), _c('li', {
-    staticClass: "goods_sale_li"
+    staticClass: "goods_sale_li",
+    on: {
+      "click": _vm.c
+    }
   }, [_c('p', [_vm._v("销售记录")])]), _vm._v(" "), _c('li', {
-    staticClass: "goods_rel_li"
+    staticClass: "goods_rel_li",
+    on: {
+      "click": _vm.d
+    }
   }, [_c('p', [_vm._v("货物余量")])])]), _vm._v(" "), _c('div', {
     staticClass: "item_box"
-  })])])])
-}]}
+  }, [_c('router-view')], 1)])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -11838,10 +11973,10 @@ if (false) {
 }
 
 /***/ }),
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11889,16 +12024,28 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */,
-/* 68 */,
-/* 69 */
+/* 71 */,
+/* 72 */,
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "chartPageBox"
-  }, [_vm._v("\n\t11\n")])
-},staticRenderFns: []}
+  }, [_c('div', {
+    staticClass: "wrapper"
+  }, [_c('div', {
+    staticClass: "mode_choice"
+  }, [_c('ul', [_c('li', {
+    staticClass: "graph_index_li active"
+  }, [_c('p', [_vm._v("图形首页")])]), _vm._v(" "), _c('li', {
+    staticClass: "bar_line_li"
+  }, [_c('p', [_vm._v("柱状折线")])])]), _vm._v(" "), _c('div', {
+    staticClass: "item_box"
+  })])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -11908,18 +12055,52 @@ if (false) {
 }
 
 /***/ }),
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
 /* 74 */,
-/* 75 */
+/* 75 */,
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "b"
+  }, [_vm._v("\n\t11\n")])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-a86e1a24", module.exports)
+  }
+}
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "a"
+  }, [_vm._v("\n\t00\n")])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-a88a4926", module.exports)
+  }
+}
+
+/***/ }),
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(34);
+var content = __webpack_require__(32);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -11939,13 +12120,13 @@ if(false) {
 }
 
 /***/ }),
-/* 76 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(35);
+var content = __webpack_require__(33);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -11965,16 +12146,16 @@ if(false) {
 }
 
 /***/ }),
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(39);
+var content = __webpack_require__(37);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -11994,15 +12175,15 @@ if(false) {
 }
 
 /***/ }),
-/* 81 */,
-/* 82 */,
-/* 83 */
+/* 87 */,
+/* 88 */,
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(42);
+var content = __webpack_require__(40);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -12022,9 +12203,61 @@ if(false) {
 }
 
 /***/ }),
-/* 84 */,
-/* 85 */,
-/* 86 */
+/* 90 */,
+/* 91 */,
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(43);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("c4948528", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/.0.26.2@css-loader/index.js!../../../../../node_modules/.11.1.4@vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-a86e1a24\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/.6.0.2@sass-loader/lib/loader.js!../../../../../node_modules/.11.1.4@vue-loader/lib/selector.js?type=styles&index=0!./b.vue", function() {
+     var newContent = require("!!../../../../../node_modules/.0.26.2@css-loader/index.js!../../../../../node_modules/.11.1.4@vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-a86e1a24\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/.6.0.2@sass-loader/lib/loader.js!../../../../../node_modules/.11.1.4@vue-loader/lib/selector.js?type=styles&index=0!./b.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(44);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("2aff8d08", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/.0.26.2@css-loader/index.js!../../../../../node_modules/.11.1.4@vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-a88a4926\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/.6.0.2@sass-loader/lib/loader.js!../../../../../node_modules/.11.1.4@vue-loader/lib/selector.js?type=styles&index=0!./a.vue", function() {
+     var newContent = require("!!../../../../../node_modules/.0.26.2@css-loader/index.js!../../../../../node_modules/.11.1.4@vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-a88a4926\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/.6.0.2@sass-loader/lib/loader.js!../../../../../node_modules/.11.1.4@vue-loader/lib/selector.js?type=styles&index=0!./a.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14306,10 +14539,10 @@ if (inBrowser && window.Vue) {
 
 /* harmony default export */ __webpack_exports__["a"] = VueRouter;
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(30)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(28)))
 
 /***/ }),
-/* 87 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14323,31 +14556,22 @@ var _backstageHeader = __webpack_require__(52);
 
 var _backstageHeader2 = _interopRequireDefault(_backstageHeader);
 
-var _formPage = __webpack_require__(22);
-
-var _formPage2 = _interopRequireDefault(_formPage);
-
-var _chartPage = __webpack_require__(21);
-
-var _chartPage2 = _interopRequireDefault(_chartPage);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
 	components: {
-		backstageHeader: _backstageHeader2.default,
-		formPage: _formPage2.default,
-		chartPage: _chartPage2.default
+		backstageHeader: _backstageHeader2.default
 	},
 	mounted: function mounted() {
-		var path = window.location.hash.replace('#/', '');
-		if (path == 'chartPage') {
-			this.$router.push({ name: 'chartPage' });
-			this.isNowPage = true;
-		} else if (path == 'formPage' || path == '') {
-			this.$router.push({ name: 'formPage' });
-			this.isNowPage = false;
-		}
+		// var path = window.location.hash.replace('#/','');
+		// console.log(path);
+		// if(path == 'chartPage'){
+		// 	this.$router.push({ name: 'chartPage' });
+		// 	this.isNowPage = true;
+		// }else if(path == 'formPage' || path == ''){
+		// 	this.$router.push({ name: 'formPage' });
+		// 	this.isNowPage = false;
+		// }
 	},
 
 	methods: {
@@ -14379,11 +14603,10 @@ exports.default = {
 //
 //
 //
-//
 
 /***/ }),
-/* 88 */,
-/* 89 */
+/* 96 */,
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14439,7 +14662,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 90 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14448,36 +14671,6 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-//
-//
-//
-//
-//
-
-exports.default = {
-	components: {},
-	methods: {},
-	props: ["isLogin"],
-	data: function data() {
-		return {};
-	},
-	computed: {},
-	created: function created() {},
-	watch: {}
-};
-
-/***/ }),
-/* 91 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-//
-//
 //
 //
 //
@@ -14507,16 +14700,122 @@ exports.default = {
 };
 
 /***/ }),
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+	components: {},
+	methods: {
+		a: function a() {
+			console.log('xixi');
+			this.$router.push({ name: 'a' });
+		},
+		b: function b() {
+			this.$router.push({ name: 'b' });
+		},
+		c: function c() {},
+		d: function d() {}
+	},
+	props: [],
+	data: function data() {
+		return {};
+	},
+	computed: {},
+	created: function created() {},
+	watch: {}
+};
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+//
+//
+//
+//
+//
+
+exports.default = {
+	components: {},
+	methods: {},
+	props: ["isLogin"],
+	data: function data() {
+		return {};
+	},
+	computed: {},
+	created: function created() {},
+	watch: {}
+};
+
+/***/ }),
 /* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+//
+//
+//
+//
+//
+
+exports.default = {
+	components: {},
+	methods: {},
+	props: ["isLogin"],
+	data: function data() {
+		return {};
+	},
+	computed: {},
+	created: function created() {},
+	watch: {}
+};
+
+/***/ }),
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14525,9 +14824,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_resource__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backstage_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backstage_vue__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backstage_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__backstage_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router_js__ = __webpack_require__(27);
 
 
 

@@ -2,30 +2,26 @@
 	<div id="main-content">
 		<backstageHeader v-on:formPage="toFormPage" v-on:chartPage="toChartPage"></backstageHeader>
 		<router-view></router-view>
-		<!-- <formPage v-if="isNowPage"></formPage> -->
 	</div>
 </template>
 
 <script type="text/javascript">
 	import backstageHeader from './components/backstage/backstage-header.vue';
-	import formPage from './components/backstage/formPage.vue';
-	import chartPage from './components/backstage/chartPage.vue';
 
 	export default{
 		components: {
-			backstageHeader,
-			formPage,
-			chartPage
+			backstageHeader
 		},
 		mounted(){
-			var path = window.location.hash.replace('#/','');
-			if(path == 'chartPage'){
-				this.$router.push({ name: 'chartPage' });
-				this.isNowPage = true;
-			}else if(path == 'formPage' || path == ''){
-				this.$router.push({ name: 'formPage' });
-				this.isNowPage = false;
-			}
+			// var path = window.location.hash.replace('#/','');
+			// console.log(path);
+			// if(path == 'chartPage'){
+			// 	this.$router.push({ name: 'chartPage' });
+			// 	this.isNowPage = true;
+			// }else if(path == 'formPage' || path == ''){
+			// 	this.$router.push({ name: 'formPage' });
+			// 	this.isNowPage = false;
+			// }
 		},
 		methods: {
 			aa(){

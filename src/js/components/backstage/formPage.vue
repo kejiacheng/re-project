@@ -3,13 +3,13 @@
 		<div class="wrapper">
 			<div class="mode_choice">
 				<ul>
-					<li class="backstage_index_li active"><p>后台首页</p></li>
-					<li class="goods_ranking_li"><p>销量排行</p></li>
-					<li class="goods_sale_li"><p>销售记录</p></li>
-					<li class="goods_rel_li"><p>货物余量</p></li>	
+					<li class="backstage_index_li active" @click="a"><p>后台首页</p></li>
+					<li class="goods_ranking_li" @click="b"><p>销量排行</p></li>
+					<li class="goods_sale_li" @click="c"><p>销售记录</p></li>
+					<li class="goods_rel_li" @click="d"><p>货物余量</p></li>	
 				</ul>
 				<div class="item_box">
-
+					<router-view></router-view>
 				</div>
 			</div>
 		</div>
@@ -21,9 +21,21 @@
 			
 		},
 		methods: {
+			a(){
+				console.log('xixi');
+				this.$router.push({ name: 'a' });
+			},
+			b(){
+				this.$router.push({ name: 'b' });
+			},
+			c(){
 
+			},
+			d(){
+
+			}
 		},
-		props: ["isLogin"],
+		props: [],
 		data: function (){
 			return {
 				
