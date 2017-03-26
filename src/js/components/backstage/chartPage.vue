@@ -3,12 +3,12 @@
 		<div class="wrapper">
 			<div class="mode_choice">
 				<ul>
-					<li class="graph_index_li active"><p>图形首页</p></li>
-					<li class="bar_line_li"><p>柱状折线</p></li>	
+					<li class="graph_index_li active" @click="e"><p>图形首页</p></li>
+					<li class="bar_line_li" @click="f"><p>柱状折线</p></li>	
 				</ul>
-				<div class="item_box">
-					
-				</div>
+			</div>
+			<div class="item_box">
+				<router-view></router-view>
 			</div>
 		</div>
 	</div>
@@ -19,9 +19,15 @@
 			
 		},
 		methods: {
-
+			e(){
+				console.log('xixi');
+				this.$router.push({ name: 'e' });
+			},
+			f(){
+				this.$router.push({ name: 'f' });
+			}
 		},
-		props: ["isLogin"],
+		props: [],
 		data: function (){
 			return {
 				

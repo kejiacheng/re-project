@@ -1,6 +1,6 @@
 <template>
-	<div class="c">
-	22
+	<div class="e">
+		00
 	</div>
 </template>
 <script type="text/javascript">
@@ -29,9 +29,9 @@
 	}
 </script>
 <style lang="sass">
-.c{
-	width:30%;
-	height:300px;
-	background:yellow;
+.e{
+	width:45%;
+	height:400px;
+	background:green;
 }
 </style>

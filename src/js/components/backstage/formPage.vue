@@ -8,9 +8,9 @@
 					<li class="goods_sale_li" @click="c"><p>销售记录</p></li>
 					<li class="goods_rel_li" @click="d"><p>货物余量</p></li>	
 				</ul>
-				<div class="item_box">
-					<router-view></router-view>
-				</div>
+			</div>
+			<div class="item_box">
+				<router-view></router-view>
 			</div>
 		</div>
 	</div>
@@ -22,17 +22,16 @@
 		},
 		methods: {
 			a(){
-				console.log('xixi');
 				this.$router.push({ name: 'a' });
 			},
 			b(){
 				this.$router.push({ name: 'b' });
 			},
 			c(){
-
+				this.$router.push({ name: 'c' });
 			},
 			d(){
-
+				this.$router.push({ name: 'd' });
 			}
 		},
 		props: [],
