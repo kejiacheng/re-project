@@ -40,7 +40,7 @@
 				//向后台发送退出信号
 				that.$http.post('/', { index: index })
 				.then((result) => {
-					if(result.body = '退出成功'){
+					if(Object.is(result.body, '退出成功')){
 						//退出成功触发exit事件让父元件得到响应
 						this.$emit('exit');
 					}

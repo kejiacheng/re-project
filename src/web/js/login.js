@@ -296,7 +296,7 @@ exports.default = {
 			var that = this;
 
 			that.$http.post("/login.html", { phone: that.phone, password: that.password, login_way: that.login_way }).then(function (result) {
-				if (result.body == "登录成功") {
+				if (Object.is(result.body, "登录成功")) {
 					window.location = "index.html";
 				} else {
 					that.error = result.body;

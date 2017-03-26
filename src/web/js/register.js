@@ -334,7 +334,7 @@ exports.default = {
 			var index = 0;
 
 			//当输入为空时
-			if (that.phone == "") {
+			if (Object.is(that.phone, "")) {
 				that.phoneTip = '手机号可用于登录、找回密码等服务';
 				that.condition.phone = false;
 				return;
@@ -351,7 +351,7 @@ exports.default = {
 
 			//通过后台数据库判断手机是否已被注册
 			that.$http.post('/register.html', { 'index': index, 'phone': that.phone }).then(function (result) {
-				if (result.body == '通过！') {
+				if (Object.is(result.body, '通过！')) {
 					r_x_phone.style.background = "url(../../../img/r.png)";
 					that.condition.phone = true;
 				} else {
@@ -379,7 +379,7 @@ exports.default = {
 			var index = 1;
 
 			//用户名为空时
-			if (that.username == "") {
+			if (Object.is(that.username, "")) {
 				that.usernameTip = '请输入2-8位账号名';
 				that.condition.username = false;
 				return;
@@ -403,7 +403,7 @@ exports.default = {
 
 			//通过后台数据库判断该用户名是否已被注册
 			that.$http.post('/register.html', { 'index': index, 'username': that.username }).then(function (result) {
-				if (result.body == '通过！') {
+				if (Object.is(result.body, '通过！')) {
 					r_x_username.style.background = "url(../../../img/r.png)";
 					that.condition.username = true;
 				} else {
@@ -431,7 +431,7 @@ exports.default = {
 			var r_x_confirm_password = document.getElementsByClassName('r_x_confirm_password')[0];
 
 			//密码为空时
-			if (that.password == "") {
+			if (Object.is(that.password, "")) {
 				that.passwordTip = "请输入6-10位登录密码";
 				that.condition.password = false;
 				return;
@@ -446,8 +446,8 @@ exports.default = {
 				that.passwordTip = "通过！";
 				that.condition.password = true;
 				r_x_password.style.background = "url(../../../img/r.png)";
-				if (that.confirm_password != "") {
-					if (that.password == that.confirm_password) {
+				if (!Object.is(that.confirm_password, "")) {
+					if (Object.is(that.password, that.confirm_password)) {
 						that.condition.confirm_password = true;
 						that.origin(confirm_password, "confirm_password");
 						that.confirm_passwordTip = "通过！";
@@ -475,13 +475,13 @@ exports.default = {
 			var confirm_password = document.getElementsByClassName('confirm_password')[0];
 			var r_x_confirm_password = document.getElementsByClassName('r_x_confirm_password')[0];
 
-			if (that.confirm_password == "") {
+			if (Object.is(that.confirm_password, "")) {
 				that.confirm_passwordTip = '请确认密码';
 				that.condition.confirm_password = false;
 				return;
 			}
 
-			if (that.password == that.confirm_password) {
+			if (Object.is(that.password, that.confirm_password)) {
 				that.confirm_passwordTip = "通过！";
 				r_x_confirm_password.style.background = "url(../../../img/r.png)";
 				that.condition.confirm_password = true;
@@ -505,7 +505,7 @@ exports.default = {
 			var index = 2;
 
 			//当验证码为空时
-			if (that.vertify == "") {
+			if (Object.is(that.vertify, "")) {
 				that.vertifyTip = '请输入验证码';
 				that.condition.vertify = false;
 				return;
@@ -513,7 +513,7 @@ exports.default = {
 
 			//将验证码发给后台匹配
 			that.$http.post('/register.html', { index: index, vertify: that.vertify }).then(function (result) {
-				if (result.body == '通过！') {
+				if (Object.is(result.body, '通过！')) {
 					r_x_vertify.style.background = "url(../../../img/r.png)";
 					that.condition.vertify = true;
 				} else {
@@ -574,7 +574,7 @@ exports.default = {
 			//将注册信息发给后台
 			that.$http.post('register.html', { index: index, phone: that.phone, username: that.username, password: that.password }).then(function (result) {
 				console.log(result.body);
-				if (result.body == '注册成功') {
+				if (Object.is(result.body, '注册成功')) {
 					window.location = "index.html";
 				}
 			}, function (result) {

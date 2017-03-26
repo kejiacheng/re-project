@@ -247,20 +247,21 @@ exports.default = {
 		acc_click: function acc_click(e) {
 			var that = this;
 			//使用三目获取正确DOM
-			var target = hasClass(e.target, 'num_bt') ? e.target.parentNode.parentNode.parentNode.parentNode : null;
+			var target = (0, _function.hasClass)(e.target, 'num_bt') ? e.target.parentNode.parentNode.parentNode.parentNode : null;
 			if (target) {
 				//使用三目判断是加还是减
-				var sign = hasClass(e.target, 'add') ? 'add' : hasClass(e.target, 'sub') ? 'sub' : null;
+				var sign = (0, _function.hasClass)(e.target, 'add') ? 'add' : (0, _function.hasClass)(e.target, 'sub') ? 'sub' : null;
 
 				//获取名字和价格
 				var item_name = target.getElementsByClassName('item_name')[0].innerHTML;
 				var item_price = target.getElementsByClassName('num')[0].innerHTML;
+
 				//根据符号进行货物数量的加减
-				if (sign == 'add') {
+				if (Object.is(sign, 'add')) {
 					if (that.shopping_list.accessories[item_name].num < 3) {
 						that.shopping_list.accessories[item_name].num++;
 					}
-				} else if (sign == 'sub') {
+				} else if (Object.is(sign, 'sub')) {
 					if (that.shopping_list.accessories[item_name].num > 0) {
 						that.shopping_list.accessories[item_name].num--;
 					}
@@ -323,7 +324,7 @@ exports.default = {
 			//获取complete_box的top值并且去掉px
 			var now_top = parseFloat(complete_box.style.top);
 			//当该物品个数为0，则改变top
-			if (that.shopping_list.accessories[name].num == 0) {
+			if (Object.is(that.shopping_list.accessories[name].num, 0)) {
 				complete_box.style.top = now_top + selected_items_height + 'px';
 			}
 		},
@@ -358,8 +359,9 @@ exports.default = {
 			sessionStorage.setItem('ingredients_price', that.shopping_list.ingredients.price);
 			//拼接accssories字符串，让支付页面可以json解析
 			var accessories = '{';
+			//不将数量为0的辅料填写进去
 			for (var i in that.shopping_list.accessories) {
-				if (that.shopping_list.accessories[i].num != 0) {
+				if (!Object.is(that.shopping_list.accessories[i].num, 0)) {
 					accessories += '"' + that.shopping_list.accessories[i].name + '"' + ': { "price":' + that.shopping_list.accessories[i].price + ', "num":' + that.shopping_list.accessories[i].num + "},";
 				}
 			}
@@ -649,7 +651,7 @@ exports.default = {
 			var index = 1;
 			//向后台发送退出信号
 			that.$http.post('/', { index: index }).then(function (result) {
-				if (result.body = '退出成功') {
+				if (Object.is(result.body, '退出成功')) {
 					//退出成功触发exit事件让父元件得到响应
 					_this.$emit('exit');
 				}

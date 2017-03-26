@@ -124,7 +124,7 @@
 	</div>
 </template>
 <script type="text/javascript">
-	import {addEvents, removeEvents, addClass, removeClass} from '../../function/function.js' 
+	import {addEvents, removeEvents,hasClass, addClass, removeClass} from '../../function/function.js' 
 	export default{
 		components: {
 			
@@ -171,12 +171,13 @@
 					//获取名字和价格
 					const item_name = target.getElementsByClassName('item_name')[0].innerHTML;
 					const item_price = target.getElementsByClassName('num')[0].innerHTML;
+
 					//根据符号进行货物数量的加减
-					if(sign == 'add'){
+					if(Object.is(sign, 'add')){
 						if(that.shopping_list.accessories[item_name].num < 3){
 							that.shopping_list.accessories[item_name].num++;
 						} 
-					}else if(sign == 'sub'){
+					}else if(Object.is(sign, 'sub')){
 						if(that.shopping_list.accessories[item_name].num > 0){
 							that.shopping_list.accessories[item_name].num--;
 						}
@@ -239,7 +240,7 @@
 				//获取complete_box的top值并且去掉px
 				const now_top = parseFloat(complete_box.style.top);
 				//当该物品个数为0，则改变top
-				if(that.shopping_list.accessories[name].num == 0){
+				if(Object.is(that.shopping_list.accessories[name].num, 0)){
 					complete_box.style.top = now_top + selected_items_height + 'px';
 				}
 			},
@@ -274,8 +275,9 @@
 				sessionStorage.setItem('ingredients_price', that.shopping_list.ingredients.price);
 				//拼接accssories字符串，让支付页面可以json解析
 				let accessories = '{';
+				//不将数量为0的辅料填写进去
 				for(let i in that.shopping_list.accessories){
-					if(that.shopping_list.accessories[i].num != 0){
+					if(!Object.is(that.shopping_list.accessories[i].num, 0)){
 						accessories += '"' + that.shopping_list.accessories[i].name + '"' + ': { "price":' + that.shopping_list.accessories[i].price + ', "num":' + that.shopping_list.accessories[i].num + "},"
 					}
 				}
