@@ -195,13 +195,13 @@ exports.push([module.i, "\n@charset \"UTF-8\";\n#header {\n  width: 100%;\n  hei
 
 /***/ }),
 
-/***/ 100:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(39);
+var content = __webpack_require__(41);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -866,13 +866,13 @@ function applyToTag (styleElement, obj) {
 
 
 /* styles */
-__webpack_require__(100)
+__webpack_require__(102)
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(129),
   /* template */
-  __webpack_require__(80),
+  __webpack_require__(82),
   /* scopeId */
   null,
   /* cssModules */
@@ -10083,21 +10083,6 @@ return Vue$3;
 
 /***/ }),
 
-/***/ 39:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)();
-// imports
-exports.i(__webpack_require__(5), "");
-
-// module
-exports.push([module.i, "\n@charset \"UTF-8\";\nbody {\n  font-family: \"\\5B8B\\4F53\";\n}\n#content {\n  width: 980px;\n  margin: 20px auto 0;\n  min-height: 500px;\n}\n#content .wrapper {\n    width: 400px;\n}\n#content .wrapper .content_text {\n      margin-bottom: 12px;\n      font-weight: 600;\n      color: red;\n}\n#content .wrapper .selected_goods {\n      width: 100%;\n}\n#content .wrapper .selected_goods table {\n        width: 700px;\n        border: 1px solid #aaa;\n}\n#content .wrapper .selected_goods table th, #content .wrapper .selected_goods table td {\n          text-align: center;\n          border: 1px solid #aaa;\n          height: 30px;\n}\n#content .wrapper .selected_goods table .goods_name {\n          width: 250px;\n}\n#content .wrapper .selected_goods table .same_width {\n          width: 150px;\n}\n#content .wrapper .selected_goods table .all_money {\n          text-align: right;\n          padding-right: 40px;\n}\n#content .wrapper .selected_goods table .all_money span {\n            padding: 0 5px;\n            color: #FE0048;\n            font-weight: 600;\n}\n#content .wrapper .payment_bt {\n      display: block;\n      width: 85px;\n      height: 35px;\n      background: #389cff;\n      text-align: center;\n      line-height: 35px;\n      color: #fff;\n      font-size: 14px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      border-radius: 3px;\n      margin-top: 15px;\n      cursor: pointer;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11634,6 +11619,21 @@ module.exports = plugin;
 
 /***/ }),
 
+/***/ 41:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)();
+// imports
+exports.i(__webpack_require__(5), "");
+
+// module
+exports.push([module.i, "\n@charset \"UTF-8\";\nbody {\n  font-family: \"\\5B8B\\4F53\";\n}\n#content {\n  width: 980px;\n  margin: 20px auto 0;\n  min-height: 500px;\n}\n#content .wrapper {\n    width: 400px;\n}\n#content .wrapper .content_text {\n      margin-bottom: 12px;\n      font-weight: 600;\n      color: red;\n}\n#content .wrapper .selected_goods {\n      width: 100%;\n}\n#content .wrapper .selected_goods table {\n        width: 700px;\n        border: 1px solid #aaa;\n}\n#content .wrapper .selected_goods table th, #content .wrapper .selected_goods table td {\n          text-align: center;\n          border: 1px solid #aaa;\n          height: 30px;\n}\n#content .wrapper .selected_goods table .goods_name {\n          width: 250px;\n}\n#content .wrapper .selected_goods table .same_width {\n          width: 150px;\n}\n#content .wrapper .selected_goods table .all_money {\n          text-align: right;\n          padding-right: 40px;\n}\n#content .wrapper .selected_goods table .all_money span {\n            padding: 0 5px;\n            color: #FE0048;\n            font-weight: 600;\n}\n#content .wrapper .payment_bt {\n      display: block;\n      width: 85px;\n      height: 35px;\n      background: #389cff;\n      text-align: center;\n      line-height: 35px;\n      color: #fff;\n      font-size: 14px;\n      font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n      border-radius: 3px;\n      margin-top: 15px;\n      cursor: pointer;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11718,7 +11718,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 80:
+/***/ 82:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -11,7 +11,7 @@
 		methods: {
 
 		},
-		props: ["isLogin"],
+		props: [],
 		data: function (){
 			return {
 				
