@@ -15480,7 +15480,9 @@ exports.default = {
 		return {};
 	},
 	computed: {},
-	created: function created() {},
+	created: function created() {
+		this.$http.get('/formPage/goodsRanking');
+	},
 	watch: {}
 };
 
