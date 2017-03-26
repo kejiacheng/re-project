@@ -18,7 +18,10 @@
 			
 		},
 		mounted(){
-			if(window.location.hash.replace('#/','') == 'chartPage'){
+			var that = this;
+			var path = that.$route.path;
+			var reg = /chartPage/;
+			if(reg.test(path)){
 				this.isNowPage = false;
 			}
 		},

@@ -1,6 +1,6 @@
 <template>
 	<div class="c">
-	22
+		goodsSale
 	</div>
 </template>
 <script type="text/javascript">

@@ -12183,22 +12183,34 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "mode_choice"
   }, [_c('ul', [_c('li', {
-    staticClass: "form_index_li active",
+    staticClass: "form_index_li",
+    class: {
+      active: _vm.mode_choice == 'form_index_li'
+    },
     on: {
       "click": _vm.formIndex
     }
   }, [_c('p', [_vm._v("后台首页")])]), _vm._v(" "), _c('li', {
     staticClass: "goods_ranking_li",
+    class: {
+      active: _vm.mode_choice == 'goods_ranking_li'
+    },
     on: {
       "click": _vm.goodsRanking
     }
   }, [_c('p', [_vm._v("销量排行")])]), _vm._v(" "), _c('li', {
     staticClass: "goods_sale_li",
+    class: {
+      active: _vm.mode_choice == 'goods_sale_li'
+    },
     on: {
       "click": _vm.goodsSale
     }
   }, [_c('p', [_vm._v("销售记录")])]), _vm._v(" "), _c('li', {
     staticClass: "goods_rel_li",
+    class: {
+      active: _vm.mode_choice == 'goods_rel_li'
+    },
     on: {
       "click": _vm.goodsRel
     }
@@ -12222,7 +12234,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "b"
-  }, [_vm._v("\n\t11\n")])
+  }, [_vm._v("\n\tgoodsRanking\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -12239,7 +12251,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "d"
-  })
+  }, [_vm._v("\n\tgoodsRel\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -12308,7 +12320,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "c"
-  }, [_vm._v("\n22\n")])
+  }, [_vm._v("\n\tgoodsSale\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -12330,12 +12342,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "mode_choice"
   }, [_c('ul', [_c('li', {
-    staticClass: "graph_index_li active",
+    staticClass: "chart_index_li",
+    class: {
+      active: _vm.mode_choice == 'chart_index_li'
+    },
     on: {
       "click": _vm.chartIndex
     }
   }, [_c('p', [_vm._v("图形首页")])]), _vm._v(" "), _c('li', {
     staticClass: "bar_line_li",
+    class: {
+      active: _vm.mode_choice == 'bar_line_li'
+    },
     on: {
       "click": _vm.barLine
     }
@@ -12358,7 +12376,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "a"
-  }, [_vm._v("\n\t00\n")])
+  }, [_vm._v("\n\tformIndex\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -12376,7 +12394,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "e"
-  }, [_vm._v("\n\t00\n")])
+  }, [_vm._v("\n\tchartIndex\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -12394,7 +12412,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "f"
-  }, [_vm._v("\n\t00\n")])
+  }, [_vm._v("\n\tbarLine\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -14981,6 +14999,13 @@ exports.default = {
 		backstageHeader: _backstageHeader2.default
 	},
 	mounted: function mounted() {
+		var that = this;
+		var path = that.$route.path;
+		if (path == '/formPage' || path == '/') {
+			that.$router.push({ name: 'formIndex' });
+		} else if (path == 'chartPage') {
+			that.$router.push({ name: 'chartIndex' });
+		}
 		// var path = window.location.hash.replace('#/','');
 		// console.log(path);
 		// if(path == 'chartPage'){
@@ -14993,21 +15018,15 @@ exports.default = {
 	},
 
 	methods: {
-		aa: function aa() {},
-		bb: function bb() {},
 		toFormPage: function toFormPage() {
-			this.$router.push({ name: 'formPage' });
-			this.isNowPage = true;
+			this.$router.push({ name: 'formIndex' });
 		},
 		toChartPage: function toChartPage() {
-			this.$router.push({ name: 'chartPage' });
-			this.isNowPage = false;
+			this.$router.push({ name: 'chartIndex' });
 		}
 	},
 	data: function data() {
-		return {
-			isNowPage: true
-		};
+		return {};
 	},
 
 	computed: {},
@@ -15039,7 +15058,10 @@ var _function = __webpack_require__(20);
 exports.default = {
 	components: {},
 	mounted: function mounted() {
-		if (window.location.hash.replace('#/', '') == 'chartPage') {
+		var that = this;
+		var path = that.$route.path;
+		var reg = /chartPage/;
+		if (reg.test(path)) {
 			this.isNowPage = false;
 		}
 	},
@@ -15107,18 +15129,29 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
 	components: {},
+	mounted: function mounted() {
+		var that = this;
+		var path = that.$route.path;
+		if (path == '/chartPage/barLine') {
+			that.mode_choice = 'bar_line_li';
+		}
+	},
+
 	methods: {
 		chartIndex: function chartIndex() {
-			console.log('xixi');
 			this.$router.push({ name: 'chartIndex' });
+			this.mode_choice = 'chart_index_li';
 		},
 		barLine: function barLine() {
 			this.$router.push({ name: 'barLine' });
+			this.mode_choice = 'bar_line_li';
 		}
 	},
 	props: [],
 	data: function data() {
-		return {};
+		return {
+			mode_choice: 'chart_index_li'
+		};
 	},
 	computed: {},
 	created: function created() {},
@@ -15144,7 +15177,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 	components: {},
 	methods: {},
-	props: ["isLogin"],
+	props: [],
 	data: function data() {
 		return {};
 	},
@@ -15211,23 +15244,41 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
 	components: {},
+	mounted: function mounted() {
+		var that = this;
+		var path = that.$route.path;
+		if (path == '/formPage/goodsRanking') {
+			that.mode_choice = 'goods_ranking_li';
+		} else if (path == '/formPage/goodsSale') {
+			that.mode_choice = 'goods_sale_li';
+		} else if (path == '/formPage/goodsRel') {
+			that.mode_choice = 'goods_rel_li';
+		}
+	},
+
 	methods: {
 		formIndex: function formIndex() {
 			this.$router.push({ name: 'formIndex' });
+			this.mode_choice = 'form_index_li';
 		},
 		goodsRanking: function goodsRanking() {
 			this.$router.push({ name: 'goodsRanking' });
+			this.mode_choice = 'goods_ranking_li';
 		},
 		goodsSale: function goodsSale() {
 			this.$router.push({ name: 'goodsSale' });
+			this.mode_choice = 'goods_sale_li';
 		},
 		goodsRel: function goodsRel() {
 			this.$router.push({ name: 'goodsRel' });
+			this.mode_choice = 'goods_rel_li';
 		}
 	},
 	props: [],
 	data: function data() {
-		return {};
+		return {
+			mode_choice: 'form_index_li'
+		};
 	},
 	computed: {},
 	created: function created() {},

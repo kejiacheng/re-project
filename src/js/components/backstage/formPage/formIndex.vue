@@ -1,6 +1,6 @@
 <template>
 	<div class="a">
-		00
+		formIndex
 	</div>
 </template>
 <script type="text/javascript">

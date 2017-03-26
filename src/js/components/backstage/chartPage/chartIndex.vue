@@ -1,6 +1,6 @@
 <template>
 	<div class="e">
-		00
+		chartIndex
 	</div>
 </template>
 <script type="text/javascript">

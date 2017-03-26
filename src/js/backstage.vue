@@ -13,6 +13,13 @@
 			backstageHeader
 		},
 		mounted(){
+			var that = this;
+			var path = that.$route.path;
+			if(path == '/formPage' || path == '/'){
+				that.$router.push({ name: 'formIndex' });
+			}else if(path == 'chartPage'){
+				that.$router.push({ name: 'chartIndex' });
+			}
 			// var path = window.location.hash.replace('#/','');
 			// console.log(path);
 			// if(path == 'chartPage'){
@@ -24,24 +31,16 @@
 			// }
 		},
 		methods: {
-			aa(){
-				
-			},
-			bb(){
-
-			},
 			toFormPage(){
-				this.$router.push({ name: 'formPage' });
-				this.isNowPage = true;
+				this.$router.push({ name: 'formIndex' });
 			},
 			toChartPage(){
-				this.$router.push({ name: 'chartPage' });
-				this.isNowPage = false;
+				this.$router.push({ name: 'chartIndex' });
 			}
 		},
 		data(){
 			return {
-				isNowPage: true
+
 			}
 		},
 		computed: {

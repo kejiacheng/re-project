@@ -1,6 +1,6 @@
 <template>
 	<div class="f">
-		00
+		barLine
 	</div>
 </template>
 <script type="text/javascript">
@@ -11,7 +11,7 @@
 		methods: {
 
 		},
-		props: ["isLogin"],
+		props: [],
 		data: function (){
 			return {
 				

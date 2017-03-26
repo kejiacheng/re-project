@@ -1,6 +1,6 @@
 <template>
 	<div class="b">
-		11
+		goodsRanking
 	</div>
 </template>
 <script type="text/javascript">

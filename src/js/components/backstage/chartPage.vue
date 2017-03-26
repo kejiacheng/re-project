@@ -3,8 +3,8 @@
 		<div class="wrapper">
 			<div class="mode_choice">
 				<ul>
-					<li class="graph_index_li active" @click="chartIndex"><p>图形首页</p></li>
-					<li class="bar_line_li" @click="barLine"><p>柱状折线</p></li>	
+					<li class="chart_index_li" :class="{ active: mode_choice == 'chart_index_li'}" @click="chartIndex"><p>图形首页</p></li>
+					<li class="bar_line_li" :class="{ active: mode_choice == 'bar_line_li'}" @click="barLine"><p>柱状折线</p></li>	
 				</ul>
 			</div>
 			<div class="item_box">
@@ -18,19 +18,27 @@
 		components: {
 			
 		},
+		mounted(){
+			var that = this;
+			var path = that.$route.path;
+			if(path == '/chartPage/barLine'){
+				that.mode_choice = 'bar_line_li';
+			}
+		},
 		methods: {
 			chartIndex(){
-				console.log('xixi');
 				this.$router.push({ name: 'chartIndex' });
+				this.mode_choice = 'chart_index_li';
 			},
 			barLine(){
 				this.$router.push({ name: 'barLine' });
+				this.mode_choice = 'bar_line_li';
 			}
 		},
 		props: [],
 		data: function (){
 			return {
-				
+				mode_choice: 'chart_index_li'
 			}
 		},
 		computed: {
