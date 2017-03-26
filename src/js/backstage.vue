@@ -20,15 +20,6 @@
 			}else if(path == 'chartPage'){
 				that.$router.push({ name: 'chartIndex' });
 			}
-			// var path = window.location.hash.replace('#/','');
-			// console.log(path);
-			// if(path == 'chartPage'){
-			// 	this.$router.push({ name: 'chartPage' });
-			// 	this.isNowPage = true;
-			// }else if(path == 'formPage' || path == ''){
-			// 	this.$router.push({ name: 'formPage' });
-			// 	this.isNowPage = false;
-			// }
 		},
 		methods: {
 			toFormPage(){

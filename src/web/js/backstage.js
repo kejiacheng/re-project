@@ -11676,7 +11676,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n.b {\n  width: 35%;\n  height: 400px;\n  background: red;\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\n.goods_ranking .header_text {\n  text-align: center;\n  height: 100px;\n  font-size: 34px;\n  line-height: 100px;\n  font-weight: 600;\n}\n.goods_ranking .box {\n  position: relative;\n}\n.goods_ranking .box table {\n    margin: 0 auto 20px;\n    border: 1px solid #333;\n}\n.goods_ranking .box table th {\n      font-weight: 600;\n}\n.goods_ranking .box table th, .goods_ranking .box table td {\n      border: 1px solid #333;\n      text-align: center;\n      padding: 0 10px;\n      height: 24px;\n}\n.goods_ranking .box table .ranking, .goods_ranking .box table .num, .goods_ranking .box table .name, .goods_ranking .box table .price, .goods_ranking .box table .time, .goods_ranking .box table .people, .goods_ranking .box table .rel_num {\n      min-width: 120px;\n}\n.goods_ranking .box .select_time {\n    position: absolute;\n    top: 0;\n    left: 50px;\n    width: 130px;\n    height: 30px;\n    padding-left: 10px;\n    font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n    font-size: 14px;\n}\n", ""]);
 
 // exports
 
@@ -11690,7 +11690,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n.d {\n  width: 30%;\n  height: 300px;\n  background: black;\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\n.goods_rel .header_text {\n  text-align: center;\n  height: 100px;\n  font-size: 34px;\n  line-height: 100px;\n  font-weight: 600;\n}\n.goods_rel .box {\n  position: relative;\n}\n.goods_rel .box table {\n    margin: 0 auto 20px;\n    border: 1px solid #333;\n}\n.goods_rel .box table th {\n      font-weight: 600;\n}\n.goods_rel .box table th, .goods_rel .box table td {\n      border: 1px solid #333;\n      text-align: center;\n      padding: 0 10px;\n      height: 24px;\n}\n.goods_rel .box table .ranking, .goods_rel .box table .num, .goods_rel .box table .name, .goods_rel .box table .price, .goods_rel .box table .time, .goods_rel .box table .people, .goods_rel .box table .rel_num {\n      min-width: 120px;\n}\n.goods_rel .box .select_time {\n    position: absolute;\n    top: 0;\n    left: 50px;\n    width: 130px;\n    height: 30px;\n    padding-left: 10px;\n    font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n    font-size: 14px;\n}\n.goods_rel .update_num {\n  width: 260px;\n  margin: 0 auto;\n}\n.goods_rel .update_num input {\n    width: 70px;\n    height: 30px;\n    padding-left: 8px;\n    font-size: 14px;\n}\n.goods_rel .update_num a {\n    display: inline-block;\n    font-size: 14px;\n    width: 70px;\n    height: 30px;\n    vertical-align: top;\n    border: 2px solid #dedede;\n    text-align: center;\n    line-height: 30px;\n    background: #f7193f;\n    border-radius: 20px;\n    color: #fff;\n    cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -11722,7 +11722,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n.c {\n  width: 30%;\n  height: 300px;\n  background: yellow;\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\n.goods_sale .header_text {\n  text-align: center;\n  height: 100px;\n  font-size: 34px;\n  line-height: 100px;\n  font-weight: 600;\n}\n.goods_sale .box {\n  position: relative;\n}\n.goods_sale .box table {\n    margin: 0 auto 20px;\n    border: 1px solid #333;\n}\n.goods_sale .box table th {\n      font-weight: 600;\n}\n.goods_sale .box table th, .goods_sale .box table td {\n      border: 1px solid #333;\n      text-align: center;\n      padding: 0 10px;\n      height: 24px;\n}\n.goods_sale .box table .ranking, .goods_sale .box table .num, .goods_sale .box table .name, .goods_sale .box table .price, .goods_sale .box table .time, .goods_sale .box table .people, .goods_sale .box table .rel_num {\n      min-width: 120px;\n}\n.goods_sale .box .select_time {\n    position: absolute;\n    top: 0;\n    left: 50px;\n    width: 130px;\n    height: 30px;\n    padding-left: 10px;\n    font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n    font-size: 14px;\n}\n.goods_sale .box .page_box {\n    width: 550px;\n    margin: 0 auto;\n    font-size: 0;\n}\n.goods_sale .box .page_box a {\n      display: inline-block;\n      font-size: 14px;\n      width: 22px;\n      height: 20px;\n      text-align: center;\n      line-height: 20px;\n      margin: 0 5px;\n      border: 1px solid #333;\n      color: #000;\n      cursor: pointer;\n}\n.goods_sale .box .page_box a:first-child, .goods_sale .box .page_box a:last-child {\n        width: 40px;\n}\n.goods_sale .box .page_box strong {\n      font-size: 14px;\n}\n.goods_sale .box .page_box .prev_page, .goods_sale .box .page_box .next_page {\n      width: 60px;\n}\n.goods_sale .box .page_box .disable {\n      opacity: 0.5;\n}\n.goods_sale .box .page_box .hidden {\n      display: none;\n}\n.goods_sale .box .page_box .active {\n      color: white;\n      background: #3E26D2;\n      border-color: #3E26D2;\n}\n", ""]);
 
 // exports
 
@@ -11750,7 +11750,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n.a {\n  width: 45%;\n  height: 400px;\n  color: blue;\n}\n", ""]);
+exports.push([module.i, "\n.form_index .header_text {\n  text-align: center;\n  height: 100px;\n  font-size: 34px;\n  line-height: 100px;\n  font-weight: 600;\n}\n.form_index .tips {\n  width: 600px;\n  margin: 0 auto;\n}\n.form_index .tips p {\n    text-indent: 2em;\n    line-height: 20px;\n    margin-bottom: 10px;\n}\n", ""]);
 
 // exports
 
@@ -11765,7 +11765,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n.e {\n  width: 45%;\n  height: 400px;\n  background: green;\n}\n", ""]);
+exports.push([module.i, "\n.chart_index .header_text {\n  text-align: center;\n  height: 100px;\n  font-size: 34px;\n  line-height: 100px;\n  font-weight: 600;\n}\n.chart_index .tips {\n  width: 600px;\n  margin: 0 auto;\n}\n.chart_index .tips p {\n    text-indent: 2em;\n    line-height: 20px;\n    margin-bottom: 10px;\n}\n", ""]);
 
 // exports
 
@@ -12232,10 +12232,41 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "b"
-  }, [_vm._v("\n\tgoodsRanking\n")])
-},staticRenderFns: []}
+    staticClass: "goods_ranking"
+  }, [_c('p', {
+    staticClass: "header_text"
+  }, [_vm._v("销量排行")]), _vm._v(" "), _c('div', {
+    staticClass: "box"
+  }, [_c('table', [_c('tr', [_c('th', {
+    staticClass: "ranking"
+  }, [_vm._v("销量排名")]), _vm._v(" "), _c('th', {
+    staticClass: "name"
+  }, [_vm._v("货物名称")]), _vm._v(" "), _c('th', {
+    staticClass: "num"
+  }, [_vm._v("销量数目")])])]), _vm._v(" "), _c('select', {
+    staticClass: "select_time"
+  }, [_c('option', {
+    attrs: {
+      "value": "90"
+    }
+  }, [_vm._v("最近三个月")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "30",
+      "selected": ""
+    }
+  }, [_vm._v("最近一个月")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "10"
+    }
+  }, [_vm._v("最近十天")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "5"
+    }
+  }, [_vm._v("最近五天")])])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -12249,10 +12280,38 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "d"
-  }, [_vm._v("\n\tgoodsRel\n")])
-},staticRenderFns: []}
+    staticClass: "goods_rel item_box_list hidden"
+  }, [_c('p', {
+    staticClass: "header_text"
+  }, [_vm._v("货物余量")]), _vm._v(" "), _c('div', {
+    staticClass: "box"
+  }, [_c('table', [_c('tr', [_c('th', {
+    staticClass: "ranking"
+  }, [_vm._v("销量排名")]), _vm._v(" "), _c('th', {
+    staticClass: "name"
+  }, [_vm._v("货物名称")]), _vm._v(" "), _c('th', {
+    staticClass: "num"
+  }, [_vm._v("销量数目")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "update_num"
+  }, [_c('input', {
+    staticClass: "name",
+    attrs: {
+      "type": "text",
+      "placeholder": "货物名称"
+    }
+  }), _vm._v(" "), _c('input', {
+    staticClass: "num",
+    attrs: {
+      "type": "text",
+      "placeholder": "货物数量"
+    }
+  }), _vm._v(" "), _c('a', {
+    staticClass: "update_bt"
+  }, [_vm._v("更新")])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -12318,10 +12377,64 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "c"
-  }, [_vm._v("\n\tgoodsSale\n")])
-},staticRenderFns: []}
+    staticClass: "goods_sale"
+  }, [_c('p', {
+    staticClass: "header_text"
+  }, [_vm._v("销售记录")]), _vm._v(" "), _c('div', {
+    staticClass: "box"
+  }, [_c('table', [_c('tr', [_c('th', {
+    staticClass: "name"
+  }, [_vm._v("销售物品")]), _vm._v(" "), _c('th', {
+    staticClass: "price"
+  }, [_vm._v("销售价格")]), _vm._v(" "), _c('th', {
+    staticClass: "people"
+  }, [_vm._v("购买者")]), _vm._v(" "), _c('th', {
+    staticClass: "time"
+  }, [_vm._v("销售时间")])])]), _vm._v(" "), _c('select', {
+    staticClass: "select_time"
+  }, [_c('option', {
+    attrs: {
+      "value": "90"
+    }
+  }, [_vm._v("最近三个月")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "30"
+    }
+  }, [_vm._v("最近一个月")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "10"
+    }
+  }, [_vm._v("最近十天")]), _vm._v(" "), _c('option', {
+    attrs: {
+      "value": "5",
+      "selected": ""
+    }
+  }, [_vm._v("最近五天")])]), _vm._v(" "), _c('div', {
+    staticClass: "page_box",
+    attrs: {
+      "onselectstart": "return false;"
+    }
+  }, [_c('a', {
+    staticClass: "fitst_page set_page"
+  }, [_vm._v("首页")]), _vm._v(" "), _c('a', {
+    staticClass: "prev_page set_page"
+  }, [_vm._v("上一页")]), _vm._v(" "), _c('a', {
+    staticClass: "num_page set_page"
+  }, [_vm._v("1")]), _vm._v(" "), _c('a', {
+    staticClass: "num_page set_page"
+  }, [_vm._v("2")]), _vm._v(" "), _c('a', {
+    staticClass: "num_page set_page"
+  }, [_vm._v("3")]), _vm._v(" "), _c('a', {
+    staticClass: "num_page set_page"
+  }, [_vm._v("4")]), _vm._v(" "), _c('a', {
+    staticClass: "next_page set_page"
+  }, [_vm._v("下一页")]), _vm._v(" "), _c('a', {
+    staticClass: "last_page set_page"
+  }, [_vm._v("尾页")])])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -12374,10 +12487,16 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "a"
-  }, [_vm._v("\n\tformIndex\n")])
-},staticRenderFns: []}
+    staticClass: "form_index"
+  }, [_c('p', {
+    staticClass: "header_text"
+  }, [_vm._v("注意事项")]), _vm._v(" "), _c('div', {
+    staticClass: "tips"
+  }, [_c('p', [_vm._v("不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事")]), _vm._v(" "), _c('p', [_vm._v("不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事")]), _vm._v(" "), _c('p', [_vm._v("不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事")]), _vm._v(" "), _c('p', [_vm._v("不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事")])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -12392,10 +12511,16 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "e"
-  }, [_vm._v("\n\tchartIndex\n")])
-},staticRenderFns: []}
+    staticClass: "chart_index"
+  }, [_c('p', {
+    staticClass: "header_text"
+  }, [_vm._v("注意事项")]), _vm._v(" "), _c('div', {
+    staticClass: "tips"
+  }, [_c('p', [_vm._v("不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事")]), _vm._v(" "), _c('p', [_vm._v("不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事")]), _vm._v(" "), _c('p', [_vm._v("不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事")]), _vm._v(" "), _c('p', [_vm._v("不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事不要搞事")])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -15006,15 +15131,6 @@ exports.default = {
 		} else if (path == 'chartPage') {
 			that.$router.push({ name: 'chartIndex' });
 		}
-		// var path = window.location.hash.replace('#/','');
-		// console.log(path);
-		// if(path == 'chartPage'){
-		// 	this.$router.push({ name: 'chartPage' });
-		// 	this.isNowPage = true;
-		// }else if(path == 'formPage' || path == ''){
-		// 	this.$router.push({ name: 'formPage' });
-		// 	this.isNowPage = false;
-		// }
 	},
 
 	methods: {
@@ -15201,6 +15317,12 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 exports.default = {
 	components: {},
@@ -15300,6 +15422,12 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 exports.default = {
 	components: {},
@@ -15323,6 +15451,21 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -15356,6 +15499,20 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
 	components: {},
@@ -15384,11 +15541,37 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
 	components: {},
 	methods: {},
-	props: ["isLogin"],
+	props: [],
 	data: function data() {
 		return {};
 	},
