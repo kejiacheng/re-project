@@ -8,7 +8,7 @@ Vue.use(Vuex);
 
 const state = {
 	count: 0,
-	rankingList: {},
+	rankingList: [],
 	goodsSale: {},
 }
 

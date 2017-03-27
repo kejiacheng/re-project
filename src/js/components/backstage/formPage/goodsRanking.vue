@@ -1,13 +1,20 @@
 <template>
-	<div class="goods_ranking">
+	<div class="goods_ranking" @click="sa">
 		<p class="header_text">销量排行</p>
 		<div class="box">
-			<table>
+			<table class="a">
 				<tr>
 					<th class="ranking">销量排名</th>
 					<th class="name">货物名称</th>
 					<th class="num">销量数目</th>
 				</tr>
+				<template v-for="(item, index) in arr">
+					<tr>
+						<td>{{ index+1 }}</td>
+						<td>{{ item[0] }}</td>
+						<td>{{ item[1] }}</td>
+					</tr>
+				</template>
 			</table>
 			<select class="select_time">
 				<option value="90">最近三个月</option>
@@ -23,8 +30,11 @@
 		components: {
 			
 		},
+		mounted(){
+			
+		},
 		methods: {
-
+			
 		},
 		props: [],
 		data: function (){
@@ -33,13 +43,15 @@
 			}
 		},
 		computed: {
-
+			arr(){
+				return this.$store.state.rankingList;
+			}
 		},
 		created: function (){
 			
 		},
 		watch: {
-
+			
 		}
 	}
 </script>

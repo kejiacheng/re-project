@@ -30,10 +30,10 @@
 			}else if(path == '/formPage/goodsRel'){
 				that.mode_choice = 'goods_rel_li';
 			}
-			that.$http.get('/formPage')
+			that.$http.post('/formPage')
 			.then((result) => {
 				that.$store.commit('getRankingList', result.body);
-				// console.log(that.$store.state.rankingList);
+				// that.$store.commit('', result.body);
 			})
 		},
 		methods: {
