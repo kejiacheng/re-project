@@ -7,7 +7,7 @@ import getters from './getters';
 Vue.use(Vuex);
 
 const state = {
-	count: 0,
+	goodsList: [],
 	rankingList: [],
 	goodsSale: [],
 }

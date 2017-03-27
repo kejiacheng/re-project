@@ -16,7 +16,7 @@
 					</tr>
 				</template>
 			</table>
-			<select class="select_time">
+			<select class="select_time" @change="time">
 				<option value="30" selected>最近一个月</option>
 				<option value="10">最近十天</option>
 				<option value="5">最近五天</option>
@@ -33,7 +33,17 @@
 			
 		},
 		methods: {
-			
+			time(e){
+				const value = e.target.value;
+				const that = this;
+				if(Object.is(value, '5')){
+					that.$store.commit('getRankingList', that.$store.getters.five);
+				}else if(Object.is(value, '10')){
+					that.$store.commit('getRankingList', that.$store.getters.ten);
+				}else if(Object.is(value, '30')){
+					that.$store.commit('getRankingList', that.$store.state.goodsList);
+				}
+			}
 		},
 		props: [],
 		data: function (){

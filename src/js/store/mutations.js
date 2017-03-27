@@ -32,7 +32,7 @@ export default {
 		state.rankingList = arr;
 	},
 	[getGoodsSale] (state, n){
-		var arr = n.reverse();
+		var arr = n.sort((a,b) => b.date - a.date);
 		var newArr = [];
 		arr.forEach((e) => {
 			var str = '';

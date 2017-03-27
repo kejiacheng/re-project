@@ -22,8 +22,11 @@
 			}
 			that.$http.post('/backstage')
 			.then((result) => {
+				// console.log(result.body)
 				that.$store.commit('getRankingList', result.body);
 				that.$store.commit('getGoodsSale', result.body);
+				that.$store.state.goodsList = result.body;
+				// console.log(that.$store.state.goodsList)
 			})
 		},
 		methods: {

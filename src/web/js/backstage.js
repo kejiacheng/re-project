@@ -11461,7 +11461,6 @@ const routes = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__actions__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__getters__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__getters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__getters__);
 
 
 
@@ -11471,14 +11470,14 @@ const routes = [
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
 
 const state = {
-	count: 0,
+	goodsList: [],
 	rankingList: [],
 	goodsSale: [],
 }
 
 /* harmony default export */ __webpack_exports__["a"] = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 	state,
-	getters: __WEBPACK_IMPORTED_MODULE_4__getters___default.a,
+	getters: __WEBPACK_IMPORTED_MODULE_4__getters__["a" /* default */],
 	actions: __WEBPACK_IMPORTED_MODULE_3__actions___default.a,
 	mutations: __WEBPACK_IMPORTED_MODULE_2__mutations__["a" /* default */],
 });
@@ -12276,18 +12275,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "a"
   }, [_vm._m(0), _vm._v(" "), _vm._l((_vm.arr), function(item, index) {
     return [_c('tr', [_c('td', [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[0]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[1]))])])]
-  })], 2), _vm._v(" "), _vm._m(1)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('tr', [_c('th', {
-    staticClass: "ranking"
-  }, [_vm._v("销量排名")]), _vm._v(" "), _c('th', {
-    staticClass: "name"
-  }, [_vm._v("货物名称")]), _vm._v(" "), _c('th', {
-    staticClass: "num"
-  }, [_vm._v("销量数目")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('select', {
-    staticClass: "select_time"
+  })], 2), _vm._v(" "), _c('select', {
+    staticClass: "select_time",
+    on: {
+      "change": _vm.time
+    }
   }, [_c('option', {
     attrs: {
       "value": "30",
@@ -12301,7 +12293,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": "5"
     }
-  }, [_vm._v("最近五天")])])
+  }, [_vm._v("最近五天")])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('tr', [_c('th', {
+    staticClass: "ranking"
+  }, [_vm._v("销量排名")]), _vm._v(" "), _c('th', {
+    staticClass: "name"
+  }, [_vm._v("货物名称")]), _vm._v(" "), _c('th', {
+    staticClass: "num"
+  }, [_vm._v("销量数目")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -12421,20 +12421,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "box"
   }, [_c('table', [_vm._m(0), _vm._v(" "), _vm._l((_vm.arr), function(item) {
     return [_c('tr', [_c('td', [_vm._v(_vm._s(item[0]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[1]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[2]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[3]))])])]
-  })], 2), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('tr', [_c('th', {
-    staticClass: "name"
-  }, [_vm._v("销售物品")]), _vm._v(" "), _c('th', {
-    staticClass: "price"
-  }, [_vm._v("销售价格")]), _vm._v(" "), _c('th', {
-    staticClass: "people"
-  }, [_vm._v("购买者")]), _vm._v(" "), _c('th', {
-    staticClass: "time"
-  }, [_vm._v("销售时间")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('select', {
-    staticClass: "select_time"
+  })], 2), _vm._v(" "), _c('select', {
+    staticClass: "select_time",
+    on: {
+      "change": _vm.time
+    }
   }, [_c('option', {
     attrs: {
       "value": "30",
@@ -12448,7 +12439,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": "5"
     }
-  }, [_vm._v("最近五天")])])
+  }, [_vm._v("最近五天")])]), _vm._v(" "), _vm._m(1)])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('tr', [_c('th', {
+    staticClass: "name"
+  }, [_vm._v("销售物品")]), _vm._v(" "), _c('th', {
+    staticClass: "price"
+  }, [_vm._v("销售价格")]), _vm._v(" "), _c('th', {
+    staticClass: "people"
+  }, [_vm._v("购买者")]), _vm._v(" "), _c('th', {
+    staticClass: "time"
+  }, [_vm._v("销售时间")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "page_box",
@@ -15985,8 +15986,11 @@ exports.default = {
 			that.$router.push({ name: 'chartIndex' });
 		}
 		that.$http.post('/backstage').then(function (result) {
+			// console.log(result.body)
 			that.$store.commit('getRankingList', result.body);
 			that.$store.commit('getGoodsSale', result.body);
+			that.$store.state.goodsList = result.body;
+			// console.log(that.$store.state.goodsList)
 		});
 	},
 
@@ -16339,7 +16343,19 @@ exports.default = {
 	components: {},
 	mounted: function mounted() {},
 
-	methods: {},
+	methods: {
+		time: function time(e) {
+			var value = e.target.value;
+			var that = this;
+			if (Object.is(value, '5')) {
+				that.$store.commit('getRankingList', that.$store.getters.five);
+			} else if (Object.is(value, '10')) {
+				that.$store.commit('getRankingList', that.$store.getters.ten);
+			} else if (Object.is(value, '30')) {
+				that.$store.commit('getRankingList', that.$store.state.goodsList);
+			}
+		}
+	},
 	props: [],
 	data: function data() {
 		return {};
@@ -16446,7 +16462,19 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
 	components: {},
-	methods: {},
+	methods: {
+		time: function time(e) {
+			var value = e.target.value;
+			var that = this;
+			if (Object.is(value, '5')) {
+				that.$store.commit('getGoodsSale', that.$store.getters.five);
+			} else if (Object.is(value, '10')) {
+				that.$store.commit('getGoodsSale', that.$store.getters.ten);
+			} else if (Object.is(value, '30')) {
+				that.$store.commit('getGoodsSale', that.$store.state.goodsList);
+			}
+		}
+	},
 	props: [],
 	data: function data() {
 		return {};
@@ -16477,9 +16505,39 @@ exports.default = {
 
 /***/ }),
 /* 134 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = {
+	ten: state => {
+		var oldDate = new Date();
+		oldDate.setDate(oldDate.getDate() - 9);
+		oldDate = formatTime(oldDate, 0);
 
+		function formatTime(time, hours){
+			var year = time.getFullYear();
+			var month = time.getMonth() + 1;
+			var date = time.getDate();
+
+			return year * 1000000 + month * 10000 + date * 100 + hours;
+		}
+		return state.goodsList.filter(item => item.date > oldDate)
+	},
+	five: state => {
+		var oldDate = new Date();
+		oldDate.setDate(oldDate.getDate() - 4);
+		oldDate = formatTime(oldDate, 0);
+
+		function formatTime(time, hours){
+			var year = time.getFullYear();
+			var month = time.getMonth() + 1;
+			var date = time.getDate();
+
+			return year * 1000000 + month * 10000 + date * 100 + hours;
+		}
+		return state.goodsList.filter(item => item.date > oldDate)
+	}
+};
 
 /***/ }),
 /* 135 */
@@ -16530,7 +16588,8 @@ const getGoodsSale = 'getGoodsSale';
 		state.rankingList = arr;
 	},
 	[__WEBPACK_IMPORTED_MODULE_0__mutation_types_js__["b" /* getGoodsSale */]] (state, n){
-		var arr = n.reverse();
+		var arr = n.sort((a,b) => b.date - a.date);
+		console.log(arr)
 		var newArr = [];
 		arr.forEach((e) => {
 			var str = '';
