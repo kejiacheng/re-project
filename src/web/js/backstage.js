@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 137);
+/******/ 	return __webpack_require__(__webpack_require__.s = 136);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -11457,7 +11457,8 @@ const routes = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutations__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutations__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mutations___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__mutations__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__actions__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__getters__ = __webpack_require__(134);
@@ -11471,14 +11472,16 @@ const routes = [
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
 
 const state = {
-	count: 0
+	count: 0,
+	rankingList: {},
+	goodsSale: {},
 }
 
 /* harmony default export */ __webpack_exports__["a"] = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 	state,
 	getters: __WEBPACK_IMPORTED_MODULE_4__getters___default.a,
 	actions: __WEBPACK_IMPORTED_MODULE_3__actions___default.a,
-	mutations: __WEBPACK_IMPORTED_MODULE_2__mutations__["a" /* default */],
+	mutations: __WEBPACK_IMPORTED_MODULE_2__mutations__["default"],
 });
 
 /***/ }),
@@ -16224,7 +16227,8 @@ exports.default = {
 			that.mode_choice = 'goods_rel_li';
 		}
 		that.$http.get('/formPage').then(function (result) {
-			console.log(result.body[0]);
+			that.$store.commit('getRankingList', result.body);
+			// console.log(that.$store.state.rankingList);
 		});
 	},
 
@@ -16453,29 +16457,12 @@ exports.default = {
 
 /***/ }),
 /* 135 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-const HEHE = 'HEHE';
-/* harmony export (immutable) */ __webpack_exports__["a"] = HEHE;
-
+throw new Error("Module parse failed: C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\store\\mutations.js Unexpected token (9:12)\nYou may need an appropriate loader to handle this file type.\n| \t[getRankingList] (state, n){\r\n| \t\tn.forEach((e,x) => {\r\n| \t\t\tlet json + x = {1:2};\r\n| \t\t\tconsole.log(json + x)\r\n| \t\t})\r");
 
 /***/ }),
 /* 136 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mutation_types_js__ = __webpack_require__(135);
-
-
-/* harmony default export */ __webpack_exports__["a"] = {
-	[__WEBPACK_IMPORTED_MODULE_0__mutation_types_js__["a" /* HEHE */]] (state, n){
-		state.count += n
-	}
-};
-
-/***/ }),
-/* 137 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

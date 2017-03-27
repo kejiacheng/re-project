@@ -32,7 +32,8 @@
 			}
 			that.$http.get('/formPage')
 			.then((result) => {
-				console.log(result.body[0]);
+				that.$store.commit('getRankingList', result.body);
+				// console.log(that.$store.state.rankingList);
 			})
 		},
 		methods: {
