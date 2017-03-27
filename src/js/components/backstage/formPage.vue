@@ -30,6 +30,10 @@
 			}else if(path == '/formPage/goodsRel'){
 				that.mode_choice = 'goods_rel_li';
 			}
+			that.$http.get('/formPage')
+			.then((result) => {
+				console.log(result.body[0]);
+			})
 		},
 		methods: {
 			formIndex(){

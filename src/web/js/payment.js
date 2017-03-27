@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 135);
+/******/ 	return __webpack_require__(__webpack_require__.s = 141);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -195,13 +195,13 @@ exports.push([module.i, "\n@charset \"UTF-8\";\n#header {\n  width: 100%;\n  hei
 
 /***/ }),
 
-/***/ 102:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(41);
+var content = __webpack_require__(42);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -276,7 +276,46 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 129:
+/***/ 13:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(16)
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(19),
+  /* template */
+  __webpack_require__(14),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\header.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] header.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0e2b669d", Component.options)
+  } else {
+    hotAPI.reload("data-v-0e2b669d", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 131:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -383,70 +422,6 @@ exports.default = {
 
 /***/ }),
 
-/***/ 13:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(16)
-
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(19),
-  /* template */
-  __webpack_require__(14),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\header.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] header.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0e2b669d", Component.options)
-  } else {
-    hotAPI.reload("data-v-0e2b669d", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 135:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_resource__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__payment_vue__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__payment_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__payment_vue__);
-
-
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_resource___default.a);
-
-new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-	el: '#main-content',
-	render: cE => cE(__WEBPACK_IMPORTED_MODULE_2__payment_vue___default.a)
-})
-
-/***/ }),
-
 /***/ 14:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -481,6 +456,31 @@ if (false) {
      require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-0e2b669d", module.exports)
   }
 }
+
+/***/ }),
+
+/***/ 141:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_resource__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__payment_vue__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__payment_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__payment_vue__);
+
+
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_resource___default.a);
+
+new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
+	el: '#main-content',
+	render: cE => cE(__WEBPACK_IMPORTED_MODULE_2__payment_vue___default.a)
+})
 
 /***/ }),
 
@@ -866,13 +866,13 @@ function applyToTag (styleElement, obj) {
 
 
 /* styles */
-__webpack_require__(102)
+__webpack_require__(103)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(129),
+  __webpack_require__(131),
   /* template */
-  __webpack_require__(82),
+  __webpack_require__(83),
   /* scopeId */
   null,
   /* cssModules */
@@ -11619,7 +11619,7 @@ module.exports = plugin;
 
 /***/ }),
 
-/***/ 41:
+/***/ 42:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)();
@@ -11718,7 +11718,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 82:
+/***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
