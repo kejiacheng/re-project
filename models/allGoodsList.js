@@ -12,9 +12,10 @@ module.exports = {
 
 		return newGoods.save();
 	},
-	getGoodsList: function getGoodsList(){
+	getGoodsList: function getGoodsList(now, old){
 		return AllGoodsList
 		.find({})
+		.where('date').gt(old).lt(now)
 		.exec();
 	}
 }

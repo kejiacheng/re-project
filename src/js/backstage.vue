@@ -20,6 +20,11 @@
 			}else if(path == 'chartPage'){
 				that.$router.push({ name: 'chartIndex' });
 			}
+			that.$http.post('/backstage')
+			.then((result) => {
+				that.$store.commit('getRankingList', result.body);
+				that.$store.commit('getGoodsSale', result.body);
+			})
 		},
 		methods: {
 			toFormPage(){

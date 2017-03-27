@@ -15984,6 +15984,10 @@ exports.default = {
 		} else if (path == 'chartPage') {
 			that.$router.push({ name: 'chartIndex' });
 		}
+		that.$http.post('/backstage').then(function (result) {
+			that.$store.commit('getRankingList', result.body);
+			that.$store.commit('getGoodsSale', result.body);
+		});
 	},
 
 	methods: {
@@ -16229,10 +16233,6 @@ exports.default = {
 		} else if (path == '/formPage/goodsRel') {
 			that.mode_choice = 'goods_rel_li';
 		}
-		that.$http.post('/formPage').then(function (result) {
-			that.$store.commit('getRankingList', result.body);
-			that.$store.commit('getGoodsSale', result.body);
-		});
 	},
 
 	methods: {
