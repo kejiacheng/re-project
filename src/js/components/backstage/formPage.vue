@@ -33,7 +33,7 @@
 			that.$http.post('/formPage')
 			.then((result) => {
 				that.$store.commit('getRankingList', result.body);
-				// that.$store.commit('', result.body);
+				that.$store.commit('getGoodsSale', result.body);
 			})
 		},
 		methods: {

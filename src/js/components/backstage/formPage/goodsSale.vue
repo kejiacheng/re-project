@@ -9,12 +9,19 @@
 					<th class="people">购买者</th>
 					<th class="time">销售时间</th>
 				</tr>
+				<template v-for="item in arr">
+					<tr>
+						<td>{{ item[0] }}</td>
+						<td>{{ item[1] }}</td>
+						<td>{{ item[2] }}</td>
+						<td>{{ item[3] }}</td>
+					</tr>
+				</template>
 			</table>
 			<select class="select_time">
-				<option value="90">最近三个月</option>
-				<option value="30">最近一个月</option>
+				<option value="30" selected>最近一个月</option>
 				<option value="10">最近十天</option>
-				<option value="5" selected>最近五天</option>
+				<option value="5">最近五天</option>
 			</select>
 			<div class="page_box" onselectstart="return false;">
 				<a class="fitst_page set_page">首页</a>
@@ -44,7 +51,9 @@
 			}
 		},
 		computed: {
-
+			arr(){
+				return this.$store.state.goodsSale;
+			}
 		},
 		created: function (){
 

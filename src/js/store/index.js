@@ -9,7 +9,7 @@ Vue.use(Vuex);
 const state = {
 	count: 0,
 	rankingList: [],
-	goodsSale: {},
+	goodsSale: [],
 }
 
 export default new Vuex.Store({

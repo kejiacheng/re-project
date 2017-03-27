@@ -1,5 +1,5 @@
 <template>
-	<div class="goods_ranking" @click="sa">
+	<div class="goods_ranking">
 		<p class="header_text">销量排行</p>
 		<div class="box">
 			<table class="a">
@@ -17,7 +17,6 @@
 				</template>
 			</table>
 			<select class="select_time">
-				<option value="90">最近三个月</option>
 				<option value="30" selected>最近一个月</option>
 				<option value="10">最近十天</option>
 				<option value="5">最近五天</option>

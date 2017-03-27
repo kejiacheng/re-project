@@ -11,5 +11,10 @@ module.exports = {
 		});
 
 		return newGoods.save();
+	},
+	getGoodsList: function getGoodsList(){
+		return AllGoodsList
+		.find({})
+		.exec();
 	}
 }

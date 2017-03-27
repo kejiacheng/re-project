@@ -27,12 +27,27 @@ export default {
 			middle.push(i,json[i]);
 			arr.push(middle);
 		}
-		console.log('store');
 		//将二维数据根据数量进行排序
 		arr.sort((a, b) => b[1]-a[1]);
 		state.rankingList = arr;
 	},
 	[getGoodsSale] (state, n){
-
+		var arr = n.reverse();
+		var newArr = [];
+		arr.forEach((e) => {
+			var str = '';
+			var totalPrice = 0;
+			var middle = [];
+			str += e.ingredients.name + '*1,';
+			totalPrice += parseFloat(e.ingredients.price);
+			for(let i in e.accessories){
+				str = str + i + '*' + e.accessories[i].num + ',';
+				totalPrice += parseFloat(e.accessories[i].num) * parseFloat(e.accessories[i].price)
+			}
+			str = str.substring(0,str.length-1);
+			middle.push(str,totalPrice.toFixed(1),e.username ? e.username : '游客',e.date);
+			newArr.push(middle);
+		})
+		state.goodsSale = newArr;
 	}
 }
