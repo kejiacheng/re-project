@@ -46,6 +46,7 @@
 			time(e){
 				const value = e.target.value;
 				const that = this;
+				//当改变时间时，根据时间触发mutation,改变售货记录
 				if(Object.is(value, '5')){
 					that.$store.commit('getGoodsSale', that.$store.getters.five);
 				}else if(Object.is(value, '10')){
@@ -55,6 +56,7 @@
 				}
 			},
 			setPageNum(e){
+				//通过事件委托，根据事件发现改变当前页数
 				if(Object.is(e.target.nodeName.toLowerCase(), 'a')){
 					this.nowPage = parseInt(e.target.innerHTML);
 				}else{
@@ -68,11 +70,13 @@
 				this.nowPage = totalPage;
 			},
 			prevPage(){
+				//当前页大于第一页，当前页减一
 				if(this.nowPage > 1){
 					this.nowPage--;
 				}
 			},
 			nextPage(){
+				//当前页未超过总页数，当前页加一
 				if(this.nowPage < this.totalPage){
 					this.nowPage++;
 				}
@@ -89,6 +93,7 @@
 		},
 		computed: {
 			arr(){
+				//当售卖记录的个数改变时，调整总页数
 				this.totalPage = Math.ceil((Object.is(this.$store.state.goodsSale.length, 0) ? 1 : this.$store.state.goodsSale.length)/ 10);
 				return this.$store.state.goodsSale;
 			}
