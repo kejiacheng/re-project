@@ -10,6 +10,7 @@ const state = {
 	goodsList: [],
 	rankingList: [],
 	goodsSale: [],
+	relGoods: {},
 }
 
 export default new Vuex.Store({

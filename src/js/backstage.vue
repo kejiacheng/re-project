@@ -22,11 +22,15 @@
 			}
 			that.$http.post('/backstage')
 			.then((result) => {
-				// console.log(result.body)
 				that.$store.commit('getRankingList', result.body);
 				that.$store.commit('getGoodsSale', result.body);
 				that.$store.state.goodsList = result.body;
-				// console.log(that.$store.state.goodsList)
+			})
+			that.$http.get('/backstage')
+			.then((result) => {
+				delete result.body._id;
+				delete result.body.__v;
+				that.$store.commit('relGoods', result.body);
 			})
 		},
 		methods: {

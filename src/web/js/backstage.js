@@ -11473,6 +11473,7 @@ const state = {
 	goodsList: [],
 	rankingList: [],
 	goodsSale: [],
+	relGoods: {},
 }
 
 /* harmony default export */ __webpack_exports__["a"] = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
@@ -12316,21 +12317,23 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "goods_rel item_box_list hidden"
   }, [_c('p', {
     staticClass: "header_text"
   }, [_vm._v("货物余量")]), _vm._v(" "), _c('div', {
     staticClass: "box"
-  }, [_c('table', [_c('tr', [_c('th', {
-    staticClass: "ranking"
-  }, [_vm._v("销量排名")]), _vm._v(" "), _c('th', {
+  }, [_c('table', [_vm._m(0), _vm._v(" "), _vm._l((_vm.arr), function(item, index) {
+    return [_c('tr', [_c('td', [_vm._v(_vm._s(index))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item))])])]
+  })], 2)]), _vm._v(" "), _vm._m(1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('tr', [_c('th', {
     staticClass: "name"
   }, [_vm._v("货物名称")]), _vm._v(" "), _c('th', {
     staticClass: "num"
-  }, [_vm._v("销量数目")])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("货物余量")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "update_num"
   }, [_c('input', {
     staticClass: "name",
@@ -12346,7 +12349,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('a', {
     staticClass: "update_bt"
-  }, [_vm._v("更新")])])])
+  }, [_vm._v("更新")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -16042,11 +16045,14 @@ exports.default = {
 			that.$router.push({ name: 'chartIndex' });
 		}
 		that.$http.post('/backstage').then(function (result) {
-			// console.log(result.body)
 			that.$store.commit('getRankingList', result.body);
 			that.$store.commit('getGoodsSale', result.body);
 			that.$store.state.goodsList = result.body;
-			// console.log(that.$store.state.goodsList)
+		});
+		that.$http.get('/backstage').then(function (result) {
+			delete result.body._id;
+			delete result.body.__v;
+			that.$store.commit('relGoods', result.body);
 		});
 	},
 
@@ -16457,6 +16463,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
 
 exports.default = {
 	components: {},
@@ -16465,7 +16476,12 @@ exports.default = {
 	data: function data() {
 		return {};
 	},
-	computed: {},
+	computed: {
+		arr: function arr() {
+			console.log('xixi');
+			return this.$store.state.relGoods;
+		}
+	},
 	created: function created() {},
 	watch: {}
 };
@@ -16641,6 +16657,9 @@ const getRankingList = 'getRankingList';
 const getGoodsSale = 'getGoodsSale';
 /* harmony export (immutable) */ __webpack_exports__["b"] = getGoodsSale;
 
+const relGoods = 'relGoods';
+/* harmony export (immutable) */ __webpack_exports__["c"] = relGoods;
+
 
 /***/ }),
 /* 136 */
@@ -16696,6 +16715,9 @@ const getGoodsSale = 'getGoodsSale';
 			newArr.push(middle);
 		})
 		state.goodsSale = newArr;
+	},
+	[__WEBPACK_IMPORTED_MODULE_0__mutation_types_js__["c" /* relGoods */]] (state, n){
+		state.relGoods = n;
 	}
 };
 

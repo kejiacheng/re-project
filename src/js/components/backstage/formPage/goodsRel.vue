@@ -4,10 +4,15 @@
 		<div class="box">
 			<table>
 				<tr>
-					<th class="ranking">销量排名</th>
 					<th class="name">货物名称</th>
-					<th class="num">销量数目</th>
+					<th class="num">货物余量</th>
 				</tr>
+				<template v-for="(item, index) in arr">
+					<tr>
+						<td>{{ index }}</td>
+						<td>{{ item }}</td>
+					</tr>
+				</template>
 			</table>
 		</div>
 		<div class="update_num">
@@ -32,7 +37,9 @@
 			}
 		},
 		computed: {
-
+			arr(){
+				return this.$store.state.relGoods;
+			}
 		},
 		created: function (){
 

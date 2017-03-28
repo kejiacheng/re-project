@@ -1,6 +1,7 @@
 import { 
 	getRankingList,  
 	getGoodsSale,
+	relGoods,
 } from './mutation-types.js';
 
 export default {
@@ -49,5 +50,8 @@ export default {
 			newArr.push(middle);
 		})
 		state.goodsSale = newArr;
+	},
+	[relGoods] (state, n){
+		state.relGoods = n;
 	}
 }
