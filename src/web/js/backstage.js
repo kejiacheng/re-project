@@ -11755,7 +11755,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n@charset \"UTF-8\";\n.goods_sale .header_text {\n  text-align: center;\n  height: 100px;\n  font-size: 34px;\n  line-height: 100px;\n  font-weight: 600;\n}\n.goods_sale .box {\n  position: relative;\n}\n.goods_sale .box table {\n    margin: 0 auto 20px;\n    border: 1px solid #333;\n}\n.goods_sale .box table th {\n      color: #FFF;\n      background: #00bc9b;\n      font-weight: 600;\n}\n.goods_sale .box table td {\n      background: #fafafa;\n}\n.goods_sale .box table th, .goods_sale .box table td {\n      border: 1px solid #333;\n      padding: 10px 15px;\n      text-align: center;\n      height: 24px;\n}\n.goods_sale .box table .ranking, .goods_sale .box table .num, .goods_sale .box table .name, .goods_sale .box table .price, .goods_sale .box table .time, .goods_sale .box table .people, .goods_sale .box table .rel_num {\n      min-width: 120px;\n}\n.goods_sale .box .select_time {\n    position: absolute;\n    top: 0;\n    left: 50px;\n    width: 130px;\n    height: 30px;\n    padding-left: 10px;\n    font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n    font-size: 14px;\n}\n.goods_sale .box .page_box {\n    width: 550px;\n    margin: 0 auto;\n    font-size: 0;\n}\n.goods_sale .box .page_box a {\n      display: inline-block;\n      font-size: 13px;\n      width: 25px;\n      height: 25px;\n      text-align: center;\n      line-height: 27px;\n      margin: 0 5px;\n      border: 1px solid #333;\n      color: #000;\n      cursor: pointer;\n      background: #fafafa;\n}\n.goods_sale .box .page_box a:first-child, .goods_sale .box .page_box a:last-child {\n        width: 40px;\n}\n.goods_sale .box .page_box .num_page {\n      border-color: #00bc9b;\n}\n.goods_sale .box .page_box .prev_page, .goods_sale .box .page_box .next_page {\n      width: 60px;\n}\n.goods_sale .box .page_box .disable {\n      opacity: 0.5;\n}\n.goods_sale .box .page_box .hidden {\n      display: none;\n}\n.goods_sale .box .page_box .active {\n      color: white;\n      background: #00bc9b;\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\n.goods_sale .header_text {\n  text-align: center;\n  height: 100px;\n  font-size: 34px;\n  line-height: 100px;\n  font-weight: 600;\n}\n.goods_sale .box {\n  position: relative;\n}\n.goods_sale .box table {\n    margin: 0 auto 20px;\n    border: 1px solid #333;\n}\n.goods_sale .box table .isShow {\n      background: red;\n}\n.goods_sale .box table th {\n      color: #FFF;\n      background: #00bc9b;\n      font-weight: 600;\n}\n.goods_sale .box table td {\n      background: #fafafa;\n}\n.goods_sale .box table th, .goods_sale .box table td {\n      border: 1px solid #333;\n      padding: 10px 15px;\n      text-align: center;\n      height: 24px;\n}\n.goods_sale .box table .ranking, .goods_sale .box table .num, .goods_sale .box table .name, .goods_sale .box table .price, .goods_sale .box table .time, .goods_sale .box table .people, .goods_sale .box table .rel_num {\n      min-width: 120px;\n}\n.goods_sale .box .select_time {\n    position: absolute;\n    top: 0;\n    left: 50px;\n    width: 130px;\n    height: 30px;\n    padding-left: 10px;\n    font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n    font-size: 14px;\n}\n.goods_sale .box .page_box {\n    width: 550px;\n    margin: 0 auto;\n    font-size: 0;\n}\n.goods_sale .box .page_box a {\n      display: inline-block;\n      font-size: 13px;\n      width: 25px;\n      height: 25px;\n      text-align: center;\n      line-height: 27px;\n      margin: 0 5px;\n      border: 1px solid #333;\n      color: #000;\n      cursor: pointer;\n      background: #fafafa;\n}\n.goods_sale .box .page_box a:first-child, .goods_sale .box .page_box a:last-child {\n        width: 40px;\n}\n.goods_sale .box .page_box .num_page {\n      border-color: #00bc9b;\n}\n.goods_sale .box .page_box .prev_page, .goods_sale .box .page_box .next_page {\n      width: 60px;\n}\n.goods_sale .box .page_box .disable {\n      opacity: 0.5;\n}\n.goods_sale .box .page_box .hidden {\n      display: none;\n}\n.goods_sale .box .page_box .active {\n      color: white;\n      background: #00bc9b;\n}\n", ""]);
 
 // exports
 
@@ -12419,8 +12419,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "header_text"
   }, [_vm._v("销售记录")]), _vm._v(" "), _c('div', {
     staticClass: "box"
-  }, [_c('table', [_vm._m(0), _vm._v(" "), _vm._l((_vm.arr), function(item) {
-    return [_c('tr', [_c('td', [_vm._v(_vm._s(item[0]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[1]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[2]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[3]))])])]
+  }, [_c('table', [_vm._m(0), _vm._v(" "), _vm._l((_vm.arr), function(item, index) {
+    return [_c('tr', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (index < ((_vm.nowPage * 10)) && index > (((_vm.nowPage - 1) * 10) - 1)),
+        expression: "index < ((nowPage*10)) && index > (((nowPage - 1)*10) - 1)"
+      }],
+      attrs: {
+        "data-index": index
+      }
+    }, [_c('td', [_vm._v(_vm._s(item[0]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[1]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[2]))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item[3]))])])]
   })], 2), _vm._v(" "), _c('select', {
     staticClass: "select_time",
     on: {
@@ -12439,19 +12449,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": "5"
     }
-  }, [_vm._v("最近五天")])]), _vm._v(" "), _vm._m(1)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('tr', [_c('th', {
-    staticClass: "name "
-  }, [_vm._v("销售物品")]), _vm._v(" "), _c('th', {
-    staticClass: "price"
-  }, [_vm._v("销售价格")]), _vm._v(" "), _c('th', {
-    staticClass: "people"
-  }, [_vm._v("购买者")]), _vm._v(" "), _c('th', {
-    staticClass: "time"
-  }, [_vm._v("销售时间")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_vm._v("最近五天")])]), _vm._v(" "), _c('div', {
     staticClass: "page_box",
     attrs: {
       "onselectstart": "return false;"
@@ -12463,16 +12461,40 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("上一页")]), _vm._v(" "), _c('a', {
     staticClass: "num_page set_page active"
   }, [_vm._v("1")]), _vm._v(" "), _c('a', {
-    staticClass: "num_page set_page"
+    staticClass: "num_page set_page",
+    on: {
+      "click": _vm.a
+    }
   }, [_vm._v("2")]), _vm._v(" "), _c('a', {
-    staticClass: "num_page set_page"
+    staticClass: "num_page set_page",
+    on: {
+      "click": _vm.b
+    }
   }, [_vm._v("3")]), _vm._v(" "), _c('a', {
-    staticClass: "num_page set_page"
+    staticClass: "num_page set_page",
+    on: {
+      "click": _vm.c
+    }
   }, [_vm._v("4")]), _vm._v(" "), _c('a', {
+    staticClass: "num_page set_page",
+    on: {
+      "click": _vm.c
+    }
+  }, [_vm._v("5")]), _vm._v(" "), _c('a', {
     staticClass: "next_page set_page specific_page"
   }, [_vm._v("下一页")]), _vm._v(" "), _c('a', {
     staticClass: "last_page set_page specific_page"
-  }, [_vm._v("尾页")])])
+  }, [_vm._v("尾页")])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('tr', [_c('th', {
+    staticClass: "name "
+  }, [_vm._v("销售物品")]), _vm._v(" "), _c('th', {
+    staticClass: "price"
+  }, [_vm._v("销售价格")]), _vm._v(" "), _c('th', {
+    staticClass: "people"
+  }, [_vm._v("购买者")]), _vm._v(" "), _c('th', {
+    staticClass: "time"
+  }, [_vm._v("销售时间")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -16362,7 +16384,10 @@ exports.default = {
 	},
 	computed: {
 		arr: function arr() {
-			return this.$store.state.rankingList;
+			//只取前10个
+			return this.$store.state.rankingList.filter(function (item, index) {
+				return index < 10;
+			});
 		}
 	},
 	created: function created() {},
@@ -16459,6 +16484,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 exports.default = {
 	components: {},
@@ -16473,11 +16499,22 @@ exports.default = {
 			} else if (Object.is(value, '30')) {
 				that.$store.commit('getGoodsSale', that.$store.state.goodsList);
 			}
+		},
+		a: function a() {
+			this.nowPage = 2;
+		},
+		b: function b() {
+			this.nowPage = 3;
+		},
+		c: function c() {
+			this.nowPage = 4;
 		}
 	},
 	props: [],
 	data: function data() {
-		return {};
+		return {
+			nowPage: 1
+		};
 	},
 	computed: {
 		arr: function arr() {

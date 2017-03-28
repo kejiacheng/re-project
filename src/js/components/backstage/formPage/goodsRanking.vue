@@ -53,7 +53,8 @@
 		},
 		computed: {
 			arr(){
-				return this.$store.state.rankingList;
+				//只取前10个
+				return this.$store.state.rankingList.filter((item, index) => index < 10);
 			}
 		},
 		created: function (){

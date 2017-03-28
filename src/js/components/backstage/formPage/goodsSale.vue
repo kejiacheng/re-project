@@ -9,8 +9,8 @@
 					<th class="people">购买者</th>
 					<th class="time">销售时间</th>
 				</tr>
-				<template v-for="item in arr">
-					<tr>
+				<template v-for="(item, index) in arr">
+					<tr :data-index="index" v-show="index < ((nowPage*10)) && index > (((nowPage - 1)*10) - 1)">
 						<td>{{ item[0] }}</td>
 						<td>{{ item[1] }}</td>
 						<td>{{ item[2] }}</td>
@@ -27,9 +27,10 @@
 				<a class="fitst_page set_page specific_page disable">首页</a>
 				<a class="prev_page set_page specific_page disable">上一页</a>
 				<a class="num_page set_page active">1</a>
-				<a class="num_page set_page">2</a>
-				<a class="num_page set_page">3</a>
-				<a class="num_page set_page">4</a>
+				<a class="num_page set_page" @click="a">2</a>
+				<a class="num_page set_page" @click="b">3</a>
+				<a class="num_page set_page" @click="c">4</a>
+				<a class="num_page set_page" @click="c">5</a>
 				<a class="next_page set_page specific_page">下一页</a>
 				<a class="last_page set_page specific_page">尾页</a>
 			</div>
@@ -52,12 +53,21 @@
 				}else if(Object.is(value, '30')){
 					that.$store.commit('getGoodsSale', that.$store.state.goodsList);
 				}
+			},
+			a(){
+				this.nowPage = 2;
+			},
+			b(){
+				this.nowPage = 3;
+			},
+			c(){
+				this.nowPage = 4;
 			}
 		},
 		props: [],
 		data: function (){
 			return {
-				
+				nowPage: 1,
 			}
 		},
 		computed: {
@@ -86,6 +96,9 @@
 	.box{
 		position:relative;
 		table{
+			.isShow{
+				background:red;
+			}
 			margin:0 auto 20px;
 			border:1px solid #333;
 			th{
