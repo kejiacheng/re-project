@@ -4,7 +4,7 @@
 		<div class="box">
 			<table>
 				<tr>
-					<th class="name">销售物品</th>
+					<th class="name ">销售物品</th>
 					<th class="price">销售价格</th>
 					<th class="people">购买者</th>
 					<th class="time">销售时间</th>
@@ -24,14 +24,14 @@
 				<option value="5">最近五天</option>
 			</select>
 			<div class="page_box" onselectstart="return false;">
-				<a class="fitst_page set_page">首页</a>
-				<a class="prev_page set_page">上一页</a>
-				<a class="num_page set_page">1</a>
+				<a class="fitst_page set_page specific_page disable">首页</a>
+				<a class="prev_page set_page specific_page disable">上一页</a>
+				<a class="num_page set_page active">1</a>
 				<a class="num_page set_page">2</a>
 				<a class="num_page set_page">3</a>
 				<a class="num_page set_page">4</a>
-				<a class="next_page set_page">下一页</a>
-				<a class="last_page set_page">尾页</a>
+				<a class="next_page set_page specific_page">下一页</a>
+				<a class="last_page set_page specific_page">尾页</a>
 			</div>
 		</div>
 	</div>
@@ -89,12 +89,17 @@
 			margin:0 auto 20px;
 			border:1px solid #333;
 			th{
+				color: #FFF;
+				background: #00bc9b;
 				font-weight: 600;
+			}
+			td{
+				background: #fafafa;
 			}
 			th,td{
 				border:1px solid #333;
+				padding: 10px 15px;
 				text-align: center;
-				padding:0 10px;
 				height:24px;
 			}
 			.ranking,.num,.name,.price,.time,.people,.rel_num{
@@ -117,21 +122,25 @@
 			font-size:0;
 			a{
 				display: inline-block;
-				font-size:14px;
-				width:22px;
-				height:20px;
+				font-size:13px;
+				width:25px;
+				height:25px;
 				text-align: center;
-				line-height:20px;
+				line-height:27px;
 				margin:0 5px;
 				border:1px solid #333;
 				color:#000;
 				cursor:pointer;
+				background: #fafafa;
 				&:first-child,&:last-child{
 					width:40px;
 				}
 			}
-			strong{
-				font-size:14px;
+			.specific_page{
+				
+			}
+			.num_page{
+				border-color: #00bc9b;
 			}
 			.prev_page,.next_page{
 				width:60px;
@@ -143,9 +152,8 @@
 				display:none;
 			}
 			.active{
-				color:white;
-				background:#3E26D2;
-				border-color:#3E26D2;
+				color: white;
+				background: #00bc9b;
 			}
 		}
 	}

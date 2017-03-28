@@ -80,12 +80,17 @@
 			margin:0 auto 20px;
 			border:1px solid #333;
 			th{
+				color: #FFF;
+				background: #00bc9b;
 				font-weight: 600;
+			}
+			td{
+				background: #fafafa;
 			}
 			th,td{
 				border:1px solid #333;
+				padding: 10px 15px;
 				text-align: center;
-				padding:0 10px;
 				height:24px;
 			}
 			.ranking,.num,.name,.price,.time,.people,.rel_num{
