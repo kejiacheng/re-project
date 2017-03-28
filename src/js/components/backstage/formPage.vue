@@ -21,8 +21,8 @@
 			
 		},
 		mounted(){
-			var that = this;
-			var path = that.$route.path;
+			const that = this;
+			const path = that.$route.path;
 			if(path == '/formPage/goodsRanking'){
 				that.mode_choice = 'goods_ranking_li';
 			}else if(path == '/formPage/goodsSale'){

@@ -11755,7 +11755,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n@charset \"UTF-8\";\n.goods_sale .header_text {\n  text-align: center;\n  height: 100px;\n  font-size: 34px;\n  line-height: 100px;\n  font-weight: 600;\n}\n.goods_sale .box {\n  position: relative;\n}\n.goods_sale .box table {\n    margin: 0 auto 20px;\n    border: 1px solid #333;\n}\n.goods_sale .box table .isShow {\n      background: red;\n}\n.goods_sale .box table th {\n      color: #FFF;\n      background: #00bc9b;\n      font-weight: 600;\n}\n.goods_sale .box table td {\n      background: #fafafa;\n}\n.goods_sale .box table th, .goods_sale .box table td {\n      border: 1px solid #333;\n      padding: 10px 15px;\n      text-align: center;\n      height: 24px;\n}\n.goods_sale .box table .ranking, .goods_sale .box table .num, .goods_sale .box table .name, .goods_sale .box table .price, .goods_sale .box table .time, .goods_sale .box table .people, .goods_sale .box table .rel_num {\n      min-width: 120px;\n}\n.goods_sale .box .select_time {\n    position: absolute;\n    top: 0;\n    left: 50px;\n    width: 130px;\n    height: 30px;\n    padding-left: 10px;\n    font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n    font-size: 14px;\n}\n.goods_sale .box .page_box {\n    width: 550px;\n    margin: 0 auto;\n    font-size: 0;\n}\n.goods_sale .box .page_box a {\n      display: inline-block;\n      font-size: 13px;\n      width: 25px;\n      height: 25px;\n      text-align: center;\n      line-height: 27px;\n      margin: 0 5px;\n      border: 1px solid #333;\n      color: #000;\n      cursor: pointer;\n      background: #fafafa;\n}\n.goods_sale .box .page_box a:first-child, .goods_sale .box .page_box a:last-child {\n        width: 40px;\n}\n.goods_sale .box .page_box .num_page {\n      border-color: #00bc9b;\n}\n.goods_sale .box .page_box .prev_page, .goods_sale .box .page_box .next_page {\n      width: 60px;\n}\n.goods_sale .box .page_box .disable {\n      opacity: 0.5;\n}\n.goods_sale .box .page_box .hidden {\n      display: none;\n}\n.goods_sale .box .page_box .active {\n      color: white;\n      background: #00bc9b;\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\n.goods_sale .header_text {\n  text-align: center;\n  height: 100px;\n  font-size: 34px;\n  line-height: 100px;\n  font-weight: 600;\n}\n.goods_sale .box {\n  position: relative;\n  height: 550px;\n}\n.goods_sale .box table {\n    margin: 0 auto 20px;\n    border: 1px solid #333;\n}\n.goods_sale .box table .isShow {\n      background: red;\n}\n.goods_sale .box table th {\n      color: #FFF;\n      background: #00bc9b;\n      font-weight: 600;\n}\n.goods_sale .box table td {\n      background: #fafafa;\n}\n.goods_sale .box table th, .goods_sale .box table td {\n      border: 1px solid #333;\n      padding: 10px 15px;\n      text-align: center;\n      height: 24px;\n}\n.goods_sale .box table .ranking, .goods_sale .box table .num, .goods_sale .box table .name, .goods_sale .box table .price, .goods_sale .box table .time, .goods_sale .box table .people, .goods_sale .box table .rel_num {\n      min-width: 120px;\n}\n.goods_sale .box .select_time {\n    position: absolute;\n    top: 0;\n    left: 50px;\n    width: 130px;\n    height: 30px;\n    padding-left: 10px;\n    font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n    font-size: 14px;\n}\n.goods_sale .box .page_box {\n    width: 550px;\n    font-size: 0;\n    position: absolute;\n    bottom: 0;\n    left: 230px;\n}\n.goods_sale .box .page_box a {\n      display: inline-block;\n      font-size: 13px;\n      width: 25px;\n      height: 25px;\n      text-align: center;\n      line-height: 27px;\n      margin: 0 5px;\n      border: 1px solid #333;\n      color: #000;\n      cursor: pointer;\n      background: #fafafa;\n}\n.goods_sale .box .page_box .num_page_box {\n      display: inline-block;\n}\n.goods_sale .box .page_box span {\n      font-size: 13px;\n}\n.goods_sale .box .page_box .num_page {\n      border-color: #00bc9b;\n}\n.goods_sale .box .page_box .first_page, .goods_sale .box .page_box .last_page {\n      width: 40px;\n}\n.goods_sale .box .page_box .prev_page, .goods_sale .box .page_box .next_page {\n      width: 60px;\n}\n.goods_sale .box .page_box .disable {\n      opacity: 0.5;\n}\n.goods_sale .box .page_box .active {\n      color: white;\n      background: #00bc9b;\n}\n", ""]);
 
 // exports
 
@@ -12455,35 +12455,69 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "onselectstart": "return false;"
     }
   }, [_c('a', {
-    staticClass: "fitst_page set_page specific_page disable"
+    staticClass: "first_page",
+    class: {
+      disable: Object.is(_vm.nowPage, 1)
+    },
+    on: {
+      "click": _vm.firstPage
+    }
   }, [_vm._v("首页")]), _vm._v(" "), _c('a', {
-    staticClass: "prev_page set_page specific_page disable"
-  }, [_vm._v("上一页")]), _vm._v(" "), _c('a', {
-    staticClass: "num_page set_page active"
-  }, [_vm._v("1")]), _vm._v(" "), _c('a', {
-    staticClass: "num_page set_page",
+    staticClass: "prev_page",
+    class: {
+      disable: Object.is(_vm.nowPage, 1)
+    },
     on: {
-      "click": _vm.a
+      "click": _vm.prevPage
     }
-  }, [_vm._v("2")]), _vm._v(" "), _c('a', {
-    staticClass: "num_page set_page",
+  }, [_vm._v("上一页")]), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.nowPage - _vm.offsetPage > 1),
+      expression: "nowPage - offsetPage > 1"
+    }]
+  }, [_vm._v("...")]), _vm._v(" "), _c('div', {
+    staticClass: "num_page_box",
     on: {
-      "click": _vm.b
+      "click": _vm.setPageNum
     }
-  }, [_vm._v("3")]), _vm._v(" "), _c('a', {
-    staticClass: "num_page set_page",
+  }, _vm._l((_vm.totalPage), function(n) {
+    return _c('a', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (n >= _vm.nowPage - _vm.offsetPage && n <= _vm.nowPage + _vm.offsetPage),
+        expression: "n >= nowPage - offsetPage && n <= nowPage + offsetPage"
+      }],
+      staticClass: "num_page",
+      class: {
+        active: Object.is(_vm.nowPage, n)
+      }
+    }, [_vm._v(_vm._s(n))])
+  })), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.nowPage + _vm.offsetPage < _vm.totalPage),
+      expression: "nowPage + offsetPage < totalPage"
+    }]
+  }, [_vm._v("...")]), _vm._v(" "), _c('a', {
+    staticClass: "next_page",
+    class: {
+      disable: Object.is(_vm.nowPage, _vm.totalPage)
+    },
     on: {
-      "click": _vm.c
+      "click": _vm.nextPage
     }
-  }, [_vm._v("4")]), _vm._v(" "), _c('a', {
-    staticClass: "num_page set_page",
-    on: {
-      "click": _vm.c
-    }
-  }, [_vm._v("5")]), _vm._v(" "), _c('a', {
-    staticClass: "next_page set_page specific_page"
   }, [_vm._v("下一页")]), _vm._v(" "), _c('a', {
-    staticClass: "last_page set_page specific_page"
+    staticClass: "last_page",
+    class: {
+      disable: Object.is(_vm.nowPage, _vm.totalPage)
+    },
+    on: {
+      "click": _vm.lastPage
+    }
   }, [_vm._v("尾页")])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('tr', [_c('th', {
@@ -16210,7 +16244,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 	components: {},
 	methods: {},
-	props: ["isLogin"],
+	props: [],
 	data: function data() {
 		return {};
 	},
@@ -16427,7 +16461,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 	components: {},
 	methods: {},
-	props: ["isLogin"],
+	props: [],
 	data: function data() {
 		return {};
 	},
@@ -16500,24 +16534,40 @@ exports.default = {
 				that.$store.commit('getGoodsSale', that.$store.state.goodsList);
 			}
 		},
-		a: function a() {
-			this.nowPage = 2;
+		setPageNum: function setPageNum(e) {
+			if (Object.is(e.target.nodeName.toLowerCase(), 'a')) {
+				this.nowPage = parseInt(e.target.innerHTML);
+			} else {}
 		},
-		b: function b() {
-			this.nowPage = 3;
+		firstPage: function firstPage() {
+			this.nowPage = 1;
 		},
-		c: function c() {
-			this.nowPage = 4;
+		lastPage: function lastPage() {
+			this.nowPage = totalPage;
+		},
+		prevPage: function prevPage() {
+			if (this.nowPage > 1) {
+				this.nowPage--;
+			}
+		},
+		nextPage: function nextPage() {
+			if (this.nowPage < this.totalPage) {
+				this.nowPage++;
+			}
 		}
 	},
 	props: [],
 	data: function data() {
 		return {
-			nowPage: 1
+			nowPage: 1, //当前页数
+			totalPage: 1, //总页数
+			offsetPage: 2 //页数偏移量
 		};
 	},
 	computed: {
 		arr: function arr() {
+			this.totalPage = Math.ceil((Object.is(this.$store.state.goodsSale.length, 0) ? 1 : this.$store.state.goodsSale.length) / 10);
+			console.log(this.totalPage);
 			return this.$store.state.goodsSale;
 		}
 	},

@@ -24,15 +24,15 @@
 				<option value="5">最近五天</option>
 			</select>
 			<div class="page_box" onselectstart="return false;">
-				<a class="fitst_page set_page specific_page disable">首页</a>
-				<a class="prev_page set_page specific_page disable">上一页</a>
-				<a class="num_page set_page active">1</a>
-				<a class="num_page set_page" @click="a">2</a>
-				<a class="num_page set_page" @click="b">3</a>
-				<a class="num_page set_page" @click="c">4</a>
-				<a class="num_page set_page" @click="c">5</a>
-				<a class="next_page set_page specific_page">下一页</a>
-				<a class="last_page set_page specific_page">尾页</a>
+				<a class="first_page" :class="{ disable: Object.is(nowPage, 1) }" @click="firstPage">首页</a>
+				<a class="prev_page" :class="{ disable: Object.is(nowPage, 1) }" @click="prevPage">上一页</a>
+				<span v-show="nowPage - offsetPage > 1">...</span>
+				<div class="num_page_box" @click="setPageNum">
+					<a class="num_page" v-for="n in totalPage" v-show="n >= nowPage - offsetPage && n <= nowPage + offsetPage" :class="{ active: Object.is(nowPage, n) }">{{ n }}</a>
+				</div>
+				<span v-show="nowPage + offsetPage < totalPage">...</span>
+				<a class="next_page" :class="{ disable: Object.is(nowPage, totalPage) }" @click="nextPage">下一页</a>
+				<a class="last_page" :class="{ disable: Object.is(nowPage, totalPage) }" @click="lastPage">尾页</a>
 			</div>
 		</div>
 	</div>
@@ -54,24 +54,42 @@
 					that.$store.commit('getGoodsSale', that.$store.state.goodsList);
 				}
 			},
-			a(){
-				this.nowPage = 2;
+			setPageNum(e){
+				if(Object.is(e.target.nodeName.toLowerCase(), 'a')){
+					this.nowPage = parseInt(e.target.innerHTML);
+				}else{
+
+				}
 			},
-			b(){
-				this.nowPage = 3;
+			firstPage(){
+				this.nowPage = 1;
 			},
-			c(){
-				this.nowPage = 4;
+			lastPage(){
+				this.nowPage = totalPage;
+			},
+			prevPage(){
+				if(this.nowPage > 1){
+					this.nowPage--;
+				}
+			},
+			nextPage(){
+				if(this.nowPage < this.totalPage){
+					this.nowPage++;
+				}
+				
 			}
 		},
 		props: [],
 		data: function (){
 			return {
-				nowPage: 1,
+				nowPage: 1,  //当前页数
+				totalPage: 1,  //总页数
+				offsetPage: 2  //页数偏移量
 			}
 		},
 		computed: {
 			arr(){
+				this.totalPage = Math.ceil((Object.is(this.$store.state.goodsSale.length, 0) ? 1 : this.$store.state.goodsSale.length)/ 10);
 				return this.$store.state.goodsSale;
 			}
 		},
@@ -95,6 +113,7 @@
 	}
 	.box{
 		position:relative;
+		height: 550px;
 		table{
 			.isShow{
 				background:red;
@@ -131,8 +150,10 @@
 		}
 		.page_box{
 			width:550px;
-			margin:0 auto;
 			font-size:0;
+			position:absolute;
+			bottom: 0;
+			left: 230px;
 			a{
 				display: inline-block;
 				font-size:13px;
@@ -145,24 +166,24 @@
 				color:#000;
 				cursor:pointer;
 				background: #fafafa;
-				&:first-child,&:last-child{
-					width:40px;
-				}
 			}
-			.specific_page{
-				
+			.num_page_box{
+				display: inline-block;
+			}
+			span{
+				font-size: 13px;
 			}
 			.num_page{
 				border-color: #00bc9b;
 			}
+			.first_page,.last_page{
+				width: 40px;
+			}
 			.prev_page,.next_page{
-				width:60px;
+				width: 60px;
 			}
 			.disable{
 				opacity:0.5;
-			}
-			.hidden{
-				display:none;
 			}
 			.active{
 				color: white;

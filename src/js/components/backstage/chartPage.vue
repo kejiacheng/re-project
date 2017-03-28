@@ -19,8 +19,8 @@
 			
 		},
 		mounted(){
-			var that = this;
-			var path = that.$route.path;
+			const that = this;
+			const path = that.$route.path;
 			if(path == '/chartPage/barLine'){
 				that.mode_choice = 'bar_line_li';
 			}

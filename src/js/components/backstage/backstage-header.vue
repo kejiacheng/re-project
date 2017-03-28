@@ -18,9 +18,9 @@
 			
 		},
 		mounted(){
-			var that = this;
-			var path = that.$route.path;
-			var reg = /chartPage/;
+			const that = this;
+			const path = that.$route.path;
+			const reg = /chartPage/;
 			if(reg.test(path)){
 				this.isNowPage = false;
 			}
