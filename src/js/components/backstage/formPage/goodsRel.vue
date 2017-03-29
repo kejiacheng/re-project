@@ -37,6 +37,8 @@
 				.then((result) => {
 					if(that.arr[that.name]){
 						that.arr[that.name] = that.num;
+						that.name = null;
+						that.num = null;
 					}
 				})	
 			}

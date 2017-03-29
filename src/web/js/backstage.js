@@ -16512,6 +16512,8 @@ exports.default = {
 			that.$http.post('/goodsRel', { name: that.name, num: that.num }).then(function (result) {
 				if (that.arr[that.name]) {
 					that.arr[that.name] = that.num;
+					that.name = null;
+					that.num = null;
 				}
 			});
 		}
