@@ -1,14 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var allGoodsList = require('../models/allGoodsList.js');
+var RelGoods = require('../lib/mongo').RelGoods;
 var request = require('request');
 
 router.get('/', function (req, res ,next){
-	
+	RelGoods.findById('58da39e9ef94021ccc903c49')
+	.then((result) => {
+		res.send(result);
+	})
 })
 
 router.post('/', function (req, res, next){
-
 	//获取格式化后的今天时间
 	var nowDate = new Date();
 	nowDate = formatTime(nowDate, 24);

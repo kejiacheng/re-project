@@ -12324,32 +12324,65 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("货物余量")]), _vm._v(" "), _c('div', {
     staticClass: "box"
   }, [_c('table', [_vm._m(0), _vm._v(" "), _vm._l((_vm.arr), function(item, index) {
-    return [_c('tr', [_c('td', [_vm._v(_vm._s(index))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(item))])])]
-  })], 2)]), _vm._v(" "), _vm._m(1)])
+    return [_c('tr', [_c('td', [_vm._v(_vm._s(index))]), _vm._v(" "), _c('td', {
+      class: index
+    }, [_vm._v(_vm._s(item))])])]
+  })], 2)]), _vm._v(" "), _c('div', {
+    staticClass: "update_num"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.name),
+      expression: "name"
+    }],
+    staticClass: "name",
+    attrs: {
+      "type": "text",
+      "placeholder": "货物名称"
+    },
+    domProps: {
+      "value": (_vm.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.name = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.num),
+      expression: "num"
+    }],
+    staticClass: "num",
+    attrs: {
+      "type": "text",
+      "placeholder": "货物数量"
+    },
+    domProps: {
+      "value": (_vm.num)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.num = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('a', {
+    staticClass: "update_bt",
+    on: {
+      "click": _vm.update
+    }
+  }, [_vm._v("更新")])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('tr', [_c('th', {
     staticClass: "name"
   }, [_vm._v("货物名称")]), _vm._v(" "), _c('th', {
     staticClass: "num"
   }, [_vm._v("货物余量")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "update_num"
-  }, [_c('input', {
-    staticClass: "name",
-    attrs: {
-      "type": "text",
-      "placeholder": "货物名称"
-    }
-  }), _vm._v(" "), _c('input', {
-    staticClass: "num",
-    attrs: {
-      "type": "text",
-      "placeholder": "货物数量"
-    }
-  }), _vm._v(" "), _c('a', {
-    staticClass: "update_bt"
-  }, [_vm._v("更新")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -16471,14 +16504,27 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = {
 	components: {},
-	methods: {},
+	mounted: function mounted() {},
+
+	methods: {
+		update: function update() {
+			var that = this;
+			that.$http.post('/goodsRel', { name: that.name, num: that.num }).then(function (result) {
+				if (that.arr[that.name]) {
+					that.arr[that.name] = that.num;
+				}
+			});
+		}
+	},
 	props: [],
 	data: function data() {
-		return {};
+		return {
+			name: null,
+			num: null
+		};
 	},
 	computed: {
 		arr: function arr() {
-			console.log('xixi');
 			return this.$store.state.relGoods;
 		}
 	},

@@ -22,4 +22,5 @@ module.exports = function (app){
 	app.use('/changePW-3', require('./changePW-3'));
 	app.use('/payment', require('./payment'));
 	app.use('/backstage', require('./backstage'));
+	app.use('/goodsRel', require('./goodsRel'));
 }

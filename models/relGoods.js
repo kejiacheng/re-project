@@ -13,6 +13,10 @@ module.exports = {
 		})
 	},
 	updateGoods: (data) => {
-		
+		return RelGoods
+		.findById('58da39e9ef94021ccc903c49', function (err,person){
+			person[data.name] = data.num;
+			RelGoods.update({_id:'58da39e9ef94021ccc903c49'},person,function(err){});
+		})
 	}
 }

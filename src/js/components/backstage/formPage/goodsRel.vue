@@ -10,15 +10,15 @@
 				<template v-for="(item, index) in arr">
 					<tr>
 						<td>{{ index }}</td>
-						<td>{{ item }}</td>
+						<td :class="index">{{ item }}</td>
 					</tr>
 				</template>
 			</table>
 		</div>
 		<div class="update_num">
-			<input type="text" class="name" placeholder="货物名称">
-			<input type="text" class="num" placeholder="货物数量">
-			<a class="update_bt">更新</a>
+			<input type="text" class="name" placeholder="货物名称" v-model="name">
+			<input type="text" class="num" placeholder="货物数量" v-model="num">
+			<a class="update_bt" @click="update">更新</a>
 		</div>
 	</div>
 </template>
@@ -27,13 +27,25 @@
 		components: {
 			
 		},
+		mounted(){
+			
+		},
 		methods: {
-
+			update(){
+				var that = this;
+				that.$http.post('/goodsRel', { name: that.name, num: that.num })
+				.then((result) => {
+					if(that.arr[that.name]){
+						that.arr[that.name] = that.num;
+					}
+				})	
+			}
 		},
 		props: [],
 		data: function (){
 			return {
-				
+				name: null,
+				num: null
 			}
 		},
 		computed: {
