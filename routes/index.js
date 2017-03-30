@@ -23,4 +23,5 @@ module.exports = function (app){
 	app.use('/payment', require('./payment'));
 	app.use('/backstage', require('./backstage'));
 	app.use('/goodsRel', require('./goodsRel'));
+	app.use('/chartPage', require('./chartPage'));
 }
