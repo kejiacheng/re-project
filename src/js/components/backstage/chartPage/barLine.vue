@@ -6,11 +6,11 @@
 				<option>折线图</option>
 			</select>
 			<div class="goods_wrapper">
-				<input class="goods" readonly>
-				<div class="select_goods">
+				<input class="goods" readonly v-model="nowGoodsName" @click="showSelect">
+				<div class="select_goods" v-show="select_goods" @click="selectGoods">
 					<div class="item">全部</div>
-					<template v-for="item in goodsNameJson">
-						<div class="item">{{ item.name }}</div>
+					<template v-for="(item, key) in goodsNameJson">
+						<div class="item">{{ key }}</div>
 					</template>
 				</div>
 			</div>
@@ -33,20 +33,27 @@
 			const that = this;
 			that.init();
 			
-			async function a(){
-				await that.getGoodsArray();
-				that.getGoodsName(that.goodsList);
-				for(let i in that.goodsNameJson){
-					console.log(i);
-					for(let j in that.goodsNameJson[i]){
-						console.log(j);
-					}
-				}
-			}
-			a()
-			.then((result) => {
+			async function setData(){
+				await that.getGoodsJson();
+				that.transformGoodsJson(that.goodsList);
+				console.log(that.goodsNameJson);
+				console.log(that.goodsDateJson);
+				// for(let i in that.goodsNameJson){
+				// 	console.log(i);
+				// 	for(let j in that.goodsNameJson[i]){
+				// 		console.log(j);
+				// 	}
+				// }
+				that.supplyJson(that.goodsDateJson)
+				let arr = that.jsonToArray(that.goodsDateJson);
+				var canvas = document.getElementById("canvas");
+				var ctx = canvas.getContext("2d");
+
 				
-			})
+				var bar_chart1 = new bar_chart(arr);
+				bar_chart1.draw(ctx);
+			}
+			setData()
 			// var arr=[["10.28",120],["10.29",20],["10.30",53],["10.31",22],["11.01",13],["11.02",34],["11.03",32],["11.04",49],["11.05",62],["11.06",20],["11.07",120],["11.08",230],["11.09",211]];
 			// var canvas = document.getElementById("canvas");
 			// var ctx = canvas.getContext("2d");
@@ -56,7 +63,7 @@
 			// bar_chart1.draw(ctx);
 		},
 		methods: {
-			init(){
+			init(){//将初始的起始和结尾时间写入
 				const that = this;
 				let startTime = new Date();
 				let endTime = new Date();
@@ -64,34 +71,79 @@
 				that.endTime = format_time(endTime);
 				that.startTime = format_time(startTime);
 			},
-			getGoodsArray(){
+			showSelect(){
+				this.select_goods = true;
+			},
+			selectGoods(e){
+				if(Object.is(e.target.className, 'item')){
+					this.nowGoodsName = e.target.innerHTML;
+				}
+				this.select_goods = false;
+			},
+			getGoodsJson(){//根据时间从后台获取货物数据
 				const that = this;
 				return that.$http.post('/barLine', { startTime: that.startTime, endTime: that.endTime })
 				.then((result) => {
 					that.goodsList = result.body;
 				})
 			},
-			getGoodsName(json){
-				let newJson = {};
+			transformGoodsJson(json){//将原始json转变为以货物为key和时间为key的两个JSON
+				let nameJson = {};
+				let dateJson = {};
 				for(let i in json){
+					//写出namejson
 					let str = '';
 					str += json[i].ingredients.name + '*1';
 					for(let j in json[i].accessories){
 						str += j + '*' + json[i].accessories[j].num;
 					}
-					if(!newJson[str]){
-						newJson[str] = {
+					if(!nameJson[str]){
+						nameJson[str] = {
 							[json[i].date]: 1
 						}
 					}else{
-						if(!newJson[str][json[i].date]){
-							newJson[str][json[i].date] = 1;
+						if(!nameJson[str][json[i].date]){
+							nameJson[str][json[i].date] = 1;
 						}else{
-							newJson[str][json[i].date]++;
+							nameJson[str][json[i].date]++;
 						}
 					}
+					//写出dateJson
+					let date = String(json[i].date).substring(4,8);
+					if(!dateJson[date]){
+						dateJson[date] = 1;
+					}else{
+						dateJson[date]++;
+					}
 				}
-				this.goodsNameJson = newJson;
+				this.goodsNameJson = nameJson;
+				this.goodsDateJson = dateJson;
+			},
+			supplyJson(json){
+				//将时间格式从2088-12-12转变为1212
+				const start = Number(this.startTime.replace(/-/g,'').substring(4));
+				const end = Number(this.endTime.replace(/-/g,'').substring(4));
+
+				for(let i = start;i<=end;i++){
+					//当月份小于10时在前面添加0
+					if(i<1000){
+						i = '0' + i;
+					}
+					//判断该日期是否需补充
+					if(!json[i]){
+						json[i] = 0
+					}
+				}
+			},
+			jsonToArray(json){//将json转为Array
+				let arr = [];
+				//将json里的数据push到数组里
+				for(let i in json){
+					arr.push([i,json[i]]);
+				}
+				//根据时间从小到大排序
+				arr.sort((a,b) => a[0]-b[0])
+				return arr;
 			}
 		},
 		props: [],
@@ -99,6 +151,8 @@
 			return {
 				startTime: '',
 				endTime: '',
+				nowGoodsName: '全部',
+				select_goods: false,
 				goodsList: {},
 				goodsNameJson: {},
 				goodsDateJson: {}
@@ -147,7 +201,6 @@
 				border:solid #aaa;
 				border-width:0 1px 1px 1px;
 				overflow-y: scroll;
-				display: none;
 				.item{
 					text-align: left;
 					line-height:34px;

@@ -15774,7 +15774,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "\n.bar_line .condition_select {\n  height: 50px;\n  padding-left: 110px;\n  font-size: 14px;\n}\n.bar_line .condition_select select {\n    width: 100px;\n    height: 34px;\n}\n.bar_line .condition_select input {\n    height: 30px;\n    padding-left: 8px;\n}\n.bar_line .condition_select .goods_wrapper {\n    display: inline-block;\n    position: relative;\n    font-size: 12px;\n}\n.bar_line .condition_select .goods_wrapper input {\n      width: 230px;\n}\n.bar_line .condition_select .goods_wrapper .select_goods {\n      padding: 0 10px;\n      position: absolute;\n      top: 34px;\n      left: 0;\n      width: 220px;\n      height: 105px;\n      background: #fff;\n      border: solid #aaa;\n      border-width: 0 1px 1px 1px;\n      overflow-y: scroll;\n      display: none;\n}\n.bar_line .condition_select .goods_wrapper .select_goods .item {\n        text-align: left;\n        line-height: 34px;\n        height: 34px;\n        border-bottom: 1px solid #aaa;\n        cursor: pointer;\n}\n.bar_line .condition_select .goods_wrapper .select_goods .item:hover {\n          color: #000778;\n}\n.bar_line #canvas {\n  margin-left: 80px;\n}\n.bar_line a {\n  display: inline-block;\n  font-size: 14px;\n  width: 70px;\n  height: 30px;\n  vertical-align: top;\n  border: 2px solid #dedede;\n  text-align: center;\n  line-height: 30px;\n  background: #f7193f;\n  border-radius: 20px;\n  color: #fff;\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n.bar_line .condition_select {\n  height: 50px;\n  padding-left: 110px;\n  font-size: 14px;\n}\n.bar_line .condition_select select {\n    width: 100px;\n    height: 34px;\n}\n.bar_line .condition_select input {\n    height: 30px;\n    padding-left: 8px;\n}\n.bar_line .condition_select .goods_wrapper {\n    display: inline-block;\n    position: relative;\n    font-size: 12px;\n}\n.bar_line .condition_select .goods_wrapper input {\n      width: 230px;\n}\n.bar_line .condition_select .goods_wrapper .select_goods {\n      padding: 0 10px;\n      position: absolute;\n      top: 34px;\n      left: 0;\n      width: 220px;\n      height: 105px;\n      background: #fff;\n      border: solid #aaa;\n      border-width: 0 1px 1px 1px;\n      overflow-y: scroll;\n}\n.bar_line .condition_select .goods_wrapper .select_goods .item {\n        text-align: left;\n        line-height: 34px;\n        height: 34px;\n        border-bottom: 1px solid #aaa;\n        cursor: pointer;\n}\n.bar_line .condition_select .goods_wrapper .select_goods .item:hover {\n          color: #000778;\n}\n.bar_line #canvas {\n  margin-left: 80px;\n}\n.bar_line a {\n  display: inline-block;\n  font-size: 14px;\n  width: 70px;\n  height: 30px;\n  vertical-align: top;\n  border: 2px solid #dedede;\n  text-align: center;\n  line-height: 30px;\n  background: #f7193f;\n  border-radius: 20px;\n  color: #fff;\n  cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -16633,18 +16633,43 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "goods_wrapper"
   }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.nowGoodsName),
+      expression: "nowGoodsName"
+    }],
     staticClass: "goods",
     attrs: {
       "readonly": ""
+    },
+    domProps: {
+      "value": (_vm.nowGoodsName)
+    },
+    on: {
+      "click": _vm.showSelect,
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.nowGoodsName = $event.target.value
+      }
     }
   }), _vm._v(" "), _c('div', {
-    staticClass: "select_goods"
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.select_goods),
+      expression: "select_goods"
+    }],
+    staticClass: "select_goods",
+    on: {
+      "click": _vm.selectGoods
+    }
   }, [_c('div', {
     staticClass: "item"
-  }, [_vm._v("全部")]), _vm._v(" "), _vm._l((_vm.goodsNameJson), function(item) {
+  }, [_vm._v("全部")]), _vm._v(" "), _vm._l((_vm.goodsNameJson), function(item, key) {
     return [_c('div', {
       staticClass: "item"
-    }, [_vm._v(_vm._s(item.name))])]
+    }, [_vm._v(_vm._s(key))])]
   })], 2)]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
@@ -24436,26 +24461,35 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 exports.default = {
 	components: {},
 	mounted: function mounted() {
-		var a = function () {
+		var setData = function () {
 			var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee() {
-				var i, j;
+				var arr, canvas, ctx, bar_chart1;
 				return regeneratorRuntime.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
 							case 0:
 								_context.next = 2;
-								return that.getGoodsArray();
+								return that.getGoodsJson();
 
 							case 2:
-								that.getGoodsName(that.goodsList);
-								for (i in that.goodsNameJson) {
-									console.log(i);
-									for (j in that.goodsNameJson[i]) {
-										console.log(j);
-									}
-								}
+								that.transformGoodsJson(that.goodsList);
+								console.log(that.goodsNameJson);
+								console.log(that.goodsDateJson);
+								// for(let i in that.goodsNameJson){
+								// 	console.log(i);
+								// 	for(let j in that.goodsNameJson[i]){
+								// 		console.log(j);
+								// 	}
+								// }
+								that.supplyJson(that.goodsDateJson);
+								arr = that.jsonToArray(that.goodsDateJson);
+								canvas = document.getElementById("canvas");
+								ctx = canvas.getContext("2d");
+								bar_chart1 = new _chart.bar_chart(arr);
 
-							case 4:
+								bar_chart1.draw(ctx);
+
+							case 11:
 							case 'end':
 								return _context.stop();
 						}
@@ -24463,7 +24497,7 @@ exports.default = {
 				}, _callee, this);
 			}));
 
-			return function a() {
+			return function setData() {
 				return _ref.apply(this, arguments);
 			};
 		}();
@@ -24471,7 +24505,7 @@ exports.default = {
 		var that = this;
 		that.init();
 
-		a().then(function (result) {});
+		setData();
 		// var arr=[["10.28",120],["10.29",20],["10.30",53],["10.31",22],["11.01",13],["11.02",34],["11.03",32],["11.04",49],["11.05",62],["11.06",20],["11.07",120],["11.08",230],["11.09",211]];
 		// var canvas = document.getElementById("canvas");
 		// var ctx = canvas.getContext("2d");
@@ -24483,6 +24517,7 @@ exports.default = {
 
 	methods: {
 		init: function init() {
+			//将初始的起始和结尾时间写入
 			var that = this;
 			var startTime = new Date();
 			var endTime = new Date();
@@ -24490,31 +24525,81 @@ exports.default = {
 			that.endTime = (0, _function.format_time)(endTime);
 			that.startTime = (0, _function.format_time)(startTime);
 		},
-		getGoodsArray: function getGoodsArray() {
+		showSelect: function showSelect() {
+			this.select_goods = true;
+		},
+		selectGoods: function selectGoods(e) {
+			if (Object.is(e.target.className, 'item')) {
+				this.nowGoodsName = e.target.innerHTML;
+			}
+			this.select_goods = false;
+		},
+		getGoodsJson: function getGoodsJson() {
+			//根据时间从后台获取货物数据
 			var that = this;
 			return that.$http.post('/barLine', { startTime: that.startTime, endTime: that.endTime }).then(function (result) {
 				that.goodsList = result.body;
 			});
 		},
-		getGoodsName: function getGoodsName(json) {
-			var newJson = {};
+		transformGoodsJson: function transformGoodsJson(json) {
+			//将原始json转变为以货物为key和时间为key的两个JSON
+			var nameJson = {};
+			var dateJson = {};
 			for (var i in json) {
+				//写出namejson
 				var str = '';
 				str += json[i].ingredients.name + '*1';
 				for (var j in json[i].accessories) {
 					str += j + '*' + json[i].accessories[j].num;
 				}
-				if (!newJson[str]) {
-					newJson[str] = _defineProperty({}, json[i].date, 1);
+				if (!nameJson[str]) {
+					nameJson[str] = _defineProperty({}, json[i].date, 1);
 				} else {
-					if (!newJson[str][json[i].date]) {
-						newJson[str][json[i].date] = 1;
+					if (!nameJson[str][json[i].date]) {
+						nameJson[str][json[i].date] = 1;
 					} else {
-						newJson[str][json[i].date]++;
+						nameJson[str][json[i].date]++;
 					}
 				}
+				//写出dateJson
+				var date = String(json[i].date).substring(4, 8);
+				if (!dateJson[date]) {
+					dateJson[date] = 1;
+				} else {
+					dateJson[date]++;
+				}
 			}
-			this.goodsNameJson = newJson;
+			this.goodsNameJson = nameJson;
+			this.goodsDateJson = dateJson;
+		},
+		supplyJson: function supplyJson(json) {
+			//将时间格式从2088-12-12转变为1212
+			var start = Number(this.startTime.replace(/-/g, '').substring(4));
+			var end = Number(this.endTime.replace(/-/g, '').substring(4));
+
+			for (var i = start; i <= end; i++) {
+				//当月份小于10时在前面添加0
+				if (i < 1000) {
+					i = '0' + i;
+				}
+				//判断该日期是否需补充
+				if (!json[i]) {
+					json[i] = 0;
+				}
+			}
+		},
+		jsonToArray: function jsonToArray(json) {
+			//将json转为Array
+			var arr = [];
+			//将json里的数据push到数组里
+			for (var i in json) {
+				arr.push([i, json[i]]);
+			}
+			//根据时间从小到大排序
+			arr.sort(function (a, b) {
+				return a[0] - b[0];
+			});
+			return arr;
 		}
 	},
 	props: [],
@@ -24522,6 +24607,8 @@ exports.default = {
 		return {
 			startTime: '',
 			endTime: '',
+			nowGoodsName: '全部',
+			select_goods: false,
 			goodsList: {},
 			goodsNameJson: {},
 			goodsDateJson: {}
