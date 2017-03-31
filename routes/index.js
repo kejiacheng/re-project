@@ -24,4 +24,5 @@ module.exports = function (app){
 	app.use('/backstage', require('./backstage'));
 	app.use('/goodsRel', require('./goodsRel'));
 	app.use('/chartPage', require('./chartPage'));
+	app.use('/barLine', require('./barLine'));
 }

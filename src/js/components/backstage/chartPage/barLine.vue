@@ -8,7 +8,10 @@
 			<div class="goods_wrapper">
 				<input class="goods" readonly>
 				<div class="select_goods">
-				
+					<div class="item">全部</div>
+					<template v-for="item in goodsNameJson">
+						<div class="item">{{ item.name }}</div>
+					</template>
 				</div>
 			</div>
 			<input class="start" onclick="laydate()" v-model="startTime">
@@ -21,6 +24,7 @@
 <script type="text/javascript">
 	import {format_time} from '../../../function/function.js'
 	import {bar_chart, line_chart} from '../../../function/chart.js'
+	import "babel-polyfill"
 	export default{
 		components: {
 			
@@ -28,13 +32,28 @@
 		mounted(){
 			const that = this;
 			that.init();
-			var arr=[["10.28",120],["10.29",20],["10.30",53],["10.31",22],["11.01",13],["11.02",34],["11.03",32],["11.04",49],["11.05",62],["11.06",20],["11.07",120],["11.08",230],["11.09",211]];
-			var canvas = document.getElementById("canvas");
-			var ctx = canvas.getContext("2d");
+			
+			async function a(){
+				await that.getGoodsArray();
+				that.getGoodsName(that.goodsList);
+				for(let i in that.goodsNameJson){
+					console.log(i);
+					for(let j in that.goodsNameJson[i]){
+						console.log(j);
+					}
+				}
+			}
+			a()
+			.then((result) => {
+				
+			})
+			// var arr=[["10.28",120],["10.29",20],["10.30",53],["10.31",22],["11.01",13],["11.02",34],["11.03",32],["11.04",49],["11.05",62],["11.06",20],["11.07",120],["11.08",230],["11.09",211]];
+			// var canvas = document.getElementById("canvas");
+			// var ctx = canvas.getContext("2d");
 
 			
-			var bar_chart1 = new bar_chart(arr);
-			bar_chart1.draw(ctx);
+			// var bar_chart1 = new bar_chart(arr);
+			// bar_chart1.draw(ctx);
 		},
 		methods: {
 			init(){
@@ -46,14 +65,43 @@
 				that.startTime = format_time(startTime);
 			},
 			getGoodsArray(){
-				
+				const that = this;
+				return that.$http.post('/barLine', { startTime: that.startTime, endTime: that.endTime })
+				.then((result) => {
+					that.goodsList = result.body;
+				})
+			},
+			getGoodsName(json){
+				let newJson = {};
+				for(let i in json){
+					let str = '';
+					str += json[i].ingredients.name + '*1';
+					for(let j in json[i].accessories){
+						str += j + '*' + json[i].accessories[j].num;
+					}
+					if(!newJson[str]){
+						newJson[str] = {
+							[json[i].date]: 1
+						}
+					}else{
+						if(!newJson[str][json[i].date]){
+							newJson[str][json[i].date] = 1;
+						}else{
+							newJson[str][json[i].date]++;
+						}
+					}
+				}
+				this.goodsNameJson = newJson;
 			}
 		},
 		props: [],
 		data: function (){
 			return {
 				startTime: '',
-				endTime: ''
+				endTime: '',
+				goodsList: {},
+				goodsNameJson: {},
+				goodsDateJson: {}
 			}
 		},
 		computed: {

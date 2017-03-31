@@ -38,7 +38,7 @@ router.post('/', function (req, res ,next){
 
 	relGoods.buyGoods(dataB)
 	.then((result) => {
-		console.log(result);
+		// console.log(result);
 	})
 
 
