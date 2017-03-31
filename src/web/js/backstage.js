@@ -24462,6 +24462,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 exports.default = {
 	components: {},
 	mounted: function mounted() {
+		//画出初始时间数据图形
 		var setData = function () {
 			var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee() {
 				var canvas, ctx, bar_chart1;
@@ -24474,14 +24475,6 @@ exports.default = {
 
 							case 2:
 								that.transformGoodsJson(that.goodsList);
-								console.log(that.goodsNameJson);
-								console.log(that.goodsDateJson);
-								// for(let i in that.goodsNameJson){
-								// 	console.log(i);
-								// 	for(let j in that.goodsNameJson[i]){
-								// 		console.log(j);
-								// 	}
-								// }
 								that.supplyJson(that.goodsDateJson);
 								that.nowArray = that.jsonToArray(that.goodsDateJson);
 								canvas = document.getElementById("canvas");
@@ -24490,7 +24483,7 @@ exports.default = {
 
 								bar_chart1.draw(ctx);
 
-							case 11:
+							case 9:
 							case 'end':
 								return _context.stop();
 						}
@@ -24505,15 +24498,7 @@ exports.default = {
 
 		var that = this;
 		that.init();
-
 		setData();
-		// var arr=[["10.28",120],["10.29",20],["10.30",53],["10.31",22],["11.01",13],["11.02",34],["11.03",32],["11.04",49],["11.05",62],["11.06",20],["11.07",120],["11.08",230],["11.09",211]];
-		// var canvas = document.getElementById("canvas");
-		// var ctx = canvas.getContext("2d");
-
-
-		// var bar_chart1 = new bar_chart(arr);
-		// bar_chart1.draw(ctx);
 	},
 
 	methods: {
@@ -24530,15 +24515,38 @@ exports.default = {
 			this.select_goods = true;
 		},
 		selectGoods: function selectGoods(e) {
+			var that = this;
 			if (Object.is(e.target.className, 'item')) {
-				this.nowGoodsName = e.target.innerHTML;
+				if (!Object.is(that.nowGoodsName, e.target.innerHTML)) {
+					console.log('no');
+					that.nowGoodsName = e.target.innerHTML;
+					if (Object.is(that.nowGoodsName, '全部')) {} else {
+						that.supplyJson(that.goodsNameJson[that.nowGoodsName]);
+						that.nowArray = that.jsonToArray(that.goodsNameJson[that.nowGoodsName]);
+						var canvas = document.getElementById("canvas");
+						var ctx = canvas.getContext("2d");
+						var chart_type = document.getElementsByClassName('chart_type')[0].value;
+						console.log(chart_type);
+						//判断需要何种图形
+						if (Object.is(chart_type, '折线图')) {
+							var line_chart1 = new _chart.line_chart(that.nowArray);
+							line_chart1.draw(ctx);
+						} else if (Object.is(chart_type, '柱状图')) {
+							var bar_chart1 = new _chart.bar_chart(that.nowArray);
+							bar_chart1.draw(ctx);
+						}
+					}
+				} else {
+					console.log('yes');
+				}
 			}
-			this.select_goods = false;
+			that.select_goods = false;
 		},
 		changeType: function changeType(e) {
 			var that = this;
 			var canvas = document.getElementById("canvas");
 			var ctx = canvas.getContext("2d");
+			//判断需要何种图形
 			if (Object.is(e.target.value, '折线图')) {
 				var line_chart1 = new _chart.line_chart(that.nowArray);
 				line_chart1.draw(ctx);
@@ -24560,22 +24568,27 @@ exports.default = {
 			var dateJson = {};
 			for (var i in json) {
 				//写出namejson
-				var str = '';
+				var str = ''; //将主料和辅料的名称及数量写入str
 				str += json[i].ingredients.name + '*1';
 				for (var j in json[i].accessories) {
 					str += j + '*' + json[i].accessories[j].num;
 				}
+				//修改时间格式2001121201成1212
+				var date = String(json[i].date).substring(4, 8);
+
+				//判断该组货物是否存在
 				if (!nameJson[str]) {
-					nameJson[str] = _defineProperty({}, json[i].date, 1);
+					nameJson[str] = _defineProperty({}, date, 1);
 				} else {
-					if (!nameJson[str][json[i].date]) {
-						nameJson[str][json[i].date] = 1;
+					//判断该货物的该时间是否存在
+					if (!nameJson[str][date]) {
+						nameJson[str][date] = 1;
 					} else {
-						nameJson[str][json[i].date]++;
+						nameJson[str][date]++;
 					}
 				}
 				//写出dateJson
-				var date = String(json[i].date).substring(4, 8);
+
 				if (!dateJson[date]) {
 					dateJson[date] = 1;
 				} else {

@@ -33,19 +33,11 @@
 		mounted(){
 			const that = this;
 			that.init();
-			
+			//画出初始时间数据图形
 			async function setData(){
 				await that.getGoodsJson();
 				that.transformGoodsJson(that.goodsList);
-				console.log(that.goodsNameJson);
-				console.log(that.goodsDateJson);
-				// for(let i in that.goodsNameJson){
-				// 	console.log(i);
-				// 	for(let j in that.goodsNameJson[i]){
-				// 		console.log(j);
-				// 	}
-				// }
-				that.supplyJson(that.goodsDateJson)
+				that.supplyJson(that.goodsDateJson);
 				that.nowArray = that.jsonToArray(that.goodsDateJson);
 				let canvas = document.getElementById("canvas");
 				let ctx = canvas.getContext("2d");
@@ -54,13 +46,6 @@
 				bar_chart1.draw(ctx);
 			}
 			setData()
-			// var arr=[["10.28",120],["10.29",20],["10.30",53],["10.31",22],["11.01",13],["11.02",34],["11.03",32],["11.04",49],["11.05",62],["11.06",20],["11.07",120],["11.08",230],["11.09",211]];
-			// var canvas = document.getElementById("canvas");
-			// var ctx = canvas.getContext("2d");
-
-			
-			// var bar_chart1 = new bar_chart(arr);
-			// bar_chart1.draw(ctx);
 		},
 		methods: {
 			init(){//将初始的起始和结尾时间写入
@@ -75,15 +60,41 @@
 				this.select_goods = true;
 			},
 			selectGoods(e){
+				const that = this;
 				if(Object.is(e.target.className, 'item')){
-					this.nowGoodsName = e.target.innerHTML;
+					if(!Object.is(that.nowGoodsName, e.target.innerHTML)){
+						console.log('no')
+						that.nowGoodsName = e.target.innerHTML;
+						if(Object.is(that.nowGoodsName, '全部')){
+							
+						}else{
+							that.supplyJson(that.goodsNameJson[that.nowGoodsName])
+							that.nowArray = that.jsonToArray(that.goodsNameJson[that.nowGoodsName]);
+							let canvas = document.getElementById("canvas");
+							let ctx = canvas.getContext("2d");
+							let chart_type = document.getElementsByClassName('chart_type')[0].value
+							
+							//判断需要何种图形
+							if(Object.is(chart_type, '折线图')){
+								let line_chart1 = new line_chart(that.nowArray);
+								line_chart1.draw(ctx);
+							}else if(Object.is(chart_type, '柱状图')){
+								let bar_chart1 = new bar_chart(that.nowArray);
+								bar_chart1.draw(ctx);
+							}
+						}
+					}else{
+						console.log('yes')
+					}
+					
 				}
-				this.select_goods = false;
+				that.select_goods = false;
 			},
 			changeType(e){
 				const that = this;
 				let canvas = document.getElementById("canvas");
 				let ctx = canvas.getContext("2d");
+				//判断需要何种图形
 				if(Object.is(e.target.value, '折线图')){
 					let line_chart1 = new line_chart(that.nowArray);
 					line_chart1.draw(ctx);
@@ -104,24 +115,29 @@
 				let dateJson = {};
 				for(let i in json){
 					//写出namejson
-					let str = '';
+					let str = '';//将主料和辅料的名称及数量写入str
 					str += json[i].ingredients.name + '*1';
 					for(let j in json[i].accessories){
 						str += j + '*' + json[i].accessories[j].num;
 					}
+					//修改时间格式2001121201成1212
+					let date = String(json[i].date).substring(4,8);
+
+					//判断该组货物是否存在
 					if(!nameJson[str]){
 						nameJson[str] = {
-							[json[i].date]: 1
+							[date]: 1
 						}
 					}else{
-						if(!nameJson[str][json[i].date]){
-							nameJson[str][json[i].date] = 1;
+						//判断该货物的该时间是否存在
+						if(!nameJson[str][date]){
+							nameJson[str][date] = 1;
 						}else{
-							nameJson[str][json[i].date]++;
+							nameJson[str][date]++;
 						}
 					}
 					//写出dateJson
-					let date = String(json[i].date).substring(4,8);
+					
 					if(!dateJson[date]){
 						dateJson[date] = 1;
 					}else{
