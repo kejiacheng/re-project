@@ -16630,7 +16630,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "bar_line"
   }, [_c('div', {
     staticClass: "condition_select"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_c('select', {
+    staticClass: "chart_type",
+    on: {
+      "change": _vm.changeType
+    }
+  }, [_c('option', [_vm._v("柱状图")]), _vm._v(" "), _c('option', [_vm._v("折线图")])]), _vm._v(" "), _c('div', {
     staticClass: "goods_wrapper"
   }, [_c('input', {
     directives: [{
@@ -16719,11 +16724,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "height": "450"
     }
   })])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('select', {
-    staticClass: "chart_type"
-  }, [_c('option', [_vm._v("柱状图")]), _vm._v(" "), _c('option', [_vm._v("折线图")])])
-}]}
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -24463,7 +24464,7 @@ exports.default = {
 	mounted: function mounted() {
 		var setData = function () {
 			var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee() {
-				var arr, canvas, ctx, bar_chart1;
+				var canvas, ctx, bar_chart1;
 				return regeneratorRuntime.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
@@ -24482,10 +24483,10 @@ exports.default = {
 								// 	}
 								// }
 								that.supplyJson(that.goodsDateJson);
-								arr = that.jsonToArray(that.goodsDateJson);
+								that.nowArray = that.jsonToArray(that.goodsDateJson);
 								canvas = document.getElementById("canvas");
 								ctx = canvas.getContext("2d");
-								bar_chart1 = new _chart.bar_chart(arr);
+								bar_chart1 = new _chart.bar_chart(that.nowArray);
 
 								bar_chart1.draw(ctx);
 
@@ -24533,6 +24534,18 @@ exports.default = {
 				this.nowGoodsName = e.target.innerHTML;
 			}
 			this.select_goods = false;
+		},
+		changeType: function changeType(e) {
+			var that = this;
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
+			if (Object.is(e.target.value, '折线图')) {
+				var line_chart1 = new _chart.line_chart(that.nowArray);
+				line_chart1.draw(ctx);
+			} else if (Object.is(e.target.value, '柱状图')) {
+				var bar_chart1 = new _chart.bar_chart(that.nowArray);
+				bar_chart1.draw(ctx);
+			}
 		},
 		getGoodsJson: function getGoodsJson() {
 			//根据时间从后台获取货物数据
@@ -24611,7 +24624,8 @@ exports.default = {
 			select_goods: false,
 			goodsList: {},
 			goodsNameJson: {},
-			goodsDateJson: {}
+			goodsDateJson: {},
+			nowArray: []
 		};
 	},
 	computed: {},
@@ -25189,7 +25203,7 @@ function line_chart(arr){
 	chart.call(this,arr);
 
 	this.draw = 
-		function(){
+		function(ctx){
 			ctx.clearRect(0,0,980,450);
 			canvas.onmousemove = "";
 			var that = this;

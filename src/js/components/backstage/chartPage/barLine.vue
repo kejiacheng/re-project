@@ -1,7 +1,7 @@
 <template>
 	<div class="bar_line">
 		<div class="condition_select">
-			<select class="chart_type">
+			<select class="chart_type" @change="changeType">
 				<option>柱状图</option>
 				<option>折线图</option>
 			</select>
@@ -25,6 +25,7 @@
 	import {format_time} from '../../../function/function.js'
 	import {bar_chart, line_chart} from '../../../function/chart.js'
 	import "babel-polyfill"
+	
 	export default{
 		components: {
 			
@@ -45,12 +46,11 @@
 				// 	}
 				// }
 				that.supplyJson(that.goodsDateJson)
-				let arr = that.jsonToArray(that.goodsDateJson);
-				var canvas = document.getElementById("canvas");
-				var ctx = canvas.getContext("2d");
-
+				that.nowArray = that.jsonToArray(that.goodsDateJson);
+				let canvas = document.getElementById("canvas");
+				let ctx = canvas.getContext("2d");
 				
-				var bar_chart1 = new bar_chart(arr);
+				let bar_chart1 = new bar_chart(that.nowArray);
 				bar_chart1.draw(ctx);
 			}
 			setData()
@@ -80,6 +80,18 @@
 				}
 				this.select_goods = false;
 			},
+			changeType(e){
+				const that = this;
+				let canvas = document.getElementById("canvas");
+				let ctx = canvas.getContext("2d");
+				if(Object.is(e.target.value, '折线图')){
+					let line_chart1 = new line_chart(that.nowArray);
+					line_chart1.draw(ctx);
+				}else if(Object.is(e.target.value, '柱状图')){
+					let bar_chart1 = new bar_chart(that.nowArray);
+					bar_chart1.draw(ctx);
+				}
+			},	
 			getGoodsJson(){//根据时间从后台获取货物数据
 				const that = this;
 				return that.$http.post('/barLine', { startTime: that.startTime, endTime: that.endTime })
@@ -155,7 +167,8 @@
 				select_goods: false,
 				goodsList: {},
 				goodsNameJson: {},
-				goodsDateJson: {}
+				goodsDateJson: {},
+				nowArray: []
 			}
 		},
 		computed: {

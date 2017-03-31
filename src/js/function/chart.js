@@ -166,7 +166,7 @@ function line_chart(arr){
 	chart.call(this,arr);
 
 	this.draw = 
-		function(){
+		function(ctx){
 			ctx.clearRect(0,0,980,450);
 			canvas.onmousemove = "";
 			var that = this;
