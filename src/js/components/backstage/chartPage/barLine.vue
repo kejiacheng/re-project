@@ -16,7 +16,7 @@
 			</div>
 			<input class="start" onclick="laydate()" v-model="startTime">
 			<input class="end" onclick="laydate()" v-model="endTime">
-			<a class="filter_bt">筛选</a>
+			<a class="filter_bt" @click="getData">筛选</a>
 		</div>
 		<canvas id="canvas" width="980" height="450"></canvas>
 	</div>
@@ -62,18 +62,29 @@
 			selectGoods(e){
 				const that = this;
 				if(Object.is(e.target.className, 'item')){
+					//判断物品是否发生变化
 					if(!Object.is(that.nowGoodsName, e.target.innerHTML)){
-						console.log('no')
 						that.nowGoodsName = e.target.innerHTML;
+						//判断是全部物品还是某物品
 						if(Object.is(that.nowGoodsName, '全部')){
-							
+							that.nowArray = that.jsonToArray(that.goodsDateJson);
+							let canvas = document.getElementById("canvas");
+							let ctx = canvas.getContext("2d");
+							let chart_type = document.getElementsByClassName('chart_type')[0].value
+							//判断需要何种图形
+							if(Object.is(chart_type, '折线图')){
+								let line_chart1 = new line_chart(that.nowArray);
+								line_chart1.draw(ctx);
+							}else if(Object.is(chart_type, '柱状图')){
+								let bar_chart1 = new bar_chart(that.nowArray);
+								bar_chart1.draw(ctx);
+							}
 						}else{
 							that.supplyJson(that.goodsNameJson[that.nowGoodsName])
 							that.nowArray = that.jsonToArray(that.goodsNameJson[that.nowGoodsName]);
 							let canvas = document.getElementById("canvas");
 							let ctx = canvas.getContext("2d");
 							let chart_type = document.getElementsByClassName('chart_type')[0].value
-							
 							//判断需要何种图形
 							if(Object.is(chart_type, '折线图')){
 								let line_chart1 = new line_chart(that.nowArray);
@@ -83,10 +94,7 @@
 								bar_chart1.draw(ctx);
 							}
 						}
-					}else{
-						console.log('yes')
 					}
-					
 				}
 				that.select_goods = false;
 			},
@@ -172,6 +180,31 @@
 				//根据时间从小到大排序
 				arr.sort((a,b) => a[0]-b[0])
 				return arr;
+			},
+			async getData(){
+				const that = this;
+				const start = document.getElementsByClassName('start')[0];
+				const end = document.getElementsByClassName('end')[0];
+				const chart_type = document.getElementsByClassName('chart_type')[0]
+				that.startTime = start.value;
+				that.endTime = end.value;
+				//计算两个时间是否在15天之内
+				var day_num = (new Date(that.endTime).getTime() - new Date(that.startTime).getTime())/1000/60/60/24;
+				if(day_num <= 15 && day_num >=0){
+					await that.getGoodsJson()
+					that.nowGoodsName = '全部';
+					chart_type.value = '柱状图';
+					that.transformGoodsJson(that.goodsList);
+					that.supplyJson(that.goodsDateJson);
+					that.nowArray = that.jsonToArray(that.goodsDateJson);
+					let canvas = document.getElementById("canvas");
+					let ctx = canvas.getContext("2d");
+					
+					let bar_chart1 = new bar_chart(that.nowArray);
+					bar_chart1.draw(ctx);
+				}else{
+					alert('您输入的时间不能超过15天且起始时间要大于结束时间');
+				}
 			}
 		},
 		props: [],

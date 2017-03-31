@@ -16716,7 +16716,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }), _vm._v(" "), _c('a', {
-    staticClass: "filter_bt"
+    staticClass: "filter_bt",
+    on: {
+      "click": _vm.getData
+    }
   }, [_vm._v("筛选")])]), _vm._v(" "), _c('canvas', {
     attrs: {
       "id": "canvas",
@@ -24517,16 +24520,15 @@ exports.default = {
 		selectGoods: function selectGoods(e) {
 			var that = this;
 			if (Object.is(e.target.className, 'item')) {
+				//判断物品是否发生变化
 				if (!Object.is(that.nowGoodsName, e.target.innerHTML)) {
-					console.log('no');
 					that.nowGoodsName = e.target.innerHTML;
-					if (Object.is(that.nowGoodsName, '全部')) {} else {
-						that.supplyJson(that.goodsNameJson[that.nowGoodsName]);
-						that.nowArray = that.jsonToArray(that.goodsNameJson[that.nowGoodsName]);
+					//判断是全部物品还是某物品
+					if (Object.is(that.nowGoodsName, '全部')) {
+						that.nowArray = that.jsonToArray(that.goodsDateJson);
 						var canvas = document.getElementById("canvas");
 						var ctx = canvas.getContext("2d");
 						var chart_type = document.getElementsByClassName('chart_type')[0].value;
-						console.log(chart_type);
 						//判断需要何种图形
 						if (Object.is(chart_type, '折线图')) {
 							var line_chart1 = new _chart.line_chart(that.nowArray);
@@ -24535,9 +24537,21 @@ exports.default = {
 							var bar_chart1 = new _chart.bar_chart(that.nowArray);
 							bar_chart1.draw(ctx);
 						}
+					} else {
+						that.supplyJson(that.goodsNameJson[that.nowGoodsName]);
+						that.nowArray = that.jsonToArray(that.goodsNameJson[that.nowGoodsName]);
+						var _canvas = document.getElementById("canvas");
+						var _ctx = _canvas.getContext("2d");
+						var _chart_type = document.getElementsByClassName('chart_type')[0].value;
+						//判断需要何种图形
+						if (Object.is(_chart_type, '折线图')) {
+							var _line_chart = new _chart.line_chart(that.nowArray);
+							_line_chart.draw(_ctx);
+						} else if (Object.is(_chart_type, '柱状图')) {
+							var _bar_chart = new _chart.bar_chart(that.nowArray);
+							_bar_chart.draw(_ctx);
+						}
 					}
-				} else {
-					console.log('yes');
 				}
 			}
 			that.select_goods = false;
@@ -24626,6 +24640,58 @@ exports.default = {
 				return a[0] - b[0];
 			});
 			return arr;
+		},
+		getData: function getData() {
+			var _this = this;
+
+			return _asyncToGenerator(regeneratorRuntime.mark(function _callee2() {
+				var that, start, end, chart_type, day_num, canvas, ctx, bar_chart1;
+				return regeneratorRuntime.wrap(function _callee2$(_context2) {
+					while (1) {
+						switch (_context2.prev = _context2.next) {
+							case 0:
+								that = _this;
+								start = document.getElementsByClassName('start')[0];
+								end = document.getElementsByClassName('end')[0];
+								chart_type = document.getElementsByClassName('chart_type')[0];
+
+								that.startTime = start.value;
+								that.endTime = end.value;
+								//计算两个时间是否在15天之内
+								day_num = (new Date(that.endTime).getTime() - new Date(that.startTime).getTime()) / 1000 / 60 / 60 / 24;
+
+								if (!(day_num <= 15 && day_num >= 0)) {
+									_context2.next = 21;
+									break;
+								}
+
+								_context2.next = 10;
+								return that.getGoodsJson();
+
+							case 10:
+								that.nowGoodsName = '全部';
+								chart_type.value = '柱状图';
+								that.transformGoodsJson(that.goodsList);
+								that.supplyJson(that.goodsDateJson);
+								that.nowArray = that.jsonToArray(that.goodsDateJson);
+								canvas = document.getElementById("canvas");
+								ctx = canvas.getContext("2d");
+								bar_chart1 = new _chart.bar_chart(that.nowArray);
+
+								bar_chart1.draw(ctx);
+								_context2.next = 22;
+								break;
+
+							case 21:
+								alert('您输入的时间不能超过15天且起始时间要大于结束时间');
+
+							case 22:
+							case 'end':
+								return _context2.stop();
+						}
+					}
+				}, _callee2, _this);
+			}))();
 		}
 	},
 	props: [],
