@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 142);
+/******/ 	return __webpack_require__(__webpack_require__.s = 143);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -181,16 +181,117 @@ module.exports = function normalizeComponent (
 /***/ }),
 
 /***/ 10:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(0)();
-// imports
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addEvents", function() { return addEvents; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeEvents", function() { return removeEvents; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasClass", function() { return hasClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addClass", function() { return addClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeClass", function() { return removeClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleClass", function() { return toggleClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cookieUtil", function() { return cookieUtil; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "format_time", function() { return format_time; });
+//事件绑定事件 
+var addEvents = (target,type,func) => {
+	if(target.addEventListener){
+		target.addEventListener(type,func,false);
+	}else if(target.attachEvent){
+		target.attachEvent("on",type,func);
+	}
+}
 
+//事件取消绑定事件
+var removeEvents = (target,type,func) => {
+	if(target.removeEventListener){
+		target.removeEventListener(type,func,false);
+	}else if(target.detachEvent){
+		target.detachEvent("on",type,func);
+	}
+}
 
-// module
-exports.push([module.i, "\n@charset \"UTF-8\";\n#header {\n  width: 100%;\n  height: 115px;\n  border-bottom: 1px solid #dedede;\n}\n#header .wrapper {\n    width: 980px;\n    margin: 0 auto;\n    height: 115px;\n    position: relative;\n}\n#header .wrapper .logo {\n      height: 115px;\n      line-height: 115px;\n      width: 250px;\n      font-size: 0;\n}\n#header .wrapper .logo a {\n        display: inline-block;\n        width: 50px;\n        height: 65px;\n        margin-right: 30px;\n        background: url(" + __webpack_require__(9) + ");\n        background-size: 50px 65px;\n        vertical-align: middle;\n}\n#header .wrapper .logo .text {\n        border-left: 1px solid #333;\n        line-height: 62px;\n        display: inline-block;\n        padding-left: 25px;\n        font-size: 26px;\n        vertical-align: middle;\n        color: #888;\n        font-weight: 400;\n        font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#header .wrapper .back_index {\n      font-size: 14px;\n      position: absolute;\n      right: 5px;\n      bottom: 5px;\n      color: blue;\n}\n", ""]);
+//判断对象是否有这个class函数
+var hasClass = (obj,cls) => {
+	return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+}
 
-// exports
+//给对象添加class函数
+var addClass = (obj,cls) => {
+	if (!this.hasClass(obj,cls)) obj.className += " " + cls;
+}
+
+//给对象删除class函数
+var removeClass = (obj,cls) => {
+	if (this.hasClass(obj, cls)) {  
+	    let reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
+	    obj.className = obj.className.replace(reg, ' ');  
+	}	
+}
+
+//对象toggleClass事件函数
+var toggleClass = (obj,cls) => {
+	if(this.hasClass(obj,cls)){  
+        this.removeClass(obj, cls);  
+    }else{  
+        this.addClass(obj, cls);  
+    } 
+}
+
+//cookie方法
+var cookieUtil = () => {
+	console.log('xixi');
+	return {
+		get: function (name){
+			const cookieName = encodeURIComponent(name) + '=';
+			const cookieStart = document.cookie.indexOf(cookieName);
+			let cookieValue;
+
+			if(cookieStart > -1){
+				let cookieEnd = document.cookie.indexOf(';', cookieStart);
+				if(cookieEnd == -1){
+					cookieEnd = document.cookie.length;
+				}
+				cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+			}
+			return cookieValue;
+		},
+		set: function (name, value, expires, path, domain, secure){
+			let cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+			let date = new Date();
+			date.setTime(date.getTime() + expires * 1000);
+			cookieText += '; expires=' + date.toGMTString();
+
+			if(path){
+				cookieText += '; path=' + path;
+			}
+			if(domain){
+				cookieText += '; domain' + domain;
+			}
+			if(secure){
+				cookieText += '; secure';
+			}
+			document.cookie = cookieText;
+		},
+		unset: function (name, path, domain, secure){
+			this.set(name, "", new Date(0), path, domain, secure);
+		}
+	}	
+}
+
+//格式化时间，变成XXXX-XX-XX的格式
+function format_time(time){
+	var year = time.getFullYear();
+	var month = time.getMonth()+1;
+	var day = time.getDate();
+	if(month < 10){
+		month = "0" + month;
+	}
+	if(day < 10){
+		day = "0" + day;
+	}
+	return year + "-" + month + "-" + day;
+}
 
 
 /***/ }),
@@ -230,7 +331,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n#footer {\n  height: 40px;\n}\n#footer p {\n    line-height: 40px;\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n@charset \"UTF-8\";\n#header {\n  width: 100%;\n  height: 115px;\n  border-bottom: 1px solid #dedede;\n}\n#header .wrapper {\n    width: 980px;\n    margin: 0 auto;\n    height: 115px;\n    position: relative;\n}\n#header .wrapper .logo {\n      height: 115px;\n      line-height: 115px;\n      width: 250px;\n      font-size: 0;\n}\n#header .wrapper .logo a {\n        display: inline-block;\n        width: 50px;\n        height: 65px;\n        margin-right: 30px;\n        background: url(" + __webpack_require__(9) + ");\n        background-size: 50px 65px;\n        vertical-align: middle;\n}\n#header .wrapper .logo .text {\n        border-left: 1px solid #333;\n        line-height: 62px;\n        display: inline-block;\n        padding-left: 25px;\n        font-size: 26px;\n        vertical-align: middle;\n        color: #888;\n        font-weight: 400;\n        font-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n#header .wrapper .back_index {\n      font-size: 14px;\n      position: absolute;\n      right: 5px;\n      bottom: 5px;\n      color: blue;\n}\n", ""]);
 
 // exports
 
@@ -240,38 +341,14 @@ exports.push([module.i, "\n#footer {\n  height: 40px;\n}\n#footer p {\n    line-
 /***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
+exports = module.exports = __webpack_require__(0)();
+// imports
 
-/* styles */
-__webpack_require__(17)
 
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(18),
-  /* template */
-  __webpack_require__(15),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\footer.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] footer.vue: functional components are not supported with templates, they should use render functions.")}
+// module
+exports.push([module.i, "\n#footer {\n  height: 40px;\n}\n#footer p {\n    line-height: 40px;\n    text-align: center;\n}\n", ""]);
 
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-260dfaaa", Component.options)
-  } else {
-    hotAPI.reload("data-v-260dfaaa", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
+// exports
 
 
 /***/ }),
@@ -286,7 +363,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _function = __webpack_require__(20);
+var _function = __webpack_require__(10);
 
 exports.default = {
 	components: {},
@@ -684,21 +761,21 @@ exports.default = {
 
 
 /* styles */
-__webpack_require__(16)
+__webpack_require__(18)
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(19),
   /* template */
-  __webpack_require__(14),
+  __webpack_require__(16),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\header.vue"
+Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\footer.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] header.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] footer.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -707,9 +784,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0e2b669d", Component.options)
+    hotAPI.createRecord("data-v-260dfaaa", Component.options)
   } else {
-    hotAPI.reload("data-v-0e2b669d", Component.options)
+    hotAPI.reload("data-v-260dfaaa", Component.options)
   }
 })()}
 
@@ -728,7 +805,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _header = __webpack_require__(13);
+var _header = __webpack_require__(14);
 
 var _header2 = _interopRequireDefault(_header);
 
@@ -736,7 +813,7 @@ var _registerContent = __webpack_require__(70);
 
 var _registerContent2 = _interopRequireDefault(_registerContent);
 
-var _footer = __webpack_require__(12);
+var _footer = __webpack_require__(13);
 
 var _footer2 = _interopRequireDefault(_footer);
 
@@ -769,6 +846,70 @@ exports.default = {
 /***/ }),
 
 /***/ 14:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(17)
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(20),
+  /* template */
+  __webpack_require__(15),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Users\\Administrator\\Desktop\\re-project\\src\\js\\components\\header.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] header.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0e2b669d", Component.options)
+  } else {
+    hotAPI.reload("data-v-0e2b669d", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 143:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_resource__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__register_vue__);
+
+
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_resource___default.a);
+
+new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
+	el: '#main-content',
+	render: cE => cE(__WEBPACK_IMPORTED_MODULE_2__register_vue___default.a)
+})
+
+/***/ }),
+
+/***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -805,32 +946,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 142:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_resource__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_vue__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__register_vue__);
-
-
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_resource___default.a);
-
-new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-	el: '#main-content',
-	render: cE => cE(__WEBPACK_IMPORTED_MODULE_2__register_vue___default.a)
-})
-
-/***/ }),
-
-/***/ 15:
+/***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -852,13 +968,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 16:
+/***/ 17:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(10);
+var content = __webpack_require__(11);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -879,13 +995,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 17:
+/***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(11);
+var content = __webpack_require__(12);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -906,35 +1022,6 @@ if(false) {
 
 /***/ }),
 
-/***/ 18:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-//
-//
-//
-//
-//
-
-exports.default = {
-	components: {},
-	methods: {},
-	props: [],
-	data: function data() {
-		return {};
-	},
-	computed: {},
-	created: function created() {},
-	watch: {}
-};
-
-/***/ }),
-
 /***/ 19:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -944,12 +1031,6 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1208,104 +1289,37 @@ function applyToTag (styleElement, obj) {
 /***/ }),
 
 /***/ 20:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addEvents", function() { return addEvents; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeEvents", function() { return removeEvents; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasClass", function() { return hasClass; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addClass", function() { return addClass; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeClass", function() { return removeClass; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleClass", function() { return toggleClass; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cookieUtil", function() { return cookieUtil; });
-//事件绑定事件 
-var addEvents = (target,type,func) => {
-	if(target.addEventListener){
-		target.addEventListener(type,func,false);
-	}else if(target.attachEvent){
-		target.attachEvent("on",type,func);
-	}
-}
-
-//事件取消绑定事件
-var removeEvents = (target,type,func) => {
-	if(target.removeEventListener){
-		target.removeEventListener(type,func,false);
-	}else if(target.detachEvent){
-		target.detachEvent("on",type,func);
-	}
-}
-
-//判断对象是否有这个class函数
-var hasClass = (obj,cls) => {
-	return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-}
-
-//给对象添加class函数
-var addClass = (obj,cls) => {
-	if (!this.hasClass(obj,cls)) obj.className += " " + cls;
-}
-
-//给对象删除class函数
-var removeClass = (obj,cls) => {
-	if (this.hasClass(obj, cls)) {  
-	    let reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
-	    obj.className = obj.className.replace(reg, ' ');  
-	}	
-}
-
-//对象toggleClass事件函数
-var toggleClass = (obj,cls) => {
-	if(this.hasClass(obj,cls)){  
-        this.removeClass(obj, cls);  
-    }else{  
-        this.addClass(obj, cls);  
-    } 
-}
-
-//cookie方法
-var cookieUtil = () => {
-	console.log('xixi');
-	return {
-		get: function (name){
-			const cookieName = encodeURIComponent(name) + '=';
-			const cookieStart = document.cookie.indexOf(cookieName);
-			let cookieValue;
-
-			if(cookieStart > -1){
-				let cookieEnd = document.cookie.indexOf(';', cookieStart);
-				if(cookieEnd == -1){
-					cookieEnd = document.cookie.length;
-				}
-				cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
-			}
-			return cookieValue;
-		},
-		set: function (name, value, expires, path, domain, secure){
-			let cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
-			let date = new Date();
-			date.setTime(date.getTime() + expires * 1000);
-			cookieText += '; expires=' + date.toGMTString();
-
-			if(path){
-				cookieText += '; path=' + path;
-			}
-			if(domain){
-				cookieText += '; domain' + domain;
-			}
-			if(secure){
-				cookieText += '; secure';
-			}
-			document.cookie = cookieText;
-		},
-		unset: function (name, path, domain, secure){
-			this.set(name, "", new Date(0), path, domain, secure);
-		}
-	}	
-}
 
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+	components: {},
+	methods: {},
+	props: [],
+	data: function data() {
+		return {};
+	},
+	computed: {},
+	created: function created() {},
+	watch: {}
+};
 
 /***/ }),
 

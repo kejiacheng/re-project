@@ -84,4 +84,17 @@ var cookieUtil = () => {
 	}	
 }
 
-export {addEvents, removeEvents, hasClass, addClass, removeClass, toggleClass, cookieUtil}
+//格式化时间，变成XXXX-XX-XX的格式
+function format_time(time){
+	var year = time.getFullYear();
+	var month = time.getMonth()+1;
+	var day = time.getDate();
+	if(month < 10){
+		month = "0" + month;
+	}
+	if(day < 10){
+		day = "0" + day;
+	}
+	return year + "-" + month + "-" + day;
+}
+export {addEvents, removeEvents, hasClass, addClass, removeClass, toggleClass, cookieUtil, format_time}

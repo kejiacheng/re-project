@@ -11,32 +11,56 @@
 				
 				</div>
 			</div>
-			<input class="start" onclick="laydate()">
-			<input class="end" onclick="laydate()">
+			<input class="start" onclick="laydate()" v-model="startTime">
+			<input class="end" onclick="laydate()" v-model="endTime">
 			<a class="filter_bt">筛选</a>
 		</div>
 		<canvas id="canvas" width="980" height="450"></canvas>
 	</div>
 </template>
 <script type="text/javascript">
+	import {format_time} from '../../../function/function.js'
+	import {bar_chart, line_chart} from '../../../function/chart.js'
 	export default{
 		components: {
 			
 		},
-		methods: {
+		mounted(){
+			const that = this;
+			that.init();
+			var arr=[["10.28",120],["10.29",20],["10.30",53],["10.31",22],["11.01",13],["11.02",34],["11.03",32],["11.04",49],["11.05",62],["11.06",20],["11.07",120],["11.08",230],["11.09",211]];
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
 
+			
+			var bar_chart1 = new bar_chart(arr);
+			bar_chart1.draw(ctx);
+		},
+		methods: {
+			init(){
+				const that = this;
+				let startTime = new Date();
+				let endTime = new Date();
+				startTime.setDate(startTime.getDate() - 15)
+				that.endTime = format_time(endTime);
+				that.startTime = format_time(startTime);
+			},
+			getGoodsArray(){
+				
+			}
 		},
 		props: [],
 		data: function (){
 			return {
-				
+				startTime: '',
+				endTime: ''
 			}
 		},
 		computed: {
 
 		},
 		created: function (){
-
+			
 		},
 		watch: {
 

@@ -38,7 +38,7 @@
 		props: [],
 		data: function (){
 			return {
-				mode_choice: 'chart_index_li'
+				mode_choice: 'chart_index_li',
 			}
 		},
 		computed: {
