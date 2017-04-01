@@ -159,8 +159,10 @@
 				//将时间格式从2088-12-12转变为1212
 				const start = Number(this.startTime.replace(/-/g,'').substring(4));
 				const end = Number(this.endTime.replace(/-/g,'').substring(4));
+				let date = Number(this.startTime.replace(/-/g,'').substring(4));
+				let a = new Date(this.startTime)
 
-				for(let i = start;i<=end;i++){
+				for(let i = start,j=0;i<=end;){
 					//当月份小于10时在前面添加0
 					if(i<1000){
 						i = '0' + i;
@@ -169,6 +171,8 @@
 					if(!json[i]){
 						json[i] = 0
 					}
+					//用该表达式将i++可以防止夸月时出现的BUG
+					i = Number(format_time(new Date(a.setDate(new Date(this.startTime).getDate() + j++))).replace(/-/g,'').substring(4));
 				}
 			},
 			jsonToArray(json){//将json转为Array

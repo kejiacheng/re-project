@@ -24616,8 +24616,11 @@ exports.default = {
 			//将时间格式从2088-12-12转变为1212
 			var start = Number(this.startTime.replace(/-/g, '').substring(4));
 			var end = Number(this.endTime.replace(/-/g, '').substring(4));
+			var date = Number(this.startTime.replace(/-/g, '').substring(4));
+			var a = new Date(this.startTime);
 
-			for (var i = start; i <= end; i++) {
+			console.log();
+			for (var i = start, j = 0; i <= end;) {
 				//当月份小于10时在前面添加0
 				if (i < 1000) {
 					i = '0' + i;
@@ -24626,6 +24629,8 @@ exports.default = {
 				if (!json[i]) {
 					json[i] = 0;
 				}
+				i = Number((0, _function.format_time)(new Date(a.setDate(new Date(this.startTime).getDate() + j++))).replace(/-/g, '').substring(4));
+				console.log(i + 'x');
 			}
 		},
 		jsonToArray: function jsonToArray(json) {
