@@ -24618,9 +24618,7 @@ exports.default = {
 			var end = Number(this.endTime.replace(/-/g, '').substring(4));
 			var date = Number(this.startTime.replace(/-/g, '').substring(4));
 			var a = new Date(this.startTime);
-
-			console.log();
-			for (var i = start, j = 0; i <= end;) {
+			for (var i = start; i <= end;) {
 				//当月份小于10时在前面添加0
 				if (i < 1000) {
 					i = '0' + i;
@@ -24629,8 +24627,8 @@ exports.default = {
 				if (!json[i]) {
 					json[i] = 0;
 				}
-				i = Number((0, _function.format_time)(new Date(a.setDate(new Date(this.startTime).getDate() + j++))).replace(/-/g, '').substring(4));
-				console.log(i + 'x');
+				//用该表达式将i++可以防止夸月时出现的BUG
+				i = Number((0, _function.format_time)(new Date(a.setDate(a.getDate() + 1))).replace(/-/g, '').substring(4));
 			}
 		},
 		jsonToArray: function jsonToArray(json) {
