@@ -13,6 +13,8 @@ module.exports = function (app){
 			delete req.session.username;
 			delete req.session.login_way;
 			res.send('退出成功');
+		}else if(req.body.index == 2){
+			
 		}
 	})
 
