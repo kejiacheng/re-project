@@ -67,7 +67,7 @@
 				this.nowPage = 1;
 			},
 			lastPage(){
-				this.nowPage = totalPage;
+				this.nowPage = this.totalPage;
 			},
 			prevPage(){
 				//当前页大于第一页，当前页减一

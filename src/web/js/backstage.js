@@ -25068,7 +25068,7 @@ exports.default = {
 			this.nowPage = 1;
 		},
 		lastPage: function lastPage() {
-			this.nowPage = totalPage;
+			this.nowPage = this.totalPage;
 		},
 		prevPage: function prevPage() {
 			//当前页大于第一页，当前页减一
