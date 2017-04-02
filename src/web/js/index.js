@@ -11249,10 +11249,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "ranking_list"
   }, [_c('p', {
     staticClass: "ranking_list_title"
-  }, [_vm._v("月售排行")]), _vm._v(" "), _c('ul', [_vm._l((_vm.ranking_list), function(item) {
+  }, [_vm._v("月售排行")]), _vm._v(" "), _c('ul', [_vm._l((_vm.ranking_list), function(item, index) {
     return [_c('li', [_c('i', {
-      class: item.className
-    }, [_vm._v(_vm._s(item.ranking))]), _c('span', {
+      class: [index < 3 ? 'top_3' : 'not_top']
+    }, [_vm._v(_vm._s(index + 1))]), _c('span', {
       attrs: {
         "title": item.name
       }
@@ -12101,6 +12101,46 @@ var _function = __webpack_require__(41);
 
 exports.default = {
 	components: {},
+	mounted: function mounted() {
+		var _this = this;
+
+		this.$http.post('/backstage').then(function (result) {
+			var json = {};
+			//将ingredients和accessories数据转换成json格式
+			result.body.forEach(function (e) {
+				var str = '';
+				str += e.ingredients.name + '*1,';
+				for (var i in e.accessories) {
+					str = str + i + '*' + e.accessories[i].num + ',';
+				}
+				str = str.substring(0, str.length - 1);
+				if (!json[str]) {
+					json[str] = 1;
+				} else {
+					json[str] += 1;
+				}
+			});
+			//将json格式转变为数组，方便sort
+			var arr = [];
+			for (var i in json) {
+				var middle = [];
+				middle.push(i, json[i]);
+				arr.push(middle);
+			}
+			//将二维数据根据数量进行排序
+			arr.sort(function (a, b) {
+				return b[1] - a[1];
+			});
+			//取出数组前10个项
+			arr = arr.slice(0, 10);
+			console.log(arr);
+			arr.forEach(function (Arr) {
+				var json = { name: Arr[0], num: Arr[1] };
+				_this.ranking_list.push(json);
+			});
+		});
+	},
+
 	methods: {
 		ing_click: function ing_click(e) {
 			var that = this;
@@ -12256,7 +12296,7 @@ exports.default = {
 	data: function data() {
 		return {
 			ingredients: [{ className: 'green_tea', pic: 'green_tea.jpg', name: '绿茶', price: '2.5' }, { className: 'red_tea', pic: 'red_tea.jpg', name: '红茶', price: '2.5' }, { className: 'apple', pic: 'apple.jpg', name: '苹果汁', price: '3.5' }, { className: 'lemon', pic: 'lemon.jpg', name: '柠檬汁', price: '3.5' }, { className: 'peach', pic: 'peach.jpg', name: '蜜桃汁', price: '3.5' }, { className: 'mango', pic: 'mango.jpg', name: '芒果汁', price: '4.0' }, { className: 'orange', pic: 'orange.jpg', name: '鲜橙汁', price: '3.5' }],
-			ranking_list: [{ className: 'top_3', ranking: 1, name: '苹果汁+红茶+牛奶+果葡糖浆', num: '23011' }, { className: 'top_3', ranking: 2, name: '芒果汁+奶油+椰果+蜂蜜', num: '19637' }, { className: 'top_3', ranking: 3, name: '椰果+蜜桃汁+牛奶', num: '17666' }, { className: 'not_top', ranking: 4, name: '柠檬汁+蜜桃汁+果葡糖浆+椰果', num: '17213' }, { className: 'not_top', ranking: 5, name: '鲜橙汁+椰果+牛奶+苹果汁', num: '16871' }, { className: 'not_top', ranking: 6, name: '绿茶+蜂蜜', num: '14239' }, { className: 'not_top', ranking: 7, name: '绿茶+椰果+果葡糖浆', num: '6584' }, { className: 'not_top', ranking: 8, name: '苹果汁+蜜桃汁+鲜橙汁+芒果汁', num: '4568' }, { className: 'not_top', ranking: 9, name: '柠檬汁+奶油+椰果', num: '3654' }, { className: 'not_top', ranking: 10, name: '苹果汁+奶油+椰果', num: '2601' }],
+			ranking_list: [],
 			shopping_list: { //购物清单
 				ingredients: {
 					price: null,

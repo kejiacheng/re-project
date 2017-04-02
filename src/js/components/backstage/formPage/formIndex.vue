@@ -14,6 +14,9 @@
 		components: {
 			
 		},
+		mounted(){
+			
+		},
 		methods: {
 
 		},

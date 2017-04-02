@@ -33,8 +33,10 @@ export default {
 		state.rankingList = arr;
 	},
 	[getGoodsSale] (state, n){
+		//将数组根据二维数组的第一个参数（时间）进行排序
 		var arr = n.sort((a,b) => b.date - a.date);
 		var newArr = [];
+		//将各参数写入新数组中
 		arr.forEach((e) => {
 			var str = '';
 			var totalPrice = 0;
