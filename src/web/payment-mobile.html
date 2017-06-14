@@ -61,7 +61,9 @@
     var payBt = document.getElementsByClassName('pay-bt')[0];
     var num = document.getElementsByClassName('num')[0];
     var socket = io.connect('http://10.1.40.14:3000');
-
+    if(!document.referrer.match('payment-mobile')){
+        history.go(0);
+    }
     payBt.onclick = function (){
         socket.emit('pay', {price: 5})
         payBt.innerHTML = '订单完成';

@@ -9,6 +9,7 @@ router.get('/', function (req,res,next){
 })
 
 router.get('/clear', function(req,res,next){
+    totolPrice = 0;
     res.send({success: true});
 })
 
