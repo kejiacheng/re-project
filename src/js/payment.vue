@@ -33,7 +33,8 @@
 						</tbody>
 					</table>
 				</div>
-				<a class="payment_bt" @click="payment">提交支付</a>
+				<!--<a class="payment_bt" @click="payment">提交支付</a>-->
+				<img class="code" src="../img/code.png" alt="">
 			</div>
 		</div>
 		<paymentFooter></paymentFooter>
@@ -52,7 +53,7 @@
 		mounted(){
 		    var that = this;
             var socket = io.connect('http://10.1.40.14:3000');
-			alert(JSON.stringify(sessionStorage))
+
             socket.on('payEvent', function(data){
                 if(data.success){
                     alert('支付成功');
@@ -63,6 +64,7 @@
                     window.location = "index.html";
                 }
             })
+
 		},
 		methods: {
 			payment(){
@@ -72,7 +74,13 @@
 				.then((result) => {
 					if(result.body == '支付完成'){
 					    sessionStorage.clear();
-                        window.location = "index.html";
+
+                        that.$http.get('/totolPrice/clear')
+                            .then(result => {
+                				if(result.body.success){
+                                    window.location = "index.html";
+								}
+                            })
 					}
 				})
 			}
@@ -163,6 +171,11 @@ $mic:"微软雅黑";
 			border-radius: 3px;
 			margin-top:15px;
 			cursor:pointer;
+		}
+		.code{
+			margin: 30px 0 0 150px;
+			width: 200px;
+			height: 200px;
 		}
 	}
 	

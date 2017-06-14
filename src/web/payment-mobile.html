@@ -9,9 +9,8 @@
     <link href="" rel="stylesheet">
     <style>
         .wrapper{
-            width: 80%;
+            width: 85%;
             height: 50rem;
-            border: 0.1rem solid #dedede;
             margin: 10rem auto;
         }
         .wrapper .text{
@@ -51,27 +50,37 @@
 <body>
 <div id="main-content">
     <div class="wrapper">
-        <p class="text">本次购物您所需支付人民币<span class="num">5</span>元</p>
+        <p class="text">本次购物您所需支付人民币<span class="num"></span>元</p>
         <a class="pay-bt">确认支付</a>
         <p class="tips">请在<span>3</span>分钟内支付，否则该订单将被取消</p>
     </div>
 </div>
+<script src="../js/function/jquery-1.12.1.min.js"></script>
 <script src="https://cdn.bootcss.com/socket.io/2.0.1/socket.io.js"></script>
 <script>
     var payBt = document.getElementsByClassName('pay-bt')[0];
+    var num = document.getElementsByClassName('num')[0];
     var socket = io.connect('http://10.1.40.14:3000');
 
-    socket.on('news', function (data){
-        console.log(data);
-    });
     payBt.onclick = function (){
         socket.emit('pay', {price: 5})
+        payBt.innerHTML = '订单完成';
+        clearTimeout(timer);
     };
-    setTimeout(function (){
+    var timer = setTimeout(function (){
         payBt.onclick = null;
         payBt.innerHTML = '订单失效';
         socket.emit('unUseful')
     },180000)
+
+    $.ajax({
+        type: 'get',
+        url: '/totolPrice',
+        success: function (json){
+            num.innerHTML = json.totolPrice;
+        }
+    })
+
 </script>
 </body>
 </html>

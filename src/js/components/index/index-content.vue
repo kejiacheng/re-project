@@ -321,8 +321,13 @@
 				accessories = accessories.substring(0,accessories.length-1);
 				accessories += "}";
 				sessionStorage.setItem('accessories', accessories);
-				
-				window.location = 'payment.html';
+				//总价
+                that.$http.post('/totolPrice', {totolPrice: that.totol_price})
+					.then(result => {
+					    if(result.body.success){
+                            window.location = 'payment.html';
+						}
+					});
 			}
 		},
 		data(){
