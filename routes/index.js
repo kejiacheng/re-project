@@ -27,4 +27,5 @@ module.exports = function (app){
 	app.use('/goodsRel', require('./goodsRel'));
 	app.use('/chartPage', require('./chartPage'));
 	app.use('/barLine', require('./barLine'));
+	app.use('/totolPrice', require('./totolPrice'));
 }

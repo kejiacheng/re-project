@@ -4,6 +4,7 @@ module.exports = {
 	buyGoods: (data) => {
 		return RelGoods
 		.findById('58da39e9ef94021ccc903c49', function (err,person){
+			console.log(person);
 			person[data.ingredients.name] -= 300;
 			
 			for(var i in data.accessories){

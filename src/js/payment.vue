@@ -49,6 +49,21 @@
 			paymentHeader,
 			paymentFooter
 		},
+		mounted(){
+		    var that = this;
+            var socket = io.connect('http://10.1.40.14:3000');
+			alert(JSON.stringify(sessionStorage))
+            socket.on('payEvent', function(data){
+                if(data.success){
+                    alert('支付成功');
+                    that.payment();
+                }else{
+                    alert('支付失败');
+                    sessionStorage.clear();
+                    window.location = "index.html";
+                }
+            })
+		},
 		methods: {
 			payment(){
 				var that = this;
@@ -56,7 +71,8 @@
 				that.$http.post("/payment", { ingredients_name: that.ingredients_name, ingredients_price: that.ingredients_price, accessories: that.accessories })
 				.then((result) => {
 					if(result.body == '支付完成'){
-						window.location = "index.html";
+					    sessionStorage.clear();
+                        window.location = "index.html";
 					}
 				})
 			}

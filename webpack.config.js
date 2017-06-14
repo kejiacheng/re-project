@@ -93,6 +93,13 @@ module.exports = {
 			hash: true,
 			chunks: ['payment']
 		}),
+        new HtmlWebpackPlugin({
+            filename: __dirname + '/src/web/payment-mobile.html',
+            template: __dirname + '/src/html/payment-mobile.html',
+            injext: 'body',
+            hash: true,
+            chunks: []
+        }),
 		new HtmlWebpackPlugin({
 			filename: __dirname + '/src/web/backstage.html',
 			template: __dirname + '/src/html/backstage.html',
